@@ -48,6 +48,8 @@ class RisultatiAPI: NSObject {
 
 
 struct Partita: Decodable {
+    let leagueName: String?
+    let matchId: String?
     let matchStatus: String?
     let matchTime: String?
     let matchHometeamName: String?

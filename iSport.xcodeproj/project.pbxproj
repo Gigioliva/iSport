@@ -10,6 +10,9 @@
 		2346C90521ECF2FF00A18CC2 /* CustomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346C90421ECF2FF00A18CC2 /* CustomImage.swift */; };
 		2346C90D21ED105600A18CC2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346C90C21ED105600A18CC2 /* Extensions.swift */; };
 		2346C91321ED1C5500A18CC2 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346C91221ED1C5500A18CC2 /* News.swift */; };
+		239A117721F38DA4006B90CA /* WebViewNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239A117621F38DA4006B90CA /* WebViewNews.swift */; };
+		239A117921F3AB69006B90CA /* StatisticaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239A117821F3AB69006B90CA /* StatisticaTableViewCell.swift */; };
+		239A117B21F3AC16006B90CA /* StatisticaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239A117A21F3AC16006B90CA /* StatisticaView.swift */; };
 		23B1F76421EBF63600D6ABD7 /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B1F76321EBF63600D6ABD7 /* NewsAPI.swift */; };
 		23E45A7421EE234000A5F38F /* RisultatoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E45A7321EE234000A5F38F /* RisultatoTableViewCell.swift */; };
 		23E45A7621EE2B9B00A5F38F /* RisultatiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E45A7521EE2B9B00A5F38F /* RisultatiAPI.swift */; };
@@ -47,6 +50,9 @@
 		2346C90421ECF2FF00A18CC2 /* CustomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImage.swift; sourceTree = "<group>"; };
 		2346C90C21ED105600A18CC2 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2346C91221ED1C5500A18CC2 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		239A117621F38DA4006B90CA /* WebViewNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewNews.swift; sourceTree = "<group>"; };
+		239A117821F3AB69006B90CA /* StatisticaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticaTableViewCell.swift; sourceTree = "<group>"; };
+		239A117A21F3AC16006B90CA /* StatisticaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticaView.swift; sourceTree = "<group>"; };
 		23B1F76321EBF63600D6ABD7 /* NewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPI.swift; sourceTree = "<group>"; };
 		23E45A7321EE234000A5F38F /* RisultatoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RisultatoTableViewCell.swift; sourceTree = "<group>"; };
 		23E45A7521EE2B9B00A5F38F /* RisultatiAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RisultatiAPI.swift; sourceTree = "<group>"; };
@@ -119,7 +125,10 @@
 			children = (
 				23EEE73021EB978400DE746F /* AppDelegate.swift */,
 				23EEE73221EB978400DE746F /* NewsView.swift */,
+				239A117621F38DA4006B90CA /* WebViewNews.swift */,
 				23EEE73421EB978400DE746F /* Main.storyboard */,
+				239A117A21F3AC16006B90CA /* StatisticaView.swift */,
+				239A117821F3AB69006B90CA /* StatisticaTableViewCell.swift */,
 				23E45A7321EE234000A5F38F /* RisultatoTableViewCell.swift */,
 				2346C91221ED1C5500A18CC2 /* News.swift */,
 				23EEE76721EBB5B300DE746F /* RisultatiLive.swift */,
@@ -294,9 +303,12 @@
 				23EEE73921EB978400DE746F /* iSport.xcdatamodeld in Sources */,
 				2346C91321ED1C5500A18CC2 /* News.swift in Sources */,
 				23EEE73121EB978400DE746F /* AppDelegate.swift in Sources */,
+				239A117721F38DA4006B90CA /* WebViewNews.swift in Sources */,
 				23EEE76821EBB5B300DE746F /* RisultatiLive.swift in Sources */,
 				23E45A7421EE234000A5F38F /* RisultatoTableViewCell.swift in Sources */,
 				23B1F76421EBF63600D6ABD7 /* NewsAPI.swift in Sources */,
+				239A117921F3AB69006B90CA /* StatisticaTableViewCell.swift in Sources */,
+				239A117B21F3AC16006B90CA /* StatisticaView.swift in Sources */,
 				23EEE76421EBAB6B00DE746F /* LabelNews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

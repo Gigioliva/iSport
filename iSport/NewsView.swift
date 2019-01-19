@@ -15,8 +15,6 @@ class NewsView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var listaArticoli = [Article]()
     
-    var webFrame: UIView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.rgb(red: 226, green: 227, blue: 228)
@@ -46,46 +44,32 @@ class NewsView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        webFrame = UIView()
         let window = UIApplication.shared.keyWindow!
+        let WebView = WebViewNews()
+        window.addSubview(WebView)
+        WebView.urlNews = listaArticoli[indexPath.row].url!
         
-        webFrame.frame = window.frame
-        webFrame.backgroundColor = UIColor(white: 0, alpha: 0.5)
-        webFrame.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closeWebFrame)))
+        WebView.translatesAutoresizingMaskIntoConstraints = false
+        WebView.topAnchorAnimated = WebView.topAnchor.constraint(equalTo: WebView.superview!.safeAreaLayoutGuide.topAnchor, constant: 0)
         
-        let webView = WKWebView()
+        WebView.constraintHeight = NSLayoutConstraint(item: WebView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 0)
+        WebView.constraintHeight!.isActive = true
         
-//        webView.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: 0)
-//
-//        UIView.animate(withDuration: 2, animations: {
-//            webView.frame = CGRect(x: 0, y: 50, width: window.frame.width, height: window.frame.height - 50)
-//        })
-        if let url = URL(string: listaArticoli[indexPath.row].url!) {
-            let request = URLRequest(url: url)
-            webView.load(request)
-        }
-        webFrame.addSubview(webView)
-        webView.translatesAutoresizingMaskIntoConstraints = false
-        webView.topAnchor.constraint(equalTo: webView.superview!.topAnchor, constant: 50).isActive = true
-        webView.bottomAnchor.constraint(equalTo: webView.superview!.bottomAnchor, constant: 0).isActive = true
-        webView.leadingAnchor.constraint(equalTo: webView.superview!.leadingAnchor, constant: 0).isActive = true
-        webView.trailingAnchor.constraint(equalTo: webView.superview!.trailingAnchor, constant: 0).isActive = true
-        
-        
-        
-        window.addSubview(webFrame)
-        
-        webFrame.translatesAutoresizingMaskIntoConstraints = false
-        webFrame.topAnchor.constraint(equalTo: webFrame.superview!.topAnchor, constant: 0).isActive = true
-        webFrame.bottomAnchor.constraint(equalTo: webFrame.superview!.bottomAnchor, constant: 0).isActive = true
-        webFrame.leadingAnchor.constraint(equalTo: webFrame.superview!.leadingAnchor, constant: 0).isActive = true
-        webFrame.trailingAnchor.constraint(equalTo: webFrame.superview!.trailingAnchor, constant: 0).isActive = true
+        WebView.bottomAnchor.constraint(equalTo: WebView.superview!.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        WebView.leadingAnchor.constraint(equalTo: WebView.superview!.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
+        WebView.trailingAnchor.constraint(equalTo: WebView.superview!.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
 
+        WebView.superview!.layoutIfNeeded()
+        
+        WebView.constraintHeight!.isActive=false
+        WebView.topAnchorAnimated!.isActive=true
+        UIView.animate(withDuration: 1, animations: {
+            WebView.superview!.layoutIfNeeded()
+        })
+        
+        
     }
-    
-    @objc func closeWebFrame(){
-        webFrame.removeFromSuperview()
-    }
+
     
     func aggiornaTableView(articoli: [Article]){
         listaArticoli = articoli
