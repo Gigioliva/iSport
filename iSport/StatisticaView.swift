@@ -19,9 +19,9 @@ class StatisticaView: UIViewController {
     @IBOutlet weak var MatchStatus: UILabel!
     @IBOutlet weak var HalfTimeScore: UILabel!
     
-    @IBOutlet weak var Statistiche: UITableView!
-    @IBOutlet weak var Formazioni: UITableView!
-    @IBOutlet weak var Goals: UITableView!
+    @IBOutlet weak var Dettagli: UITableView!
+    
+    
     
     var contenuto: Partita?
     var statisticaLista = [Statistic]()
@@ -47,22 +47,35 @@ class StatisticaView: UIViewController {
         HalfTimeScore.text = String("HT " + homePrimoTempo + "-" + awayPrimoTempo)
         statisticaLista = contenuto!.statistics
         
-        statisticheDelegate = StatisticaViewTableData(tableView: Statistiche, statistiche: statisticaLista)
-        Statistiche.delegate = statisticheDelegate
-        Statistiche.dataSource = statisticheDelegate
+        statisticheDelegate = StatisticaViewTableData(tableView: Dettagli, statistiche: statisticaLista)
+        formazioneDelegate = FormazioneTableViewDelegate(tableViewFormazione: Dettagli, formazioneCasa: (contenuto?.lineup.home?.startingLineups)!, formazioneAway: (contenuto?.lineup.away?.startingLineups)!)
+        goalsDelegate = GoalsTableViewDelegate(tableView: Dettagli, listaGoal: (contenuto?.goalscorer)!)
         
-        formazioneDelegate = FormazioneTableViewDelegate(tableViewFormazione: Formazioni, formazioneCasa: (contenuto?.lineup.home?.startingLineups)!, formazioneAway: (contenuto?.lineup.away?.startingLineups)!)
-        Formazioni.delegate = formazioneDelegate
-        Formazioni.dataSource = formazioneDelegate
-        
-        goalsDelegate = GoalsTableViewDelegate(tableView: Goals, listaGoal: (contenuto?.goalscorer)!)
-        Goals.delegate = goalsDelegate
-        Goals.dataSource = goalsDelegate
-        
-        
+        Dettagli.delegate=statisticheDelegate
+        Dettagli.dataSource = statisticheDelegate
         
     }
- 
+    
+    
+    @IBAction func ShowStatistiche(_ sender: Any) {
+        Dettagli.delegate=statisticheDelegate
+        Dettagli.dataSource = statisticheDelegate
+        Dettagli.reloadData()
+    }
+    
+    
+    @IBAction func ShowFormazione(_ sender: Any) {
+        Dettagli.delegate=formazioneDelegate
+        Dettagli.dataSource = formazioneDelegate
+        Dettagli.reloadData()
+    }
+    
+    @IBAction func ShowGoal(_ sender: Any) {
+        Dettagli.delegate=goalsDelegate
+        Dettagli.dataSource = goalsDelegate
+        Dettagli.reloadData()
+    }
+    
 
 }
 
