@@ -56,9 +56,12 @@ struct Partita: Decodable {
     let matchHometeamScore: String?
     let matchAwayteamName: String?
     let matchAwayteamScore: String?
+    let matchHometeamHalftimeScore: String?
+    let matchAwayteamHalftimeScore: String?
     let goalscorer: [GoalList]
     let cards: [CardList]
     let statistics: [Statistic]
+    let lineup: Formazione
 }
 
 struct GoalList: Decodable {
@@ -81,3 +84,17 @@ struct Statistic: Decodable {
     let away: String?
 }
 
+struct Formazione: Decodable {
+    let home: Campo?
+    let away: Campo?
+}
+
+struct Campo: Decodable {
+    let startingLineups: [Lineup]?
+}
+
+struct Lineup: Decodable{
+    let lineupPlayer: String?
+    let lineupNumber: String?
+    let lineupPosition: String?
+}

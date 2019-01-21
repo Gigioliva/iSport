@@ -15,6 +15,8 @@ class RisultatiLive: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     var listaPartite = [Partita]()
     
+    var indiceCellaSelezionata: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ListaRisultati.delegate = self
@@ -38,12 +40,29 @@ class RisultatiLive: UIViewController, UITableViewDelegate, UITableViewDataSourc
         return 50
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        indiceCellaSelezionata = indexPath.row
+        performSegue(withIdentifier: "MostraStatistiche", sender: nil)
+    }
+    
+    
     func aggiornaTableView(partite: [Partita]){
         listaPartite = partite
-        //ordinare sull'orario di inizio
+        
+        listaPartite.sort(by: { (parita1, partita2) -> Bool in
+            return parita1.matchTime! < partita2.matchTime!
+            })
         
         
         ListaRisultati.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MostraStatistiche"{
+            let statisticaView = segue.destination as! StatisticaView
+            statisticaView.contenuto = listaPartite[indiceCellaSelezionata]
+            
+        }
     }
     
  

@@ -10,9 +10,14 @@
 		2346C90521ECF2FF00A18CC2 /* CustomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346C90421ECF2FF00A18CC2 /* CustomImage.swift */; };
 		2346C90D21ED105600A18CC2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346C90C21ED105600A18CC2 /* Extensions.swift */; };
 		2346C91321ED1C5500A18CC2 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346C91221ED1C5500A18CC2 /* News.swift */; };
+		2368D8A921F4F225002E58D0 /* StatisticaViewTableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2368D8A821F4F225002E58D0 /* StatisticaViewTableData.swift */; };
+		2368D8AF21F4FA24002E58D0 /* FormazioneTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2368D8AE21F4FA24002E58D0 /* FormazioneTableViewDelegate.swift */; };
 		239A117721F38DA4006B90CA /* WebViewNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239A117621F38DA4006B90CA /* WebViewNews.swift */; };
 		239A117921F3AB69006B90CA /* StatisticaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239A117821F3AB69006B90CA /* StatisticaTableViewCell.swift */; };
 		239A117B21F3AC16006B90CA /* StatisticaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239A117A21F3AC16006B90CA /* StatisticaView.swift */; };
+		23A6C8DD21F5D47600F732DC /* FormazioneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A6C8DC21F5D47600F732DC /* FormazioneTableViewCell.swift */; };
+		23A6C8DF21F5DA3C00F732DC /* GoalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A6C8DE21F5DA3C00F732DC /* GoalsTableViewCell.swift */; };
+		23A6C8E121F5DABD00F732DC /* GoalsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A6C8E021F5DABD00F732DC /* GoalsTableViewDelegate.swift */; };
 		23B1F76421EBF63600D6ABD7 /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B1F76321EBF63600D6ABD7 /* NewsAPI.swift */; };
 		23E45A7421EE234000A5F38F /* RisultatoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E45A7321EE234000A5F38F /* RisultatoTableViewCell.swift */; };
 		23E45A7621EE2B9B00A5F38F /* RisultatiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E45A7521EE2B9B00A5F38F /* RisultatiAPI.swift */; };
@@ -50,9 +55,14 @@
 		2346C90421ECF2FF00A18CC2 /* CustomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImage.swift; sourceTree = "<group>"; };
 		2346C90C21ED105600A18CC2 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2346C91221ED1C5500A18CC2 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		2368D8A821F4F225002E58D0 /* StatisticaViewTableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticaViewTableData.swift; sourceTree = "<group>"; };
+		2368D8AE21F4FA24002E58D0 /* FormazioneTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormazioneTableViewDelegate.swift; sourceTree = "<group>"; };
 		239A117621F38DA4006B90CA /* WebViewNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewNews.swift; sourceTree = "<group>"; };
 		239A117821F3AB69006B90CA /* StatisticaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticaTableViewCell.swift; sourceTree = "<group>"; };
 		239A117A21F3AC16006B90CA /* StatisticaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticaView.swift; sourceTree = "<group>"; };
+		23A6C8DC21F5D47600F732DC /* FormazioneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormazioneTableViewCell.swift; sourceTree = "<group>"; };
+		23A6C8DE21F5DA3C00F732DC /* GoalsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsTableViewCell.swift; sourceTree = "<group>"; };
+		23A6C8E021F5DABD00F732DC /* GoalsTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsTableViewDelegate.swift; sourceTree = "<group>"; };
 		23B1F76321EBF63600D6ABD7 /* NewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPI.swift; sourceTree = "<group>"; };
 		23E45A7321EE234000A5F38F /* RisultatoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RisultatoTableViewCell.swift; sourceTree = "<group>"; };
 		23E45A7521EE2B9B00A5F38F /* RisultatiAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RisultatiAPI.swift; sourceTree = "<group>"; };
@@ -127,8 +137,13 @@
 				23EEE73221EB978400DE746F /* NewsView.swift */,
 				239A117621F38DA4006B90CA /* WebViewNews.swift */,
 				23EEE73421EB978400DE746F /* Main.storyboard */,
+				23A6C8E021F5DABD00F732DC /* GoalsTableViewDelegate.swift */,
+				23A6C8DE21F5DA3C00F732DC /* GoalsTableViewCell.swift */,
+				2368D8AE21F4FA24002E58D0 /* FormazioneTableViewDelegate.swift */,
 				239A117A21F3AC16006B90CA /* StatisticaView.swift */,
+				2368D8A821F4F225002E58D0 /* StatisticaViewTableData.swift */,
 				239A117821F3AB69006B90CA /* StatisticaTableViewCell.swift */,
+				23A6C8DC21F5D47600F732DC /* FormazioneTableViewCell.swift */,
 				23E45A7321EE234000A5F38F /* RisultatoTableViewCell.swift */,
 				2346C91221ED1C5500A18CC2 /* News.swift */,
 				23EEE76721EBB5B300DE746F /* RisultatiLive.swift */,
@@ -297,8 +312,12 @@
 			files = (
 				23E45A7621EE2B9B00A5F38F /* RisultatiAPI.swift in Sources */,
 				23EEE73321EB978400DE746F /* NewsView.swift in Sources */,
+				2368D8AF21F4FA24002E58D0 /* FormazioneTableViewDelegate.swift in Sources */,
+				23A6C8E121F5DABD00F732DC /* GoalsTableViewDelegate.swift in Sources */,
 				2346C90D21ED105600A18CC2 /* Extensions.swift in Sources */,
+				23A6C8DF21F5DA3C00F732DC /* GoalsTableViewCell.swift in Sources */,
 				23EEE76621EBAEFB00DE746F /* CellNews.swift in Sources */,
+				23A6C8DD21F5D47600F732DC /* FormazioneTableViewCell.swift in Sources */,
 				2346C90521ECF2FF00A18CC2 /* CustomImage.swift in Sources */,
 				23EEE73921EB978400DE746F /* iSport.xcdatamodeld in Sources */,
 				2346C91321ED1C5500A18CC2 /* News.swift in Sources */,
@@ -309,6 +328,7 @@
 				23B1F76421EBF63600D6ABD7 /* NewsAPI.swift in Sources */,
 				239A117921F3AB69006B90CA /* StatisticaTableViewCell.swift in Sources */,
 				239A117B21F3AC16006B90CA /* StatisticaView.swift in Sources */,
+				2368D8A921F4F225002E58D0 /* StatisticaViewTableData.swift in Sources */,
 				23EEE76421EBAB6B00DE746F /* LabelNews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

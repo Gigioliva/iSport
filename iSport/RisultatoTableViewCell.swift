@@ -29,6 +29,10 @@ class RisultatoTableViewCell: UITableViewCell {
             StartGame.text = partita!.matchTime ?? ""
             Time.text = partita!.matchStatus ?? ""
             
+            let homePrimoTempo = partita!.matchHometeamHalftimeScore ?? ""
+            let awayPrimoTempo = partita!.matchAwayteamHalftimeScore ?? ""
+            ScoreHalfTime.text = String("HT " + homePrimoTempo + "-" + awayPrimoTempo)
+            
         }
     }
     
