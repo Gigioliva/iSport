@@ -19,13 +19,15 @@
 		23A6C8DF21F5DA3C00F732DC /* GoalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A6C8DE21F5DA3C00F732DC /* GoalsTableViewCell.swift */; };
 		23A6C8E121F5DABD00F732DC /* GoalsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A6C8E021F5DABD00F732DC /* GoalsTableViewDelegate.swift */; };
 		23B1F76421EBF63600D6ABD7 /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B1F76321EBF63600D6ABD7 /* NewsAPI.swift */; };
+		23D1201821F628E900F375EC /* CardsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1201721F628E900F375EC /* CardsTableViewDelegate.swift */; };
+		23D1201A21F629E800F375EC /* CardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1201921F629E800F375EC /* CardsTableViewCell.swift */; };
+		23D1201C21F635A400F375EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23D1201B21F635A300F375EC /* Assets.xcassets */; };
 		23E45A7421EE234000A5F38F /* RisultatoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E45A7321EE234000A5F38F /* RisultatoTableViewCell.swift */; };
 		23E45A7621EE2B9B00A5F38F /* RisultatiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E45A7521EE2B9B00A5F38F /* RisultatiAPI.swift */; };
 		23EEE73121EB978400DE746F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEE73021EB978400DE746F /* AppDelegate.swift */; };
 		23EEE73321EB978400DE746F /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEE73221EB978400DE746F /* NewsView.swift */; };
 		23EEE73621EB978400DE746F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EEE73421EB978400DE746F /* Main.storyboard */; };
 		23EEE73921EB978400DE746F /* iSport.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 23EEE73721EB978400DE746F /* iSport.xcdatamodeld */; };
-		23EEE73B21EB978500DE746F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23EEE73A21EB978500DE746F /* Assets.xcassets */; };
 		23EEE73E21EB978500DE746F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EEE73C21EB978500DE746F /* LaunchScreen.storyboard */; };
 		23EEE74921EB978500DE746F /* iSportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEE74821EB978500DE746F /* iSportTests.swift */; };
 		23EEE75421EB978500DE746F /* iSportUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEE75321EB978500DE746F /* iSportUITests.swift */; };
@@ -64,6 +66,9 @@
 		23A6C8DE21F5DA3C00F732DC /* GoalsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsTableViewCell.swift; sourceTree = "<group>"; };
 		23A6C8E021F5DABD00F732DC /* GoalsTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsTableViewDelegate.swift; sourceTree = "<group>"; };
 		23B1F76321EBF63600D6ABD7 /* NewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPI.swift; sourceTree = "<group>"; };
+		23D1201721F628E900F375EC /* CardsTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsTableViewDelegate.swift; sourceTree = "<group>"; };
+		23D1201921F629E800F375EC /* CardsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsTableViewCell.swift; sourceTree = "<group>"; };
+		23D1201B21F635A300F375EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23E45A7321EE234000A5F38F /* RisultatoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RisultatoTableViewCell.swift; sourceTree = "<group>"; };
 		23E45A7521EE2B9B00A5F38F /* RisultatiAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RisultatiAPI.swift; sourceTree = "<group>"; };
 		23EEE72D21EB978400DE746F /* iSport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSport.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,7 +76,6 @@
 		23EEE73221EB978400DE746F /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		23EEE73521EB978400DE746F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		23EEE73821EB978400DE746F /* iSport.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iSport.xcdatamodel; sourceTree = "<group>"; };
-		23EEE73A21EB978500DE746F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23EEE73D21EB978500DE746F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		23EEE73F21EB978500DE746F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23EEE74421EB978500DE746F /* iSportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iSportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +141,8 @@
 				23EEE73221EB978400DE746F /* NewsView.swift */,
 				239A117621F38DA4006B90CA /* WebViewNews.swift */,
 				23EEE73421EB978400DE746F /* Main.storyboard */,
+				23D1201721F628E900F375EC /* CardsTableViewDelegate.swift */,
+				23D1201921F629E800F375EC /* CardsTableViewCell.swift */,
 				23A6C8E021F5DABD00F732DC /* GoalsTableViewDelegate.swift */,
 				23A6C8DE21F5DA3C00F732DC /* GoalsTableViewCell.swift */,
 				2368D8AE21F4FA24002E58D0 /* FormazioneTableViewDelegate.swift */,
@@ -147,11 +153,11 @@
 				23E45A7321EE234000A5F38F /* RisultatoTableViewCell.swift */,
 				2346C91221ED1C5500A18CC2 /* News.swift */,
 				23EEE76721EBB5B300DE746F /* RisultatiLive.swift */,
+				23D1201B21F635A300F375EC /* Assets.xcassets */,
 				2346C90C21ED105600A18CC2 /* Extensions.swift */,
 				23EEE76521EBAEFB00DE746F /* CellNews.swift */,
 				2346C90421ECF2FF00A18CC2 /* CustomImage.swift */,
 				23EEE76321EBAB6B00DE746F /* LabelNews.swift */,
-				23EEE73A21EB978500DE746F /* Assets.xcassets */,
 				23EEE73C21EB978500DE746F /* LaunchScreen.storyboard */,
 				23EEE73F21EB978500DE746F /* Info.plist */,
 				23B1F76321EBF63600D6ABD7 /* NewsAPI.swift */,
@@ -284,7 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23EEE73E21EB978500DE746F /* LaunchScreen.storyboard in Resources */,
-				23EEE73B21EB978500DE746F /* Assets.xcassets in Resources */,
+				23D1201C21F635A400F375EC /* Assets.xcassets in Resources */,
 				23EEE73621EB978400DE746F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,7 +329,9 @@
 				2346C91321ED1C5500A18CC2 /* News.swift in Sources */,
 				23EEE73121EB978400DE746F /* AppDelegate.swift in Sources */,
 				239A117721F38DA4006B90CA /* WebViewNews.swift in Sources */,
+				23D1201821F628E900F375EC /* CardsTableViewDelegate.swift in Sources */,
 				23EEE76821EBB5B300DE746F /* RisultatiLive.swift in Sources */,
+				23D1201A21F629E800F375EC /* CardsTableViewCell.swift in Sources */,
 				23E45A7421EE234000A5F38F /* RisultatoTableViewCell.swift in Sources */,
 				23B1F76421EBF63600D6ABD7 /* NewsAPI.swift in Sources */,
 				239A117921F3AB69006B90CA /* StatisticaTableViewCell.swift in Sources */,

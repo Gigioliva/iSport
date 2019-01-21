@@ -13,9 +13,10 @@ class RisultatiLive: UIViewController, UITableViewDelegate, UITableViewDataSourc
 
     @IBOutlet weak var ListaRisultati: UITableView!
     
-    var listaPartite = [Partita]()
+    var listaPartiteOra = Dictionary<String, [Partita]>()
+    var listaOrari = [String]()
     
-    var indiceCellaSelezionata: Int = 0
+    var indiceCellaSelezionata = (sezione: 0, riga: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,14 +25,28 @@ class RisultatiLive: UIViewController, UITableViewDelegate, UITableViewDataSourc
         RisultatiAPI.RequestAPI(giorno: "2019-01-12", callback: aggiornaTableView)
         
     }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return listaOrari[section]
+    }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return listaOrari.count
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listaPartite.count
+        let nomeSezione = listaOrari[section]
+        
+        return listaPartiteOra[nomeSezione]?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cella = ListaRisultati.dequeueReusableCell(withIdentifier: "ResultLive") as! RisultatoTableViewCell
-        cella.partita = listaPartite[indexPath.row]
+        let cella = ListaRisultati.dequeueReusableCell(withIdentifier: "ResultLive", for: indexPath) as! RisultatoTableViewCell
+        
+        let nomeSezione = listaOrari[indexPath.section]
+        let contenuto = listaPartiteOra[nomeSezione]!
+        
+        cella.partita = contenuto[indexPath.row]
         
         return cella
     }
@@ -41,26 +56,38 @@ class RisultatiLive: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        indiceCellaSelezionata = indexPath.row
+        indiceCellaSelezionata.sezione = indexPath.section
+        indiceCellaSelezionata.riga = indexPath.row
         performSegue(withIdentifier: "MostraStatistiche", sender: nil)
     }
     
     
     func aggiornaTableView(partite: [Partita]){
-        listaPartite = partite
         
-        listaPartite.sort(by: { (parita1, partita2) -> Bool in
-            return parita1.matchTime! < partita2.matchTime!
+        let listaOrari = partite.reduce(Set<String>(), { (acc, partitaAttuale) in
+            return acc.union([partitaAttuale.matchTime!])
+        })
+        
+        for orario in listaOrari{
+            listaPartiteOra[orario] = partite.filter({ (partita) in
+                return partita.matchTime == orario
             })
+        }
         
-        
+        self.listaOrari = Array(listaOrari)
+        self.listaOrari.sort { (orario1, orario2) in
+            return orario1 < orario2
+        }
+ 
         ListaRisultati.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MostraStatistiche"{
             let statisticaView = segue.destination as! StatisticaView
-            statisticaView.contenuto = listaPartite[indiceCellaSelezionata]
+            let nomeSezione = listaOrari[indiceCellaSelezionata.sezione]
+            
+            statisticaView.contenuto = listaPartiteOra[nomeSezione]![indiceCellaSelezionata.riga]
             
         }
     }

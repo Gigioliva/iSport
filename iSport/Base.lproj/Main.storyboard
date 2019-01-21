@@ -366,7 +366,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N88-TN-ZeK" userLabel="Dettagli">
-                                <rect key="frame" x="0.0" y="258.5" width="414" height="554.5"/>
+                                <rect key="frame" x="0.0" y="208.5" width="414" height="604.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GoalsCell" id="dy7-iK-IxT" customClass="GoalsTableViewCell" customModule="iSport" customModuleProvider="target">
@@ -547,35 +547,120 @@
                                             <outlet property="ValoreTeam2" destination="mBt-hf-pg2" id="Kkd-dA-adU"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CardsCell" id="UB4-Rb-7NT" customClass="CardsTableViewCell" customModule="iSport" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="160" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UB4-Rb-7NT" id="mpo-DA-7mV">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zsz-ES-ggq">
+                                                    <rect key="frame" x="20" y="11" width="374" height="22"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jxe-eO-V0P">
+                                                            <rect key="frame" x="199.5" y="0.5" width="142.5" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgX-QA-YKg">
+                                                            <rect key="frame" x="174.5" y="0.0" width="25" height="22"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="25" id="QGB-g4-1LF"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowcard" translatesAutoresizingMaskIntoConstraints="NO" id="4up-yA-Mb4">
+                                                            <rect key="frame" x="5" y="0.0" width="22" height="22"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rsE-hg-pnC">
+                                                            <rect key="frame" x="32" y="0.5" width="142.5" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redcard" translatesAutoresizingMaskIntoConstraints="NO" id="0pR-R9-wHI">
+                                                            <rect key="frame" x="347" y="0.0" width="22" height="22"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="0pR-R9-wHI" firstAttribute="leading" secondItem="jxe-eO-V0P" secondAttribute="trailing" constant="5" id="4xt-BY-Bhp"/>
+                                                        <constraint firstItem="mgX-QA-YKg" firstAttribute="height" secondItem="Zsz-ES-ggq" secondAttribute="height" id="6WG-i1-ACh"/>
+                                                        <constraint firstItem="rsE-hg-pnC" firstAttribute="centerY" secondItem="Zsz-ES-ggq" secondAttribute="centerY" id="A2i-xS-JoQ"/>
+                                                        <constraint firstItem="jxe-eO-V0P" firstAttribute="leading" secondItem="mgX-QA-YKg" secondAttribute="trailing" id="CK3-Po-Vhl"/>
+                                                        <constraint firstItem="4up-yA-Mb4" firstAttribute="height" secondItem="Zsz-ES-ggq" secondAttribute="height" id="GB4-Np-c0I"/>
+                                                        <constraint firstItem="4up-yA-Mb4" firstAttribute="leading" secondItem="Zsz-ES-ggq" secondAttribute="leading" constant="5" id="QHQ-hA-jtQ"/>
+                                                        <constraint firstItem="0pR-R9-wHI" firstAttribute="centerY" secondItem="Zsz-ES-ggq" secondAttribute="centerY" id="R2q-aG-h8w"/>
+                                                        <constraint firstAttribute="trailing" secondItem="0pR-R9-wHI" secondAttribute="trailing" constant="5" id="T8N-s5-KQh"/>
+                                                        <constraint firstItem="mgX-QA-YKg" firstAttribute="leading" secondItem="rsE-hg-pnC" secondAttribute="trailing" id="Tfc-vd-2mT"/>
+                                                        <constraint firstItem="rsE-hg-pnC" firstAttribute="leading" secondItem="4up-yA-Mb4" secondAttribute="trailing" constant="5" id="UG3-8c-DYJ"/>
+                                                        <constraint firstItem="4up-yA-Mb4" firstAttribute="centerY" secondItem="Zsz-ES-ggq" secondAttribute="centerY" id="goH-MU-0IV"/>
+                                                        <constraint firstItem="mgX-QA-YKg" firstAttribute="centerX" secondItem="Zsz-ES-ggq" secondAttribute="centerX" id="hMk-KF-LAP"/>
+                                                        <constraint firstItem="0pR-R9-wHI" firstAttribute="width" secondItem="Zsz-ES-ggq" secondAttribute="height" id="iIu-jR-Ght"/>
+                                                        <constraint firstItem="4up-yA-Mb4" firstAttribute="width" secondItem="Zsz-ES-ggq" secondAttribute="height" id="jym-mj-jLA"/>
+                                                        <constraint firstItem="jxe-eO-V0P" firstAttribute="centerY" secondItem="Zsz-ES-ggq" secondAttribute="centerY" id="kdg-zO-RzD"/>
+                                                        <constraint firstItem="mgX-QA-YKg" firstAttribute="centerY" secondItem="Zsz-ES-ggq" secondAttribute="centerY" id="lUk-O5-s59"/>
+                                                        <constraint firstItem="0pR-R9-wHI" firstAttribute="height" secondItem="Zsz-ES-ggq" secondAttribute="height" id="qbN-c2-5UN"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="Zsz-ES-ggq" firstAttribute="bottom" secondItem="mpo-DA-7mV" secondAttribute="bottomMargin" id="AgL-pQ-2fx"/>
+                                                <constraint firstItem="Zsz-ES-ggq" firstAttribute="top" secondItem="mpo-DA-7mV" secondAttribute="topMargin" id="GdP-Lp-AyX"/>
+                                                <constraint firstItem="Zsz-ES-ggq" firstAttribute="leading" secondItem="mpo-DA-7mV" secondAttribute="leadingMargin" id="T8E-Ls-ooc"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Zsz-ES-ggq" secondAttribute="trailing" id="nVn-lP-BbN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="CardAway" destination="0pR-R9-wHI" id="P0z-Zu-AKi"/>
+                                            <outlet property="CardCasa" destination="4up-yA-Mb4" id="aH8-H6-L9V"/>
+                                            <outlet property="MinutoFallo" destination="mgX-QA-YKg" id="eLw-XZ-Oz5"/>
+                                            <outlet property="NomeGiocatoreAway" destination="jxe-eO-V0P" id="jVb-s4-PLd"/>
+                                            <outlet property="NomeGiocatoreCasa" destination="rsE-hg-pnC" id="IMw-rz-deq"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Xn6-B7-yh6">
-                                <rect key="frame" x="0.0" y="158.5" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="158.5" width="414" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIp-to-XJ3">
-                                        <rect key="frame" x="0.0" y="35" width="138" height="30"/>
-                                        <state key="normal" title="Statistiche"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIp-to-XJ3">
+                                        <rect key="frame" x="0.0" y="0.0" width="103.5" height="50"/>
+                                        <state key="normal" image="statistic"/>
                                         <connections>
                                             <action selector="ShowStatistiche:" destination="wYR-OS-4MO" eventType="touchUpInside" id="fTT-RW-fVd"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeI-Am-YZ3">
-                                        <rect key="frame" x="138" y="35" width="138" height="30"/>
-                                        <state key="normal" title="Formazione"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeI-Am-YZ3">
+                                        <rect key="frame" x="103.5" y="0.0" width="103.5" height="50"/>
+                                        <state key="normal" image="football-field"/>
                                         <connections>
                                             <action selector="ShowFormazione:" destination="wYR-OS-4MO" eventType="touchUpInside" id="7ve-87-mUj"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WmC-6q-bBZ">
-                                        <rect key="frame" x="276" y="35" width="138" height="30"/>
-                                        <state key="normal" title="Goal"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="it2-D4-8Ud">
+                                        <rect key="frame" x="207" y="0.0" width="103.5" height="50"/>
+                                        <state key="normal" image="cards"/>
+                                        <connections>
+                                            <action selector="ShowCards:" destination="wYR-OS-4MO" eventType="touchUpInside" id="kG5-2N-SUs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WmC-6q-bBZ">
+                                        <rect key="frame" x="310.5" y="0.0" width="103.5" height="50"/>
+                                        <state key="normal" image="goals"/>
                                         <connections>
                                             <action selector="ShowGoal:" destination="wYR-OS-4MO" eventType="touchUpInside" id="YsP-KG-ePV"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="3gZ-H2-cM2"/>
+                                    <constraint firstItem="it2-D4-8Ud" firstAttribute="height" secondItem="Xn6-B7-yh6" secondAttribute="height" id="1dN-jc-QI6"/>
+                                    <constraint firstAttribute="height" constant="50" id="3gZ-H2-cM2"/>
+                                    <constraint firstItem="pIp-to-XJ3" firstAttribute="height" secondItem="Xn6-B7-yh6" secondAttribute="height" id="IzH-pb-hsf"/>
+                                    <constraint firstItem="WmC-6q-bBZ" firstAttribute="height" secondItem="Xn6-B7-yh6" secondAttribute="height" id="QZg-66-3bD"/>
+                                    <constraint firstItem="zeI-Am-YZ3" firstAttribute="height" secondItem="Xn6-B7-yh6" secondAttribute="height" id="gfd-hd-Wv4"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -615,7 +700,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cards" width="8.1599998474121094" height="12.239999771118164"/>
+        <image name="football-field" width="242.52632141113281" height="242.52632141113281"/>
+        <image name="goals" width="15.119999885559082" height="15.119999885559082"/>
         <image name="icons8-news-500" width="26.25" height="26.25"/>
+        <image name="redcard" width="8.1599998474121094" height="12"/>
+        <image name="statistic" width="418.90908813476562" height="418.90908813476562"/>
         <image name="text-lines" width="409.60000610351562" height="380.79998779296875"/>
+        <image name="yellowcard" width="8.1599998474121094" height="12.239999771118164"/>
     </resources>
 </document>

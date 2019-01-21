@@ -29,6 +29,7 @@ class StatisticaView: UIViewController {
     var statisticheDelegate: StatisticaViewTableData?
     var formazioneDelegate: FormazioneTableViewDelegate?
     var goalsDelegate: GoalsTableViewDelegate?
+    var cardsDelegate: CardsTableViewDelegate?
     
 
     override func viewDidLoad() {
@@ -50,6 +51,7 @@ class StatisticaView: UIViewController {
         statisticheDelegate = StatisticaViewTableData(tableView: Dettagli, statistiche: statisticaLista)
         formazioneDelegate = FormazioneTableViewDelegate(tableViewFormazione: Dettagli, formazioneCasa: (contenuto?.lineup.home?.startingLineups)!, formazioneAway: (contenuto?.lineup.away?.startingLineups)!)
         goalsDelegate = GoalsTableViewDelegate(tableView: Dettagli, listaGoal: (contenuto?.goalscorer)!)
+        cardsDelegate = CardsTableViewDelegate(tableView: Dettagli, listaCard: (contenuto?.cards)!)
         
         Dettagli.delegate=statisticheDelegate
         Dettagli.dataSource = statisticheDelegate
@@ -63,6 +65,11 @@ class StatisticaView: UIViewController {
         Dettagli.reloadData()
     }
     
+    @IBAction func ShowCards(_ sender: Any) {
+        Dettagli.delegate = cardsDelegate
+        Dettagli.dataSource = cardsDelegate
+        Dettagli.reloadData()
+    }
     
     @IBAction func ShowFormazione(_ sender: Any) {
         Dettagli.delegate=formazioneDelegate
