@@ -49,11 +49,11 @@ class StatisticaView: UIViewController {
         statisticaLista = contenuto!.statistics
         
         statisticheDelegate = StatisticaViewTableData(tableView: Dettagli, statistiche: statisticaLista)
-        formazioneDelegate = FormazioneTableViewDelegate(tableViewFormazione: Dettagli, formazioneCasa: (contenuto?.lineup.home?.startingLineups)!, formazioneAway: (contenuto?.lineup.away?.startingLineups)!)
+        formazioneDelegate = FormazioneTableViewDelegate(tableViewFormazione: Dettagli, formazioneCasa: (contenuto?.lineup.home)!, formazioneAway: (contenuto?.lineup.away)!)
         goalsDelegate = GoalsTableViewDelegate(tableView: Dettagli, listaGoal: (contenuto?.goalscorer)!)
         cardsDelegate = CardsTableViewDelegate(tableView: Dettagli, listaCard: (contenuto?.cards)!)
         
-        Dettagli.delegate=statisticheDelegate
+        Dettagli.delegate = statisticheDelegate
         Dettagli.dataSource = statisticheDelegate
         
     }
