@@ -56,6 +56,8 @@ class StatisticaView: UIViewController {
         Dettagli.delegate = statisticheDelegate
         Dettagli.dataSource = statisticheDelegate
         
+        print(RisultatiAPI.GetPrediction(matchId: (contenuto?.matchId)!))
+        
     }
     
     

@@ -65,9 +65,9 @@ struct Lineup: Decodable{
 
 struct Prediction: Decodable{
     let matchId: String?
-    let probHW: String?
+    let probHw: String?
     let probD: String?
-    let probAW: String?
+    let probAw: String?
 }
 
 struct Odds: Decodable{
