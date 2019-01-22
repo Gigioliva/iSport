@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UICircularProgressRing
 
 class StatisticaView: UIViewController {
 
@@ -21,6 +22,9 @@ class StatisticaView: UIViewController {
     
     @IBOutlet weak var Dettagli: UITableView!
     
+    @IBOutlet weak var RingHome: UICircularProgressRing!
+    @IBOutlet weak var RingDraw: UICircularProgressRing!
+    @IBOutlet weak var RingAway: UICircularProgressRing!
     
     
     var contenuto: Partita?
@@ -56,7 +60,11 @@ class StatisticaView: UIViewController {
         Dettagli.delegate = statisticheDelegate
         Dettagli.dataSource = statisticheDelegate
         
-        print(RisultatiAPI.GetPrediction(matchId: (contenuto?.matchId)!))
+        let predizione = RisultatiAPI.GetPrediction(matchId: (contenuto?.matchId)!)!
+        
+        RingHome.value = CGFloat(Double(predizione.probHw!)!)
+        RingDraw.value = CGFloat(Double(predizione.probD!)!)
+        RingAway.value = CGFloat(Double(predizione.probAw!)!)
         
     }
     

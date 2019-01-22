@@ -228,7 +228,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ptg-PZ-i0h"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="News" image="icons8-news-500" id="nXu-Ag-Qbw"/>
+                    <tabBarItem key="tabBarItem" title="News" image="news" id="nXu-Ag-Qbw"/>
                     <connections>
                         <outlet property="ListaNews" destination="AXc-cP-aBy" id="UjC-1c-IvA"/>
                     </connections>
@@ -241,7 +241,7 @@
         <scene sceneID="Cc2-Zh-0rG">
             <objects>
                 <tabBarController id="gvM-uV-wYl" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Taa-io-C35">
+                    <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Taa-io-C35">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -249,17 +249,18 @@
                     <connections>
                         <segue destination="8Nc-XC-A5Z" kind="relationship" relationship="viewControllers" id="BWQ-Lj-fio"/>
                         <segue destination="8Kt-cA-PkZ" kind="relationship" relationship="viewControllers" id="L5Z-CX-v9v"/>
+                        <segue destination="QQ9-1A-hxF" kind="relationship" relationship="viewControllers" id="PaM-vi-4FX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l0J-C4-pWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-140" y="-58"/>
         </scene>
-        <!--Pagina2-->
+        <!--Risultati-->
         <scene sceneID="dez-gn-3dX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Nc-XC-A5Z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Pagina2" id="fAb-Cg-VQa"/>
+                    <tabBarItem key="tabBarItem" title="Risultati" image="risultati" id="fAb-Cg-VQa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Pss-hd-S5a">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -274,6 +275,22 @@
             </objects>
             <point key="canvasLocation" x="812" y="273.91304347826087"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="MMi-ek-H7R">
+            <objects>
+                <viewController id="QQ9-1A-hxF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bs8-UA-dAh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Lqs-JO-mJo"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="l78-Vh-yJs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nU1-s0-RTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="812" y="1023"/>
+        </scene>
         <!--Statistica View-->
         <scene sceneID="ze6-TN-yGm">
             <objects>
@@ -282,9 +299,98 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Campionato" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0t-QF-aDw">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="liV-Db-kw5">
+                                <rect key="frame" x="0.0" y="158.5" width="414" height="100"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uh1-za-NcR" customClass="UICircularProgressRing" customModule="UICircularProgressRing">
+                                        <rect key="frame" x="0.0" y="0.0" width="138" height="100"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="outerRingWidth">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="innerRingWidth">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="outerRingColor">
+                                                <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="innerRingColor">
+                                                <color key="value" red="1" green="0.56795325470000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                                <color key="value" red="1" green="0.56795325470000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="startAngle">
+                                                <real key="value" value="-90"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="endAngle">
+                                                <real key="value" value="-90"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pYP-ut-V6w" customClass="UICircularProgressRing" customModule="UICircularProgressRing">
+                                        <rect key="frame" x="138" y="0.0" width="138" height="100"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="outerRingWidth">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="innerRingWidth">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                                <color key="value" red="1" green="0.56795325470000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="innerRingColor">
+                                                <color key="value" red="1" green="0.56795325470000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="outerRingColor">
+                                                <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="startAngle">
+                                                <real key="value" value="-90"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="endAngle">
+                                                <real key="value" value="-90"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFk-BJ-7jn" customClass="UICircularProgressRing" customModule="UICircularProgressRing">
+                                        <rect key="frame" x="276" y="0.0" width="138" height="100"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="outerRingColor">
+                                                <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="outerRingWidth">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="innerRingColor">
+                                                <color key="value" red="1" green="0.56795325470000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                                <color key="value" red="1" green="0.56795325470000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="innerRingWidth">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="startAngle">
+                                                <real key="value" value="-90"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="endAngle">
+                                                <real key="value" value="-90"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="F4T-3l-2ME"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Campionato" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0t-QF-aDw">
                                 <rect key="frame" x="0.0" y="88" width="414" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -366,7 +472,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N88-TN-ZeK" userLabel="Dettagli">
-                                <rect key="frame" x="0.0" y="208.5" width="414" height="604.5"/>
+                                <rect key="frame" x="0.0" y="308.5" width="414" height="504.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GoalsCell" id="dy7-iK-IxT" customClass="GoalsTableViewCell" customModule="iSport" customModuleProvider="target">
@@ -573,7 +679,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgX-QA-YKg">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mgX-QA-YKg">
                                                             <rect key="frame" x="174.5" y="0.0" width="25" height="22"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="25" id="QGB-g4-1LF"/>
@@ -634,10 +740,11 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Xn6-B7-yh6">
-                                <rect key="frame" x="0.0" y="158.5" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="258.5" width="414" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIp-to-XJ3">
                                         <rect key="frame" x="0.0" y="0.0" width="103.5" height="50"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <state key="normal" image="statistic"/>
                                         <connections>
                                             <action selector="ShowStatistiche:" destination="wYR-OS-4MO" eventType="touchUpInside" id="fTT-RW-fVd"/>
@@ -645,6 +752,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeI-Am-YZ3">
                                         <rect key="frame" x="103.5" y="0.0" width="103.5" height="50"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <state key="normal" image="football-field"/>
                                         <connections>
                                             <action selector="ShowFormazione:" destination="wYR-OS-4MO" eventType="touchUpInside" id="7ve-87-mUj"/>
@@ -652,6 +760,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="it2-D4-8Ud">
                                         <rect key="frame" x="207" y="0.0" width="103.5" height="50"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <state key="normal" image="cards"/>
                                         <connections>
                                             <action selector="ShowCards:" destination="wYR-OS-4MO" eventType="touchUpInside" id="kG5-2N-SUs"/>
@@ -659,6 +768,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WmC-6q-bBZ">
                                         <rect key="frame" x="310.5" y="0.0" width="103.5" height="50"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <state key="normal" image="goals"/>
                                         <connections>
                                             <action selector="ShowGoal:" destination="wYR-OS-4MO" eventType="touchUpInside" id="YsP-KG-ePV"/>
@@ -680,13 +790,16 @@
                             <constraint firstItem="qUz-6l-zyh" firstAttribute="trailing" secondItem="Vtj-Eb-bcW" secondAttribute="trailing" id="9aF-Ff-FSM"/>
                             <constraint firstItem="Vtj-Eb-bcW" firstAttribute="trailing" secondItem="m0t-QF-aDw" secondAttribute="trailing" id="BPr-zW-EGA"/>
                             <constraint firstItem="m0t-QF-aDw" firstAttribute="top" secondItem="Vtj-Eb-bcW" secondAttribute="top" id="CNI-A9-w16"/>
-                            <constraint firstItem="Xn6-B7-yh6" firstAttribute="top" secondItem="qUz-6l-zyh" secondAttribute="bottom" id="IPC-WM-0IZ"/>
                             <constraint firstItem="N88-TN-ZeK" firstAttribute="leading" secondItem="Vtj-Eb-bcW" secondAttribute="leading" id="Mgi-Wf-mQx"/>
                             <constraint firstItem="Vtj-Eb-bcW" firstAttribute="bottom" secondItem="N88-TN-ZeK" secondAttribute="bottom" id="Ngj-qA-aCg"/>
                             <constraint firstItem="N88-TN-ZeK" firstAttribute="top" secondItem="Xn6-B7-yh6" secondAttribute="bottom" id="PYD-mu-lWC"/>
+                            <constraint firstItem="liV-Db-kw5" firstAttribute="leading" secondItem="eUL-aR-iLr" secondAttribute="leading" id="QjE-me-qUZ"/>
                             <constraint firstItem="qUz-6l-zyh" firstAttribute="top" secondItem="m0t-QF-aDw" secondAttribute="bottom" id="cKx-H3-f7f"/>
                             <constraint firstItem="Xn6-B7-yh6" firstAttribute="leading" secondItem="Vtj-Eb-bcW" secondAttribute="leading" id="gYU-v8-feF"/>
+                            <constraint firstItem="Xn6-B7-yh6" firstAttribute="top" secondItem="liV-Db-kw5" secondAttribute="bottom" id="gr9-bv-zpw"/>
+                            <constraint firstItem="Vtj-Eb-bcW" firstAttribute="trailing" secondItem="liV-Db-kw5" secondAttribute="trailing" id="mfQ-kf-sbj"/>
                             <constraint firstItem="m0t-QF-aDw" firstAttribute="leading" secondItem="Vtj-Eb-bcW" secondAttribute="leading" id="tOj-G6-Gsq"/>
+                            <constraint firstItem="liV-Db-kw5" firstAttribute="top" secondItem="qUz-6l-zyh" secondAttribute="bottom" id="thG-B3-d1D"/>
                             <constraint firstItem="qUz-6l-zyh" firstAttribute="leading" secondItem="Vtj-Eb-bcW" secondAttribute="leading" id="wFf-6E-pEf"/>
                             <constraint firstItem="Vtj-Eb-bcW" firstAttribute="trailing" secondItem="N88-TN-ZeK" secondAttribute="trailing" id="xO5-a2-qtl"/>
                         </constraints>
@@ -698,6 +811,9 @@
                         <outlet property="HalfTimeScore" destination="eP2-FD-RLF" id="PNX-hB-7Lh"/>
                         <outlet property="MatchStatus" destination="gfp-ky-KJB" id="aBr-eV-QW7"/>
                         <outlet property="OrarioInizio" destination="Q9D-Av-sUf" id="Jem-GL-8n8"/>
+                        <outlet property="RingAway" destination="gFk-BJ-7jn" id="WHa-Qn-iRs"/>
+                        <outlet property="RingDraw" destination="pYP-ut-V6w" id="WXs-aw-fQZ"/>
+                        <outlet property="RingHome" destination="uh1-za-NcR" id="ZCS-TU-UcA"/>
                         <outlet property="Team1Name" destination="PYA-7x-3Z8" id="aBB-xe-CwH"/>
                         <outlet property="Team1Score" destination="UrV-b4-rLg" id="wcx-bg-Za3"/>
                         <outlet property="Team2Name" destination="UcB-Zz-88Z" id="7hy-ry-mRh"/>
@@ -713,8 +829,9 @@
         <image name="cards" width="8.1599998474121094" height="12.239999771118164"/>
         <image name="football-field" width="242.52632141113281" height="242.52632141113281"/>
         <image name="goals" width="15.119999885559082" height="15.119999885559082"/>
-        <image name="icons8-news-500" width="26.25" height="26.25"/>
+        <image name="news" width="24" height="24"/>
         <image name="redcard" width="8.1599998474121094" height="12"/>
+        <image name="risultati" width="24" height="24"/>
         <image name="statistic" width="418.90908813476562" height="418.90908813476562"/>
         <image name="text-lines" width="409.60000610351562" height="380.79998779296875"/>
         <image name="yellowcard" width="8.1599998474121094" height="12.239999771118164"/>
