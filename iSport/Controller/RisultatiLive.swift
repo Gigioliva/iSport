@@ -25,7 +25,6 @@ class RisultatiLive: UIViewController, UITableViewDelegate, UITableViewDataSourc
         let giorno = "2019-01-12"
         
         RisultatiAPI.RequestAPI(giorno: giorno, callback: aggiornaTableView)
-        RisultatiAPI.OddsAPI(giorno: giorno)
         RisultatiAPI.PredictionAPI(giorno: giorno)
         
     }

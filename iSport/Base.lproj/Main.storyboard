@@ -247,9 +247,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="8Nc-XC-A5Z" kind="relationship" relationship="viewControllers" id="BWQ-Lj-fio"/>
                         <segue destination="8Kt-cA-PkZ" kind="relationship" relationship="viewControllers" id="L5Z-CX-v9v"/>
-                        <segue destination="QQ9-1A-hxF" kind="relationship" relationship="viewControllers" id="PaM-vi-4FX"/>
+                        <segue destination="8Nc-XC-A5Z" kind="relationship" relationship="viewControllers" id="BWQ-Lj-fio"/>
+                        <segue destination="QQ9-1A-hxF" kind="relationship" relationship="viewControllers" id="cy7-TA-reW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l0J-C4-pWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -278,18 +278,107 @@
         <!--Item-->
         <scene sceneID="MMi-ek-H7R">
             <objects>
-                <viewController id="QQ9-1A-hxF" sceneMemberID="viewController">
+                <viewController id="QQ9-1A-hxF" customClass="OddsViewController" customModule="iSport" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bs8-UA-dAh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I9w-Jo-H9k">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OddsCell" rowHeight="130" id="4Vt-xZ-COz" customClass="OddsTableViewCell" customModule="iSport" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Vt-xZ-COz" id="Xza-5M-ZrW">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="av1-Dr-3Eb">
+                                                    <rect key="frame" x="10" y="11" width="394" height="108"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data - Ora" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cR-Tf-AUS">
+                                                            <rect key="frame" x="5" y="2" width="80" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team1 - Team2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PuE-Tu-wxx">
+                                                            <rect key="frame" x="5" y="27.5" width="123" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xgg-cT-oWq">
+                                                            <rect key="frame" x="5" y="53" width="384" height="50"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIk-Yi-MLh" customClass="BottoneScommessa" customModule="iSport" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="118" height="50"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <viewLayoutGuide key="safeArea" id="AiL-0w-vj9"/>
+                                                                </view>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ATd-pP-GsO" customClass="BottoneScommessa" customModule="iSport" customModuleProvider="target">
+                                                                    <rect key="frame" x="133" y="0.0" width="118" height="50"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <viewLayoutGuide key="safeArea" id="kfz-S1-VBe"/>
+                                                                </view>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xY-ei-tOZ" customClass="BottoneScommessa" customModule="iSport" customModuleProvider="target">
+                                                                    <rect key="frame" x="266" y="0.0" width="118" height="50"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </view>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.85113769770000003" green="0.87014490369999997" blue="0.89412182569999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstItem="PuE-Tu-wxx" firstAttribute="leading" secondItem="av1-Dr-3Eb" secondAttribute="leading" constant="5" id="661-gA-Qs2"/>
+                                                        <constraint firstAttribute="bottom" secondItem="xgg-cT-oWq" secondAttribute="bottom" constant="5" id="IO3-ER-O7m"/>
+                                                        <constraint firstItem="2cR-Tf-AUS" firstAttribute="top" secondItem="av1-Dr-3Eb" secondAttribute="top" constant="2" id="ITV-gK-tlr"/>
+                                                        <constraint firstItem="2cR-Tf-AUS" firstAttribute="leading" secondItem="av1-Dr-3Eb" secondAttribute="leading" constant="5" id="V18-Ae-FTy"/>
+                                                        <constraint firstItem="xgg-cT-oWq" firstAttribute="leading" secondItem="av1-Dr-3Eb" secondAttribute="leading" constant="5" id="fK6-Uc-ygT"/>
+                                                        <constraint firstItem="PuE-Tu-wxx" firstAttribute="top" secondItem="2cR-Tf-AUS" secondAttribute="bottom" constant="5" id="h2S-RW-lgK"/>
+                                                        <constraint firstAttribute="trailing" secondItem="xgg-cT-oWq" secondAttribute="trailing" constant="5" id="qMP-Yd-7Ry"/>
+                                                        <constraint firstItem="xgg-cT-oWq" firstAttribute="top" secondItem="PuE-Tu-wxx" secondAttribute="bottom" constant="5" id="wP0-dz-lXm"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="av1-Dr-3Eb" firstAttribute="leading" secondItem="Xza-5M-ZrW" secondAttribute="leading" constant="10" id="Gua-bo-Cnk"/>
+                                                <constraint firstAttribute="trailing" secondItem="av1-Dr-3Eb" secondAttribute="trailing" constant="10" id="LOc-Za-ama"/>
+                                                <constraint firstItem="av1-Dr-3Eb" firstAttribute="top" secondItem="Xza-5M-ZrW" secondAttribute="topMargin" id="fSI-F7-s3C"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="av1-Dr-3Eb" secondAttribute="bottom" id="qVM-8a-lCP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="Bottone1" destination="cIk-Yi-MLh" id="v4c-SY-EEX"/>
+                                            <outlet property="Bottone2" destination="5xY-ei-tOZ" id="b1O-dU-xPL"/>
+                                            <outlet property="BottoneX" destination="ATd-pP-GsO" id="veP-W0-tAH"/>
+                                            <outlet property="DataOra" destination="2cR-Tf-AUS" id="Qmv-yk-gPu"/>
+                                            <outlet property="Squadre" destination="PuE-Tu-wxx" id="S8R-on-8HL"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.44750720259999999" green="0.50887107850000002" blue="0.55687129499999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Lqs-JO-mJo" firstAttribute="bottom" secondItem="I9w-Jo-H9k" secondAttribute="bottom" id="C6F-n1-Xra"/>
+                            <constraint firstItem="I9w-Jo-H9k" firstAttribute="top" secondItem="Lqs-JO-mJo" secondAttribute="top" id="kum-kO-hVc"/>
+                            <constraint firstItem="I9w-Jo-H9k" firstAttribute="leading" secondItem="Lqs-JO-mJo" secondAttribute="leading" id="rd2-6i-XQL"/>
+                            <constraint firstItem="Lqs-JO-mJo" firstAttribute="trailing" secondItem="I9w-Jo-H9k" secondAttribute="trailing" id="wwM-R0-59R"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Lqs-JO-mJo"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="l78-Vh-yJs"/>
+                    <connections>
+                        <outlet property="tableViewOdds" destination="I9w-Jo-H9k" id="H20-16-XxU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nU1-s0-RTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="812" y="1023"/>
+            <point key="canvasLocation" x="811.59420289855075" y="1022.5446428571428"/>
         </scene>
         <!--Statistica View-->
         <scene sceneID="ze6-TN-yGm">

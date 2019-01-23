@@ -20,7 +20,7 @@ class RisultatiAPI: NSObject {
     static var listaOdds = [Odds]()
     
     //AAAA-MM-GG
-    static func RequestAPI(giorno: String,callback: @escaping ([Partita]) -> Void){
+    static func RequestAPI(giorno: String, callback: @escaping ([Partita]) -> Void){
         let stringURL = String(urlRisultatiAPI + "&from=" + giorno + "&to=" + giorno + "&APIkey=" + risultatiKey)
         let url = URL(string: stringURL)!
         URLSession.shared.dataTask(with: url){ (data, response, error) in
@@ -73,7 +73,7 @@ class RisultatiAPI: NSObject {
             }.resume()
     }
     
-    static func OddsAPI(giorno: String){
+    static func OddsAPI(giorno: String, callback: @escaping ([Odds]) -> Void){
         let stringURL = String(urlOddsAPI + "&from=" + giorno + "&to=" + giorno + "&APIkey=" + risultatiKey)
         let url = URL(string: stringURL)!
         URLSession.shared.dataTask(with: url){ (data, response, error) in
@@ -90,7 +90,9 @@ class RisultatiAPI: NSObject {
                 do{
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
-                    self.listaOdds = try decoder.decode([Odds].self, from: data)
+                    let listaTemporanea = try decoder.decode([Odds].self, from: data)
+                    self.listaOdds = filtraOdds(scommesse: listaTemporanea)
+                    callback(self.listaOdds)
                 }catch let errore{
                     print(errore)
                 }
@@ -111,6 +113,31 @@ class RisultatiAPI: NSObject {
             return odd.matchId == matchId
         }
         return scommessa.count > 0 ? scommessa[0] : nil
+    }
+    
+    static func GetPartita(matchId: String) -> Partita? {
+        let partita = listaPartite.filter { (partita) in
+            return partita.matchId == matchId
+        }
+        return partita.count > 0 ? partita[0] : nil
+    }
+    
+    
+    static func filtraOdds(scommesse: [Odds]) -> [Odds]{
+        var risultato = [Odds]()
+        let listaMatchId = scommesse.reduce(Set<String>(), { (acc, scommessaAttuale) in
+            return acc.union([scommessaAttuale.matchId!])
+        })
+        
+        for matchId in listaMatchId{
+            let temp = scommesse.filter({ (odds) in
+                return odds.matchId == matchId
+            })
+            risultato.append(temp[0])
+        }
+        
+        return risultato
+        
     }
     
 

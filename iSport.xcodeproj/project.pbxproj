@@ -12,6 +12,9 @@
 		2346C90521ECF2FF00A18CC2 /* CustomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346C90421ECF2FF00A18CC2 /* CustomImage.swift */; };
 		2346C90D21ED105600A18CC2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346C90C21ED105600A18CC2 /* Extensions.swift */; };
 		2346C91321ED1C5500A18CC2 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346C91221ED1C5500A18CC2 /* News.swift */; };
+		235A523F21F8789E00BEEE9B /* OddsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235A523E21F8789E00BEEE9B /* OddsViewController.swift */; };
+		235A524121F878F100BEEE9B /* OddsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235A524021F878F100BEEE9B /* OddsTableViewCell.swift */; };
+		235A524321F8797B00BEEE9B /* BottoneScommessa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235A524221F8797B00BEEE9B /* BottoneScommessa.swift */; };
 		2368D8A921F4F225002E58D0 /* StatisticaViewTableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2368D8A821F4F225002E58D0 /* StatisticaViewTableData.swift */; };
 		2368D8AF21F4FA24002E58D0 /* FormazioneTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2368D8AE21F4FA24002E58D0 /* FormazioneTableViewDelegate.swift */; };
 		239A117721F38DA4006B90CA /* WebViewNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239A117621F38DA4006B90CA /* WebViewNews.swift */; };
@@ -65,6 +68,9 @@
 		2346C90421ECF2FF00A18CC2 /* CustomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomImage.swift; path = iSport/Extra/CustomImage.swift; sourceTree = SOURCE_ROOT; };
 		2346C90C21ED105600A18CC2 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = iSport/Extra/Extensions.swift; sourceTree = SOURCE_ROOT; };
 		2346C91221ED1C5500A18CC2 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = News.swift; path = iSport/Model/News.swift; sourceTree = SOURCE_ROOT; };
+		235A523E21F8789E00BEEE9B /* OddsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddsViewController.swift; sourceTree = "<group>"; };
+		235A524021F878F100BEEE9B /* OddsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddsTableViewCell.swift; sourceTree = "<group>"; };
+		235A524221F8797B00BEEE9B /* BottoneScommessa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottoneScommessa.swift; sourceTree = "<group>"; };
 		2368D8A821F4F225002E58D0 /* StatisticaViewTableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatisticaViewTableData.swift; path = iSport/Controller/StatisticaViewTableData.swift; sourceTree = SOURCE_ROOT; };
 		2368D8AE21F4FA24002E58D0 /* FormazioneTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FormazioneTableViewDelegate.swift; path = iSport/Controller/FormazioneTableViewDelegate.swift; sourceTree = SOURCE_ROOT; };
 		239A117621F38DA4006B90CA /* WebViewNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebViewNews.swift; path = iSport/View/WebViewNews.swift; sourceTree = SOURCE_ROOT; };
@@ -177,6 +183,8 @@
 				23EEE76521EBAEFB00DE746F /* CellNews.swift */,
 				23E45A7321EE234000A5F38F /* RisultatoTableViewCell.swift */,
 				23A6C8DE21F5DA3C00F732DC /* GoalsTableViewCell.swift */,
+				235A524021F878F100BEEE9B /* OddsTableViewCell.swift */,
+				235A524221F8797B00BEEE9B /* BottoneScommessa.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -191,6 +199,7 @@
 				23EEE76721EBB5B300DE746F /* RisultatiLive.swift */,
 				2368D8A821F4F225002E58D0 /* StatisticaViewTableData.swift */,
 				239A117A21F3AC16006B90CA /* StatisticaView.swift */,
+				235A523E21F8789E00BEEE9B /* OddsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -493,10 +502,12 @@
 				23E45A7621EE2B9B00A5F38F /* RisultatiAPI.swift in Sources */,
 				23EEE73321EB978400DE746F /* NewsView.swift in Sources */,
 				2368D8AF21F4FA24002E58D0 /* FormazioneTableViewDelegate.swift in Sources */,
+				235A523F21F8789E00BEEE9B /* OddsViewController.swift in Sources */,
 				23A6C8E121F5DABD00F732DC /* GoalsTableViewDelegate.swift in Sources */,
 				2346C90D21ED105600A18CC2 /* Extensions.swift in Sources */,
 				23A6C8DF21F5DA3C00F732DC /* GoalsTableViewCell.swift in Sources */,
 				23EEE76621EBAEFB00DE746F /* CellNews.swift in Sources */,
+				235A524321F8797B00BEEE9B /* BottoneScommessa.swift in Sources */,
 				23A6C8DD21F5D47600F732DC /* FormazioneTableViewCell.swift in Sources */,
 				2346C90521ECF2FF00A18CC2 /* CustomImage.swift in Sources */,
 				23EEE73921EB978400DE746F /* iSport.xcdatamodeld in Sources */,
@@ -514,6 +525,7 @@
 				239A117B21F3AC16006B90CA /* StatisticaView.swift in Sources */,
 				2368D8A921F4F225002E58D0 /* StatisticaViewTableData.swift in Sources */,
 				23EEE76421EBAB6B00DE746F /* LabelNews.swift in Sources */,
+				235A524121F878F100BEEE9B /* OddsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,6 +14,7 @@ struct Partita: Decodable {
     let matchId: String?
     let matchStatus: String?
     let matchTime: String?
+    let matchDate: String?
     let matchHometeamName: String?
     let matchHometeamScore: String?
     let matchAwayteamName: String?
@@ -71,6 +72,19 @@ struct Prediction: Decodable{
 }
 
 struct Odds: Decodable{
+    let matchId: String?
+    let odd1: String?
+    let oddX: String?
+    let odd2: String?
+}
+
+
+struct OddsCompleta: Decodable{
+    let leagueName: String?
+    let matchHometeamName: String?
+    let matchAwayteamName: String?
+    let matchTime: String?
+    let matchData: String?
     let matchId: String?
     let odd1: String?
     let oddX: String?
