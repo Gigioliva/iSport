@@ -19,8 +19,17 @@ class RisultatiAPI: NSObject {
     static var listaPredizioni = [Prediction]()
     static var listaOdds = [Odds]()
     
+    
+    
+    static func UpdateDatiPartite(giorno: String, callback: @escaping () -> Void){
+        RequestAPI(giorno: giorno, callback: callback)
+        
+    }
+    
+    
+    
     //AAAA-MM-GG
-    static func RequestAPI(giorno: String, callback: @escaping ([Partita]) -> Void){
+    private static func RequestAPI(giorno: String, callback: @escaping () -> Void){
         let stringURL = String(urlRisultatiAPI + "&from=" + giorno + "&to=" + giorno + "&APIkey=" + risultatiKey)
         let url = URL(string: stringURL)!
         URLSession.shared.dataTask(with: url){ (data, response, error) in
@@ -38,7 +47,7 @@ class RisultatiAPI: NSObject {
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
                     self.listaPartite = try decoder.decode([Partita].self, from: data)
-                    callback(listaPartite)
+                    PredictionAPI(giorno: giorno, callback: callback)
                 }catch let errore{
                     print(errore)
                 }
@@ -47,7 +56,7 @@ class RisultatiAPI: NSObject {
             }.resume()
     }
     
-    static func PredictionAPI(giorno: String){
+    private static func PredictionAPI(giorno: String, callback: @escaping () -> Void){
         let stringURL = String(urlPredizioniAPI + "&from=" + giorno + "&to=" + giorno + "&APIkey=" + risultatiKey)
         let url = URL(string: stringURL)!
         URLSession.shared.dataTask(with: url){ (data, response, error) in
@@ -65,6 +74,7 @@ class RisultatiAPI: NSObject {
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
                     self.listaPredizioni = try decoder.decode([Prediction].self, from: data)
+                    OddsAPI(giorno: giorno, callback: callback)
                 }catch let errore{
                     print(errore)
                 }
@@ -73,7 +83,7 @@ class RisultatiAPI: NSObject {
             }.resume()
     }
     
-    static func OddsAPI(giorno: String, callback: @escaping ([Odds]) -> Void){
+    private static func OddsAPI(giorno: String, callback: @escaping () -> Void){
         let stringURL = String(urlOddsAPI + "&from=" + giorno + "&to=" + giorno + "&APIkey=" + risultatiKey)
         let url = URL(string: stringURL)!
         URLSession.shared.dataTask(with: url){ (data, response, error) in
@@ -92,7 +102,7 @@ class RisultatiAPI: NSObject {
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
                     let listaTemporanea = try decoder.decode([Odds].self, from: data)
                     self.listaOdds = filtraOdds(scommesse: listaTemporanea)
-                    callback(self.listaOdds)
+                    callback()
                 }catch let errore{
                     print(errore)
                 }

@@ -24,8 +24,7 @@ class RisultatiLive: UIViewController, UITableViewDelegate, UITableViewDataSourc
         ListaRisultati.dataSource = self
         let giorno = "2019-01-12"
         
-        RisultatiAPI.RequestAPI(giorno: giorno, callback: aggiornaTableView)
-        RisultatiAPI.PredictionAPI(giorno: giorno)
+        RisultatiAPI.UpdateDatiPartite(giorno: giorno, callback: aggiornaTableView)
         
     }
 
@@ -65,7 +64,9 @@ class RisultatiLive: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     
-    func aggiornaTableView(partite: [Partita]){
+    func aggiornaTableView(){
+        
+        let partite = RisultatiAPI.listaPartite
         
         let listaOrari = partite.reduce(Set<String>(), { (acc, partitaAttuale) in
             return acc.union([partitaAttuale.matchTime!])

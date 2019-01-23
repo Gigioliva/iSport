@@ -71,8 +71,8 @@ class NewsView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
 
     
-    func aggiornaTableView(articoli: [Article]){
-        listaArticoli = articoli
+    func aggiornaTableView(){
+        listaArticoli = NewsAPI.listaArticoli
         ListaNews.reloadData()
     }
     

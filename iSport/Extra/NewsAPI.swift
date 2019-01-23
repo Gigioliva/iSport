@@ -14,7 +14,7 @@ class NewsAPI: NSObject {
     
     static var listaArticoli = [Article]()
     
-    static func RequestAPI(callback: @escaping ([Article]) -> Void){
+    static func RequestAPI(callback: @escaping () -> Void){
         let url = URL(string: urlNewsAPI)!
         URLSession.shared.dataTask(with: url){ (data, response, error) in
             DispatchQueue.main.async {
@@ -31,7 +31,7 @@ class NewsAPI: NSObject {
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
                     self.listaArticoli = try decoder.decode(Articoli.self, from: data).articles
-                    callback(listaArticoli)
+                    callback()
                 }catch let errore{
                     print(errore)
                 }

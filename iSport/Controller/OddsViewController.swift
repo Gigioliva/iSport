@@ -24,7 +24,7 @@ class OddsViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableViewOdds.rowHeight = UITableView.automaticDimension
         
         let giorno = "2019-01-12"
-        RisultatiAPI.OddsAPI(giorno: giorno, callback: aggiornaTabella)
+        RisultatiAPI.UpdateDatiPartite(giorno: giorno, callback: aggiornaTabella)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -58,7 +58,9 @@ class OddsViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
-    func aggiornaTabella(listaOdds: [Odds]) {
+    func aggiornaTabella() {
+        let listaOdds = RisultatiAPI.listaOdds
+        
         var listaScommesse = [OddsCompleta]()
         for scommessa in listaOdds{
             let infoPartita = RisultatiAPI.GetPartita(matchId: scommessa.matchId!)
