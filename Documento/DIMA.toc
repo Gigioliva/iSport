@@ -4,21 +4,21 @@
 \contentsline {section}{\numberline {1.3}Definitions, acronyms, abbreviations}{3}
 \contentsline {section}{\numberline {1.4}Mobile Application Scope}{4}
 \contentsline {section}{\numberline {1.5}Framework}{5}
-\contentsline {chapter}{\numberline {2}General Overview}{6}
-\contentsline {section}{\numberline {2.1}Core Features}{6}
-\contentsline {section}{\numberline {2.2}Functional Requirements}{6}
-\contentsline {section}{\numberline {2.3}Non Functional Requirements}{6}
-\contentsline {chapter}{\numberline {3}Data Design}{7}
-\contentsline {section}{\numberline {3.1}E/R Model}{7}
-\contentsline {section}{\numberline {3.2}Core Data}{7}
-\contentsline {chapter}{\numberline {4}Architecture}{8}
-\contentsline {section}{\numberline {4.1}General Overview}{8}
-\contentsline {section}{\numberline {4.2}Server}{8}
-\contentsline {section}{\numberline {4.3}Client}{8}
-\contentsline {section}{\numberline {4.4}Patterns}{8}
-\contentsline {section}{\numberline {4.5}Security}{8}
-\contentsline {chapter}{\numberline {5}User Interfaces}{9}
-\contentsline {chapter}{\numberline {6}External Services and Libraries}{10}
-\contentsline {chapter}{\numberline {7}UML}{11}
-\contentsline {chapter}{\numberline {8}Test Cases}{12}
-\contentsline {chapter}{\numberline {9}Cost Estimation}{13}
+\contentsline {section}{\numberline {1.6}Functional Requirements}{5}
+\contentsline {section}{\numberline {1.7}Non Functional Requirements}{6}
+\contentsline {section}{\numberline {1.8}Assumptions, Dependencies and Constraints\\}{6}
+\contentsline {chapter}{\numberline {2}Architecture}{7}
+\contentsline {section}{\numberline {2.1}Database}{7}
+\contentsline {section}{\numberline {2.2}Client}{7}
+\contentsline {chapter}{\numberline {3}Use case functional requirements analysis}{8}
+\contentsline {chapter}{\numberline {4}Sequence Diagram}{20}
+\contentsline {chapter}{\numberline {5}User Interfaces}{21}
+\contentsline {chapter}{\numberline {6}External Services and Libraries}{22}
+\contentsline {chapter}{\numberline {7}Software System Attribute}{23}
+\contentsline {section}{\numberline {7.1}Reliability}{23}
+\contentsline {section}{\numberline {7.2}Availability}{23}
+\contentsline {section}{\numberline {7.3}Security}{23}
+\contentsline {section}{\numberline {7.4}Maintainability}{23}
+\contentsline {section}{\numberline {7.5}Usability}{23}
+\contentsline {chapter}{\numberline {8}Test Cases}{24}
+\contentsline {chapter}{\numberline {9}Cost Estimation}{25}
