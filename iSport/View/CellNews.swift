@@ -19,7 +19,7 @@ class CellNews: UITableViewCell {
     var urlImmagine: String? {
         didSet{
             if let url = urlImmagine{
-                Immagine.loadImageUsingUrlString(urlString: url,callback: reloadSize)
+                Immagine.loadImageUsingUrlString(urlString: url)
             }
         }
     }
@@ -47,37 +47,8 @@ class CellNews: UITableViewCell {
         Conteiner.backgroundColor = UIColor.white
         Conteiner.layer.cornerRadius = 3
     }
-    
-    func reloadSize(){
-//        let ratio = Immagine.image!.size.width / Immagine.image!.size.height
-//        Immagine.addConstraint(NSLayoutConstraint(item: Immagine, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: self.frame.size.width / ratio))
-    }
+
 
         
 
 }
-
-
-/*extension UIImageView {
-    func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
-        contentMode = mode
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async() {
-                self.image = image
-                let ratio = image.size.width / image.size.height
-                self.frame.size = CGSize(width: self.frame.size.width, height: self.frame.size.width / ratio)
-                print("cose")
-            }
-            }.resume()
-    }
-    func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
-        guard let url = URL(string: link) else { return }
-        downloaded(from: url, contentMode: mode)
-    }
-}*/

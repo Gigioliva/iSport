@@ -13,6 +13,17 @@ class BottoneScommessa: UIView {
     let bottoneScommessa = UIButton()
     let quotaLabel = UILabel()
     
+    var premuto: Bool = false {
+        
+        didSet{
+            if premuto {
+                bottoneScommessa.backgroundColor = UIColor.orange
+            } else {
+                bottoneScommessa.backgroundColor = UIColor.rgb(red: 55, green: 65, blue: 74)
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()

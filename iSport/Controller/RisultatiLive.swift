@@ -49,7 +49,7 @@ class RisultatiLive: UIViewController, UITableViewDelegate, UITableViewDataSourc
         let contenuto = listaPartiteOra[nomeSezione]!
         
         cella.partita = contenuto[indexPath.row]
-        
+        cella.selectionStyle = .none
         return cella
     }
     
@@ -62,7 +62,7 @@ class RisultatiLive: UIViewController, UITableViewDelegate, UITableViewDataSourc
         indiceCellaSelezionata.riga = indexPath.row
         performSegue(withIdentifier: "MostraStatistiche", sender: nil)
     }
-    
+
     
     func aggiornaTableView(){
         

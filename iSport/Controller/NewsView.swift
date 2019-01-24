@@ -36,6 +36,7 @@ class NewsView: UIViewController, UITableViewDelegate, UITableViewDataSource {
         cella.Anteprima.text = listaArticoli[indexPath.row].title
         cella.TipoSport.text = getDate(dataStringa: listaArticoli[indexPath.row].publishedAt!)
         cella.urlImmagine = listaArticoli[indexPath.row].urlToImage
+        cella.selectionStyle = .none
         return cella
     }
     
@@ -66,8 +67,6 @@ class NewsView: UIViewController, UITableViewDelegate, UITableViewDataSource {
         UIView.animate(withDuration: 1, animations: {
             WebView.superview!.layoutIfNeeded()
         })
-        
-        
     }
 
     

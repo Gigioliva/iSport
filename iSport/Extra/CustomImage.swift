@@ -14,7 +14,7 @@ class CustomImageView: UIImageView {
     
     var imageUrlString: String?
     
-    func loadImageUsingUrlString(urlString: String, callback: @escaping () -> Void) {
+    func loadImageUsingUrlString(urlString: String) {
         
         imageUrlString = urlString
         
@@ -22,9 +22,6 @@ class CustomImageView: UIImageView {
         
         if let imageFromCache = imageCache.object(forKey: urlString as NSString) {
             self.image = imageFromCache
-//            let ratio = imageFromCache.size.width / imageFromCache.size.height
-//            self.addConstraint(NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: self.frame.size.width / ratio))
-            callback()
             return
         }
         
@@ -40,9 +37,6 @@ class CustomImageView: UIImageView {
                 
                 if self.imageUrlString == urlString {
                     self.image = imageToCache
-//                    let ratio = imageToCache.size.width / imageToCache.size.height
-//                    self.addConstraint(NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: self.frame.size.width / ratio))
-                    callback()
                 }
                 
                 imageCache.setObject(imageToCache, forKey: urlString as NSString)

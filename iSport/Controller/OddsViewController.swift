@@ -45,16 +45,7 @@ class OddsViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableViewOdds.dequeueReusableCell(withIdentifier: "OddsCell", for: indexPath) as! OddsTableViewCell
         let scommesseCampionato = listaScommesse[listaCampionati[indexPath.section]]!
         let scommessa = scommesseCampionato[indexPath.row]
-        
-        cell.DataOra.text = scommessa.matchData! + " - " + scommessa.matchTime!
-        cell.Squadre.text = scommessa.matchHometeamName! + " - " + scommessa.matchAwayteamName!
-        cell.Bottone1.quotaLabel.text = scommessa.odd1
-        cell.Bottone2.quotaLabel.text = scommessa.odd2
-        cell.BottoneX.quotaLabel.text = scommessa.oddX
-        
-        
-        
-        
+        cell.scommessa = scommessa
         return cell
     }
     
@@ -86,4 +77,12 @@ class OddsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
 
+    @IBAction func VisualizzaCarrello(_ sender: Any) {
+        performSegue(withIdentifier: "CarrelloView", sender: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableViewOdds.reloadData()
+    }
 }
