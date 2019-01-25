@@ -185,6 +185,18 @@ Il client si basa sul tradizionale pattern MVC.
 
 \chapter{Use case functional requirements analysis}
 This section describes how actors can interact with iSport in order to use all the features implemented in the app. The focus of this part is on the front-end and we show the operations that can be performed by the actors without taking care of the system architecture behind the app.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{images/ViewNews}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{images/ViewLive}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{images/ViewBet}
+\end{figure}
 \subsection*{Visualizzare Notizie}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
@@ -429,13 +441,77 @@ This section describes how actors can interact with iSport in order to use all t
 \chapter{Sequence Diagram}
 \chapter{User Interfaces}
 \chapter{External Services and Libraries}
+iSport application uses several third parties API in order to provide all the services to the user.\\
+Per il parsing dei dati JSON è stato usato il componente JSONDecoder nativo dell UIKit.
+\subsection*{NewsAPI}
+Quando un utente vuole visualizzare le principali notizie del giorno l'applicazione esegue le seguenti operazioni:
+\begin{itemize}
+	\item Esegue una richiesta GET al l'endpoint fornito dal servizio
+	\item Se la risposta è valida effettua il parsing del contenuto JSON
+	\item Crea le celle della tabella contenente le informazioni fornite dal servizio e parsate
+	\item Scarica in maniera asincrona le immagini di anteprima
+\end{itemize}
+L'endpoint utilizzato è "https://newsapi.org/v2/top-headlines?country=it\&category=sports \&apiKey=API\_KEY". La risposta fornita dal servizio è:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{images/ResponseNewsAPI}
+\end{figure}
+Per il parsing quindi è stata usata la seguente struttura dati:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{images/StructDati}
+\end{figure}
+\subsection*{APIFootball}
+Quando un utente vuole visualizzare i risultati delle partite del giorno l'applicazione esegue le seguenti operazioni:
+\begin{itemize}
+	\item Esegue una richiesta GET al l'endpoint fornito dal servizio
+	\item Se la risposta è valida effettua il parsing del contenuto JSON
+	\item Crea le celle della tabella contenente le informazioni fornite dal servizio e parsate
+	\item Aggiorna le informazioni ogni 30 secondi per mantenere i dati in tempo reale
+\end{itemize}
+L'endpoint utilizzato per ottenere i risultati è "https://apifootball.com/api/?action=get\_events". La risposta fornita dal servizio è:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{images/ResponseCompleta}
+\end{figure}
+Per il parsing quindi è stata usata la seguente struttura dati:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{images/StructPartita}
+\end{figure}
+Per ottenere le previsioni della partita l'endpoint utilizzato è "https://apifootball.com/api/? action=get\_predictions". La risposta fornita dal servizio è:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{images/ResponsePrediction}
+\end{figure}
+Per il parsing quindi è stata usata la seguente struttura dati:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{images/StructPrediction}
+\end{figure}
+Per ottenere le quote delle partite l'endpoint utilizzato è "https://apifootball.com/api/? action=get\_odds". La risposta fornita dal servizio è:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{images/ResponseOdds}
+\end{figure}
+Per il parsing quindi è stata usata la seguente struttura dati:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{images/StructOdds}
+\end{figure}
+
 
 \chapter{Software System Attribute}
 \section{Reliability}
+As the majority of function requires an internet connection, the software is reliable as long as there are no connectivity problems.
 \section{Availability}
+The availability parameter also relies on the internet connection signal and on the responses provided by "https://newsapi.org" and "https://apifootball.com". No problems of availability were found both during the developement phase and beta testing with users.
 \section{Security}
+The security of the iSport application was the main concern during the developement. As all the information provided are retrived from the web, there are different checks to perform in order to keep the user information safe. Furthermore, for the communication with external services, was chosen HTTPS protocol to guarantee greater security
 \section{Maintainability}
+The entire application is very maintainable as the code is entirely documented, in particular in several critical function. Therefore any developer who wants to improve it or make changes is able to do it without relevant difficulty.
 \section{Usability}
+The usability was another of our concern for the development. In order to improve it, a beta version of the application was given to 5 users and tested for 1 weeks. The result of this test highlighted usability issues. In particular, in the first version the buttons for changing information on the match detail page were not clearly visible. Another report concerned the lack of visual feedback after adding a quota to their ticket. Both of these problems were then solved in a later version of the application.
 
 \chapter{Test Cases}
 \chapter{Cost Estimation}
