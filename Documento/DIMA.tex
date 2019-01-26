@@ -66,11 +66,11 @@
 \chapter{Introduction}
 
 \section{Purpose}
-Questo documento descrive le fasi di progettazione e prototipazione per la realizzazione dell'applicazione mobile "iSport". in dettaglio, verranno discussi i componenti principali, le funzionalità e l'esperienza dell'utente.\\
+The purpose of this document is to describe the design and prototyping phases used for the realization of the “iSport” mobile application. In detail, the main components, features and user experience will be discussed.
 
-iSport è una applicazione in cui obiettivo principale è la visualizzazione di informazioni e dati relativi al mondo dello sport. In particolare ci si focalizzerà sulle notizie giornalistiche più rilevanti e sui dati relativi alle partite di calcio della giornata.\\
+The main aim of iSport application is visualizing information and data related to the sport field. In particular, we will focus on the most relevant daily news, also showing a section with all football final scores.
 
-Questo progetto è il risultato dell'implementazione delle conoscenze acquisite durante il corso "Design and Implementation of Mobile Applications" fornito dal Politecnico di Milano.
+This project is the result of the  implementation of the knowledge acquired during the course ”Design and Implementation of Mobile Applications” provided by the Milan Polytechnic.
 
 \section{Intended Audience}
 This document is produced for those who develop, evaluate and use iSport mobile application:
@@ -88,9 +88,9 @@ This document is produced for those who develop, evaluate and use iSport mobile 
 	\item \textbf{User}: An end user who will use the application
 	\item \textbf{Match}: A match between two teams that has already occurred or is in progress
 	\item \textbf{Framework}: Reusable set of libraries or classes for a software system.
-	\item \textbf{News}: Una notizia relativa al mondo dello sport presente su qualche rivista giornalistica
-	\item \textbf{Pronostico}: Una previsione sul risultato di un match appartenente ad una classe di previsioni possibili
-	\item \textbf{Quota}: Il valore di retribuzione di un pronostico relativo ad un determinato match
+	\item \textbf{News}: A news related to the world of sport present in some journalism
+	\item \textbf{Forecast}: A prediction on the football scores among a class of possible results
+	\item \textbf{Odds}: The remuneration value of a prediction relative to a given match
 	\item \textbf{REST}: is a way of providing interoperability between computer systems on the Internet.
 \end{itemize}
 \subsection*{Acronyms}
@@ -110,41 +110,42 @@ This document is produced for those who develop, evaluate and use iSport mobile 
 \end{itemize}
 
 \section{Mobile Application Scope}
-iSport è stato sviluppato per tutti coloro che sono appassionati di sport cercando di unificare sotto un'unica applicazione tutti i servizi presenti sul mercato. In questo modo si vuole dare più continuità di utilizzo all'utente finale, senza che egli abbia la necessità di navigare su più applicazioni per ottenere lo stesso risultato.\\
-In particolare l'applicazione si articolerà in tre schermate:
+iSport has been developed for those who love sports, with the aim to unify under one application all the services on the market. In this way we want to give an ongoing service to the end user, without having to browse multiple applications to achieve the same result.\\
+In particular, the application will be divided into three screens:
 \begin{itemize}
 	\item \textbf{News}
 	\item \textbf{Live}
 	\item \textbf{Bet}
 \end{itemize}
-Nella sezione "News" saranno presenti le principali notizie relative al mondo dello sport visualizzabili con un'immagine di anteprima e una piccola descrizione. Inoltre premendo sulla singola notizia sarà possibile visualizzare l'articolo completo.\\
-Nella sezione "Live" saranno presenti tutte le partite della giornata corrente con il risultato della partita se già conclusa o quello attuale se ancora in corso. Premendo sulla singola partita sarà possibile consultare tutte le informazioni su di essa come i marcatori e il minuto del goal, cartellini, formazione e statistiche.\\
-Nella sezione "Bet" saranno presenti le quote relative ai principali pronostici delle partite odierne. Premendo sulle singole quote sarà possibile comporre una schedina e una volta conclusa l'applicazione calcolerà la potenziale vincita in base all'importo della giocata.
+In the ”News” section there will be the daily sport news displayed with a preview image and a small description. Moreover, by pressing on the single news you can read the complete article.\\
+In the ”Live” section there will be all current matches with the final scores if already completed or the current one if still in progress. Pressing on the single game, the user will consult all the related information such as the markers and goal time, cards, training and statistics.\\
+In the ”Bet” section there will be the shares related to the daily football matches. By pressing on the single one the user will bet on the winning game composing a ticket; once the process is completed the application will calculate the potential winnings based the bet amount.
+
 
 \section{Framework}
-Lo sviluppo di iSport è stato realizzato mediante l'utilizzo delle native SDK iOS, in particolare facendo ricorso al linguaggio di programmazione Swift. Questa scelta è stata fatta per permettere un maggior controllo delle risorse del sistema e l'accesso a dei servizi di sistema non possibili con l'utilizzo di framework cross-platform come PhoneGap o React Native. I principali obiettivi sono stati l'implementazione di diverse funzionalità e l'integrazione con altri siti.
+The development of iSport was achieved through the use of native iOS SDKs, in particular by using the Swift programming language. This choice allowed greater control of system resources and access to system services, otherwise not possible if using cross-platform frameworks such as PhoneGap or React Native. The purpose is to implement different functionalities and integration with other sites.
 
 \section{Functional Requirements}
-The product provide to users a simple and user-friendly interface to:
+The product provides to users a simple and user-friendly interface to:
 \begin{itemize}
-	\item Visualizzare le anteprime delle notizie
-	\item Visualizzare le notizie complete
-	\item Visualizzare i risultati delle partite in tempo reale
-	\item Visualizzare i marcatori delle singole partite
-	\item Visualizzare le ammonizioni delle singole partite
-	\item Visualizzare le formazioni delle due squadre di una partita
-	\item Visualizzare le statistiche delle singole partite
-	\item Visualizzare le quote dei principali pronostici delle singole partite
-	\item Comporre la propria schedina
-	\item Visualizzare la potenziale vincita della schedina
+	\item View news previews
+	\item Read the complete article
+	\item View football match results real time
+	\item Display goal-scores
+	\item Display booking (caution)
+	\item Display team playing the match
+	\item Display statistics
+	\item Display game share 
+	\item Compose your ticket
+	\item Display the potential winnings of the ticket
 \end{itemize}
 \section{Non Functional Requirements}
 The application must be able to:
 \begin{itemize}
 	\item Run both on phone and tablet (only if they have an iOS).
-	\item Funzionare senza richiedere permessi a dati sensibili dell'utente e servizi che potrebbero necessitare un costo dell'utente (come chiamate o SMS).
-	\item occupare tutto lo schermo a disposizione.
-	\item l'applicazione deve mantenere le preferenze e lo stato ad ogni avvio.
+	\item Work without requiring user sensitive data and services that may require a user cost (such as calls or SMS).
+	\item Occupy the entire screen available.
+	\item Keep preferences and status at every start.
 \end{itemize}
 
 \section{Assumptions, Dependencies and Constraints\\}
@@ -168,19 +169,19 @@ The application must be able to:
 
 \chapter{Architecture}
 \section{Database}
-Dal momento che l'applicazione riceve tutti i dati necessari da servizi esterni tramite delle API, gli unici dati che necessitano di un salvataggio sono le partite che costituiscono una schedina. Inoltre non essendo presente un interazione tra i diversi utenti, i dati vengono salvati in locale sfruttando il Core Data presente nell'SDK di iOS.
+Since the application receives all the necessary data from external services through the API, the only data that need to be saved are the games that make up a ticket. Moreover, since there is no interaction between the different users, the data is saved locally using the Core Data present in the iOS SDK.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.2\textwidth]{images/DatiSchedina}
 \end{figure}
 
 \section{Client}
-Per la realizzazione dell'applicazione si è optato per un back-end mobile, quindi un architettura solo client. Questa scelta deriva dal fatto che l'applicazione non ha la necessità di interfacciarsi con altri utenti e per i vari servizi fa uso di API terze. La comunicazione con i servizi terzi si basa su richieste HTTPS REST, in particolare tramite delle richieste GET.\\
-Il client si basa sul tradizionale pattern MVC.
+For the implementation of the application we have chosen a mobile back-end, that is a client architecture.  This choice was made mainly because the application does not interface with other users and because for various services it uses third-party APIs. Communication with third-party services is based on HTTPS REST requests, in particular through GET requests.\\
+The client uses the traditional MVC pattern:
 \begin{itemize}
-	\item Model: in this package are contained all the classes about data shown to user, taken by the Controller and published by the View.
-	\item View: in questo package sono contenuti tutti i componenti responsabili della visualizzazione dei dati e dell'interazione con l'utente
-	\item Controller: in questo package sono contenuti tutti gli oggetti responsabili dell'interazione tra uno o più oggetti view dell'applicazione e uno o più oggetti model.
+	\item Model: this package contains all the classes representing data to be shown to the single user, taken by the Controller and published by the View.
+	\item View: this package contains all the components that display data to the user and interact with him.
+	\item Controller: this package contains all the objects in charge to interact between one or more view objects of the application and one or more model objects.
 \end{itemize}
 
 \chapter{Use case functional requirements analysis}
@@ -439,16 +440,16 @@ This section describes how actors can interact with iSport in order to use all t
 \end{tabular}
 
 \chapter{Sequence Diagram}
-In this part we show the logical ows behind some features in order to explain our work and to facilitate future implementations. The sequence diagrams will describe the interactions between the different parts of the system and the user.
+In order to explain our work and facilitate further implementations we have decided to show the logical flows aimed to create some features. The sequence diagrams will describe the interactions between the different parts of the system and the user.
 \subsection*{View News}
-La procedura di "View News" inizia quando l'utente apre l'applicazione o preme sull'oggetto del Tab Bar Navigator relativa alla sezione "News". Il sequence diagram mostra la normale procedura.
+The ”View News” procedure starts when the user opens the application or presses the ”News” section in the Tab Navigator. The sequence diagram shows the normal procedure.
 
-Dopo aver attivato la sezione news l'applicazione invierà al servizio di "NewsAPI" una richiesta per ottenere tutte le informazioni relative alle principali notizie del giorno.
+After the user activates the News section, the application will send a request to the ”NewsAPI” service in order to obtain all the information related to the most important daily news.
 
-Una volta ottenute tali informazioni il Controller si occuperà di creare una UITableViewCell per ogni notizia e di inserirle nella TableView.
+Once this information is obtained, the Controller will create a UITableViewCell for each news and insert them into the TableView.
 
-In maniera asincrona, inoltre, scaricherà le immagini di anteprima per permettere comunque all'utente di poter leggere i titoli delle notizie.\\
-Quando una cella viene premuta il Controller aprirà una WebView indirizzata all'URL della notizia in modo da permettere all'utente di leggere l'articolo completo.
+Furthermore and asynchronously, the application will download the preview images to allow the user to read the news headlines. When a cell is pressed the Controller will open a WebView addressed to the URL of the news in order to allow the user to read  the complete article.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{images/Sequence/SequenceNews}
@@ -457,13 +458,14 @@ Quando una cella viene premuta il Controller aprirà una WebView indirizzata all
 
 \newpage
 \subsection*{View Match}
-La procedura di "View Match" inizia quando l'utente preme sull'oggetto del Tab Bar Navigator relativa alla sezione "Live".
+The ”View Match” procedure starts when the user presses the “Live” section of the Tab Bar Navigator.
 
-Dopo aver attivato la sezione "Live" l'applicazione invierà al servizio di "APIFootball" una richiesta per ottenere le informazioni relative alle partite della giornata e le previsioni sulle stesse.
+After activating the ”Live” section, the application will send a request to the ”API- Football” service to obtain information about the daily matches and their forecasts.
 
-Una volta ottenute tali informazioni il Controller si occuperà di creare una UITableViewCell per ogni notizia e di inserirle nella TableView.
+When this information has been reached, the Controller will create a UITableViewCell for all the matches and insert them into the TableView.
 
-Periodicamente il Controller rinvierà tali richieste per mantenere lo stato delle partite aggiornate.
+At regular intervals the Controller will repeat these requests to keep the matches updated.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{images/Sequence/SequenceLive}
@@ -472,11 +474,12 @@ Periodicamente il Controller rinvierà tali richieste per mantenere lo stato del
 
 \newpage
 \subsection*{View Match Details}
-La procedura di "View Match" inizia quando l'utente si trova nella sezione "Live" e preme su un match di cui vuole conoscerne i dettagli.
+The ”View Match” procedure starts when the user is in the ”Live” section and presses on a single match to know the details.
 
-A quel punto il Controller accede ai dati relativi allo specifico match, scaricati in precedenza dal servizio di "APIFootball".
+Now the Controller has access to the data for the specific match, previously downloaded from the “APIFootball” service and creates Views for every information. 
 
-Successivamente crea delle View per ogni informazione fornita dal servizio. Una volta aperta la pagina di dettaglio l'utente può cambiare l'informazione desiderata tramite i relativi pulsanti.
+After opening the detail page, the user can change the desired information through the relative buttons.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{images/Sequence/SequenceMatchDetails}
@@ -484,13 +487,13 @@ Successivamente crea delle View per ogni informazione fornita dal servizio. Una 
 
 \newpage
 \subsection*{View Odds}
-La procedura di "View Odds" inizia quando l'utente preme sull'oggetto del Tab Bar Navigator relativa alla sezione "Bet".
+The ”View Odds” procedure starts when the user presses the “Bet” section on the Tab Bar Navigator.
 
-Dopo aver attivato la sezione "Bet" l'applicazione invierà al servizio di "APIFootball" una richiesta per ottenere le informazioni relative alle partite della giornata e alle quote sulle stesse.
+Activated the ”Bet” section, the application will send a request to the ”APIFootball” service to obtain information about the daily matches and the relative odds.
 
-Una volta ottenute tali informazioni il Controller si occuperà di creare una UITableViewCell per ogni notizia e di inserirle nella TableView. In particolare in ogni cella verranno inseriti tre pulsanti relativi ai pronostici principali con indicate le relative quote.
+At this point, the Controller will create a UITableViewCell for each news and insert them into the TableView. In particular, we inserted three buttons (one for each prediction) with the relative odd indicated.
 
-Periodicamente il Controller rinvierà tali richieste per mantenere lo stato delle partite aggiornate.
+At regular intervals the Controller will repeat these requests to keep the matches updated.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{images/Sequence/SequenceOdds}
@@ -498,35 +501,37 @@ Periodicamente il Controller rinvierà tali richieste per mantenere lo stato del
 
 \newpage
 \subsection*{Add Odd}
-La procedura di "Add Odd" inizia quando l'utente si trova nella sezione "Bet" e preme sul pronostico del match che vuole aggiungere alla schedina.
+The ”Add Odd” procedure starts when the user is in the ”Bet” section and presses on  the prediction of the match he wants to bet on.
 
-A quel punto il Controller accede ai dati relativi allo specifico match, scaricati in precedenza dal servizio di "APIFootball", creando la struttura dati da inserire nel Database.
+At that point the Controller has access to the data for the specific match, previously downloaded from the ”APIFootball” service and create the data structure that will be saved in the Database.
 
-Una volta creata la struttura dati il Controller verificherà se il match è già presente nel database. Se presente aggiornerà il contenuto dell'elemento con il nuovo pronostico, altrimenti creerà un nuovo record.
+Once the data structure is created, the Controller will check if the match is already present in the database; If so, it will update the element with the new forecast, otherwise it will create a new record.
 
-Terminato l'aggiornamento del DB il Controller aggiornerà la View corrente per mostrare un feedback visivo dell'avvenuta modifica.
+After updating the DB the Controller will update the current View to show the change in a visual feedback.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{images/Sequence/SequenceAddOdd}
 \end{figure}
 \newpage
 \subsection*{View Cart}
-La procedura di "View Cart" inizia quando l'utente si trova nella sezione "Bet" e preme sul bottone raffigurante un carrello nella Bar Navigation.
+The ”View Cart” procedure starts when the user is in the ”Bet” section and presses the button showing a cart in the Navigation bar.
 
-A quel punto il Controller accede ai dati presenti nel Database e per ognuno di essi creerà una UITableViewCell da inserire della TableView.
+At  that point, the Controller has access to the data in the Database and for each of them  it will create a UITableViewCell to be inserted in the TableView.
 
-L'utente può poi modificare l'importo giocato dall'input corrispondente. Una volta aggiornato l'importo il Controller calcolerà la potenziale vincita andando a moltiplicare tra loro tutte le quote e l'importo giocato.
+The user can change the amount of money gambled  by using the corresponding  input.  Once the amount has been updated, the Controller will calculate the potential winnings by multiplying all the odds with the amount played.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{images/Sequence/SequenceViewCart}
 \end{figure}
 \newpage
 \subsection*{Remove Odd}
-La procedura di "Remove Odd" inizia quando l'utente si trova nella sezione "Bet" e in particolare una volta visualizzato il carrello attuale.
+The procedure of  ”Remove Odd” begins when the user is in the ”Bet” section and he is checking the cart.
 
-Una volta visualizzata la lista di tutti i pronostici presenti nel carrello l'utente può eliminarne uno mediante uno swipe verso sinistra sulla cella corrispondente.
+In this section the user can delete each bet by swiping to the left with his finger.
 
-A quel punto il Controller eliminerà il corrispondente record dal Database e quindi aggiornerà il contenuto del carrello ricalcolando anche la nuova potenziale vincita.
+At that point the Controller will delete the corresponding record from the Database and update the contents of the shopping cart also recalculating the new potential winnings.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{images/Sequence/SequenceRemoveOdd}
