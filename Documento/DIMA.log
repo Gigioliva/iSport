@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.29)  25 JAN 2019 11:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.29)  26 JAN 2019 13:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -368,6 +368,16 @@ Class scrbook Warning: \float@addtolists detected!
 (scrbook)              a package that still implements the
 (scrbook)              deprecated \float@addtolist interface .
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--72
+
+ []
+
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 78.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -593,109 +603,169 @@ Overfull \hbox (13.07523pt too wide) in paragraph at lines 419--440
 
 [18] [19]
 chapter 4.
+
+Overfull \hbox (13.3351pt too wide) in paragraph at lines 444--445
+\OT1/cmr/m/n/12 La pro-ce-dura di "View News" in-izia quando l'utente apre l'ap
+plicazione o preme sull'oggetto
+ []
+
+<images/Sequence/SequenceNews.png, id=81, 741.77126pt x 383.4325pt>
+File: images/Sequence/SequenceNews.png Graphic file (type png)
+<use images/Sequence/SequenceNews.png>
+Package pdftex.def Info: images/Sequence/SequenceNews.png  used on input line 4
+54.
+(pdftex.def)             Requested size: 448.13095pt x 231.6468pt.
 [20
 
 
-]
+ <./images/Sequence/SequenceNews.png>]
+<images/Sequence/SequenceLive.png, id=86, 636.3775pt x 383.4325pt>
+File: images/Sequence/SequenceLive.png Graphic file (type png)
+<use images/Sequence/SequenceLive.png>
+Package pdftex.def Info: images/Sequence/SequenceLive.png  used on input line 4
+69.
+(pdftex.def)             Requested size: 448.13095pt x 270.00986pt.
+ [21 <./images/Sequence/SequenceLive.png>]
+<images/Sequence/SequenceMatchDetails.png, id=91, 636.3775pt x 463.7325pt>
+File: images/Sequence/SequenceMatchDetails.png Graphic file (type png)
+<use images/Sequence/SequenceMatchDetails.png>
+Package pdftex.def Info: images/Sequence/SequenceMatchDetails.png  used on inpu
+t line 482.
+(pdftex.def)             Requested size: 448.13095pt x 326.55641pt.
+ [22 <./images/Sequence/SequenceMatchDetails.png>]
+<images/Sequence/SequenceOdds.png, id=96, 636.3775pt x 303.1325pt>
+File: images/Sequence/SequenceOdds.png Graphic file (type png)
+<use images/Sequence/SequenceOdds.png>
+Package pdftex.def Info: images/Sequence/SequenceOdds.png  used on input line 4
+96.
+(pdftex.def)             Requested size: 448.13095pt x 213.46329pt.
+ [23 <./images/Sequence/SequenceOdds.png>]
+<images/Sequence/SequenceAddOdd.png, id=101, 756.8275pt x 664.4825pt>
+File: images/Sequence/SequenceAddOdd.png Graphic file (type png)
+<use images/Sequence/SequenceAddOdd.png>
+Package pdftex.def Info: images/Sequence/SequenceAddOdd.png  used on input line
+ 510.
+(pdftex.def)             Requested size: 448.13095pt x 393.4506pt.
+
+Overfull \hbox (9.84357pt too wide) in paragraph at lines 507--511
+[]\OT1/cmr/m/n/12 Terminato l'aggiornamento del DB il Con-troller ag-giorner^^R
+a la View cor-rente per mostrare
+ []
+
+[24 <./images/Sequence/SequenceAddOdd.png>]
+<images/Sequence/SequenceViewCart.png, id=106, 756.8275pt x 463.7325pt>
+File: images/Sequence/SequenceViewCart.png Graphic file (type png)
+<use images/Sequence/SequenceViewCart.png>
+Package pdftex.def Info: images/Sequence/SequenceViewCart.png  used on input li
+ne 521.
+(pdftex.def)             Requested size: 448.13095pt x 274.58336pt.
+ [25 <./images/Sequence/SequenceViewCart.png>]
+<images/Sequence/SequenceRemoveOdd.png, id=112, 756.8275pt x 664.4825pt>
+File: images/Sequence/SequenceRemoveOdd.png Graphic file (type png)
+<use images/Sequence/SequenceRemoveOdd.png>
+Package pdftex.def Info: images/Sequence/SequenceRemoveOdd.png  used on input l
+ine 532.
+(pdftex.def)             Requested size: 448.13095pt x 393.4506pt.
+ [26 <./images/Sequence/SequenceRemoveOdd.png>]
 chapter 5.
-[21
-
-
-]
-chapter 6.
-<images/ResponseNewsAPI.png, id=87, 769.87625pt x 600.2425pt>
-File: images/ResponseNewsAPI.png Graphic file (type png)
-<use images/ResponseNewsAPI.png>
-Package pdftex.def Info: images/ResponseNewsAPI.png  used on input line 457.
-(pdftex.def)             Requested size: 313.69029pt x 244.58063pt.
-
-Overfull \hbox (22.02528pt too wide) in paragraph at lines 454--458
-\OT1/cmr/m/n/12 L'endpoint uti-liz-zato ^^Re "https://newsapi.org/v2/top-headli
-nes?country=it&category=sports
- []
-
-<images/StructDati.png, id=88, 226.8475pt x 232.87pt>
-File: images/StructDati.png Graphic file (type png)
-<use images/StructDati.png>
-Package pdftex.def Info: images/StructDati.png  used on input line 462.
-(pdftex.def)             Requested size: 134.44064pt x 138.01038pt.
-[22
-
-
- <./images/ResponseNewsAPI.png>]
-<images/ResponseCompleta.png, id=93, 350.30875pt x 647.41875pt>
-File: images/ResponseCompleta.png Graphic file (type png)
-<use images/ResponseCompleta.png>
-Package pdftex.def Info: images/ResponseCompleta.png  used on input line 475.
-(pdftex.def)             Requested size: 134.44064pt x 248.47162pt.
-
-Overfull \hbox (41.4648pt too wide) in paragraph at lines 472--476
-\OT1/cmr/m/n/12 L'endpoint uti-liz-zato per ot-tenere i risul-tati ^^Re "https:
-//apifootball.com/api/?action=get[]events".
- []
-
-<images/StructPartita.png, id=94, 335.2525pt x 932.48375pt>
-File: images/StructPartita.png Graphic file (type png)
-<use images/StructPartita.png>
-Package pdftex.def Info: images/StructPartita.png  used on input line 480.
-(pdftex.def)             Requested size: 134.44064pt x 373.92598pt.
-[23 <./images/StructDati.png> <./images/ResponseCompleta.png>]
-<images/ResponsePrediction.png, id=100, 478.78876pt x 624.3325pt>
-File: images/ResponsePrediction.png Graphic file (type png)
-<use images/ResponsePrediction.png>
-Package pdftex.def Info: images/ResponsePrediction.png  used on input line 485.
-
-(pdftex.def)             Requested size: 134.44064pt x 175.30728pt.
-
-Overfull \hbox (27.378pt too wide) in paragraph at lines 482--486
-[]\OT1/cmr/m/n/12 Per ot-tenere le pre-vi-sioni della par-tita l'endpoint uti-l
-iz-zato ^^Re "https://apifootball.com/api/?
- []
-
-<images/StructPrediction.png, id=101, 228.855pt x 106.3975pt>
-File: images/StructPrediction.png Graphic file (type png)
-<use images/StructPrediction.png>
-Package pdftex.def Info: images/StructPrediction.png  used on input line 490.
-(pdftex.def)             Requested size: 134.44064pt x 62.50447pt.
-[24 <./images/StructPartita.png> <./images/ResponsePrediction.png>]
-<images/ResponseOdds.png, id=107, 328.22626pt x 228.855pt>
-File: images/ResponseOdds.png Graphic file (type png)
-<use images/ResponseOdds.png>
-Package pdftex.def Info: images/ResponseOdds.png  used on input line 495.
-(pdftex.def)             Requested size: 134.44064pt x 93.73686pt.
-
-Overfull \hbox (5.11852pt too wide) in paragraph at lines 492--496
-[]\OT1/cmr/m/n/12 Per ot-tenere le quote delle par-tite l'endpoint uti-liz-zato
- ^^Re "https://apifootball.com/api/?
- []
-
-<images/StructOdds.png, id=108, 228.855pt x 106.3975pt>
-File: images/StructOdds.png Graphic file (type png)
-<use images/StructOdds.png>
-Package pdftex.def Info: images/StructOdds.png  used on input line 500.
-(pdftex.def)             Requested size: 134.44064pt x 62.50447pt.
-[25 <./images/StructPrediction.png> <./images/ResponseOdds.png> <./images/Struc
-tOdds.png>]
-chapter 7.
-[26
-
-
-]
-chapter 8.
 [27
 
 
 ]
-chapter 9.
+chapter 6.
+<images/ResponseNewsAPI.png, id=120, 769.87625pt x 600.2425pt>
+File: images/ResponseNewsAPI.png Graphic file (type png)
+<use images/ResponseNewsAPI.png>
+Package pdftex.def Info: images/ResponseNewsAPI.png  used on input line 553.
+(pdftex.def)             Requested size: 313.69029pt x 244.58063pt.
+
+Overfull \hbox (22.02528pt too wide) in paragraph at lines 550--554
+\OT1/cmr/m/n/12 L'endpoint uti-liz-zato ^^Re "https://newsapi.org/v2/top-headli
+nes?country=it&category=sports
+ []
+
+<images/StructDati.png, id=121, 226.8475pt x 232.87pt>
+File: images/StructDati.png Graphic file (type png)
+<use images/StructDati.png>
+Package pdftex.def Info: images/StructDati.png  used on input line 558.
+(pdftex.def)             Requested size: 134.44064pt x 138.01038pt.
 [28
+
+
+ <./images/ResponseNewsAPI.png>]
+<images/ResponseCompleta.png, id=126, 350.30875pt x 647.41875pt>
+File: images/ResponseCompleta.png Graphic file (type png)
+<use images/ResponseCompleta.png>
+Package pdftex.def Info: images/ResponseCompleta.png  used on input line 571.
+(pdftex.def)             Requested size: 134.44064pt x 248.47162pt.
+
+Overfull \hbox (41.4648pt too wide) in paragraph at lines 568--572
+\OT1/cmr/m/n/12 L'endpoint uti-liz-zato per ot-tenere i risul-tati ^^Re "https:
+//apifootball.com/api/?action=get[]events".
+ []
+
+<images/StructPartita.png, id=127, 335.2525pt x 932.48375pt>
+File: images/StructPartita.png Graphic file (type png)
+<use images/StructPartita.png>
+Package pdftex.def Info: images/StructPartita.png  used on input line 576.
+(pdftex.def)             Requested size: 134.44064pt x 373.92598pt.
+[29 <./images/StructDati.png> <./images/ResponseCompleta.png>]
+<images/ResponsePrediction.png, id=133, 478.78876pt x 624.3325pt>
+File: images/ResponsePrediction.png Graphic file (type png)
+<use images/ResponsePrediction.png>
+Package pdftex.def Info: images/ResponsePrediction.png  used on input line 581.
+
+(pdftex.def)             Requested size: 134.44064pt x 175.30728pt.
+
+Overfull \hbox (27.378pt too wide) in paragraph at lines 578--582
+[]\OT1/cmr/m/n/12 Per ot-tenere le pre-vi-sioni della par-tita l'endpoint uti-l
+iz-zato ^^Re "https://apifootball.com/api/?
+ []
+
+<images/StructPrediction.png, id=134, 228.855pt x 106.3975pt>
+File: images/StructPrediction.png Graphic file (type png)
+<use images/StructPrediction.png>
+Package pdftex.def Info: images/StructPrediction.png  used on input line 586.
+(pdftex.def)             Requested size: 134.44064pt x 62.50447pt.
+[30 <./images/StructPartita.png> <./images/ResponsePrediction.png>]
+<images/ResponseOdds.png, id=140, 328.22626pt x 228.855pt>
+File: images/ResponseOdds.png Graphic file (type png)
+<use images/ResponseOdds.png>
+Package pdftex.def Info: images/ResponseOdds.png  used on input line 591.
+(pdftex.def)             Requested size: 134.44064pt x 93.73686pt.
+
+Overfull \hbox (5.11852pt too wide) in paragraph at lines 588--592
+[]\OT1/cmr/m/n/12 Per ot-tenere le quote delle par-tite l'endpoint uti-liz-zato
+ ^^Re "https://apifootball.com/api/?
+ []
+
+<images/StructOdds.png, id=141, 228.855pt x 106.3975pt>
+File: images/StructOdds.png Graphic file (type png)
+<use images/StructOdds.png>
+Package pdftex.def Info: images/StructOdds.png  used on input line 596.
+(pdftex.def)             Requested size: 134.44064pt x 62.50447pt.
+[31 <./images/StructPrediction.png> <./images/ResponseOdds.png> <./images/Struc
+tOdds.png>]
+chapter 7.
+[32
+
+
+]
+chapter 8.
+[33
+
+
+]
+chapter 9.
+[34
 
 
 ] (./DIMA.aux) ) 
 Here is how much of TeX's memory you used:
- 5446 strings out of 492649
- 92942 string characters out of 6129622
+ 5482 strings out of 492649
+ 94194 string characters out of 6129622
  281539 words of memory out of 5000000
- 9258 multiletter control sequences out of 15000+600000
+ 9286 multiletter control sequences out of 15000+600000
  11278 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  51i,9n,66p,9105b,231s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -707,10 +777,10 @@ cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm
 cmssbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmti12.pfb>
-Output written on DIMA.pdf (28 pages, 1094926 bytes).
+Output written on DIMA.pdf (34 pages, 1265876 bytes).
 PDF statistics:
- 149 PDF objects out of 1000 (max. 8388607)
- 85 compressed objects within 1 object stream
+ 182 PDF objects out of 1000 (max. 8388607)
+ 98 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 101 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -66,9 +66,9 @@
 \chapter{Introduction}
 
 \section{Purpose}
-Questo documento descrive le fasi di progettazione e prototipazione per la realizzazione dell'applicazione mobile "iSport". in dettaglio, verranno discussi i componenti principali, le funzionalità e l'esperienza dell'utente.
+Questo documento descrive le fasi di progettazione e prototipazione per la realizzazione dell'applicazione mobile "iSport". in dettaglio, verranno discussi i componenti principali, le funzionalità e l'esperienza dell'utente.\\
 
-iSport è una applicazione in cui obiettivo principale è la visualizzazione di informazioni e dati relativi al mondo dello sport. In particolare ci si focalizzerà sulle notizie giornalistiche più rilevanti e sui dati relativi alle partite di calcio della giornata.
+iSport è una applicazione in cui obiettivo principale è la visualizzazione di informazioni e dati relativi al mondo dello sport. In particolare ci si focalizzerà sulle notizie giornalistiche più rilevanti e sui dati relativi alle partite di calcio della giornata.\\
 
 Questo progetto è il risultato dell'implementazione delle conoscenze acquisite durante il corso "Design and Implementation of Mobile Applications" fornito dal Politecnico di Milano.
 
@@ -439,6 +439,102 @@ This section describes how actors can interact with iSport in order to use all t
 \end{tabular}
 
 \chapter{Sequence Diagram}
+In this part we show the logical ows behind some features in order to explain our work and to facilitate future implementations. The sequence diagrams will describe the interactions between the different parts of the system and the user.
+\subsection*{View News}
+La procedura di "View News" inizia quando l'utente apre l'applicazione o preme sull'oggetto del Tab Bar Navigator relativa alla sezione "News". Il sequence diagram mostra la normale procedura.
+
+Dopo aver attivato la sezione news l'applicazione invierà al servizio di "NewsAPI" una richiesta per ottenere tutte le informazioni relative alle principali notizie del giorno.
+
+Una volta ottenute tali informazioni il Controller si occuperà di creare una UITableViewCell per ogni notizia e di inserirle nella TableView.
+
+In maniera asincrona, inoltre, scaricherà le immagini di anteprima per permettere comunque all'utente di poter leggere i titoli delle notizie.\\
+Quando una cella viene premuta il Controller aprirà una WebView indirizzata all'URL della notizia in modo da permettere all'utente di leggere l'articolo completo.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{images/Sequence/SequenceNews}
+\end{figure}
+
+
+\newpage
+\subsection*{View Match}
+La procedura di "View Match" inizia quando l'utente preme sull'oggetto del Tab Bar Navigator relativa alla sezione "Live".
+
+Dopo aver attivato la sezione "Live" l'applicazione invierà al servizio di "APIFootball" una richiesta per ottenere le informazioni relative alle partite della giornata e le previsioni sulle stesse.
+
+Una volta ottenute tali informazioni il Controller si occuperà di creare una UITableViewCell per ogni notizia e di inserirle nella TableView.
+
+Periodicamente il Controller rinvierà tali richieste per mantenere lo stato delle partite aggiornate.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{images/Sequence/SequenceLive}
+\end{figure}
+
+
+\newpage
+\subsection*{View Match Details}
+La procedura di "View Match" inizia quando l'utente si trova nella sezione "Live" e preme su un match di cui vuole conoscerne i dettagli.
+
+A quel punto il Controller accede ai dati relativi allo specifico match, scaricati in precedenza dal servizio di "APIFootball".
+
+Successivamente crea delle View per ogni informazione fornita dal servizio. Una volta aperta la pagina di dettaglio l'utente può cambiare l'informazione desiderata tramite i relativi pulsanti.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{images/Sequence/SequenceMatchDetails}
+\end{figure}
+
+\newpage
+\subsection*{View Odds}
+La procedura di "View Odds" inizia quando l'utente preme sull'oggetto del Tab Bar Navigator relativa alla sezione "Bet".
+
+Dopo aver attivato la sezione "Bet" l'applicazione invierà al servizio di "APIFootball" una richiesta per ottenere le informazioni relative alle partite della giornata e alle quote sulle stesse.
+
+Una volta ottenute tali informazioni il Controller si occuperà di creare una UITableViewCell per ogni notizia e di inserirle nella TableView. In particolare in ogni cella verranno inseriti tre pulsanti relativi ai pronostici principali con indicate le relative quote.
+
+Periodicamente il Controller rinvierà tali richieste per mantenere lo stato delle partite aggiornate.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{images/Sequence/SequenceOdds}
+\end{figure}
+
+\newpage
+\subsection*{Add Odd}
+La procedura di "Add Odd" inizia quando l'utente si trova nella sezione "Bet" e preme sul pronostico del match che vuole aggiungere alla schedina.
+
+A quel punto il Controller accede ai dati relativi allo specifico match, scaricati in precedenza dal servizio di "APIFootball", creando la struttura dati da inserire nel Database.
+
+Una volta creata la struttura dati il Controller verificherà se il match è già presente nel database. Se presente aggiornerà il contenuto dell'elemento con il nuovo pronostico, altrimenti creerà un nuovo record.
+
+Terminato l'aggiornamento del DB il Controller aggiornerà la View corrente per mostrare un feedback visivo dell'avvenuta modifica.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{images/Sequence/SequenceAddOdd}
+\end{figure}
+\newpage
+\subsection*{View Cart}
+La procedura di "View Cart" inizia quando l'utente si trova nella sezione "Bet" e preme sul bottone raffigurante un carrello nella Bar Navigation.
+
+A quel punto il Controller accede ai dati presenti nel Database e per ognuno di essi creerà una UITableViewCell da inserire della TableView.
+
+L'utente può poi modificare l'importo giocato dall'input corrispondente. Una volta aggiornato l'importo il Controller calcolerà la potenziale vincita andando a moltiplicare tra loro tutte le quote e l'importo giocato.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{images/Sequence/SequenceViewCart}
+\end{figure}
+\newpage
+\subsection*{Remove Odd}
+La procedura di "Remove Odd" inizia quando l'utente si trova nella sezione "Bet" e in particolare una volta visualizzato il carrello attuale.
+
+Una volta visualizzata la lista di tutti i pronostici presenti nel carrello l'utente può eliminarne uno mediante uno swipe verso sinistra sulla cella corrispondente.
+
+A quel punto il Controller eliminerà il corrispondente record dal Database e quindi aggiornerà il contenuto del carrello ricalcolando anche la nuova potenziale vincita.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{images/Sequence/SequenceRemoveOdd}
+\end{figure}
+
+
+
+
 \chapter{User Interfaces}
 \chapter{External Services and Libraries}
 iSport application uses several third parties API in order to provide all the services to the user.\\
