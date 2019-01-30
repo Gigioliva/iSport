@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gvM-uV-wYl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rxK-GA-dUV">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Hard Sports.ttf">
+            <string>HardSports</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Risultati Live-->
         <scene sceneID="vef-a3-UAT">
@@ -236,6 +241,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RdV-up-srC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="811.59420289855075" y="-403.125"/>
+        </scene>
+        <!--Login Facebook View Controller-->
+        <scene sceneID="Rrk-kV-acm">
+            <objects>
+                <viewController id="rxK-GA-dUV" customClass="LoginFacebookViewController" customModule="iSport" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0h3-xB-Cv6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iSport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ke0-yh-cnB">
+                                <rect key="frame" x="130.5" y="174" width="153" height="63"/>
+                                <fontDescription key="fontDescription" name="HardSports" family="Hard Sports" pointSize="60"/>
+                                <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ke0-yh-cnB" firstAttribute="top" secondItem="c49-MF-kPf" secondAttribute="top" constant="130" id="Aa1-nG-Hiv"/>
+                            <constraint firstItem="Ke0-yh-cnB" firstAttribute="centerX" secondItem="0h3-xB-Cv6" secondAttribute="centerX" id="nrR-ID-RNc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="c49-MF-kPf"/>
+                    </view>
+                    <connections>
+                        <outlet property="Logo" destination="Ke0-yh-cnB" id="bLB-qI-GqX"/>
+                        <segue destination="gvM-uV-wYl" kind="show" identifier="Login" id="jOB-JF-FDO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eCu-lZ-wpK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1465" y="-58"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Cc2-Zh-0rG">

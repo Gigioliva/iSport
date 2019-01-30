@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		231066762202042A004F053A /* LoginFacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231066752202042A004F053A /* LoginFacebookViewController.swift */; };
+		23106679220210C9004F053A /* Hard Sports.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 23106678220210C9004F053A /* Hard Sports.ttf */; };
 		233D29FE21F71CCA00968469 /* Notizie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D29FD21F71CCA00968469 /* Notizie.swift */; };
 		233D2A0021F71D7200968469 /* RisultatiPartite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D29FF21F71D7200968469 /* RisultatiPartite.swift */; };
 		2346C90521ECF2FF00A18CC2 /* CustomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346C90421ECF2FF00A18CC2 /* CustomImage.swift */; };
@@ -66,6 +68,8 @@
 
 /* Begin PBXFileReference section */
 		1BDAC69243C9A9EF51258427 /* Pods-iSport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSport.release.xcconfig"; path = "Pods/Target Support Files/Pods-iSport/Pods-iSport.release.xcconfig"; sourceTree = "<group>"; };
+		231066752202042A004F053A /* LoginFacebookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFacebookViewController.swift; sourceTree = "<group>"; };
+		23106678220210C9004F053A /* Hard Sports.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hard Sports.ttf"; sourceTree = "<group>"; };
 		233D29FD21F71CCA00968469 /* Notizie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Notizie.swift; path = iSport/Model/Notizie.swift; sourceTree = SOURCE_ROOT; };
 		233D29FF21F71D7200968469 /* RisultatiPartite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RisultatiPartite.swift; path = iSport/Model/RisultatiPartite.swift; sourceTree = SOURCE_ROOT; };
 		2346C90421ECF2FF00A18CC2 /* CustomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomImage.swift; path = iSport/Extra/CustomImage.swift; sourceTree = SOURCE_ROOT; };
@@ -168,6 +172,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		23106677220210B1004F053A /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				23106678220210C9004F053A /* Hard Sports.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		233D29FC21F71C9800968469 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +220,7 @@
 				239A117A21F3AC16006B90CA /* StatisticaView.swift */,
 				235A523E21F8789E00BEEE9B /* OddsViewController.swift */,
 				23FC320121F8DC8400B61E44 /* CarrelloViewController.swift */,
+				231066752202042A004F053A /* LoginFacebookViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -250,6 +263,7 @@
 		23EEE72F21EB978400DE746F /* iSport */ = {
 			isa = PBXGroup;
 			children = (
+				23106677220210B1004F053A /* Font */,
 				233D2A0321F71DA700968469 /* Extra */,
 				233D2A0221F71D9F00968469 /* Controller */,
 				233D2A0121F71D9900968469 /* View */,
@@ -391,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23EEE73E21EB978500DE746F /* LaunchScreen.storyboard in Resources */,
+				23106679220210C9004F053A /* Hard Sports.ttf in Resources */,
 				23D1201C21F635A400F375EC /* Assets.xcassets in Resources */,
 				23EEE73621EB978400DE746F /* Main.storyboard in Resources */,
 			);
@@ -444,12 +459,28 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-iSport/Pods-iSport-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenuSwift/SideMenuSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/UICircularProgressRing/UICircularProgressRing.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenuSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICircularProgressRing.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,6 +555,7 @@
 				2346C91321ED1C5500A18CC2 /* News.swift in Sources */,
 				233D2A0021F71D7200968469 /* RisultatiPartite.swift in Sources */,
 				23EEE73121EB978400DE746F /* AppDelegate.swift in Sources */,
+				231066762202042A004F053A /* LoginFacebookViewController.swift in Sources */,
 				233D29FE21F71CCA00968469 /* Notizie.swift in Sources */,
 				23FC320621F8EED600B61E44 /* APICoreData.swift in Sources */,
 				239A117721F38DA4006B90CA /* WebViewNews.swift in Sources */,

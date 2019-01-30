@@ -7,6 +7,10 @@ target 'iSport' do
 
   # Pods for iSport
   pod 'UICircularProgressRing'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
+  pod 'SideMenuSwift'
 
   target 'iSportTests' do
     inherit! :search_paths
