@@ -96,5 +96,8 @@ class RisultatiLive: UIViewController, UITableViewDelegate, UITableViewDataSourc
         }
     }
     
- 
+    @IBAction func ShowMenu(_ sender: Any) {
+        sideMenuController?.revealMenu()
+    }
+    
 }

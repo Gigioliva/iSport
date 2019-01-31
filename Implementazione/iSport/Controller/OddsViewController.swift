@@ -85,4 +85,9 @@ class OddsViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidAppear(animated)
         tableViewOdds.reloadData()
     }
+    
+    @IBAction func ShowMenu(_ sender: Any) {
+        sideMenuController?.revealMenu()
+    }
+    
 }

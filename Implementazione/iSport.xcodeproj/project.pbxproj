@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		231066762202042A004F053A /* LoginFacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231066752202042A004F053A /* LoginFacebookViewController.swift */; };
 		23106679220210C9004F053A /* Hard Sports.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 23106678220210C9004F053A /* Hard Sports.ttf */; };
 		233D29FE21F71CCA00968469 /* Notizie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D29FD21F71CCA00968469 /* Notizie.swift */; };
 		233D2A0021F71D7200968469 /* RisultatiPartite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D29FF21F71D7200968469 /* RisultatiPartite.swift */; };
+		233E17B92202395D00BE8B33 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233E17B82202395D00BE8B33 /* MenuViewController.swift */; };
+		233E17BB220239A400BE8B33 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233E17BA220239A400BE8B33 /* MenuTableViewCell.swift */; };
 		2346C90521ECF2FF00A18CC2 /* CustomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346C90421ECF2FF00A18CC2 /* CustomImage.swift */; };
 		2346C90D21ED105600A18CC2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346C90C21ED105600A18CC2 /* Extensions.swift */; };
 		2346C91321ED1C5500A18CC2 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346C91221ED1C5500A18CC2 /* News.swift */; };
+		235249E82202EB52000E9B53 /* InfoUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235249E72202EB52000E9B53 /* InfoUserTableViewCell.swift */; };
+		235249EA2202F49F000E9B53 /* FacebookApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235249E92202F49F000E9B53 /* FacebookApi.swift */; };
 		235A523F21F8789E00BEEE9B /* OddsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235A523E21F8789E00BEEE9B /* OddsViewController.swift */; };
 		235A524121F878F100BEEE9B /* OddsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235A524021F878F100BEEE9B /* OddsTableViewCell.swift */; };
 		235A524321F8797B00BEEE9B /* BottoneScommessa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235A524221F8797B00BEEE9B /* BottoneScommessa.swift */; };
@@ -68,13 +71,16 @@
 
 /* Begin PBXFileReference section */
 		1BDAC69243C9A9EF51258427 /* Pods-iSport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSport.release.xcconfig"; path = "Pods/Target Support Files/Pods-iSport/Pods-iSport.release.xcconfig"; sourceTree = "<group>"; };
-		231066752202042A004F053A /* LoginFacebookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFacebookViewController.swift; sourceTree = "<group>"; };
 		23106678220210C9004F053A /* Hard Sports.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hard Sports.ttf"; sourceTree = "<group>"; };
 		233D29FD21F71CCA00968469 /* Notizie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Notizie.swift; path = iSport/Model/Notizie.swift; sourceTree = SOURCE_ROOT; };
 		233D29FF21F71D7200968469 /* RisultatiPartite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RisultatiPartite.swift; path = iSport/Model/RisultatiPartite.swift; sourceTree = SOURCE_ROOT; };
+		233E17B82202395D00BE8B33 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		233E17BA220239A400BE8B33 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		2346C90421ECF2FF00A18CC2 /* CustomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomImage.swift; path = iSport/Extra/CustomImage.swift; sourceTree = SOURCE_ROOT; };
 		2346C90C21ED105600A18CC2 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = iSport/Extra/Extensions.swift; sourceTree = SOURCE_ROOT; };
 		2346C91221ED1C5500A18CC2 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = News.swift; path = iSport/Model/News.swift; sourceTree = SOURCE_ROOT; };
+		235249E72202EB52000E9B53 /* InfoUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoUserTableViewCell.swift; sourceTree = "<group>"; };
+		235249E92202F49F000E9B53 /* FacebookApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookApi.swift; sourceTree = "<group>"; };
 		235A523E21F8789E00BEEE9B /* OddsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddsViewController.swift; sourceTree = "<group>"; };
 		235A524021F878F100BEEE9B /* OddsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddsTableViewCell.swift; sourceTree = "<group>"; };
 		235A524221F8797B00BEEE9B /* BottoneScommessa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottoneScommessa.swift; sourceTree = "<group>"; };
@@ -204,6 +210,8 @@
 				235A524021F878F100BEEE9B /* OddsTableViewCell.swift */,
 				235A524221F8797B00BEEE9B /* BottoneScommessa.swift */,
 				23FC320321F8E29B00B61E44 /* CarrelloTableViewCell.swift */,
+				233E17BA220239A400BE8B33 /* MenuTableViewCell.swift */,
+				235249E72202EB52000E9B53 /* InfoUserTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -220,7 +228,7 @@
 				239A117A21F3AC16006B90CA /* StatisticaView.swift */,
 				235A523E21F8789E00BEEE9B /* OddsViewController.swift */,
 				23FC320121F8DC8400B61E44 /* CarrelloViewController.swift */,
-				231066752202042A004F053A /* LoginFacebookViewController.swift */,
+				233E17B82202395D00BE8B33 /* MenuViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -233,6 +241,7 @@
 				2346C90C21ED105600A18CC2 /* Extensions.swift */,
 				23E45A7521EE2B9B00A5F38F /* RisultatiAPI.swift */,
 				23FC320521F8EED600B61E44 /* APICoreData.swift */,
+				235249E92202F49F000E9B53 /* FacebookApi.swift */,
 			);
 			name = Extra;
 			path = iSport/Extra;
@@ -540,12 +549,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				23E45A7621EE2B9B00A5F38F /* RisultatiAPI.swift in Sources */,
+				235249EA2202F49F000E9B53 /* FacebookApi.swift in Sources */,
 				23EEE73321EB978400DE746F /* NewsView.swift in Sources */,
 				2368D8AF21F4FA24002E58D0 /* FormazioneTableViewDelegate.swift in Sources */,
 				235A523F21F8789E00BEEE9B /* OddsViewController.swift in Sources */,
 				23A6C8E121F5DABD00F732DC /* GoalsTableViewDelegate.swift in Sources */,
 				2346C90D21ED105600A18CC2 /* Extensions.swift in Sources */,
 				23A6C8DF21F5DA3C00F732DC /* GoalsTableViewCell.swift in Sources */,
+				233E17B92202395D00BE8B33 /* MenuViewController.swift in Sources */,
 				23EEE76621EBAEFB00DE746F /* CellNews.swift in Sources */,
 				235A524321F8797B00BEEE9B /* BottoneScommessa.swift in Sources */,
 				23A6C8DD21F5D47600F732DC /* FormazioneTableViewCell.swift in Sources */,
@@ -555,7 +566,7 @@
 				2346C91321ED1C5500A18CC2 /* News.swift in Sources */,
 				233D2A0021F71D7200968469 /* RisultatiPartite.swift in Sources */,
 				23EEE73121EB978400DE746F /* AppDelegate.swift in Sources */,
-				231066762202042A004F053A /* LoginFacebookViewController.swift in Sources */,
+				235249E82202EB52000E9B53 /* InfoUserTableViewCell.swift in Sources */,
 				233D29FE21F71CCA00968469 /* Notizie.swift in Sources */,
 				23FC320621F8EED600B61E44 /* APICoreData.swift in Sources */,
 				239A117721F38DA4006B90CA /* WebViewNews.swift in Sources */,
@@ -570,6 +581,7 @@
 				2368D8A921F4F225002E58D0 /* StatisticaViewTableData.swift in Sources */,
 				23EEE76421EBAB6B00DE746F /* LabelNews.swift in Sources */,
 				235A524121F878F100BEEE9B /* OddsTableViewCell.swift in Sources */,
+				233E17BB220239A400BE8B33 /* MenuTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

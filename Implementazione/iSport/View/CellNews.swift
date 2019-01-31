@@ -7,14 +7,27 @@
 //
 
 import UIKit
+import FacebookCore
+import FacebookShare
 
 class CellNews: UITableViewCell {
 
     @IBOutlet weak var Immagine: CustomImageView!
-    @IBOutlet weak var TipoSport: UILabel!
     @IBOutlet weak var Anteprima: UITextView!
     @IBOutlet weak var Conteiner: UIView!
+    @IBOutlet weak var SitoURL: UILabel!
     
+    var delegate: NewsView?
+    var urlNotizia: String?
+    var contenuto: Article?{
+        
+        didSet{
+            Anteprima.text = contenuto!.title
+            urlImmagine = contenuto!.urlToImage
+            urlNotizia = contenuto!.url
+            SitoURL.text = URL(string: urlNotizia!)!.host
+        }
+    }
     
     var urlImmagine: String? {
         didSet{
@@ -46,9 +59,29 @@ class CellNews: UITableViewCell {
         super.layoutSubviews()
         Conteiner.backgroundColor = UIColor.white
         Conteiner.layer.cornerRadius = 3
+        Anteprima.isUserInteractionEnabled = false
     }
-
-
+    @IBAction func ShareButton(_ sender: Any) {
+        if AccessToken.current != nil {
+            let temp = URL(string: urlNotizia!)
+            let content = LinkShareContent(url: temp!)
+            do{
+                try ShareDialog.show(from: delegate!, content: content)
+            }catch let errore{
+                print(errore)
+            }
+            
+        }else {
+            ApriAlert()
+        }
         
-
+    }
+    
+    func ApriAlert (){
+        let alert = UIAlertController(title: "Not Logged In", message: "Please login to continue", preferredStyle: UIAlertController.Style.alert)
+        let OK = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+        alert.addAction(OK)
+        delegate!.present(alert, animated: true, completion: nil)
+    }
+ 
 }
