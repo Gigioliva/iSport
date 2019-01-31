@@ -11,6 +11,8 @@ target 'iSport' do
   pod 'FacebookLogin'
   pod 'FacebookShare'
   pod 'SideMenuSwift'
+  pod 'MessageKit'
+  pod 'Scaledrone', '~> 0.3.0'
 
   target 'iSportTests' do
     inherit! :search_paths

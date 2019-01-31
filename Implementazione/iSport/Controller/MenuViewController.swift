@@ -21,7 +21,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var User: UILabel!
     
     
-    let listView = ["News", "Live", "Bet"]
+    let listView = ["News", "Live", "Bet", "Chat"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +36,11 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         sideMenuController?.cache(viewControllerGenerator: {
             self.storyboard?.instantiateViewController(withIdentifier: "ViewBet")
         }, with: "2")
+        sideMenuController?.cache(viewControllerGenerator: {
+            self.storyboard?.instantiateViewController(withIdentifier: "ViewChat")
+        }, with: "3")
+        
+    
         
         ImageProfile.layer.borderWidth = 1
         ImageProfile.layer.masksToBounds = false
@@ -114,8 +119,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let index = AccessToken.current != nil ? indexPath.row - 1 : indexPath.row
-        sideMenuController?.setContentViewController(with: "\(index)")
+        sideMenuController?.setContentViewController(with: "\(indexPath.row)")
         sideMenuController?.hideMenu()
     }
     
