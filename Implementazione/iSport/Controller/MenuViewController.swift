@@ -27,24 +27,24 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         tableViewMenu.delegate = self
         tableViewMenu.dataSource = self
+        sideMenuController?.delegate = self
         tableViewMenu.rowHeight = 50
         
-        SideMenuController.preferences.basic.defaultCacheKey = "News"
+        SideMenuController.preferences.basic.defaultCacheKey = "news"
         sideMenuController?.cache(viewControllerGenerator: {
             self.storyboard?.instantiateViewController(withIdentifier: "ViewLive")
-        }, with: "Live")
+        }, with: "live")
         sideMenuController?.cache(viewControllerGenerator: {
             self.storyboard?.instantiateViewController(withIdentifier: "ViewBet")
-        }, with: "Bet")
+        }, with: "bet")
         sideMenuController?.cache(viewControllerGenerator: {
             self.storyboard?.instantiateViewController(withIdentifier: "ViewChat")
-        }, with: "Chat")
+        }, with: "chat")
         
-    
         
         ImageProfile.layer.borderWidth = 1
         ImageProfile.layer.masksToBounds = false
-        ImageProfile.layer.borderColor = UIColor.black.cgColor
+        ImageProfile.layer.borderColor = UIColor.white.cgColor
         ImageProfile.layer.cornerRadius = ImageProfile.frame.size.width/2
         ImageProfile.clipsToBounds = true
         
@@ -52,26 +52,6 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        if AccessToken.current != nil {
-//            let connection = GraphRequestConnection()
-//            connection.add(MyProfileRequest()) { response, result in
-//                switch result {
-//                case .success(let response):
-//                    if let url = response.profilePictureUrl, let name = response.name{
-//                        self.ViewLogged.isHidden = false
-//                        self.ImageProfile.loadImageUsingUrlString(urlString: url)
-//                        self.User.text = name
-//                    }
-//                case .failed(let error):
-//                    print("Custom Graph Request Failed: \(error)")
-//                }
-//            }
-//            connection.start()
-//
-//        }else {
-//            ViewLogged.isHidden = true
-//        }
-//        tableViewMenu.reloadData()
         reloadTable()
     }
     
@@ -82,8 +62,9 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row < listView.count {
             let cella = tableViewMenu.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuTableViewCell
-            cella.labelMenu.text = listView[indexPath.row]
+            cella.labelMenu.text = listView[indexPath.row].uppercased()
             cella.imageMenu.image = UIImage(named: listView[indexPath.row].lowercased())
+            cella.imageMenu.tintColor = UIColor.white
             cella.selectionStyle = .none
             return cella
         }
@@ -91,8 +72,9 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             let cella = tableViewMenu.dequeueReusableCell(withIdentifier: "LoginButton", for: indexPath) as! LoginTableViewCell
             let testo = AccessToken.current != nil ? "Logout" : "Login"
             let image = AccessToken.current != nil ? UIImage(named: "logout") : UIImage(named: "login")
-            cella.labelLog.text = testo
+            cella.labelLog.text = testo.uppercased()
             cella.imageLog.image = image
+            cella.imageLog.tintColor = UIColor.white
             cella.selectionStyle = .none
             return cella
         }
@@ -101,7 +83,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cella = tableViewMenu.cellForRow(at: indexPath) as? MenuTableViewCell, let testo = cella.labelMenu.text{
-            sideMenuController?.setContentViewController(with: testo)
+            sideMenuController?.setContentViewController(with: testo.lowercased(), animated: true)
             sideMenuController?.hideMenu()
         }
         if (tableViewMenu.cellForRow(at: indexPath) as? LoginTableViewCell) != nil {
@@ -126,9 +108,21 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
         else{
-            loginManager.logOut()
-            reloadTable()
+            ApriAlert()
         }
+    }
+    
+    func ApriAlert (){
+        let alert = UIAlertController(title: "Logout", message: "Are you sure you want to log out?", preferredStyle: UIAlertController.Style.alert)
+        let OK = UIAlertAction(title: "OK", style: .default) { (action) in
+            let loginManager = LoginManager()
+            loginManager.logOut()
+            self.reloadTable()
+        }
+        let Cancel = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
+        alert.addAction(OK)
+        alert.addAction(Cancel)
+        self.present(alert, animated: true, completion: nil)
     }
     
     func reloadTable(){
@@ -157,4 +151,10 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
 
+}
+
+extension MenuViewController: SideMenuControllerDelegate {
+    func sideMenuController(_ sideMenuController: SideMenuController, animationControllerFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return BasicTransitionAnimator(options: .transitionFlipFromLeft, duration: 0.6)
+    }
 }

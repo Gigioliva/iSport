@@ -46,7 +46,6 @@
 		23EEE73E21EB978500DE746F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EEE73C21EB978500DE746F /* LaunchScreen.storyboard */; };
 		23EEE74921EB978500DE746F /* iSportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEE74821EB978500DE746F /* iSportTests.swift */; };
 		23EEE75421EB978500DE746F /* iSportUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEE75321EB978500DE746F /* iSportUITests.swift */; };
-		23EEE76421EBAB6B00DE746F /* LabelNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEE76321EBAB6B00DE746F /* LabelNews.swift */; };
 		23EEE76621EBAEFB00DE746F /* CellNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEE76521EBAEFB00DE746F /* CellNews.swift */; };
 		23EEE76821EBB5B300DE746F /* RisultatiLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEE76721EBB5B300DE746F /* RisultatiLive.swift */; };
 		23FC320221F8DC8400B61E44 /* CarrelloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC320121F8DC8400B61E44 /* CarrelloViewController.swift */; };
@@ -121,7 +120,6 @@
 		23EEE74F21EB978500DE746F /* iSportUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iSportUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23EEE75321EB978500DE746F /* iSportUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSportUITests.swift; sourceTree = "<group>"; };
 		23EEE75521EB978500DE746F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		23EEE76321EBAB6B00DE746F /* LabelNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LabelNews.swift; path = iSport/View/LabelNews.swift; sourceTree = SOURCE_ROOT; };
 		23EEE76521EBAEFB00DE746F /* CellNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CellNews.swift; path = iSport/View/CellNews.swift; sourceTree = SOURCE_ROOT; };
 		23EEE76721EBB5B300DE746F /* RisultatiLive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RisultatiLive.swift; path = iSport/Controller/RisultatiLive.swift; sourceTree = SOURCE_ROOT; };
 		23FC320121F8DC8400B61E44 /* CarrelloViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrelloViewController.swift; sourceTree = "<group>"; };
@@ -214,7 +212,6 @@
 				23D1201921F629E800F375EC /* CardsTableViewCell.swift */,
 				239A117821F3AB69006B90CA /* StatisticaTableViewCell.swift */,
 				23A6C8DC21F5D47600F732DC /* FormazioneTableViewCell.swift */,
-				23EEE76321EBAB6B00DE746F /* LabelNews.swift */,
 				23EEE76521EBAEFB00DE746F /* CellNews.swift */,
 				23E45A7321EE234000A5F38F /* RisultatoTableViewCell.swift */,
 				23A6C8DE21F5DA3C00F732DC /* GoalsTableViewCell.swift */,
@@ -607,7 +604,6 @@
 				239A117921F3AB69006B90CA /* StatisticaTableViewCell.swift in Sources */,
 				239A117B21F3AC16006B90CA /* StatisticaView.swift in Sources */,
 				2368D8A921F4F225002E58D0 /* StatisticaViewTableData.swift in Sources */,
-				23EEE76421EBAB6B00DE746F /* LabelNews.swift in Sources */,
 				235A524121F878F100BEEE9B /* OddsTableViewCell.swift in Sources */,
 				233E17BB220239A400BE8B33 /* MenuTableViewCell.swift in Sources */,
 			);

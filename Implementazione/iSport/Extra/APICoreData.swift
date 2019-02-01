@@ -25,7 +25,7 @@ class APICoreData: NSObject {
                 risultato = risultati as! [PartitaCarrello]
             }
         } catch {
-            print("c'era un errore")
+            print("Errore")
         }
         return risultato
     }
@@ -42,7 +42,7 @@ class APICoreData: NSObject {
                 }
             }
         } catch {
-            print ("c'era un errore")
+            print ("Errore")
         }
     }
     
@@ -60,9 +60,9 @@ class APICoreData: NSObject {
         }
         do {
             try contesto.save()
-            print (" dati salvati correttamente ")
+            print ("dati salvati correttamente")
         } catch {
-            print (" Errore ")
+            print ("Errore")
         }
         
     }
@@ -79,7 +79,7 @@ class APICoreData: NSObject {
                 }
             }
         } catch {
-            print ("c'era un errore")
+            print ("Errore")
         }
         return nil
     }

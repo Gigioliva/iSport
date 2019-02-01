@@ -17,14 +17,12 @@ class NewsView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.rgb(red: 226, green: 227, blue: 228)
         ListaNews.delegate = self
         ListaNews.dataSource = self
-        ListaNews.backgroundColor = UIColor.rgb(red: 226, green: 227, blue: 228)
         ListaNews.rowHeight = 150
         NewsAPI.RequestAPI(callback: aggiornaTableView)
     }
-    
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listaArticoli.count

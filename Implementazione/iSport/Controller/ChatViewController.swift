@@ -31,7 +31,9 @@ class ChatViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("test load chat")
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -41,10 +43,7 @@ class ChatViewController: UIViewController, UICollectionViewDataSource, UICollec
 
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        
-        
-        
+    
         if AccessToken.current != nil {
             let connection = GraphRequestConnection()
             connection.add(MyProfileRequest()) { response, result in
@@ -67,33 +66,35 @@ class ChatViewController: UIViewController, UICollectionViewDataSource, UICollec
                 }
             }
             connection.start()
-            
         }
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        collectionView.reloadData()
+        scrollCollention()
     }
     
     
     @objc func handleKeyboardNotification(notification: NSNotification) {
         
         if let userInfo = notification.userInfo {
-            
             let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect
-            
             let isKeyboardShowing = notification.name == UIResponder.keyboardWillShowNotification
-            
             constraintBottom?.constant = isKeyboardShowing ? keyboardFrame!.height : 10
-            
             UIView.animate(withDuration: 0, delay: 0, options: UIView.AnimationOptions.curveEaseOut, animations: {
-                
                 self.view.layoutIfNeeded()
-                
             }, completion: { (completed) in
-                
                 if isKeyboardShowing {
                     self.scrollCollention()
                 }
-                
             })
         }
+    }
+    
+    @objc func dismissKeyboard() {
+        print("test key")
+        view.endEditing(true)
     }
 
     
@@ -101,15 +102,12 @@ class ChatViewController: UIViewController, UICollectionViewDataSource, UICollec
         inputTextField.endEditing(true)
     }
 
-
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return messages.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ChatLogMessageCell
-
         let messageText = messages[indexPath.item].text
         cell.messageTextView.text = messages[indexPath.item].text
         let size = CGSize(width: 250, height: 1000)
@@ -135,7 +133,7 @@ class ChatViewController: UIViewController, UICollectionViewDataSource, UICollec
             cell.profileImageView.isHidden = true
             cell.bubbleImageView.image = ChatLogMessageCell.blueBubbleImage
             cell.bubbleImageView.tintColor = UIColor(red: 0, green: 137/255, blue: 249/255, alpha: 1)
-            cell.messageTextView.textColor = UIColor.black
+            cell.messageTextView.textColor = UIColor.white
         }
         return cell
     }

@@ -16,6 +16,7 @@ class CellNews: UITableViewCell {
     @IBOutlet weak var Anteprima: UITextView!
     @IBOutlet weak var Conteiner: UIView!
     @IBOutlet weak var SitoURL: UILabel!
+    @IBOutlet weak var toolbar: UIToolbar!
     
     var delegate: NewsView?
     var urlNotizia: String?
@@ -38,26 +39,21 @@ class CellNews: UITableViewCell {
     }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        commonInit()
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        commonInit()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    func commonInit(){
-        backgroundColor = UIColor.clear
-    }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        Conteiner.backgroundColor = UIColor.white
+        toolbar.setBackgroundImage(UIImage(), forToolbarPosition: .any, barMetrics: .default)
+        toolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
         Conteiner.layer.cornerRadius = 3
         Anteprima.isUserInteractionEnabled = false
     }
