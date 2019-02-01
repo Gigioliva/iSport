@@ -11,8 +11,8 @@ import UIKit
 import MessageKit
 
 struct Member {
-    let name: String
-    let image: String
+    var name: String
+    var image: String
 }
 
 struct Message {

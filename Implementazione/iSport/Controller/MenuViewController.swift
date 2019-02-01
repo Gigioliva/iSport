@@ -29,16 +29,16 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableViewMenu.dataSource = self
         tableViewMenu.rowHeight = 50
         
-        SideMenuController.preferences.basic.defaultCacheKey = "0"
+        SideMenuController.preferences.basic.defaultCacheKey = "News"
         sideMenuController?.cache(viewControllerGenerator: {
             self.storyboard?.instantiateViewController(withIdentifier: "ViewLive")
-        }, with: "1")
+        }, with: "Live")
         sideMenuController?.cache(viewControllerGenerator: {
             self.storyboard?.instantiateViewController(withIdentifier: "ViewBet")
-        }, with: "2")
+        }, with: "Bet")
         sideMenuController?.cache(viewControllerGenerator: {
             self.storyboard?.instantiateViewController(withIdentifier: "ViewChat")
-        }, with: "3")
+        }, with: "Chat")
         
     
         
@@ -102,6 +102,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
+    
     func getImageProfil(){
         let connection = GraphRequestConnection()
         connection.add(MyProfileRequest()) { response, result in
@@ -119,8 +120,10 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        sideMenuController?.setContentViewController(with: "\(indexPath.row)")
-        sideMenuController?.hideMenu()
+        if let cella = tableViewMenu.cellForRow(at: indexPath) as? MenuTableViewCell, let testo = cella.labelMenu.text{
+            sideMenuController?.setContentViewController(with: testo)
+            sideMenuController?.hideMenu()
+        }
     }
     
 

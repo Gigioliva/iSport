@@ -773,6 +773,7 @@
                         <viewLayoutGuide key="safeArea" id="wVt-2f-R2S"/>
                     </view>
                     <connections>
+                        <outlet property="constraintBottom" destination="o92-LP-92m" id="qjT-Yo-K3e"/>
                         <outlet property="importo" destination="MxM-6v-qkm" id="PPO-E0-bQn"/>
                         <outlet property="listaCarrello" destination="Nfw-sE-3VZ" id="EqP-RB-ZtZ"/>
                         <outlet property="quotaTotLabel" destination="Hbl-Qa-wpF" id="gf2-G1-OpV"/>
@@ -1364,7 +1365,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JBD-GH-hzy">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="724"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="714"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hKP-pJ-qqK">
                                             <size key="itemSize" width="50" height="50"/>
@@ -1372,19 +1373,10 @@
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="4vw-It-tuS">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </view>
-                                            </collectionViewCell>
-                                        </cells>
+                                        <cells/>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZc-Cp-Gum">
-                                        <rect key="frame" x="0.0" y="724" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="714" width="414" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icM-DV-Bp9">
                                                 <rect key="frame" x="354" y="0.0" width="60" height="50"/>
@@ -1427,7 +1419,7 @@
                                     <constraint firstAttribute="trailing" secondItem="xZc-Cp-Gum" secondAttribute="trailing" id="dgN-0S-j4c"/>
                                     <constraint firstItem="xZc-Cp-Gum" firstAttribute="top" secondItem="JBD-GH-hzy" secondAttribute="bottom" id="k4h-bs-5xQ"/>
                                     <constraint firstItem="xZc-Cp-Gum" firstAttribute="leading" secondItem="lry-86-RDg" secondAttribute="leading" id="moY-9H-Icm"/>
-                                    <constraint firstAttribute="bottom" secondItem="xZc-Cp-Gum" secondAttribute="bottom" id="wSy-x7-umg"/>
+                                    <constraint firstAttribute="bottom" secondItem="xZc-Cp-Gum" secondAttribute="bottom" constant="10" id="wSy-x7-umg"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1450,6 +1442,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="JBD-GH-hzy" id="bKH-OQ-cbO"/>
+                        <outlet property="constraintBottom" destination="wSy-x7-umg" id="0wl-tf-H5v"/>
                         <outlet property="inputTextField" destination="lHN-tR-nQ3" id="SPo-c0-daX"/>
                     </connections>
                 </viewController>

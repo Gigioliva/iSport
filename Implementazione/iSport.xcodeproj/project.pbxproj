@@ -20,6 +20,7 @@
 		23524A3322034E8D000E9B53 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23524A3222034E8D000E9B53 /* ChatService.swift */; };
 		23524A3522034EAF000E9B53 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23524A3422034EAF000E9B53 /* Message.swift */; };
 		23524AAF22036C49000E9B53 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23524AAE22036C49000E9B53 /* ChatViewController.swift */; };
+		235539F722043FA900FD063B /* CellChatCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235539F622043FA900FD063B /* CellChatCollection.swift */; };
 		235A523F21F8789E00BEEE9B /* OddsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235A523E21F8789E00BEEE9B /* OddsViewController.swift */; };
 		235A524121F878F100BEEE9B /* OddsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235A524021F878F100BEEE9B /* OddsTableViewCell.swift */; };
 		235A524321F8797B00BEEE9B /* BottoneScommessa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235A524221F8797B00BEEE9B /* BottoneScommessa.swift */; };
@@ -87,6 +88,7 @@
 		23524A3222034E8D000E9B53 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 		23524A3422034EAF000E9B53 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		23524AAE22036C49000E9B53 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		235539F622043FA900FD063B /* CellChatCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellChatCollection.swift; sourceTree = "<group>"; };
 		235A523E21F8789E00BEEE9B /* OddsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddsViewController.swift; sourceTree = "<group>"; };
 		235A524021F878F100BEEE9B /* OddsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddsTableViewCell.swift; sourceTree = "<group>"; };
 		235A524221F8797B00BEEE9B /* BottoneScommessa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottoneScommessa.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				23FC320321F8E29B00B61E44 /* CarrelloTableViewCell.swift */,
 				233E17BA220239A400BE8B33 /* MenuTableViewCell.swift */,
 				235249E72202EB52000E9B53 /* InfoUserTableViewCell.swift */,
+				235539F622043FA900FD063B /* CellChatCollection.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				23FC320221F8DC8400B61E44 /* CarrelloViewController.swift in Sources */,
 				23524AAF22036C49000E9B53 /* ChatViewController.swift in Sources */,
 				23EEE76821EBB5B300DE746F /* RisultatiLive.swift in Sources */,
+				235539F722043FA900FD063B /* CellChatCollection.swift in Sources */,
 				23D1201A21F629E800F375EC /* CardsTableViewCell.swift in Sources */,
 				23524A3522034EAF000E9B53 /* Message.swift in Sources */,
 				23E45A7421EE234000A5F38F /* RisultatoTableViewCell.swift in Sources */,

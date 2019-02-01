@@ -27,6 +27,10 @@ class ChatService {
         scaledrone.connect()
     }
     
+    func disconnect() {
+        scaledrone.disconnect()
+    }
+    
     func sendMessage(_ message: String) {
         room?.publish(message: message)
     }

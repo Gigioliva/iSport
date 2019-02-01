@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FacebookCore
 
 class ChatViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -16,12 +17,13 @@ class ChatViewController: UIViewController, UICollectionViewDataSource, UICollec
     var member: Member!
     var chatService: ChatService!
     
+    @IBOutlet weak var constraintBottom: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var inputTextField: UITextField!
     
     
     @IBAction func HandleSend(_ sender: Any) {
-        if let text = inputTextField.text{
+        if let text = inputTextField.text, let _ = AccessToken.current{
             chatService.sendMessage(text)
             inputTextField.text = ""
         }
@@ -36,31 +38,60 @@ class ChatViewController: UIViewController, UICollectionViewDataSource, UICollec
         collectionView?.backgroundColor = UIColor.white
         collectionView?.register(ChatLogMessageCell.self, forCellWithReuseIdentifier: cellId)
 
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         
-        member = Member(name: "Gigi", image: "https://gazettereview.com/wp-content/uploads/2016/03/facebook-avatar.jpg")
-        chatService = ChatService(member: member, onRecievedMessage: {
-            [weak self] message in
-            self?.messages.append(message)
-            self?.collectionView.reloadData()
-        })
         
-        chatService.connect()
-    }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height
+        
+        if AccessToken.current != nil {
+            let connection = GraphRequestConnection()
+            connection.add(MyProfileRequest()) { response, result in
+                switch result {
+                case .success(let response):
+                    if let url = response.profilePictureUrl, let name = response.name{
+                        self.member = Member(name: name, image: url)
+                        self.chatService = ChatService(member: self.member, onRecievedMessage: {
+                            [weak self] message in
+                            self?.messages.append(message)
+                            self?.collectionView.reloadData()
+                            self?.scrollCollention()
+                        })
+                        
+                        self.chatService.connect()
+                        
+                    }
+                case .failed(let error):
+                    print("Custom Graph Request Failed: \(error)")
+                }
             }
+            connection.start()
+            
         }
     }
     
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
+    
+    @objc func handleKeyboardNotification(notification: NSNotification) {
+        
+        if let userInfo = notification.userInfo {
+            
+            let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect
+            
+            let isKeyboardShowing = notification.name == UIResponder.keyboardWillShowNotification
+            
+            constraintBottom?.constant = isKeyboardShowing ? keyboardFrame!.height : 10
+            
+            UIView.animate(withDuration: 0, delay: 0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+                
+                self.view.layoutIfNeeded()
+                
+            }, completion: { (completed) in
+                
+                if isKeyboardShowing {
+                    self.scrollCollention()
+                }
+                
+            })
         }
     }
 
@@ -117,82 +148,8 @@ class ChatViewController: UIViewController, UICollectionViewDataSource, UICollec
         sideMenuController?.revealMenu()
     }
     
-    
-}
-
-
-
-
-
-
-
-
-
-//DA SPOSTARE IN UN ALTRO FILE
-class ChatLogMessageCell: BaseCell {
-    
-    let messageTextView: UITextView = {
-        let textView = UITextView()
-        textView.font = UIFont.systemFont(ofSize: 18)
-        textView.text = "Sample message"
-        textView.backgroundColor = UIColor.clear
-        return textView
-    }()
-    
-    let textBubbleView: UIView = {
-        let view = UIView()
-        //        view.backgroundColor = UIColor(white: 0.95, alpha: 1)
-        view.layer.cornerRadius = 15
-        view.layer.masksToBounds = true
-        return view
-    }()
-    
-    let profileImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 15
-        imageView.layer.masksToBounds = true
-        return imageView
-    }()
-    
-    static let grayBubbleImage = UIImage(named: "bubble_gray")!.resizableImage(withCapInsets: UIEdgeInsets(top: 22, left: 26, bottom: 22, right: 26)).withRenderingMode(.alwaysTemplate)
-    static let blueBubbleImage = UIImage(named: "bubble_blue")!.resizableImage(withCapInsets: UIEdgeInsets(top: 22, left: 26, bottom: 22, right: 26)).withRenderingMode(.alwaysTemplate)
-    
-    let bubbleImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = ChatLogMessageCell.grayBubbleImage
-        imageView.tintColor = UIColor(white: 0.90, alpha: 1)
-        return imageView
-    }()
-    
-    override func setupViews() {
-        super.setupViews()
-        
-        addSubview(textBubbleView)
-        addSubview(messageTextView)
-        
-        addSubview(profileImageView)
-        addConstraintsWithFormat("H:|-8-[v0(30)]", views: profileImageView)
-        addConstraintsWithFormat("V:[v0(30)]|", views: profileImageView)
-        profileImageView.backgroundColor = UIColor.red
-        
-        textBubbleView.addSubview(bubbleImageView)
-        textBubbleView.addConstraintsWithFormat("H:|[v0]|", views: bubbleImageView)
-        textBubbleView.addConstraintsWithFormat("V:|[v0]|", views: bubbleImageView)
-    }
-    
-}
-
-class BaseCell: UICollectionViewCell {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupViews()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setupViews() {
+    func scrollCollention(){
+        let indexPath = IndexPath(item: self.messages.count - 1, section: 0)
+        self.collectionView.scrollToItem(at: indexPath, at: .bottom, animated: true)
     }
 }
