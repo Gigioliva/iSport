@@ -392,13 +392,50 @@
                                                     <outlet property="labelMenu" destination="T4z-7M-XGM" id="3Ua-EU-g1V"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LoginButton" rowHeight="60" id="kbd-kf-RAp">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LoginButton" rowHeight="60" id="kbd-kf-RAp" customClass="LoginTableViewCell" customModule="iSport" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="88" width="300" height="60"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kbd-kf-RAp" id="A0W-i6-G5M">
                                                     <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8eh-Qu-vmY">
+                                                            <rect key="frame" x="0.0" y="10" width="300" height="49.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3e-4U-keS">
+                                                                    <rect key="frame" x="85" y="14.5" width="42" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bet" translatesAutoresizingMaskIntoConstraints="NO" id="VNK-zW-GAO">
+                                                                    <rect key="frame" x="10" y="12.5" width="25" height="25"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="25" id="8KA-2o-vrQ"/>
+                                                                        <constraint firstAttribute="height" constant="25" id="pzh-6D-t4f"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstItem="X3e-4U-keS" firstAttribute="leading" secondItem="VNK-zW-GAO" secondAttribute="trailing" constant="50" id="7Qz-ex-69N"/>
+                                                                <constraint firstItem="X3e-4U-keS" firstAttribute="centerY" secondItem="8eh-Qu-vmY" secondAttribute="centerY" id="Q9z-uV-tXv"/>
+                                                                <constraint firstItem="VNK-zW-GAO" firstAttribute="leading" secondItem="8eh-Qu-vmY" secondAttribute="leading" constant="10" id="Se3-OB-KMm"/>
+                                                                <constraint firstItem="VNK-zW-GAO" firstAttribute="centerY" secondItem="8eh-Qu-vmY" secondAttribute="centerY" id="ab5-ah-2fe"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="8eh-Qu-vmY" firstAttribute="top" secondItem="A0W-i6-G5M" secondAttribute="top" constant="10" id="JyH-7J-xjp"/>
+                                                        <constraint firstAttribute="trailing" secondItem="8eh-Qu-vmY" secondAttribute="trailing" id="MTd-6d-cBx"/>
+                                                        <constraint firstItem="8eh-Qu-vmY" firstAttribute="leading" secondItem="A0W-i6-G5M" secondAttribute="leading" id="Pzf-lT-iLa"/>
+                                                        <constraint firstAttribute="bottom" secondItem="8eh-Qu-vmY" secondAttribute="bottom" id="hWC-jP-cLM"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="imageLog" destination="VNK-zW-GAO" id="eQ4-gI-rKK"/>
+                                                    <outlet property="labelLog" destination="X3e-4U-keS" id="anF-Mv-jL6"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <sections/>
@@ -1317,6 +1354,30 @@
             </objects>
             <point key="canvasLocation" x="2873.913043478261" y="273.88392857142856"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="jY2-TK-LYB">
+            <objects>
+                <viewController id="5n7-IY-byC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rpd-vj-JsY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIT-y8-zg3">
+                                <rect key="frame" x="224" y="260" width="81" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout" image="logout">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="oPc-b3-dOJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hWl-aC-OWG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5156.521739130435" y="572.54464285714278"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="qLp-4o-ZYn">
             <objects>
@@ -1474,6 +1535,7 @@
         <image name="cards" width="8.1599998474121094" height="12.239999771118164"/>
         <image name="football-field" width="242.52632141113281" height="242.52632141113281"/>
         <image name="goals" width="15.119999885559082" height="15.119999885559082"/>
+        <image name="logout" width="24" height="24"/>
         <image name="menu" width="24" height="24"/>
         <image name="redcard" width="8.1599998474121094" height="12"/>
         <image name="share" width="24" height="24"/>

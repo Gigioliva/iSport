@@ -31,6 +31,7 @@ class ChatViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("test load chat")
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -109,24 +110,33 @@ class ChatViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ChatLogMessageCell
 
-        cell.profileImageView.downloaded(from: messages[indexPath.item].member.image)
-
         let messageText = messages[indexPath.item].text
         cell.messageTextView.text = messages[indexPath.item].text
-
         let size = CGSize(width: 250, height: 1000)
         let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
         let estimatedFrame = NSString(string: messageText).boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)], context: nil)
-
-        cell.messageTextView.frame = CGRect(x: 48 + 8, y: 0, width: estimatedFrame.width + 16, height: estimatedFrame.height + 20)
-        cell.textBubbleView.frame = CGRect(x: 48-10, y: -4, width: estimatedFrame.width + 16 + 8 + 16, height: estimatedFrame.height + 20 + 6)
-
-        cell.profileImageView.isHidden = false
-        cell.bubbleImageView.image = ChatLogMessageCell.grayBubbleImage
-        cell.bubbleImageView.tintColor = UIColor(white: 0.95, alpha: 1)
-        cell.messageTextView.textColor = UIColor.black
-
-
+        
+        if messages[indexPath.item].member.name != member.name{
+            cell.profileImageView.downloaded(from: messages[indexPath.item].member.image)
+            
+            cell.messageTextView.frame = CGRect(x: 48 + 8, y: 0, width: estimatedFrame.width + 16, height: estimatedFrame.height + 20)
+            cell.textBubbleView.frame = CGRect(x: 48-10, y: -4, width: estimatedFrame.width + 16 + 8 + 16, height: estimatedFrame.height + 20 + 6)
+            
+            cell.profileImageView.isHidden = false
+            cell.bubbleImageView.image = ChatLogMessageCell.grayBubbleImage
+            cell.bubbleImageView.tintColor = UIColor(white: 0.95, alpha: 1)
+            cell.messageTextView.textColor = UIColor.black
+        }
+        else{
+            let temp = view.frame.width - estimatedFrame.width - 16 - 16 - 8
+            cell.messageTextView.frame = CGRect(x: temp, y: 0, width: estimatedFrame.width + 16, height: estimatedFrame.height + 20)
+            cell.textBubbleView.frame = CGRect(x: temp - 10, y: -4, width: estimatedFrame.width + 16 + 8 + 10, height: estimatedFrame.height + 20 + 6)
+            
+            cell.profileImageView.isHidden = true
+            cell.bubbleImageView.image = ChatLogMessageCell.blueBubbleImage
+            cell.bubbleImageView.tintColor = UIColor(red: 0, green: 137/255, blue: 249/255, alpha: 1)
+            cell.messageTextView.textColor = UIColor.black
+        }
         return cell
     }
     

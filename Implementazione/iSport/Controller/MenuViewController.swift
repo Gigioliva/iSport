@@ -21,7 +21,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var User: UILabel!
     
     
-    let listView = ["News", "Live", "Bet", "Chat"]
+    var listView = ["News", "Live", "Bet", "Chat"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,30 +52,27 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        
-        if AccessToken.current != nil {
-            let connection = GraphRequestConnection()
-            connection.add(MyProfileRequest()) { response, result in
-                switch result {
-                case .success(let response):
-                    if let url = response.profilePictureUrl, let name = response.name{
-                        self.ViewLogged.isHidden = false
-                        self.ImageProfile.loadImageUsingUrlString(urlString: url)
-                        self.User.text = name
-                    }
-                case .failed(let error):
-                    print("Custom Graph Request Failed: \(error)")
-                }
-            }
-            connection.start()
-
-        }else {
-            ViewLogged.isHidden = true
-        }
-        
-        
-        tableViewMenu.reloadData()
+//        if AccessToken.current != nil {
+//            let connection = GraphRequestConnection()
+//            connection.add(MyProfileRequest()) { response, result in
+//                switch result {
+//                case .success(let response):
+//                    if let url = response.profilePictureUrl, let name = response.name{
+//                        self.ViewLogged.isHidden = false
+//                        self.ImageProfile.loadImageUsingUrlString(urlString: url)
+//                        self.User.text = name
+//                    }
+//                case .failed(let error):
+//                    print("Custom Graph Request Failed: \(error)")
+//                }
+//            }
+//            connection.start()
+//
+//        }else {
+//            ViewLogged.isHidden = true
+//        }
+//        tableViewMenu.reloadData()
+        reloadTable()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -91,39 +88,72 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             return cella
         }
         else {
-            let cella = tableViewMenu.dequeueReusableCell(withIdentifier: "LoginButton", for: indexPath)
-            let loginButton = LoginButton(readPermissions: [ .publicProfile ])
-            cella.addSubview(loginButton)
-            loginButton.center = cella.center
+            let cella = tableViewMenu.dequeueReusableCell(withIdentifier: "LoginButton", for: indexPath) as! LoginTableViewCell
+            let testo = AccessToken.current != nil ? "Logout" : "Login"
+            let image = AccessToken.current != nil ? UIImage(named: "logout") : UIImage(named: "login")
+            cella.labelLog.text = testo
+            cella.imageLog.image = image
             cella.selectionStyle = .none
             return cella
         }
         
     }
     
-    
-    
-    func getImageProfil(){
-        let connection = GraphRequestConnection()
-        connection.add(MyProfileRequest()) { response, result in
-            switch result {
-            case .success(let response):
-                print("Custom Graph Request Succeeded: \(response)")
-                print("COSE: \(response.profilePictureUrl!)")
-                print("COSE: \(response.name!)")
-            case .failed(let error):
-                print("Custom Graph Request Failed: \(error)")
-            }
-        }
-        connection.start()
-    }
-    
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cella = tableViewMenu.cellForRow(at: indexPath) as? MenuTableViewCell, let testo = cella.labelMenu.text{
             sideMenuController?.setContentViewController(with: testo)
             sideMenuController?.hideMenu()
         }
+        if (tableViewMenu.cellForRow(at: indexPath) as? LoginTableViewCell) != nil {
+            loginButtonClicked()
+        }
+    }
+    
+    func loginButtonClicked() {
+        let loginManager = LoginManager()
+        
+        if AccessToken.current == nil{
+            loginManager.logIn(readPermissions: [ .publicProfile ], viewController: self) { loginResult in
+                switch loginResult {
+                case .failed(let error):
+                    print(error)
+                case .cancelled:
+                    print("User cancelled login.")
+                case .success( _, _, _):
+                    print("Logged in!")
+                    self.reloadTable()
+                }
+            }
+        }
+        else{
+            loginManager.logOut()
+            reloadTable()
+        }
+    }
+    
+    func reloadTable(){
+        if AccessToken.current == nil{
+            listView = ["News", "Live", "Bet"]
+            ViewLogged.isHidden = true
+        }
+        else{
+            listView = ["News", "Live", "Bet", "Chat"]
+            let connection = GraphRequestConnection()
+            connection.add(MyProfileRequest()) { response, result in
+                switch result {
+                case .success(let response):
+                    if let url = response.profilePictureUrl, let name = response.name{
+                        self.ViewLogged.isHidden = false
+                        self.ImageProfile.loadImageUsingUrlString(urlString: url)
+                        self.User.text = name
+                    }
+                case .failed(let error):
+                    print("Custom Graph Request Failed: \(error)")
+                }
+            }
+            connection.start()
+        }
+        self.tableViewMenu.reloadData()
     }
     
 
