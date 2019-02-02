@@ -52,7 +52,7 @@ class ChatLogMessageCell: BaseCell {
         addSubview(profileImageView)
         addConstraintsWithFormat("H:|-8-[v0(30)]", views: profileImageView)
         addConstraintsWithFormat("V:[v0(30)]|", views: profileImageView)
-        profileImageView.backgroundColor = UIColor.red
+        profileImageView.backgroundColor = UIColor.gray
         
         textBubbleView.addSubview(bubbleImageView)
         textBubbleView.addConstraintsWithFormat("H:|[v0]|", views: bubbleImageView)

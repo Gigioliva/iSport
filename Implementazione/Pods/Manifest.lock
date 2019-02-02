@@ -24,12 +24,13 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.40.0):
     - FBSDKCoreKit
+  - GTProgressBar (0.3.2)
   - MessageInputBar/Core (0.4.1)
   - MessageKit (2.0.0):
     - MessageInputBar/Core
   - Scaledrone (0.3.0):
     - Starscream (~> 2.1.0)
-  - SideMenuSwift (1.0.0)
+  - SideMenuSwift (1.0.1)
   - Starscream (2.1.1)
   - UICircularProgressRing (4.1.0)
 
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - FacebookCore
   - FacebookLogin
   - FacebookShare
+  - GTProgressBar
   - MessageKit
   - Scaledrone (~> 0.3.0)
   - SideMenuSwift
@@ -51,6 +53,7 @@ SPEC REPOS:
     - FBSDKCoreKit
     - FBSDKLoginKit
     - FBSDKShareKit
+    - GTProgressBar
     - MessageInputBar
     - MessageKit
     - Scaledrone
@@ -66,13 +69,14 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: ae214474b25033399c131dc81d258e412582a2ba
   FBSDKLoginKit: 7a1e411d46acc8834588eca437daf34de42e1d52
   FBSDKShareKit: 0e45916f4150da485928ae2a17ca021950b194f5
+  GTProgressBar: 3aa9731127b3ef193935d450928c3bd0f46bb1c4
   MessageInputBar: e81c7535347f1f7b923de7080409a535a004b6e4
   MessageKit: 29c1c87e5a396d2ca7a3f712e5171dc9aba42a1e
   Scaledrone: 25e5e70107222ed50046fc0ed9569915bdb85262
-  SideMenuSwift: f8567754feb36ade13ffd613f608829f4b86d4b3
+  SideMenuSwift: a78d47182aa03b5c07570fe57d3ba22c4561f2ce
   Starscream: 142bd8ef24592d985daee9fa48c936070b85b15f
   UICircularProgressRing: 5a32c01f54474571b1e66e8fa050c0f83d6d981b
 
-PODFILE CHECKSUM: e5357bc50ba384f9639b55c1eb7c4daade146d74
+PODFILE CHECKSUM: 4ac7c6185b30b4afe5f876970a773599fef1aedd
 
 COCOAPODS: 1.5.3

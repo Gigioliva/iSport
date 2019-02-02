@@ -13,6 +13,7 @@ target 'iSport' do
   pod 'SideMenuSwift'
   pod 'MessageKit'
   pod 'Scaledrone', '~> 0.3.0'
+  pod 'GTProgressBar'
 
   target 'iSportTests' do
     inherit! :search_paths

@@ -28,6 +28,12 @@
 		2368D8A921F4F225002E58D0 /* StatisticaViewTableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2368D8A821F4F225002E58D0 /* StatisticaViewTableData.swift */; };
 		2368D8AF21F4FA24002E58D0 /* FormazioneTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2368D8AE21F4FA24002E58D0 /* FormazioneTableViewDelegate.swift */; };
 		238D2A8F2205A8EC007AC7A8 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 238D2A8E2205A8EC007AC7A8 /* background.jpg */; };
+		238D2A912205D506007AC7A8 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238D2A902205D506007AC7A8 /* Test.swift */; };
+		238D2A95220601D3007AC7A8 /* wp_005.png in Resources */ = {isa = PBXBuildFile; fileRef = 238D2A94220601D3007AC7A8 /* wp_005.png */; };
+		238D2A9722061090007AC7A8 /* VerticallyCenteredTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238D2A9622061090007AC7A8 /* VerticallyCenteredTextView.swift */; };
+		238D2A9E2206141D007AC7A8 /* caht3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 238D2A9C2206141C007AC7A8 /* caht3.jpg */; };
+		238D2A9F2206141D007AC7A8 /* chat2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 238D2A9D2206141D007AC7A8 /* chat2.jpg */; };
+		238D2AA122061426007AC7A8 /* chat1.png in Resources */ = {isa = PBXBuildFile; fileRef = 238D2AA022061425007AC7A8 /* chat1.png */; };
 		239A117721F38DA4006B90CA /* WebViewNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239A117621F38DA4006B90CA /* WebViewNews.swift */; };
 		239A117921F3AB69006B90CA /* StatisticaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239A117821F3AB69006B90CA /* StatisticaTableViewCell.swift */; };
 		239A117B21F3AC16006B90CA /* StatisticaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239A117A21F3AC16006B90CA /* StatisticaView.swift */; };
@@ -97,6 +103,12 @@
 		2368D8A821F4F225002E58D0 /* StatisticaViewTableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatisticaViewTableData.swift; path = iSport/Controller/StatisticaViewTableData.swift; sourceTree = SOURCE_ROOT; };
 		2368D8AE21F4FA24002E58D0 /* FormazioneTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FormazioneTableViewDelegate.swift; path = iSport/Controller/FormazioneTableViewDelegate.swift; sourceTree = SOURCE_ROOT; };
 		238D2A8E2205A8EC007AC7A8 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		238D2A902205D506007AC7A8 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		238D2A94220601D3007AC7A8 /* wp_005.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wp_005.png; sourceTree = "<group>"; };
+		238D2A9622061090007AC7A8 /* VerticallyCenteredTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticallyCenteredTextView.swift; sourceTree = "<group>"; };
+		238D2A9C2206141C007AC7A8 /* caht3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = caht3.jpg; sourceTree = "<group>"; };
+		238D2A9D2206141D007AC7A8 /* chat2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chat2.jpg; sourceTree = "<group>"; };
+		238D2AA022061425007AC7A8 /* chat1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat1.png; sourceTree = "<group>"; };
 		239A117621F38DA4006B90CA /* WebViewNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebViewNews.swift; path = iSport/View/WebViewNews.swift; sourceTree = SOURCE_ROOT; };
 		239A117821F3AB69006B90CA /* StatisticaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatisticaTableViewCell.swift; path = iSport/View/StatisticaTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		239A117A21F3AC16006B90CA /* StatisticaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatisticaView.swift; path = iSport/Controller/StatisticaView.swift; sourceTree = SOURCE_ROOT; };
@@ -224,6 +236,7 @@
 				235249E72202EB52000E9B53 /* InfoUserTableViewCell.swift */,
 				235539F622043FA900FD063B /* CellChatCollection.swift */,
 				235F45C82204745400A6B708 /* LoginTableViewCell.swift */,
+				238D2A9622061090007AC7A8 /* VerticallyCenteredTextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -242,6 +255,7 @@
 				23FC320121F8DC8400B61E44 /* CarrelloViewController.swift */,
 				233E17B82202395D00BE8B33 /* MenuViewController.swift */,
 				23524AAE22036C49000E9B53 /* ChatViewController.swift */,
+				238D2A902205D506007AC7A8 /* Test.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -264,6 +278,10 @@
 		238D2A8D2205A8DB007AC7A8 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				238D2AA022061425007AC7A8 /* chat1.png */,
+				238D2A9C2206141C007AC7A8 /* caht3.jpg */,
+				238D2A9D2206141D007AC7A8 /* chat2.jpg */,
+				238D2A94220601D3007AC7A8 /* wp_005.png */,
 				238D2A8E2205A8EC007AC7A8 /* background.jpg */,
 			);
 			path = Image;
@@ -436,10 +454,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				238D2A9F2206141D007AC7A8 /* chat2.jpg in Resources */,
+				238D2A95220601D3007AC7A8 /* wp_005.png in Resources */,
 				23EEE73E21EB978500DE746F /* LaunchScreen.storyboard in Resources */,
 				238D2A8F2205A8EC007AC7A8 /* background.jpg in Resources */,
+				238D2A9E2206141D007AC7A8 /* caht3.jpg in Resources */,
 				23106679220210C9004F053A /* Hard Sports.ttf in Resources */,
 				23D1201C21F635A400F375EC /* Assets.xcassets in Resources */,
+				238D2AA122061426007AC7A8 /* chat1.png in Resources */,
 				23EEE73621EB978400DE746F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,6 +521,7 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/GTProgressBar/GTProgressBar.framework",
 				"${BUILT_PRODUCTS_DIR}/MessageInputBar/MessageInputBar.framework",
 				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Scaledrone/Scaledrone.framework",
@@ -517,6 +540,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTProgressBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageInputBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Scaledrone.framework",
@@ -612,6 +636,8 @@
 				23D1201A21F629E800F375EC /* CardsTableViewCell.swift in Sources */,
 				23524A3522034EAF000E9B53 /* Message.swift in Sources */,
 				23E45A7421EE234000A5F38F /* RisultatoTableViewCell.swift in Sources */,
+				238D2A9722061090007AC7A8 /* VerticallyCenteredTextView.swift in Sources */,
+				238D2A912205D506007AC7A8 /* Test.swift in Sources */,
 				23B1F76421EBF63600D6ABD7 /* NewsAPI.swift in Sources */,
 				239A117921F3AB69006B90CA /* StatisticaTableViewCell.swift in Sources */,
 				239A117B21F3AC16006B90CA /* StatisticaView.swift in Sources */,

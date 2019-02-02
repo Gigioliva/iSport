@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// A private transitioning context used for triggering the transition animation
+/// A internal transitioning context used for triggering the transition animation
 extension SideMenuController {
     class TransitionContext: NSObject, UIViewControllerContextTransitioning {
         var isAnimated = true
@@ -29,8 +29,11 @@ extension SideMenuController {
         var completion: ((Bool) -> Void)?
 
         init(with fromViewController: UIViewController, toViewController: UIViewController) {
+            guard let superView = fromViewController.view.superview else {
+                fatalError("fromViewControlelr's view should have a parent view")
+            }
             presentationStyle = .custom
-            containerView = fromViewController.view.superview!
+            containerView = superView
             viewControllers = [
                 .from: fromViewController,
                 .to: toViewController

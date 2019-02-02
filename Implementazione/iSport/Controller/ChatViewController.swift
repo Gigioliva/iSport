@@ -9,7 +9,7 @@
 import UIKit
 import FacebookCore
 
-class ChatViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class ChatViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextViewDelegate {
     
     private let cellId = "ChatCell"
     
@@ -19,26 +19,36 @@ class ChatViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @IBOutlet weak var constraintBottom: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var inputTextField: UITextField!
+    @IBOutlet weak var inputTextField: VerticallyCenteredTextView!
     
+    @IBOutlet weak var toolbar: UIToolbar!
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
-    @IBAction func HandleSend(_ sender: Any) {
-        if let text = inputTextField.text, let _ = AccessToken.current{
-            chatService.sendMessage(text)
+    @IBAction func Send(_ sender: Any) {
+        if let text = inputTextField.text, let _ = AccessToken.current, chatService != nil {
+            chatService.sendMessage(text.trimmingCharacters(in: .whitespacesAndNewlines))
             inputTextField.text = ""
+            sizeTextView()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        toolbar.setBackgroundImage(UIImage(), forToolbarPosition: .any, barMetrics: .default)
+        toolbar.setShadowImage(UIImage(), forToolbarPosition: .any)
+        inputTextField.text = "temp"
+        sizeTextView()
+        inputTextField.text = ""
+        toolbar.addConstraint(NSLayoutConstraint(item: toolbar, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: heightConstraint.constant))
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
         
+        inputTextField.layer.cornerRadius = 15
+        inputTextField.delegate = self
+        
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        collectionView?.backgroundColor = UIColor.white
         collectionView?.register(ChatLogMessageCell.self, forCellWithReuseIdentifier: cellId)
 
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -81,7 +91,7 @@ class ChatViewController: UIViewController, UICollectionViewDataSource, UICollec
         if let userInfo = notification.userInfo {
             let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect
             let isKeyboardShowing = notification.name == UIResponder.keyboardWillShowNotification
-            constraintBottom?.constant = isKeyboardShowing ? keyboardFrame!.height : 10
+            constraintBottom?.constant = isKeyboardShowing ? keyboardFrame!.height : 0
             UIView.animate(withDuration: 0, delay: 0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                 self.view.layoutIfNeeded()
             }, completion: { (completed) in
@@ -93,7 +103,6 @@ class ChatViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     @objc func dismissKeyboard() {
-        print("test key")
         view.endEditing(true)
     }
 
@@ -160,4 +169,27 @@ class ChatViewController: UIViewController, UICollectionViewDataSource, UICollec
         let indexPath = IndexPath(item: self.messages.count - 1, section: 0)
         self.collectionView.scrollToItem(at: indexPath, at: .bottom, animated: true)
     }
+    
+    func textViewDidChange(_ textView: UITextView)
+    {
+        sizeTextView()
+    }
+    
+    func sizeTextView(){
+        let minimo = CGFloat(0.0)
+        let massimo = CGFloat(80.0)
+        inputTextField.isScrollEnabled = true
+        let dimensione = inputTextField.contentSize.height
+        
+        if dimensione > massimo {
+            heightConstraint.constant = massimo
+        } else if dimensione < minimo {
+            heightConstraint.constant = minimo
+        } else {
+            heightConstraint.constant = dimensione
+        }
+    
+        inputTextField.isScrollEnabled = inputTextField.contentSize.height >= 80
+    }
+
 }

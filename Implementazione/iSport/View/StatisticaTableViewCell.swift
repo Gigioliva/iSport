@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GTProgressBar
 
 class StatisticaTableViewCell: UITableViewCell {
 
@@ -14,8 +15,19 @@ class StatisticaTableViewCell: UITableViewCell {
     @IBOutlet weak var ValoreTeam1: UILabel!
     @IBOutlet weak var ValoreTeam2: UILabel!
     
+    @IBOutlet weak var ProgressBarHome: GTProgressBar!
+    @IBOutlet weak var ProgressBarAway: GTProgressBar!
     
-    
+    var contenuto: Statistic? {
+        
+        didSet{
+            TipoStatistica.text = contenuto!.type
+            ValoreTeam1.text = contenuto!.home
+            ValoreTeam2.text = contenuto!.away
+            ProgressBarHome.progress = 0.3
+            ProgressBarAway.progress = 0.6
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

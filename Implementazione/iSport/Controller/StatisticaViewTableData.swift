@@ -27,9 +27,10 @@ class StatisticaViewTableData: NSObject, UITableViewDelegate, UITableViewDataSou
         let cella = Statistiche.dequeueReusableCell(withIdentifier: "StatisticCell") as! StatisticaTableViewCell
         let contenutoCella = statisticaLista[indexPath.row]
         
-        cella.TipoStatistica.text = contenutoCella.type
-        cella.ValoreTeam1.text = contenutoCella.home
-        cella.ValoreTeam2.text = contenutoCella.away
+//        cella.TipoStatistica.text = contenutoCella.type
+//        cella.ValoreTeam1.text = contenutoCella.home
+//        cella.ValoreTeam2.text = contenutoCella.away
+        cella.contenuto = contenutoCella
         
         return cella
     }

@@ -67,6 +67,9 @@ extension SideMenuController {
 
             // The shadow's alpha when showing on the content view. Default is 0.2.
             public var shadowAlpha: CGFloat = 0.2
+            
+            // The shadow's color when showing on the content view. Default is black.
+            public var shadowColor: UIColor = .black
         }
 
         public struct Configuration {
@@ -106,7 +109,11 @@ extension SideMenuController {
             public var supportedOrientations: UIInterfaceOrientationMask = .portrait
         }
 
+
+        /// The basic configuration of side menu
         public var basic = Configuration()
+
+        /// The animation configuration of side menu
         public var animation = Animation()
     }
 }
