@@ -13,8 +13,8 @@ class RisultatiLive: UIViewController, UITableViewDelegate, UITableViewDataSourc
 
     @IBOutlet weak var ListaRisultati: UITableView!
     
-    var listaPartiteOra = Dictionary<String, [Partita]>()
-    var listaOrari = [String]()
+    var listaPartiteCampionato = Dictionary<String, [Partita]>()
+    var listaCampionati = [String]()
     
     var indiceCellaSelezionata = (sezione: 0, riga: 0)
     
@@ -29,24 +29,24 @@ class RisultatiLive: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return listaOrari[section]
+        return listaCampionati[section]
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return listaOrari.count
+        return listaCampionati.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let nomeSezione = listaOrari[section]
+        let nomeSezione = listaCampionati[section]
         
-        return listaPartiteOra[nomeSezione]?.count ?? 0
+        return listaPartiteCampionato[nomeSezione]?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cella = ListaRisultati.dequeueReusableCell(withIdentifier: "ResultLive", for: indexPath) as! RisultatoTableViewCell
         
-        let nomeSezione = listaOrari[indexPath.section]
-        let contenuto = listaPartiteOra[nomeSezione]!
+        let nomeSezione = listaCampionati[indexPath.section]
+        let contenuto = listaPartiteCampionato[nomeSezione]!
         
         cella.partita = contenuto[indexPath.row]
         cella.selectionStyle = .none
@@ -68,20 +68,31 @@ class RisultatiLive: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         let partite = RisultatiAPI.listaPartite
         
-        let listaOrari = partite.reduce(Set<String>(), { (acc, partitaAttuale) in
-            return acc.union([partitaAttuale.matchTime!])
+        let listaCampionati = partite.reduce(Set<String>(), { (acc, partitaAttuale) in
+            return acc.union([partitaAttuale.leagueName!])
         })
         
-        for orario in listaOrari{
-            listaPartiteOra[orario] = partite.filter({ (partita) in
-                return partita.matchTime == orario
+        for campionato in listaCampionati{
+            listaPartiteCampionato[campionato] = partite.filter({ (partita) in
+                return partita.leagueName == campionato
             })
         }
         
-        self.listaOrari = Array(listaOrari)
-        self.listaOrari.sort { (orario1, orario2) in
-            return orario1 < orario2
+        self.listaCampionati = Array(listaCampionati)
+        
+        for campionato in listaCampionati{
+            self.listaPartiteCampionato[campionato]?.sort(by: { (orario1, orario2) -> Bool in
+                return orario1.matchTime! < orario2.matchTime!
+            })
         }
+        
+        self.listaCampionati.sort { (campionato1, campionato2) -> Bool in
+            return campionato1 < campionato2
+        }
+        
+//        self.listaOrari.sort { (orario1, orario2) in
+//            return orario1 < orario2
+//        }
  
         ListaRisultati.reloadData()
     }
@@ -89,9 +100,8 @@ class RisultatiLive: UIViewController, UITableViewDelegate, UITableViewDataSourc
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MostraStatistiche"{
             let statisticaView = segue.destination as! StatisticaView
-            let nomeSezione = listaOrari[indiceCellaSelezionata.sezione]
-            
-            statisticaView.contenuto = listaPartiteOra[nomeSezione]![indiceCellaSelezionata.riga]
+            let nomeSezione = listaCampionati[indiceCellaSelezionata.sezione]
+            statisticaView.contenuto = listaPartiteCampionato[nomeSezione]![indiceCellaSelezionata.riga]
             
         }
     }

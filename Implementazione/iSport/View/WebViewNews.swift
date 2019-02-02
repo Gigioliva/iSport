@@ -41,8 +41,11 @@ class WebViewNews: UIView {
         
         let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 50))
         self.addSubview(navBar)
-        let barItem = UINavigationItem(title: "Top")
+        navBar.barTintColor = UIColor.rgb(red: 67, green: 70, blue: 71)
+        navBar.isTranslucent = false
+        let barItem = UINavigationItem(title: "")
         dismissButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.dismissWebView))
+        dismissButton?.tintColor = UIColor.white
         barItem.leftBarButtonItem = dismissButton
         navBar.setItems([barItem], animated: false);
         
@@ -72,7 +75,7 @@ class WebViewNews: UIView {
         self.constraintHeight!.isActive=true
         
         
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             self.superview!.layoutIfNeeded()
         }, completion: { (animazioneFinita) in
             self.removeFromSuperview()

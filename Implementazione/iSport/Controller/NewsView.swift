@@ -19,7 +19,7 @@ class NewsView: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         ListaNews.delegate = self
         ListaNews.dataSource = self
-        ListaNews.rowHeight = 150
+        ListaNews.rowHeight = 130
         NewsAPI.RequestAPI(callback: aggiornaTableView)
     }
 
@@ -56,7 +56,7 @@ class NewsView: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         WebView.constraintHeight!.isActive=false
         WebView.topAnchorAnimated!.isActive=true
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             WebView.superview!.layoutIfNeeded()
         })
     }

@@ -18,13 +18,9 @@ class StatisticaView: UIViewController {
     @IBOutlet weak var Team1Score: UILabel!
     @IBOutlet weak var Team2Score: UILabel!
     @IBOutlet weak var MatchStatus: UILabel!
-    @IBOutlet weak var HalfTimeScore: UILabel!
     
+    @IBOutlet weak var imageSfondo: UIImageView!
     @IBOutlet weak var Dettagli: UITableView!
-    
-    @IBOutlet weak var RingHome: UICircularProgressRing!
-    @IBOutlet weak var RingDraw: UICircularProgressRing!
-    @IBOutlet weak var RingAway: UICircularProgressRing!
     
     
     var contenuto: Partita?
@@ -38,7 +34,6 @@ class StatisticaView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         Campionato.text = contenuto!.leagueName ?? Campionato.text
         OrarioInizio.text = contenuto!.matchTime ?? OrarioInizio.text
         Team1Name.text = contenuto!.matchHometeamName ?? Team1Name.text
@@ -47,9 +42,6 @@ class StatisticaView: UIViewController {
         Team2Score.text = contenuto!.matchAwayteamScore ?? Team2Score.text
         MatchStatus.text = contenuto!.matchStatus ?? MatchStatus.text
         
-        let homePrimoTempo = contenuto!.matchHometeamHalftimeScore ?? "0"
-        let awayPrimoTempo = contenuto!.matchAwayteamHalftimeScore ?? "0"
-        HalfTimeScore.text = String("HT " + homePrimoTempo + "-" + awayPrimoTempo)
         statisticaLista = contenuto!.statistics
         
         statisticheDelegate = StatisticaViewTableData(tableView: Dettagli, statistiche: statisticaLista)
@@ -62,9 +54,9 @@ class StatisticaView: UIViewController {
         
         let predizione = RisultatiAPI.GetPrediction(matchId: (contenuto?.matchId)!)!
         
-        RingHome.value = CGFloat(Double(predizione.probHw!)!)
-        RingDraw.value = CGFloat(Double(predizione.probD!)!)
-        RingAway.value = CGFloat(Double(predizione.probAw!)!)
+//        RingHome.value = CGFloat(Double(predizione.probHw!)!)
+//        RingDraw.value = CGFloat(Double(predizione.probD!)!)
+//        RingAway.value = CGFloat(Double(predizione.probAw!)!)
         
     }
     
