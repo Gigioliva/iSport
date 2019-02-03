@@ -65,17 +65,25 @@ class FormazioneTableViewDelegate: NSObject, UITableViewDataSource, UITableViewD
             if indexPath.row < formazioneCasa.count{
                 cella.NumeroGiocatoreCasa.text = formazioneCasa[indexPath.row].lineupNumber ?? ""
                 cella.NomeGiocatoreCasa.text = formazioneCasa[indexPath.row].lineupPlayer ?? ""
+                if indexPath.row == 0 {
+                    cella.MagliaHome.image = UIImage(named: "dress-yellow")
+                }
             }else{
                 cella.NomeGiocatoreAway.text = ""
                 cella.NumeroGiocatoreAway.text = ""
+                cella.MagliaHome.isHidden = true
             }
             
             if indexPath.row < formazioneAway.count{
                 cella.NomeGiocatoreAway.text = formazioneAway[indexPath.row].lineupPlayer ?? ""
                 cella.NumeroGiocatoreAway.text = formazioneAway[indexPath.row].lineupNumber ?? ""
+                if indexPath.row == 0 {
+                    cella.MagliaAway.image = UIImage(named: "dress-yellow")
+                }
             }else{
                 cella.NomeGiocatoreAway.text = ""
                 cella.NumeroGiocatoreAway.text = ""
+                cella.MagliaAway.isHidden = true
             }
         }
         
@@ -85,11 +93,17 @@ class FormazioneTableViewDelegate: NSObject, UITableViewDataSource, UITableViewD
             cella.NumeroGiocatoreAway.text = ""
             cella.NomeGiocatoreAway.text = ""
             cella.NumeroGiocatoreAway.text = ""
+            cella.MagliaAway.isHidden = true
+            cella.MagliaHome.isHidden = true
             if contenuto.tipo == "Home"{
                 cella.NomeGiocatoreCasa.text = contenuto.sostituzione.lineupPlayer ?? ""
+                cella.NumeroGiocatoreCasa.text = contenuto.sostituzione.lineupNumber ?? ""
+                cella.MagliaHome.isHidden = false
             }
             if contenuto.tipo == "Away"{
                 cella.NomeGiocatoreAway.text = contenuto.sostituzione.lineupPlayer ?? ""
+                cella.NumeroGiocatoreAway.text = contenuto.sostituzione.lineupNumber ?? ""
+                cella.MagliaAway.isHidden = false
             }
             
         }

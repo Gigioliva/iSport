@@ -24,12 +24,8 @@ class GoalsTableViewDelegate: NSObject, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cella = tableViewGoal.dequeueReusableCell(withIdentifier: "GoalsCell") as! GoalsTableViewCell
-        
-        cella.GiocatoreAway.text = listaGoals[indexPath.row].awayScorer
-        cella.GiocatoreCasa.text = listaGoals[indexPath.row].homeScorer
-        cella.MinutoGoal.text = listaGoals[indexPath.row].time
-        cella.ScoreGoal.text = listaGoals[indexPath.row].score
-        
+        let goal = listaGoals[indexPath.row]
+        cella.contenuto = goal
         return cella
     }
     

@@ -15,5 +15,6 @@ class FormazioneTableViewCell: UITableViewCell {
     @IBOutlet weak var NumeroGiocatoreAway: UILabel!
     @IBOutlet weak var NomeGiocatoreAway: UILabel!
     
-
+    @IBOutlet weak var MagliaAway: UIImageView!
+    @IBOutlet weak var MagliaHome: UIImageView!
 }
