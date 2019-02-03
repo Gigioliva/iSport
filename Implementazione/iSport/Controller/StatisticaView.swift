@@ -41,10 +41,11 @@ class StatisticaView: UIViewController {
         Team1Score.text = contenuto!.matchHometeamScore ?? Team1Score.text
         Team2Score.text = contenuto!.matchAwayteamScore ?? Team2Score.text
         MatchStatus.text = contenuto!.matchStatus ?? MatchStatus.text
+        let predizione = RisultatiAPI.GetPrediction(matchId: (contenuto?.matchId)!)!
         
         statisticaLista = contenuto!.statistics
         
-        statisticheDelegate = StatisticaViewTableData(tableView: Dettagli, statistiche: statisticaLista)
+        statisticheDelegate = StatisticaViewTableData(tableView: Dettagli, statistiche: statisticaLista, prediction: predizione)
         formazioneDelegate = FormazioneTableViewDelegate(tableViewFormazione: Dettagli, formazioneCasa: (contenuto?.lineup.home)!, formazioneAway: (contenuto?.lineup.away)!)
         goalsDelegate = GoalsTableViewDelegate(tableView: Dettagli, listaGoal: (contenuto?.goalscorer)!)
         cardsDelegate = CardsTableViewDelegate(tableView: Dettagli, listaCard: (contenuto?.cards)!)
@@ -52,7 +53,6 @@ class StatisticaView: UIViewController {
         Dettagli.delegate = statisticheDelegate
         Dettagli.dataSource = statisticheDelegate
         
-        let predizione = RisultatiAPI.GetPrediction(matchId: (contenuto?.matchId)!)!
         
 //        RingHome.value = CGFloat(Double(predizione.probHw!)!)
 //        RingDraw.value = CGFloat(Double(predizione.probD!)!)

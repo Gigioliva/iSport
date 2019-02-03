@@ -85,5 +85,55 @@ class APICoreData: NSObject {
     }
     
     
+    static func ModNews(notizia: Article) {
+        if let news = GetNewsByURL(url: notizia.url!){
+            contesto.delete(news)
+        } else {
+            let query = NSEntityDescription.insertNewObject(forEntityName: "News", into: contesto)
+            query.setValue(notizia.url, forKey: "url")
+            query.setValue(notizia.urlToImage, forKey: "urlToImage")
+            query.setValue(notizia.title, forKey: "title")
+        }
+        do {
+            try contesto.save()
+            print ("dati salvati correttamente")
+        } catch {
+            print ("Errore")
+        }
+
+    }
+    
+    static func GetNewsByURL(url: String) -> News? {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "News")
+        fetchRequest.predicate = NSPredicate(format: "url= %@", url)
+        fetchRequest.returnsObjectsAsFaults = false
+        do {
+            let risultati = try contesto.fetch(fetchRequest)
+            if risultati.count > 0 {
+                for result in risultati as! [News] {
+                    return result
+                }
+            }
+        } catch {
+            print ("Errore")
+        }
+        return nil
+    }
+    
+    static func GetAllNews() -> [News]{
+        var risultato = [News]()
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "News")
+        fetchRequest.returnsObjectsAsFaults = false
+        do {
+            let risultati = try contesto.fetch(fetchRequest)
+            if risultati.count > 0 {
+                risultato = risultati as! [News]
+            }
+        } catch {
+            print("Errore")
+        }
+        return risultato
+    }
+    
 
 }

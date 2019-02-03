@@ -21,23 +21,23 @@ class StatisticaTableViewCell: UITableViewCell {
     var contenuto: Statistic? {
         
         didSet{
-            TipoStatistica.text = contenuto!.type
+            TipoStatistica.text = contenuto!.type?.uppercased()
             ValoreTeam1.text = contenuto!.home
             ValoreTeam2.text = contenuto!.away
-            ProgressBarHome.progress = 0.3
-            ProgressBarAway.progress = 0.6
+            let valoreHome = Float(contenuto?.home ?? "0") ?? 0
+            let valoreAway = Float(contenuto?.away ?? "0") ?? 0
+            ProgressBarHome.progress = CGFloat(valoreHome / (valoreHome + valoreAway))
+            ProgressBarAway.progress = CGFloat(valoreAway / (valoreHome + valoreAway))
+            
+            if ProgressBarHome.progress >= 0.5 {
+                ProgressBarHome.barFillColor = UIColor.rgb(red: 0, green: 150, blue: 0)
+                ProgressBarAway.barFillColor = UIColor.red
+            } else {
+                ProgressBarHome.barFillColor = UIColor.red
+                ProgressBarAway.barFillColor = UIColor.rgb(red: 0, green: 150, blue: 0)
+            }
+            
         }
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

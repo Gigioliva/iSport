@@ -18,7 +18,9 @@ class CellNews: UITableViewCell {
     @IBOutlet weak var SitoURL: UILabel!
     @IBOutlet weak var toolbar: UIToolbar!
     
-    var delegate: NewsView?
+    @IBOutlet weak var Favorite: UIBarButtonItem!
+    
+    var delegate: UIViewController?
     var urlNotizia: String?
     var contenuto: Article?{
         
@@ -57,6 +59,7 @@ class CellNews: UITableViewCell {
         Conteiner.layer.cornerRadius = 3
         Anteprima.isUserInteractionEnabled = false
     }
+    
     @IBAction func ShareButton(_ sender: Any) {
         if AccessToken.current != nil {
             let temp = URL(string: urlNotizia!)
@@ -79,5 +82,17 @@ class CellNews: UITableViewCell {
         alert.addAction(OK)
         delegate!.present(alert, animated: true, completion: nil)
     }
- 
+
+    @IBAction func SaveFavorite(_ sender: Any) {
+        if let view = delegate as? NewsDelegate {
+            APICoreData.ModNews(notizia: contenuto!)
+            view.reloadTable()
+        }
+    }
+    
+}
+
+
+protocol NewsDelegate: AnyObject {
+    func reloadTable()
 }

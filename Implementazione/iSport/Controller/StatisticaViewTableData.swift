@@ -11,32 +11,59 @@ import UIKit
 class StatisticaViewTableData: NSObject, UITableViewDelegate, UITableViewDataSource {
     
     var statisticaLista: [Statistic]
+    var previsioni: Prediction
     
     var Statistiche: UITableView
     
-    init(tableView: UITableView, statistiche: [Statistic]) {
+    init(tableView: UITableView, statistiche: [Statistic], prediction: Prediction) {
         self.Statistiche = tableView
         self.statisticaLista = statistiche
+        self.previsioni = prediction
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "PREDICTION"
+        case 1:
+            return "STATISTIC"
+        default:
+            return ""
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return statisticaLista.count
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return statisticaLista.count
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cella = Statistiche.dequeueReusableCell(withIdentifier: "StatisticCell") as! StatisticaTableViewCell
-        let contenutoCella = statisticaLista[indexPath.row]
         
-//        cella.TipoStatistica.text = contenutoCella.type
-//        cella.ValoreTeam1.text = contenutoCella.home
-//        cella.ValoreTeam2.text = contenutoCella.away
-        cella.contenuto = contenutoCella
-        
-        return cella
+        if indexPath.section == 0 {
+            let cella = Statistiche.dequeueReusableCell(withIdentifier: "PrevisionCell") as! PredictionTableViewCell
+            cella.predizione = previsioni
+            return cella
+        } else {
+            let cella = Statistiche.dequeueReusableCell(withIdentifier: "StatisticCell") as! StatisticaTableViewCell
+            let contenutoCella = statisticaLista[indexPath.row]
+            cella.contenuto = contenutoCella
+            return cella
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        let dimensioni: CGFloat = indexPath.section == 0 ? 80 : 33
+        return dimensioni
     }
 
 }

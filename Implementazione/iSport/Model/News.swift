@@ -8,11 +8,11 @@
 
 import UIKit
 
-class News: NSObject {
-    var author: String?
-    var title: String?
-    var descriptionContent: String?
-    var url: String?
-    var urlToImage: String?
-
-}
+//class News: NSObject {
+//    var author: String?
+//    var title: String?
+//    var descriptionContent: String?
+//    var url: String?
+//    var urlToImage: String?
+//
+//}

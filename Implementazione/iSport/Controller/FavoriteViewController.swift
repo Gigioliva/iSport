@@ -1,42 +1,42 @@
 //
-//  ViewController.swift
+//  FavoriteViewController.swift
 //  iSport
 //
-//  Created by Gianluigi Oliva on 13/01/2019.
+//  Created by Gianluigi Oliva on 03/02/2019.
 //  Copyright © 2019 Gianluigi Oliva. All rights reserved.
 //
 
 import UIKit
-import WebKit
 
-class NewsView: UIViewController, UITableViewDelegate, UITableViewDataSource, NewsDelegate {
+class FavoriteViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NewsDelegate {
     
-    @IBOutlet weak var ListaNews: UITableView!
-    
-    var listaArticoli = [Article]()
+    @IBOutlet weak var ListaFavoriti: UITableView!
+    var ListaNews = [News]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ListaNews.delegate = self
-        ListaNews.dataSource = self
-        ListaNews.rowHeight = 130
-        NewsAPI.RequestAPI(callback: aggiornaTableView)
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        reloadTable()
+        ListaFavoriti.delegate = self
+        ListaFavoriti.dataSource = self
+        ListaFavoriti.rowHeight = 130
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        reloadTable()
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listaArticoli.count
+        return ListaNews.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cella = ListaNews.dequeueReusableCell(withIdentifier: "CellNews") as! CellNews
-        cella.contenuto = listaArticoli[indexPath.row]
+        let cella = ListaFavoriti.dequeueReusableCell(withIdentifier: "CellNews") as! CellNews
+        let articolo = ListaNews[indexPath.row]
+        let news = Article(author: "", title: articolo.title, description: "", url: articolo.url, urlToImage: articolo.urlToImage, publishedAt: "")
+        cella.contenuto = news
         cella.delegate = self
         cella.selectionStyle = .none
-        if APICoreData.GetNewsByURL(url: listaArticoli[indexPath.row].url!) != nil {
+        if APICoreData.GetNewsByURL(url: news.url!) != nil {
             cella.Favorite.image = UIImage(named: "bookmarkFull")
         } else {
             cella.Favorite.image = UIImage(named: "bookmark")
@@ -48,7 +48,7 @@ class NewsView: UIViewController, UITableViewDelegate, UITableViewDataSource, Ne
         let window = UIApplication.shared.keyWindow!
         let WebView = WebViewNews()
         window.addSubview(WebView)
-        WebView.urlNews = listaArticoli[indexPath.row].url!
+        WebView.urlNews = ListaNews[indexPath.row].url!
         
         WebView.translatesAutoresizingMaskIntoConstraints = false
         WebView.topAnchorAnimated = WebView.topAnchor.constraint(equalTo: WebView.superview!.safeAreaLayoutGuide.topAnchor, constant: 0)
@@ -59,7 +59,7 @@ class NewsView: UIViewController, UITableViewDelegate, UITableViewDataSource, Ne
         WebView.bottomAnchor.constraint(equalTo: WebView.superview!.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
         WebView.leadingAnchor.constraint(equalTo: WebView.superview!.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
         WebView.trailingAnchor.constraint(equalTo: WebView.superview!.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
-
+        
         WebView.superview!.layoutIfNeeded()
         
         WebView.constraintHeight!.isActive=false
@@ -70,21 +70,9 @@ class NewsView: UIViewController, UITableViewDelegate, UITableViewDataSource, Ne
     }
 
     
-    func aggiornaTableView(){
-        listaArticoli = NewsAPI.listaArticoli
-        ListaNews.reloadData()
-    }
-    
-    @IBAction func OpenMenu(_ sender: Any) {
-        sideMenuController?.revealMenu()
-    }
-    
-    @IBAction func ShowFavorite(_ sender: Any) {
-        performSegue(withIdentifier: "ShowPreferiti", sender: nil)
-    }
-    
     func reloadTable() {
-        self.ListaNews.reloadData()
+        ListaNews = APICoreData.GetAllNews()
+        self.ListaFavoriti.reloadData()
     }
     
 }
