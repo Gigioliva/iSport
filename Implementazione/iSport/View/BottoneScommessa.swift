@@ -10,7 +10,7 @@ import UIKit
 
 class BottoneScommessa: UIView {
 
-    let bottoneScommessa = UIButton()
+    let bottoneScommessa = UILabel()
     let quotaLabel = UILabel()
     
     var premuto: Bool = false {
@@ -36,15 +36,18 @@ class BottoneScommessa: UIView {
     }
     
     func commonInit(){
+        self.layer.cornerRadius = 3
+        self.clipsToBounds = true
         self.addSubview(bottoneScommessa)
         self.addSubview(quotaLabel)
         
-        bottoneScommessa.setTitle("1", for: .normal)
+        bottoneScommessa.text = "1"
         quotaLabel.text = "1.25"
         bottoneScommessa.backgroundColor = UIColor.rgb(red: 55, green: 65, blue: 74)
-        bottoneScommessa.titleLabel?.textColor = UIColor.white
+        bottoneScommessa.textColor = UIColor.white
         quotaLabel.textAlignment = .center
-        bottoneScommessa.titleLabel?.textAlignment = .center
+        bottoneScommessa.textAlignment = .center
+        quotaLabel.backgroundColor = UIColor.rgb(red: 224, green: 228, blue: 232)
         
         self.translatesAutoresizingMaskIntoConstraints = false
         bottoneScommessa.translatesAutoresizingMaskIntoConstraints = false

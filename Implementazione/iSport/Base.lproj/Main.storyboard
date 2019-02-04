@@ -20,11 +20,11 @@
             <objects>
                 <viewController id="uec-1L-9jv" customClass="RisultatiLive" customModule="iSport" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IXx-bM-eaN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QX4-1O-5x2">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ResultLive" id="49l-tz-4OY" customClass="RisultatoTableViewCell" customModule="iSport" customModuleProvider="target">
@@ -171,11 +171,11 @@
             <objects>
                 <viewController id="8Kt-cA-PkZ" customClass="NewsView" customModule="iSport" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sgS-fi-LV3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AXc-cP-aBy">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellNews" rowHeight="150" id="8YM-N6-uL0" customClass="CellNews" customModule="iSport" customModuleProvider="target">
@@ -486,7 +486,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.26280254125595093" green="0.27443215250968933" blue="0.27843230962753296" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.082352941176470587" green="0.10588235294117647" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="sd4-2n-sax" firstAttribute="top" secondItem="dvW-mC-5ZP" secondAttribute="top" id="FJJ-kk-m5z"/>
                             <constraint firstItem="dvW-mC-5ZP" firstAttribute="bottom" secondItem="sd4-2n-sax" secondAttribute="bottom" id="KNI-2v-ZVJ"/>
@@ -529,10 +529,10 @@
             <objects>
                 <navigationController storyboardIdentifier="ViewLive" automaticallyAdjustsScrollViewInsets="NO" id="8Nc-XC-A5Z" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Pss-hd-S5a">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="Pss-hd-S5a">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.14509803921568626" green="0.16078431372549018" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.082352941176470587" green="0.10588235294117647" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -548,11 +548,11 @@
             <objects>
                 <viewController id="QQ9-1A-hxF" customClass="OddsViewController" customModule="iSport" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bs8-UA-dAh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I9w-Jo-H9k">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OddsCell" rowHeight="130" id="4Vt-xZ-COz" customClass="OddsTableViewCell" customModule="iSport" customModuleProvider="target">
@@ -563,41 +563,44 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="av1-Dr-3Eb">
-                                                    <rect key="frame" x="10" y="11" width="394" height="108"/>
+                                                    <rect key="frame" x="5" y="5" width="404" height="120"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data - Ora" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cR-Tf-AUS">
                                                             <rect key="frame" x="5" y="2" width="51" height="12"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team1 - Team2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PuE-Tu-wxx">
                                                             <rect key="frame" x="5" y="19" width="123" height="20.5"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xgg-cT-oWq">
-                                                            <rect key="frame" x="5" y="44.5" width="384" height="58.5"/>
+                                                            <rect key="frame" x="5" y="44.5" width="394" height="70.5"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIk-Yi-MLh" customClass="BottoneScommessa" customModule="iSport" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="4.5" width="118" height="50"/>
+                                                                    <rect key="frame" x="0.0" y="10.5" width="121.5" height="50"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <viewLayoutGuide key="safeArea" id="AiL-0w-vj9"/>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ATd-pP-GsO" customClass="BottoneScommessa" customModule="iSport" customModuleProvider="target">
-                                                                    <rect key="frame" x="133" y="4.5" width="118" height="50"/>
+                                                                    <rect key="frame" x="136.5" y="10.5" width="121" height="50"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <viewLayoutGuide key="safeArea" id="kfz-S1-VBe"/>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xY-ei-tOZ" customClass="BottoneScommessa" customModule="iSport" customModuleProvider="target">
-                                                                    <rect key="frame" x="266" y="4.5" width="118" height="50"/>
+                                                                    <rect key="frame" x="272.5" y="10.5" width="121.5" height="50"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </view>
                                                             </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </stackView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.85113769770000003" green="0.87014490369999997" blue="0.89412182569999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="PuE-Tu-wxx" firstAttribute="leading" secondItem="av1-Dr-3Eb" secondAttribute="leading" constant="5" id="661-gA-Qs2"/>
                                                         <constraint firstAttribute="bottom" secondItem="xgg-cT-oWq" secondAttribute="bottom" constant="5" id="IO3-ER-O7m"/>
@@ -612,10 +615,10 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="av1-Dr-3Eb" firstAttribute="leading" secondItem="Xza-5M-ZrW" secondAttribute="leading" constant="10" id="Gua-bo-Cnk"/>
-                                                <constraint firstAttribute="trailing" secondItem="av1-Dr-3Eb" secondAttribute="trailing" constant="10" id="LOc-Za-ama"/>
-                                                <constraint firstItem="av1-Dr-3Eb" firstAttribute="top" secondItem="Xza-5M-ZrW" secondAttribute="topMargin" id="fSI-F7-s3C"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="av1-Dr-3Eb" secondAttribute="bottom" id="qVM-8a-lCP"/>
+                                                <constraint firstItem="av1-Dr-3Eb" firstAttribute="leading" secondItem="Xza-5M-ZrW" secondAttribute="leading" constant="5" id="Gua-bo-Cnk"/>
+                                                <constraint firstAttribute="trailing" secondItem="av1-Dr-3Eb" secondAttribute="trailing" constant="5" id="LOc-Za-ama"/>
+                                                <constraint firstItem="av1-Dr-3Eb" firstAttribute="top" secondItem="Xza-5M-ZrW" secondAttribute="top" constant="5" id="fSI-F7-s3C"/>
+                                                <constraint firstAttribute="bottom" secondItem="av1-Dr-3Eb" secondAttribute="bottom" constant="5" id="qVM-8a-lCP"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -625,12 +628,13 @@
                                             <outlet property="BottoneX" destination="ATd-pP-GsO" id="veP-W0-tAH"/>
                                             <outlet property="DataOra" destination="2cR-Tf-AUS" id="Qmv-yk-gPu"/>
                                             <outlet property="Squadre" destination="PuE-Tu-wxx" id="S8R-on-8HL"/>
+                                            <outlet property="ViewContainer" destination="av1-Dr-3Eb" id="cUi-ro-kli"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.44750720259999999" green="0.50887107850000002" blue="0.55687129499999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.8784313725490196" green="0.89411764705882346" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Lqs-JO-mJo" firstAttribute="trailing" secondItem="I9w-Jo-H9k" secondAttribute="trailing" id="KX0-61-cIe"/>
                             <constraint firstItem="Lqs-JO-mJo" firstAttribute="bottom" secondItem="I9w-Jo-H9k" secondAttribute="bottom" id="VAO-Jv-4bG"/>
@@ -641,7 +645,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZJp-Oy-H35">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="5dr-QG-pg5">
-                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="ShowMenu:" destination="QQ9-1A-hxF" id="bWn-i0-ep8"/>
                             </connections>
@@ -666,11 +670,11 @@
             <objects>
                 <viewController id="4rp-v4-FN4" customClass="CarrelloViewController" customModule="iSport" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HEn-ub-0rv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Tg-yw-k5v">
-                                <rect key="frame" x="0.0" y="712" width="414" height="150"/>
+                                <rect key="frame" x="0.0" y="624" width="414" height="150"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0wK-u5-7kR">
                                         <rect key="frame" x="10" y="5" width="394" height="140"/>
@@ -697,7 +701,7 @@
                                                         </connections>
                                                     </textField>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="MxM-6v-qkm" secondAttribute="trailing" id="Rrb-5W-98F"/>
                                                     <constraint firstItem="MxM-6v-qkm" firstAttribute="leading" secondItem="OEY-lS-3CX" secondAttribute="trailing" id="lIu-Ob-htM"/>
@@ -725,7 +729,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="Hbl-Qa-wpF" firstAttribute="centerY" secondItem="g0y-m1-x3f" secondAttribute="centerY" id="0bo-AA-cho"/>
                                                     <constraint firstItem="2EY-64-i2w" firstAttribute="centerY" secondItem="g0y-m1-x3f" secondAttribute="centerY" id="9sB-ay-dOL"/>
@@ -753,7 +757,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="F2V-yM-Ewb" firstAttribute="centerY" secondItem="CbP-Ez-ktS" secondAttribute="centerY" id="C38-7G-BtN"/>
                                                     <constraint firstItem="F2V-yM-Ewb" firstAttribute="leading" secondItem="CbP-Ez-ktS" secondAttribute="leading" id="Yzk-KO-ovb"/>
@@ -763,6 +767,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -775,7 +780,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nfw-sE-3VZ">
-                                <rect key="frame" x="0.0" y="88" width="414" height="624"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="624"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CarrelloCell" rowHeight="60" id="yIl-LP-eL2" customClass="CarrelloTableViewCell" customModule="iSport" customModuleProvider="target">
@@ -785,21 +790,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xj0-A0-InF">
-                                                    <rect key="frame" x="10" y="11" width="394" height="38"/>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xj0-A0-InF">
+                                                    <rect key="frame" x="5" y="5" width="404" height="50"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lRE-45-gEc">
-                                                            <rect key="frame" x="10" y="0.0" width="384" height="38"/>
+                                                            <rect key="frame" x="5" y="5" width="394" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team1 - Team2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmr-nu-gLW">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="284" height="38"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="294" height="40"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuV-bj-kFm" customClass="BottoneScommessa" customModule="iSport" customModuleProvider="target">
-                                                                    <rect key="frame" x="284" y="0.0" width="100" height="38"/>
+                                                                    <rect key="frame" x="294" y="0.0" width="100" height="40"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="100" id="7bd-AC-TSf"/>
@@ -812,33 +817,34 @@
                                                             </constraints>
                                                         </stackView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.85113769770000003" green="0.87014490369999997" blue="0.89412182569999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="lRE-45-gEc" secondAttribute="bottom" id="Y9h-pP-Uef"/>
-                                                        <constraint firstAttribute="trailing" secondItem="lRE-45-gEc" secondAttribute="trailing" id="aPz-xC-g17"/>
-                                                        <constraint firstItem="lRE-45-gEc" firstAttribute="leading" secondItem="Xj0-A0-InF" secondAttribute="leading" constant="10" id="l04-1Q-5pq"/>
-                                                        <constraint firstItem="lRE-45-gEc" firstAttribute="top" secondItem="Xj0-A0-InF" secondAttribute="top" id="nyP-4a-c7O"/>
+                                                        <constraint firstAttribute="bottom" secondItem="lRE-45-gEc" secondAttribute="bottom" constant="5" id="Y9h-pP-Uef"/>
+                                                        <constraint firstAttribute="trailing" secondItem="lRE-45-gEc" secondAttribute="trailing" constant="5" id="aPz-xC-g17"/>
+                                                        <constraint firstItem="lRE-45-gEc" firstAttribute="leading" secondItem="Xj0-A0-InF" secondAttribute="leading" constant="5" id="l04-1Q-5pq"/>
+                                                        <constraint firstItem="lRE-45-gEc" firstAttribute="top" secondItem="Xj0-A0-InF" secondAttribute="top" constant="5" id="nyP-4a-c7O"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="Xj0-A0-InF" secondAttribute="trailing" constant="10" id="0yP-BZ-Pvr"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Xj0-A0-InF" secondAttribute="bottom" id="Kpw-b5-GTY"/>
-                                                <constraint firstItem="Xj0-A0-InF" firstAttribute="leading" secondItem="Kar-Z0-tZT" secondAttribute="leading" constant="10" id="ia4-50-rKb"/>
-                                                <constraint firstItem="Xj0-A0-InF" firstAttribute="top" secondItem="Kar-Z0-tZT" secondAttribute="topMargin" id="yai-px-OdL"/>
+                                                <constraint firstAttribute="trailing" secondItem="Xj0-A0-InF" secondAttribute="trailing" constant="5" id="0yP-BZ-Pvr"/>
+                                                <constraint firstAttribute="bottom" secondItem="Xj0-A0-InF" secondAttribute="bottom" constant="5" id="Kpw-b5-GTY"/>
+                                                <constraint firstItem="Xj0-A0-InF" firstAttribute="leading" secondItem="Kar-Z0-tZT" secondAttribute="leading" constant="5" id="ia4-50-rKb"/>
+                                                <constraint firstItem="Xj0-A0-InF" firstAttribute="top" secondItem="Kar-Z0-tZT" secondAttribute="top" constant="5" id="yai-px-OdL"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="Puntata" destination="fuV-bj-kFm" id="5PX-5V-Bhc"/>
                                             <outlet property="Squadre" destination="Cmr-nu-gLW" id="olL-G2-sXx"/>
+                                            <outlet property="ViewContainer" destination="Xj0-A0-InF" id="G6v-gH-AdD"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.44750720259999999" green="0.50887107850000002" blue="0.55687129499999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.8784313725490196" green="0.89411764705882346" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="8Tg-yw-k5v" firstAttribute="leading" secondItem="wVt-2f-R2S" secondAttribute="leading" id="2QX-He-i8b"/>
                             <constraint firstItem="Nfw-sE-3VZ" firstAttribute="leading" secondItem="wVt-2f-R2S" secondAttribute="leading" id="5ab-29-3VC"/>
@@ -867,14 +873,14 @@
             <objects>
                 <viewController id="wYR-OS-4MO" customClass="StatisticaView" customModule="iSport" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eUL-aR-iLr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Nud-J5-41b">
-                                <rect key="frame" x="0.0" y="88" width="414" height="150"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                             </imageView>
                             <visualEffectView opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZSz-ea-D7F">
-                                <rect key="frame" x="0.0" y="88" width="414" height="150"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hHx-x5-Wuq">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -882,7 +888,7 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qUz-6l-zyh">
-                                <rect key="frame" x="0.0" y="88" width="414" height="150"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYA-7x-3Z8">
                                         <rect key="frame" x="122.5" y="86" width="47" height="18"/>
@@ -959,7 +965,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N88-TN-ZeK" userLabel="Dettagli">
-                                <rect key="frame" x="0.0" y="288" width="414" height="574"/>
+                                <rect key="frame" x="0.0" y="200" width="414" height="574"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GoalsCell" id="dy7-iK-IxT" customClass="GoalsTableViewCell" customModule="iSport" customModuleProvider="target">
@@ -1486,7 +1492,7 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Xn6-B7-yh6">
-                                <rect key="frame" x="0.0" y="238" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="150" width="414" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIp-to-XJ3">
                                         <rect key="frame" x="0.0" y="0.0" width="103.5" height="50"/>
@@ -1574,9 +1580,10 @@
             <objects>
                 <navigationController storyboardIdentifier="ViewBet" automaticallyAdjustsScrollViewInsets="NO" id="dKn-Ez-Fli" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i8W-MP-8hI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="i8W-MP-8hI">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.082352941176470587" green="0.10588235294117647" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1592,10 +1599,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gkZ-d4-L4E" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="VNu-Zb-0Tv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="VNu-Zb-0Tv">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.14509803921568626" green="0.16078431372549018" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.082352941176470587" green="0.10588235294117647" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1611,14 +1618,14 @@
             <objects>
                 <viewController id="UVg-Di-sz2" customClass="ChatViewController" customModule="iSport" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y0e-W1-npL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chat1.png" translatesAutoresizingMaskIntoConstraints="NO" id="MqZ-Qn-ii4">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JBD-GH-hzy">
-                                <rect key="frame" x="0.0" y="88" width="414" height="721"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="721"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hKP-pJ-qqK">
                                     <size key="itemSize" width="50" height="50"/>
@@ -1629,10 +1636,10 @@
                                 <cells/>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZc-Cp-Gum">
-                                <rect key="frame" x="0.0" y="809" width="414" height="53"/>
+                                <rect key="frame" x="0.0" y="721" width="414" height="53"/>
                                 <subviews>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AYK-M5-tB4">
-                                        <rect key="frame" x="354" y="-1" width="60" height="44"/>
+                                        <rect key="frame" x="354" y="-6" width="60" height="49"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="0Wc-cN-UGd"/>
                                         </constraints>
@@ -1709,10 +1716,10 @@
             <objects>
                 <navigationController storyboardIdentifier="ViewChat" automaticallyAdjustsScrollViewInsets="NO" id="p0d-pe-NaQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="S96-0i-yCt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="S96-0i-yCt">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.14509803921568626" green="0.16078431372549018" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.082352941176470587" green="0.10588235294117647" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1728,11 +1735,11 @@
             <objects>
                 <viewController id="Pzv-eL-YPy" customClass="FavoriteViewController" customModule="iSport" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7NI-Gx-QkU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pjo-6k-vey">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellNews" rowHeight="150" id="NIV-DZ-JOf" customClass="CellNews" customModule="iSport" customModuleProvider="target">
@@ -1883,7 +1890,7 @@
         <image name="redcard" width="8.1599998474121094" height="12"/>
         <image name="send" width="24" height="24"/>
         <image name="share" width="24" height="24"/>
-        <image name="shopping-cart" width="48" height="48"/>
+        <image name="shopping-cart" width="24" height="24"/>
         <image name="statistic" width="418.90908813476562" height="418.90908813476562"/>
         <image name="text-lines" width="409.60000610351562" height="380.79998779296875"/>
         <image name="yellowcard" width="8.1599998474121094" height="12.239999771118164"/>

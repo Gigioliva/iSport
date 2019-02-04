@@ -12,6 +12,7 @@ class CarrelloTableViewCell: UITableViewCell {
 
     @IBOutlet weak var Squadre: UILabel!
     @IBOutlet weak var Puntata: BottoneScommessa!
+    @IBOutlet weak var ViewContainer: UIView!
     
 
 }

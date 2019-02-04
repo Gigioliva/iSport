@@ -20,8 +20,8 @@ class OddsViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableViewOdds.delegate = self
         tableViewOdds.dataSource = self
         
-        tableViewOdds.estimatedRowHeight = 130
-        tableViewOdds.rowHeight = UITableView.automaticDimension
+        tableViewOdds.estimatedRowHeight = 100
+//        tableViewOdds.rowHeight = UITableView.automaticDimension
         
         let giorno = "2019-01-12"
         RisultatiAPI.UpdateDatiPartite(giorno: giorno, callback: aggiornaTabella)
@@ -46,6 +46,8 @@ class OddsViewController: UIViewController, UITableViewDelegate, UITableViewData
         let scommesseCampionato = listaScommesse[listaCampionati[indexPath.section]]!
         let scommessa = scommesseCampionato[indexPath.row]
         cell.scommessa = scommessa
+        cell.selectionStyle = .none
+        cell.ViewContainer.layer.cornerRadius = 3
         return cell
     }
     
@@ -68,9 +70,18 @@ class OddsViewController: UIViewController, UITableViewDelegate, UITableViewData
                 return partita.leagueName == campioanto
             })
         }
+        
+        for campioanto in campionati{
+            self.listaScommesse[campioanto!]?.sort(by: { (scommessa1, scommessa2) -> Bool in
+                return scommessa1.matchTime! < scommessa2.matchTime!
+            })
+        }
+        
         self.listaCampionati = Array(self.listaScommesse.keys)
         
-        
+        self.listaCampionati.sort { (campionato1, campionato2) -> Bool in
+            return campionato1 < campionato2
+        }
         
         tableViewOdds.reloadData()
         

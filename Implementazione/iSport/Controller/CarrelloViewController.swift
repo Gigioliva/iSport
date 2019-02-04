@@ -33,7 +33,7 @@ class CarrelloViewController: UIViewController, UITableViewDataSource, UITableVi
         listaCarrello.dataSource = self
         
         listaCarrello.estimatedRowHeight = 60
-        listaCarrello.rowHeight = UITableView.automaticDimension
+//        listaCarrello.rowHeight = UITableView.automaticDimension
         listaCarrello.allowsSelection = false
         
         UpdateDati()
@@ -75,9 +75,9 @@ class CarrelloViewController: UIViewController, UITableViewDataSource, UITableVi
         let cella = listaCarrello.dequeueReusableCell(withIdentifier: "CarrelloCell", for: indexPath) as! CarrelloTableViewCell
         let scommessa = listaScommesse[indexPath.row]
         cella.Squadre.text = scommessa.homeName! + " - " + scommessa.awayName!
-        cella.Puntata.bottoneScommessa.setTitle(scommessa.puntata!, for: .normal)
+        cella.Puntata.bottoneScommessa.text = scommessa.puntata!
         cella.Puntata.quotaLabel.text = scommessa.quota
-        
+        cella.ViewContainer.layer.cornerRadius = 3
         return cella
     }
     

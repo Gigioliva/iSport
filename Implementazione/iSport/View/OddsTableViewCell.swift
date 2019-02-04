@@ -11,6 +11,7 @@ import CoreData
 
 class OddsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var ViewContainer: UIView!
     @IBOutlet weak var DataOra: UILabel!
     @IBOutlet weak var Squadre: UILabel!
     
@@ -26,9 +27,9 @@ class OddsTableViewCell: UITableViewCell {
             Bottone1.quotaLabel.text = scommessa!.odd1
             Bottone2.quotaLabel.text = scommessa!.odd2
             BottoneX.quotaLabel.text = scommessa!.oddX
-            Bottone1.bottoneScommessa.setTitle("1", for: .normal)
-            Bottone2.bottoneScommessa.setTitle("2", for: .normal)
-            BottoneX.bottoneScommessa.setTitle("X", for: .normal)
+            Bottone1.bottoneScommessa.text = "1"
+            Bottone2.bottoneScommessa.text = "2"
+            BottoneX.bottoneScommessa.text = "X"
         }
     }
 
@@ -44,9 +45,9 @@ class OddsTableViewCell: UITableViewCell {
     
     func AggiornaPulsanti() {
         if let puntata = APICoreData.GetPartitaById(matchId: (scommessa?.matchId)!){
-            Bottone1.premuto = puntata.puntata == Bottone1.bottoneScommessa.titleLabel!.text
-            Bottone2.premuto = puntata.puntata == Bottone2.bottoneScommessa.titleLabel!.text
-            BottoneX.premuto = puntata.puntata == BottoneX.bottoneScommessa.titleLabel!.text
+            Bottone1.premuto = puntata.puntata == Bottone1.bottoneScommessa.text
+            Bottone2.premuto = puntata.puntata == Bottone2.bottoneScommessa.text
+            BottoneX.premuto = puntata.puntata == BottoneX.bottoneScommessa.text
         } else {
             Bottone1.premuto = false
             Bottone2.premuto = false
@@ -61,7 +62,7 @@ class OddsTableViewCell: UITableViewCell {
     
     @objc func aggiungiAlCarrello(_ sender: UITapGestureRecognizer){
         let bottonePremuto = sender.view as! BottoneScommessa
-        APICoreData.AddPartita(scommessa: scommessa!, quota: bottonePremuto.quotaLabel.text!, puntata: (bottonePremuto.bottoneScommessa.titleLabel?.text)!)
+        APICoreData.AddPartita(scommessa: scommessa!, quota: bottonePremuto.quotaLabel.text!, puntata: (bottonePremuto.bottoneScommessa.text)!)
         AggiornaPulsanti()
     }
     
