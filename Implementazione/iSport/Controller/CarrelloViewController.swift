@@ -8,6 +8,9 @@
 
 import UIKit
 import CoreData
+import FirebaseAuth
+import FirebaseCore
+import FirebaseDatabase
 
 class CarrelloViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -132,4 +135,56 @@ class CarrelloViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
+    @IBAction func BuyTicket(_ sender: Any) {
+        let encoder = JSONEncoder()
+        var schedina = [Scommessa]()
+        for scommessa in listaScommesse {
+            schedina.append(Scommessa(awayName: scommessa.awayName!, homeNmae: scommessa.homeName!, matchId: scommessa.matchId!, puntata: scommessa.puntata!, quota: scommessa.quota!))
+        }
+        if schedina.count > 0{
+            if let user = Auth.auth().currentUser {
+                let database = Database.database().reference()
+                do{
+                    let schedinaFirebase: NSString
+                    try schedinaFirebase = NSString(data: encoder.encode(schedina), encoding: String.Encoding.utf8.rawValue) ?? "errore"
+                    database.child("Schedina").child(user.uid).childByAutoId().setValue(["ticket": schedinaFirebase, "importo": importo.text!, "vincita": vincitaPotenziale.text!])
+                    for scommessa in listaScommesse {
+                        APICoreData.DeletePartitaFromId(matchId: scommessa.matchId!)
+                    }
+                    ApriAlert(title: "Buy completed", message: "The purchase was completed successfully.")
+                    UpdateDati()
+                }catch {
+                    print("Errore Buy")
+                }
+            } else {
+                ApriAlert(title: "Not Logged In", message: "Please login to continue.")
+            }
+        } else {
+            ApriAlert(title: "Error", message: "You must insert at least one event.")
+        }
+        
+    }
+    
+    func ApriAlert (title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let OK = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+        alert.addAction(OK)
+        self.present(alert, animated: true, completion: nil)
+    }
+}
+
+
+
+struct Scommessa: Codable {
+    let awayName: String
+    let homeNmae: String
+    let matchId: String
+    let puntata: String
+    let quota: String
+}
+
+struct Ticket: Codable {
+    let ticket: [Scommessa]
+    let importo: String
+    let vincita: String
 }

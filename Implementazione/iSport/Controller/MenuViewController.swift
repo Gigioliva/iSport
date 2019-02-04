@@ -10,6 +10,7 @@ import UIKit
 import SideMenuSwift
 import FacebookLogin
 import FacebookCore
+import FirebaseAuth
 
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -101,8 +102,16 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
                     print(error)
                 case .cancelled:
                     print("User cancelled login.")
-                case .success( _, _, _):
+                case .success(let _, let _, let accessToken):
                     print("Logged in!")
+                    let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
+                    Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+                        if let error = error {
+                            print("Errore Log In Firebase \(error)")
+                            return
+                        }
+                        print("Accesso eseguito Firebase")
+                    }
                     self.reloadTable()
                 }
             }
@@ -115,9 +124,15 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     func ApriAlert (){
         let alert = UIAlertController(title: "Logout", message: "Are you sure you want to log out?", preferredStyle: UIAlertController.Style.alert)
         let OK = UIAlertAction(title: "OK", style: .default) { (action) in
-            let loginManager = LoginManager()
-            loginManager.logOut()
-            self.reloadTable()
+            do{
+                let loginManager = LoginManager()
+                let firebaseManager = Auth.auth()
+                loginManager.logOut()
+                try firebaseManager.signOut()
+                self.reloadTable()
+            }catch {
+                print("errore logout")
+            }
         }
         let Cancel = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
         alert.addAction(OK)

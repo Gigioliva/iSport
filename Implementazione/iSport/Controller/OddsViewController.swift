@@ -92,6 +92,10 @@ class OddsViewController: UIViewController, UITableViewDelegate, UITableViewData
         performSegue(withIdentifier: "CarrelloView", sender: nil)
     }
     
+    @IBAction func ShowCronologia(_ sender: Any) {
+        performSegue(withIdentifier: "CronologiaBuy", sender: nil)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tableViewOdds.reloadData()

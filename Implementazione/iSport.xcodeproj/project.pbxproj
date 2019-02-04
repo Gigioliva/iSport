@@ -38,6 +38,9 @@
 		239A117721F38DA4006B90CA /* WebViewNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239A117621F38DA4006B90CA /* WebViewNews.swift */; };
 		239A117921F3AB69006B90CA /* StatisticaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239A117821F3AB69006B90CA /* StatisticaTableViewCell.swift */; };
 		239A117B21F3AC16006B90CA /* StatisticaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239A117A21F3AC16006B90CA /* StatisticaView.swift */; };
+		23A10BB222088F0A00EB6CA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 23A10BB122088F0A00EB6CA1 /* GoogleService-Info.plist */; };
+		23A10BB42208ABBA00EB6CA1 /* CronologiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A10BB32208ABBA00EB6CA1 /* CronologiaViewController.swift */; };
+		23A10BB62208B75100EB6CA1 /* TicketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A10BB52208B75100EB6CA1 /* TicketTableViewCell.swift */; };
 		23A6C8DD21F5D47600F732DC /* FormazioneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A6C8DC21F5D47600F732DC /* FormazioneTableViewCell.swift */; };
 		23A6C8DF21F5DA3C00F732DC /* GoalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A6C8DE21F5DA3C00F732DC /* GoalsTableViewCell.swift */; };
 		23A6C8E121F5DABD00F732DC /* GoalsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A6C8E021F5DABD00F732DC /* GoalsTableViewDelegate.swift */; };
@@ -114,6 +117,9 @@
 		239A117621F38DA4006B90CA /* WebViewNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebViewNews.swift; path = iSport/View/WebViewNews.swift; sourceTree = SOURCE_ROOT; };
 		239A117821F3AB69006B90CA /* StatisticaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatisticaTableViewCell.swift; path = iSport/View/StatisticaTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		239A117A21F3AC16006B90CA /* StatisticaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatisticaView.swift; path = iSport/Controller/StatisticaView.swift; sourceTree = SOURCE_ROOT; };
+		23A10BB122088F0A00EB6CA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		23A10BB32208ABBA00EB6CA1 /* CronologiaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CronologiaViewController.swift; sourceTree = "<group>"; };
+		23A10BB52208B75100EB6CA1 /* TicketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTableViewCell.swift; sourceTree = "<group>"; };
 		23A6C8DC21F5D47600F732DC /* FormazioneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FormazioneTableViewCell.swift; path = iSport/View/FormazioneTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		23A6C8DE21F5DA3C00F732DC /* GoalsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoalsTableViewCell.swift; path = iSport/View/GoalsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		23A6C8E021F5DABD00F732DC /* GoalsTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoalsTableViewDelegate.swift; path = iSport/Controller/GoalsTableViewDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -240,6 +246,7 @@
 				235F45C82204745400A6B708 /* LoginTableViewCell.swift */,
 				238D2A9622061090007AC7A8 /* VerticallyCenteredTextView.swift */,
 				234598552207066600584C7B /* PredictionTableViewCell.swift */,
+				23A10BB52208B75100EB6CA1 /* TicketTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -259,6 +266,7 @@
 				233E17B82202395D00BE8B33 /* MenuViewController.swift */,
 				23524AAE22036C49000E9B53 /* ChatViewController.swift */,
 				234598532206F79100584C7B /* FavoriteViewController.swift */,
+				23A10BB32208ABBA00EB6CA1 /* CronologiaViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -324,6 +332,7 @@
 				23EEE73021EB978400DE746F /* AppDelegate.swift */,
 				23EEE73421EB978400DE746F /* Main.storyboard */,
 				23D1201B21F635A300F375EC /* Assets.xcassets */,
+				23A10BB122088F0A00EB6CA1 /* GoogleService-Info.plist */,
 				23EEE73C21EB978500DE746F /* LaunchScreen.storyboard */,
 				23EEE73F21EB978500DE746F /* Info.plist */,
 				23EEE73721EB978400DE746F /* iSport.xcdatamodeld */,
@@ -464,6 +473,7 @@
 				238D2A9E2206141D007AC7A8 /* caht3.jpg in Resources */,
 				23106679220210C9004F053A /* Hard Sports.ttf in Resources */,
 				23D1201C21F635A400F375EC /* Assets.xcassets in Resources */,
+				23A10BB222088F0A00EB6CA1 /* GoogleService-Info.plist in Resources */,
 				238D2AA122061426007AC7A8 /* chat1.png in Resources */,
 				23EEE73621EB978400DE746F /* Main.storyboard in Resources */,
 			);
@@ -524,13 +534,17 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GTProgressBar/GTProgressBar.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/MessageInputBar/MessageInputBar.framework",
 				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Scaledrone/Scaledrone.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenuSwift/SideMenuSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/UICircularProgressRing/UICircularProgressRing.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -543,13 +557,17 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTProgressBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageInputBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Scaledrone.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenuSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICircularProgressRing.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -622,6 +640,7 @@
 				23A6C8DD21F5D47600F732DC /* FormazioneTableViewCell.swift in Sources */,
 				2346C90521ECF2FF00A18CC2 /* CustomImage.swift in Sources */,
 				23EEE73921EB978400DE746F /* iSport.xcdatamodeld in Sources */,
+				23A10BB42208ABBA00EB6CA1 /* CronologiaViewController.swift in Sources */,
 				23FC320421F8E29B00B61E44 /* CarrelloTableViewCell.swift in Sources */,
 				2346C91321ED1C5500A18CC2 /* News.swift in Sources */,
 				233D2A0021F71D7200968469 /* RisultatiPartite.swift in Sources */,
@@ -631,6 +650,7 @@
 				23FC320621F8EED600B61E44 /* APICoreData.swift in Sources */,
 				239A117721F38DA4006B90CA /* WebViewNews.swift in Sources */,
 				23D1201821F628E900F375EC /* CardsTableViewDelegate.swift in Sources */,
+				23A10BB62208B75100EB6CA1 /* TicketTableViewCell.swift in Sources */,
 				234598542206F79100584C7B /* FavoriteViewController.swift in Sources */,
 				23FC320221F8DC8400B61E44 /* CarrelloViewController.swift in Sources */,
 				23524AAF22036C49000E9B53 /* ChatViewController.swift in Sources */,

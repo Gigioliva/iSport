@@ -41,6 +41,7 @@ class APICoreData: NSObject {
                     contesto.delete(result)
                 }
             }
+            try contesto.save()
         } catch {
             print ("Errore")
         }

@@ -41,7 +41,7 @@ class WebViewNews: UIView {
         
         let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 50))
         self.addSubview(navBar)
-        navBar.barTintColor = UIColor.rgb(red: 67, green: 70, blue: 71)
+        navBar.barTintColor = UIColor.rgb(red: 21, green: 27, blue: 77)
         navBar.isTranslucent = false
         let barItem = UINavigationItem(title: "")
         dismissButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.dismissWebView))
