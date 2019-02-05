@@ -12,6 +12,13 @@
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 
+\usepackage{xcolor}
+\usepackage{listings}
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+
 \lstset{frame=tb,
 	language=Java,
 	aboveskip=3mm,
@@ -27,6 +34,26 @@
 	breaklines=false,
 	breakatwhitespace=true,
 	tabsize=3
+}
+
+\lstdefinestyle{CStyle}{
+	backgroundcolor=\color{backgroundColour},   
+	commentstyle=\color{mGreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{mGray},
+	stringstyle=\color{mPurple},
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2,
+	language=C
 }
 
 
@@ -68,7 +95,7 @@
 \section{Purpose}
 The purpose of this document is to describe the design and prototyping phases used for the realization of the “iSport” mobile application. In detail, the main components, features and user experience will be discussed.
 
-The main aim of iSport application is visualizing information and data related to the sport field. In particular, we will focus on the most relevant daily news, also showing a section with all football final scores.
+The main aim of iSport application is visualizing information and data related to the sport field. In particular, we will focus on the most relevant daily news, also showing a section with all football final scores. Inoltre per favorire la creazione di una comunità di discussione l'applicazione fornirà un sistema di live chat attraverso cui scambiarsi pareri.
 
 This project is the result of the  implementation of the knowledge acquired during the course ”Design and Implementation of Mobile Applications” provided by the Milan Polytechnic.
 
@@ -85,7 +112,8 @@ This document is produced for those who develop, evaluate and use iSport mobile 
 \subsection*{Definitions}
 \begin{itemize}
 	\item \textbf{Platform}: The application as a whole.
-	\item \textbf{User}: An end user who will use the application
+	\item \textbf{Guest}: A person who can view public contents
+	\item \textbf{User}: A guest who already performed the login operation successfully.
 	\item \textbf{Match}: A match between two teams that has already occurred or is in progress
 	\item \textbf{Framework}: Reusable set of libraries or classes for a software system.
 	\item \textbf{News}: A news related to the world of sport present in some journalism
@@ -116,10 +144,12 @@ In particular, the application will be divided into three screens:
 	\item \textbf{News}
 	\item \textbf{Live}
 	\item \textbf{Bet}
+	\item \textbf{Chat}
 \end{itemize}
 In the ”News” section there will be the daily sport news displayed with a preview image and a small description. Moreover, by pressing on the single news you can read the complete article.\\
 In the ”Live” section there will be all current matches with the final scores if already completed or the current one if still in progress. Pressing on the single game, the user will consult all the related information such as the markers and goal time, cards, training and statistics.\\
-In the ”Bet” section there will be the shares related to the daily football matches. By pressing on the single one the user will bet on the winning game composing a ticket; once the process is completed the application will calculate the potential winnings based the bet amount.
+In the ”Bet” section there will be the shares related to the daily football matches. By pressing on the single one the user will bet on the winning game composing a ticket; once the process is completed the application will calculate the potential winnings based the bet amount.\\
+Nella sezione "Chat" ci si collegherà ad una room globale in cui poter parlare con altri utenti che stanno utilizzando l'applicazione per scambiarsi commenti e pareri.
 
 
 \section{Framework}
@@ -138,6 +168,10 @@ The product provides to users a simple and user-friendly interface to:
 	\item Display game share 
 	\item Compose your ticket
 	\item Display the potential winnings of the ticket
+	\item Condividere delle notizie su Facebook
+	\item Salvare delle notizie tra i preferiti
+	\item Chattare con altri utenti
+	\item Esegure l'accesso
 \end{itemize}
 \section{Non Functional Requirements}
 The application must be able to:
@@ -173,7 +207,28 @@ Since the application receives all the necessary data from external services thr
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.2\textwidth]{images/DatiSchedina}
+	\includegraphics[width=0.2\textwidth]{images/DatiNews}
 \end{figure}
+Per permettere l'acquisto di schedine è stato usato un Database online utilizzando la piattaforma di Firebase. Il modello E/R utilizzato per quest'ultimo è il seguente:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{images/ER.png}
+\end{figure}
+\newpage
+Per garantire la privacy di ogni utente, l'accesso al Database è regolato mediante le seguenti rules:
+\begin{lstlisting}[style=CStyle]
+{
+	"rules": {
+		"Schedina": {
+			"$uid": {
+				".read": "$uid === auth.uid",
+				".write": "$uid === auth.uid"
+			}
+		}
+	}
+}
+\end{lstlisting}
+
 
 \section{Client}
 For the implementation of the application we have chosen a mobile back-end, that is a client architecture.  This choice was made mainly because the application does not interface with other users and because for various services it uses third-party APIs. Communication with third-party services is based on HTTPS REST requests, in particular through GET requests.\\
@@ -189,19 +244,133 @@ This section describes how actors can interact with iSport in order to use all t
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/ViewNews}
+	\caption{Use case relativo alla visualizzazione e manipolazione delle notizie}
 \end{figure}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/ViewLive}
+	\caption{Use case relativo alla visualizzazione e manipolazione dei risultati}
 \end{figure}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/ViewBet}
+	\caption{Use case relativo alla visualizzazione e manipolazione delle quote}
 \end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{images/Chat}
+	\caption{Use case del servizio chat}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{images/Login}
+	\caption{Use case per l'esecuzione del Login}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{images/Share}
+	\caption{Use case relativo condivisione di notizie}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{images/Buy}
+	\caption{Use case relativo all'acquisto di schedine}
+\end{figure}
+\subsection*{Login}
+\begin{tabular}{|c|p{0.8\textwidth}|}
+	\hline
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Login\\
+	\hline
+	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & Guest \\
+	\hline
+	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & Guest with login credentials\\
+	\hline
+	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  1, 2\\
+	\hline
+	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
+		\item L'utente apre l'applicazione
+		\item L'utente preme sulla tab "Login" del "Side Menu"
+		\item L'utente viene rimandato sul sito di Facebook per l'inserimento delle credenziali
+		\item L'applicazione effettua il login tramite Facebook
+		\item L'applicazione effettua il login a Firebase usando l'account di Facebook
+	\end{itemize}\\
+	\hline
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & Actor becomes User \\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete. L'utente non ha un account Facebook. \\ \hline	
+\end{tabular}
+\newpage
+\subsection*{Logout}
+\begin{tabular}{|c|p{0.8\textwidth}|}
+	\hline
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Logout\\
+	\hline
+	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & User \\
+	\hline
+	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & Actor is logged in\\
+	\hline
+	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  1, 2\\
+	\hline
+	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
+		\item L'utente preme sulla tab "Logout" del "Side Menu"
+		\item L'applicazione effettua il logout da Facebook
+		\item L'applicazione effettua il logout da Firebase
+	\end{itemize}\\
+	\hline
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & Actor is logged out and becomes Guest \\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete. \\ \hline	
+\end{tabular}
+\newpage
 \subsection*{Visualizzare Notizie}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Visualizzare Notizie\\
+	\hline
+	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & Guest \\
+	\hline
+	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore ha scaricato l'applicazione\\
+	\hline
+	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  1, 2\\
+	\hline
+	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
+		\item L'utente apre l'applicazione
+		\item L'utente preme sulla tab "News" del "Side Menu"
+		\item L'applicazione fornisce un elenco delle notizie principali
+		\item L'utente preme sull'articolo di cui vuole visualizzare la notizia completa
+		\item L'utente preme il tasto "Done" per terminare la lettura
+	\end{itemize}\\
+	\hline
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente ha letto la notizia di interesse. \\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere gli articoli e quindi non può mostrarle. L'articolo è stato rimosso dal sito di origine, ma non nel database del servizio terzo \\ \hline	
+\end{tabular}
+\newpage
+\subsection*{Condividere Notizie}
+\begin{tabular}{|c|p{0.8\textwidth}|}
+	\hline
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Condividere Notizie\\
+	\hline
+	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & User \\
+	\hline
+	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore si è autenticato correttamente\\
+	\hline
+	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  1, 2\\
+	\hline
+	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
+		\item L'utente apre l'applicazione
+		\item L'utente preme sulla tab "News" del "Side Menu"
+		\item L'applicazione fornisce un elenco delle notizie principali
+		\item L'utente preme il simbolo di "Share" della notizia che vuole condividere
+		\item L'utente compone l'eventuale messaggio da allegare nel post
+		\item L'utente preme il tasto "Pubblica" per terminare la condivisione
+	\end{itemize}\\
+	\hline
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente ha condiviso su Facebook la notizia di interesse. \\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere gli articoli e quindi non può mostrarle. L'articolo è stato rimosso dal sito di origine, ma non nel database del servizio terzo. La connessione è debole e l'applicazione non riesce a mandare i dati per la condivisione. \\ \hline	
+\end{tabular}
+\newpage
+\subsection*{Salvare Notizie}
+\begin{tabular}{|c|p{0.8\textwidth}|}
+	\hline
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Salvare Notizie\\
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & User \\
 	\hline
@@ -211,22 +380,44 @@ This section describes how actors can interact with iSport in order to use all t
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
 		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "News"
+		\item L'utente preme sulla tab "News" del "Side Menu"
 		\item L'applicazione fornisce un elenco delle notizie principali
-		\item L'utente preme sull'articolo di cui vuole visualizzare la notizia completa
-		\item L'utente preme il tasto "Done" per terminare la lettura
+		\item L'utente preme il simbolo di "Elenco" della notizia che vuole memorizzare
+		\item L'applicazione memorizza le informazioni necessarie nel database locale
 	\end{itemize}\\
 	\hline
-	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente ha letto la notizia di interesse. \\\hline
-	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere gli articoli e quindi non può mostrarle. L'articolo è stato rimosso dal sito di origine, ma non nel database del servizio terzo \\ \hline	
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente ha memorizzato una notizia per una visione successiva. \\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere gli articoli e quindi non può mostrarle. L'articolo è stato rimosso dal sito di origine, ma non nel database del servizio terzo. \\ \hline	
 \end{tabular}
-
+\newpage
+\subsection*{Visualizzare Notizie Salvate}
+\begin{tabular}{|c|p{0.8\textwidth}|}
+	\hline
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Visualizzare Notizie Salvate\\
+	\hline
+	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & User \\
+	\hline
+	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore ha salvato delle notizie in precedenza\\
+	\hline
+	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  1, 2\\
+	\hline
+	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
+		\item L'utente apre l'applicazione
+		\item L'utente preme sulla tab "News" del "Side Menu"
+		\item L'utente preme il tasto "Elenco" nella Navigation Bar per consultare le notizie salvate
+		\item L'applicazione fornisce un elenco delle notizie salvate in precedenza
+	\end{itemize}\\
+	\hline
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente ha memorizzato una notizia per una visione successiva. \\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere gli articoli e quindi non può mostrarle. L'articolo è stato rimosso dal sito di origine, ma non nel database del servizio terzo. \\ \hline	
+\end{tabular}
+\newpage
 \subsection*{Visualizzare Partite}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Visualizzare Partite\\
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & User \\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & Guest \\
 	\hline
 	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore ha scaricato l'applicazione\\
 	\hline
@@ -234,7 +425,7 @@ This section describes how actors can interact with iSport in order to use all t
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
 		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "Live"
+		\item L'utente preme sulla tab "Live" del "Side Menu"
 		\item L'applicazione fornisce un elenco delle partite del giorno
 	\end{itemize}\\
 	\hline
@@ -244,13 +435,13 @@ This section describes how actors can interact with iSport in order to use all t
 
 
 
-
+\newpage
 \subsection*{Visualizzare Formazione Partita}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Visualizzare Formazione Partita\\
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & User \\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & Guest \\
 	\hline
 	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore ha scaricato l'applicazione\\
 	\hline
@@ -258,7 +449,7 @@ This section describes how actors can interact with iSport in order to use all t
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
 		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "Live"
+		\item L'utente preme sulla tab "Live" del "Side Menu"
 		\item L'applicazione fornisce un elenco delle partite del giorno
 		\item L'utente preme sulla partita di cui vuole ottenere l'informazione richiesta
 		\item L'utente preme sul bottone raffigurante il campo di gioco
@@ -267,13 +458,13 @@ This section describes how actors can interact with iSport in order to use all t
 	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente ha visualizzato le formazioni delle due squadre della partita richiesta. \\\hline
 	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere i risultati e quindi non può mostrargli. La connessione potrebbe essere debole e quindi non riuscire a ricevere i dati richiesti. \\ \hline	
 \end{tabular}
-
+\newpage
 \subsection*{Visualizzare Marcatori Partita}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Visualizzare Marcatori Partita\\
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & User \\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & Guest \\
 	\hline
 	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore ha scaricato l'applicazione\\
 	\hline
@@ -281,7 +472,7 @@ This section describes how actors can interact with iSport in order to use all t
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
 		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "Live"
+		\item L'utente preme sulla tab "Live" del "Side Menu"
 		\item L'applicazione fornisce un elenco delle partite del giorno
 		\item L'utente preme sulla partita di cui vuole ottenere l'informazione richiesta
 		\item L'utente preme sul bottone raffigurante un pallore
@@ -290,12 +481,13 @@ This section describes how actors can interact with iSport in order to use all t
 	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente ha visualizzato i marcatori della partita richiesta. \\\hline
 	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere i risultati e quindi non può mostrargli. La connessione potrebbe essere debole e quindi non riuscire a ricevere i dati richiesti. \\ \hline	
 \end{tabular}
+\newpage
 \subsection*{Visualizzare Statistiche Partita}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Visualizzare Statistiche Partita\\
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & User \\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & Guest \\
 	\hline
 	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore ha scaricato l'applicazione\\
 	\hline
@@ -303,7 +495,7 @@ This section describes how actors can interact with iSport in order to use all t
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
 		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "Live"
+		\item L'utente preme sulla tab "Live" del "Side Menu"
 		\item L'applicazione fornisce un elenco delle partite del giorno
 		\item L'utente preme sulla partita di cui vuole ottenere l'informazione richiesta
 		\item L'utente preme sul bottone raffigurante un grafico
@@ -312,12 +504,13 @@ This section describes how actors can interact with iSport in order to use all t
 	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente ha visualizzato le statistiche della partita richiesta. \\\hline
 	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere i risultati e quindi non può mostrargli. La connessione potrebbe essere debole e quindi non riuscire a ricevere i dati richiesti. \\ \hline	
 \end{tabular}
+\newpage
 \subsection*{Visualizzare Ammonizioni Partita}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Visualizzare Ammonizioni Partita\\
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & User \\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & Guest \\
 	\hline
 	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore ha scaricato l'applicazione\\
 	\hline
@@ -325,7 +518,7 @@ This section describes how actors can interact with iSport in order to use all t
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
 		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "Live"
+		\item L'utente preme sulla tab "Live" del "Side Menu"
 		\item L'applicazione fornisce un elenco delle partite del giorno
 		\item L'utente preme sulla partita di cui vuole ottenere l'informazione richiesta
 		\item L'utente preme sul bottone raffigurante un cartellino
@@ -334,12 +527,13 @@ This section describes how actors can interact with iSport in order to use all t
 	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente ha visualizzato gli ammoniti ed espulsi della partita richiesta. \\\hline
 	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere i risultati e quindi non può mostrargli. La connessione potrebbe essere debole e quindi non riuscire a ricevere i dati richiesti. \\ \hline	
 \end{tabular}
+\newpage
 \subsection*{Visualizzare Quote}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Visualizzare Quote\\
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & User \\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & Guest \\
 	\hline
 	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore ha scaricato l'applicazione\\
 	\hline
@@ -347,19 +541,20 @@ This section describes how actors can interact with iSport in order to use all t
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
 		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "Bet"
+		\item L'utente preme sulla tab "Bet" del "Side Menu"
 		\item L'applicazione fornisce un elenco delle quote dei principali pronostici delle partite odierne
 	\end{itemize}\\
 	\hline
 	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente ha visualizzatole quote delle partite odierne. \\\hline
-	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere i risultati e quindi non può mostrargli. La connessione potrebbe essere debole e quindi non riuscire a ricevere i dati richiesti. \\ \hline	
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere le quote. La connessione potrebbe essere debole e quindi non riuscire a ricevere i dati richiesti. \\ \hline	
 \end{tabular}
-\subsection*{Visualizzare la Schedina}
+\newpage
+\subsection*{Visualizza Schedina Composta}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Aggiungere Partita a Schedina\\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Visualizza Schedina Composta\\
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & User \\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & Guest \\
 	\hline
 	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore ha scaricato l'applicazione\\
 	\hline
@@ -367,19 +562,20 @@ This section describes how actors can interact with iSport in order to use all t
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
 		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "Bet"
+		\item L'utente preme sulla tab "Bet" del "Side Menu"
 		\item L'utente preme sul bottone raffigurante un carrello nella NavBar
 	\end{itemize}\\
 	\hline
 	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente visualizza i pronostici presenti nella schedina.\\\hline
-	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere i risultati e quindi non può mostrargli. La connessione potrebbe essere debole e quindi non riuscire a ricevere i dati richiesti. \\ \hline	
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere le quote. La connessione potrebbe essere debole e quindi non riuscire a ricevere i dati richiesti. \\ \hline	
 \end{tabular}
+\newpage
 \subsection*{Aggiungere Partita a Schedina}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Aggiungere Partita a Schedina\\
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & User \\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & Guest \\
 	\hline
 	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore ha scaricato l'applicazione\\
 	\hline
@@ -387,20 +583,21 @@ This section describes how actors can interact with iSport in order to use all t
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
 		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "Bet"
+		\item L'utente preme sulla tab "Bet" del "Side Menu"
 		\item L'applicazione fornisce un elenco delle quote dei principali pronostici delle partite odierne
 		\item L'utente preme sulla quota relativa al pronostico e partita da aggiungere
 	\end{itemize}\\
 	\hline
 	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente ha aggiunto un pronostico di una partita alla schedina.\\\hline
-	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere i risultati e quindi non può mostrargli. La connessione potrebbe essere debole e quindi non riuscire a ricevere i dati richiesti. \\ \hline	
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere le quote. La connessione potrebbe essere debole e quindi non riuscire a ricevere i dati richiesti. \\ \hline	
 \end{tabular}
+\newpage
 \subsection*{Eliminare Partita da Schedina}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Eliminare Partita a Schedina\\
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & User \\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & Guest \\
 	\hline
 	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore ha scaricato l'applicazione\\
 	\hline
@@ -408,7 +605,7 @@ This section describes how actors can interact with iSport in order to use all t
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
 		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "Bet"
+		\item L'utente preme sulla tab "Bet" del "Side Menu"
 		\item L'utente preme sul bottone raffigurante un carrello nella NavBar
 		\item L'utente effettua uno swipe verso sinistra sulla partita da eliminare
 	\end{itemize}\\
@@ -416,12 +613,13 @@ This section describes how actors can interact with iSport in order to use all t
 	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente ha eliminato un pronostico di una partita alla schedina.\\\hline
 	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & Nessuna Eccezione\\ \hline	
 \end{tabular}
+\newpage
 \subsection*{Calcolare potenziale Vincita Schedina}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Calcolare potenziale Vincita Schedina\\
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & User \\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & Guest \\
 	\hline
 	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore ha scaricato l'applicazione\\
 	\hline
@@ -429,7 +627,7 @@ This section describes how actors can interact with iSport in order to use all t
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
 		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "Bet"
+		\item L'utente preme sulla tab "Bet" del "Side Menu"
 		\item L'utente preme sul bottone raffigurante un carrello nella NavBar
 		\item L'utente inserisce l'importo da giocare nell'apposito input
 		\item L'utente preme il tasto "Done"
@@ -438,9 +636,108 @@ This section describes how actors can interact with iSport in order to use all t
 	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente visualizza la potenziale vincita della schedina attuale.\\\hline
 	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & Nessuna Eccezione \\ \hline	
 \end{tabular}
+\newpage
+\subsection*{Acquisto Schedina}
+\begin{tabular}{|c|p{0.8\textwidth}|}
+	\hline
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Acquisto Schedina\\
+	\hline
+	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & User \\
+	\hline
+	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore si è autenticato correttamente\\
+	\hline
+	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  10\\
+	\hline
+	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
+		\item L'utente apre l'applicazione
+		\item L'utente preme sulla tab "Bet" del "Side Menu"
+		\item L'utente preme sul bottone raffigurante un carrello nella NavBar
+		\item L'utente inserisce l'importo che vuole giocare
+		\item L'utente preme sul bottone "Buy"
+	\end{itemize}\\
+	\hline
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente acquista la schedina attuale.\\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & La connessione è assente e non può portare a termine l'acquisto. L'utente non è autenticato. L'utente non ha inserito nessuna partita nella schedina \\ \hline	
+\end{tabular}
+\newpage
+\subsection*{Visualizza Schedine Acquistate}
+\begin{tabular}{|c|p{0.8\textwidth}|}
+	\hline
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Visualizza Schedine Acquistate\\
+	\hline
+	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & User \\
+	\hline
+	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore si è autenticato correttamente\\
+	\hline
+	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  9\\
+	\hline
+	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
+		\item L'utente apre l'applicazione
+		\item L'utente preme sulla tab "Bet" del "Side Menu"
+		\item L'utente preme sul bottone "cronologia" nella NavBar
+		\item L'applicazione scarica le informazioni su tutte le schedine acquistate
+		\item L'utente preme sulla cella corrispondente alla schedina che vuole visualizzare
+		\item  L'applicazione carica il dettaglio di tutti gli eventi presenti nella schedina
+	\end{itemize}\\
+	\hline
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente visualizza una schedina acquistata in precedenza.\\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere la cronologia delle giocate. La connessione potrebbe essere debole e quindi non riuscire a ricevere i dati richiesti. L'utente non è autenticato. L'utente non ha giocato nessuna schedina. \\ \hline	
+\end{tabular}
+\newpage
+\subsection*{Chat}
+\begin{tabular}{|c|p{0.8\textwidth}|}
+	\hline
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Login\\
+	\hline
+	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & User \\
+	\hline
+	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore si è autenticato correttamente\\
+	\hline
+	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  1, 2\\
+	\hline
+	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
+		\item L'utente apre l'applicazione
+		\item L'utente preme sulla tab "Chat" del "Side Menu"
+		\item L'utente viene rimandato sul sito di Facebook per l'inserimento delle credenziali
+		\item L'applicazione effettua il login tramite alla room di Scaledrone usando le informazioni di Facebook
+		\item  L'utente scrive i propri messaggi nella casella di testo
+		\item L'utente preme invio per spedire il proprio messaggio
+		\item L'applicazione carica tutti i messaggi presenti nella room
+	\end{itemize}\\
+	\hline
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente interagisce con altre persone \\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete. L'utente non ha un account Facebook.\\ \hline	
+\end{tabular}
+\newpage
+
 
 \chapter{Sequence Diagram}
 In order to explain our work and facilitate further implementations we have decided to show the logical flows aimed to create some features. The sequence diagrams will describe the interactions between the different parts of the system and the user.
+
+\subsection*{Login}
+La procedura di "Login" inizia quando l'utente preme il relativo bottone del Side Menu. Una volta premuto l'utente viene reindirizzato sul sito di Facebook per completare la registrazione. Subito dopo il login a Facebook l'applicazione effettuerà il login al Database di Firebase.
+
+Una volta completata questa procedura il sistema aggiornerà la GUI abilitando le sezioni disponibili solo per gli iscritti.
+
+In caso di errore il sistema restituirà un messaggio di errore.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{images/Sequence/Login}
+\end{figure}
+\newpage
+
+\subsection*{Logout}
+La procedura di "Logout" inizia quando l'utente preme il relativo bottone del Side Menu. Una volta premuto verrà visualizzato un messaggio di conferma. In caso di approvazione verrà effettualo il logout da Facebook e Firebase.
+
+Una volta completata questa procedura il sistema aggiornerà la GUI abilitando le sezioni non disponibili per i guest.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{images/Sequence/Logout}
+\end{figure}
+\newpage
+
+
 \subsection*{View News}
 The ”View News” procedure starts when the user opens the application or presses the ”News” section in the Tab Navigator. The sequence diagram shows the normal procedure.
 
@@ -457,6 +754,24 @@ Furthermore and asynchronously, the application will download the preview images
 
 
 \newpage
+
+\subsection*{Share News}
+The ”Share News” procedure starts when the user opens the application or presses the ”News” section in the Side Menu. The sequence diagram shows the normal procedure.
+
+Dopo la normale procedura di "View News" l'utente preme sul bottone di share. A quel punto l'applicazione farà una richiesta alle "Graph" API di Facebook per la creazione del post con il testo inserito dall'utente.
+
+Tale operazione ha come condizione che l'utente sia già autenticato e in caso contrario restituirà una avviso di errore.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{images/Sequence/SharePost}
+\end{figure}
+
+
+\newpage
+
+
+
 \subsection*{View Match}
 The ”View Match” procedure starts when the user presses the “Live” section of the Tab Bar Navigator.
 
@@ -486,6 +801,20 @@ After opening the detail page, the user can change the desired information throu
 \end{figure}
 
 \newpage
+
+\subsection*{Chat}
+La procedura di "Chat" inizia quando l'utente preme il relativo bottone del Side Menu. Una volta caricata la schermata, l'applicazione rimarrà in ascolto della room mostrando in tempo reale tutti i messaggi inviati dagli altri utenti. L'utente può poi scrivere e inviare il proprio messaggio.
+
+L'applicazione inoltre scaricherà le immagini del profilo relative ai messaggi inviati dagli altri utenti in maniera asincrona.
+
+Tale procedura presuppone che l'utente sia già autenticato altrimenti verrà visualizzato un messaggio di errore.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{images/Sequence/Chat}
+\end{figure}
+\newpage
+
 \subsection*{View Odds}
 The ”View Odds” procedure starts when the user presses the “Bet” section on the Tab Bar Navigator.
 
@@ -537,7 +866,33 @@ At that point the Controller will delete the corresponding record from the Datab
 	\includegraphics[width=1\textwidth]{images/Sequence/SequenceRemoveOdd}
 \end{figure}
 
+\newpage
 
+\subsection*{Buy Ticket}
+
+La procedura di "Buy Ticket" inizia dopo che l'utente ha completato la composizione della propria schedina.
+
+Una volta premuto il bottone di buy l'applicazione controllerà la correttezza della schedina ed effettuerà l'acquisto 
+
+Tale procedura presuppone che l'utente sia già autenticato altrimenti verrà visualizzato un messaggio di errore.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{images/Sequence/BuyTicket}
+\end{figure}
+
+\newpage
+
+\subsection*{Ticket Chronology}
+La procedura di "Ticket Chronology" inizia quando l'utente si trova nella sezione "Bet" dopo aver premuto il relativo bottone del Side Menu.
+
+Dopo che l'utente preme sul tasto "Cronologia" del NavBar l'applicazione accederà ai dati presenti nel database di Firebase recuperando tutte le schedine acquistate in precedenza dall'utente e mostrandole a schermo
+
+Tale procedura presuppone che l'utente sia già autenticato altrimenti verrà visualizzato un messaggio di errore.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{images/Sequence/TicketChronology}
+\end{figure}
 
 
 \chapter{User Interfaces}

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class OddsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -93,7 +94,11 @@ class OddsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func ShowCronologia(_ sender: Any) {
-        performSegue(withIdentifier: "CronologiaBuy", sender: nil)
+        if Auth.auth().currentUser != nil {
+            performSegue(withIdentifier: "CronologiaBuy", sender: nil)
+        } else {
+            ApriAlert(title: "Not Logged In", message: "Please login to continue.")
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -105,4 +110,10 @@ class OddsViewController: UIViewController, UITableViewDelegate, UITableViewData
         sideMenuController?.revealMenu()
     }
     
+    func ApriAlert (title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let OK = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+        alert.addAction(OK)
+        self.present(alert, animated: true, completion: nil)
+    }
 }

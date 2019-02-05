@@ -9,16 +9,16 @@
 \contentsline {section}{\numberline {1.8}Assumptions, Dependencies and Constraints\\}{6}
 \contentsline {chapter}{\numberline {2}Architecture}{7}
 \contentsline {section}{\numberline {2.1}Database}{7}
-\contentsline {section}{\numberline {2.2}Client}{7}
-\contentsline {chapter}{\numberline {3}Use case functional requirements analysis}{8}
-\contentsline {chapter}{\numberline {4}Sequence Diagram}{20}
-\contentsline {chapter}{\numberline {5}User Interfaces}{27}
-\contentsline {chapter}{\numberline {6}External Services and Libraries}{28}
-\contentsline {chapter}{\numberline {7}Software System Attribute}{32}
-\contentsline {section}{\numberline {7.1}Reliability}{32}
-\contentsline {section}{\numberline {7.2}Availability}{32}
-\contentsline {section}{\numberline {7.3}Security}{32}
-\contentsline {section}{\numberline {7.4}Maintainability}{32}
-\contentsline {section}{\numberline {7.5}Usability}{32}
-\contentsline {chapter}{\numberline {8}Test Cases}{33}
-\contentsline {chapter}{\numberline {9}Cost Estimation}{34}
+\contentsline {section}{\numberline {2.2}Client}{8}
+\contentsline {chapter}{\numberline {3}Use case functional requirements analysis}{9}
+\contentsline {chapter}{\numberline {4}Sequence Diagram}{31}
+\contentsline {chapter}{\numberline {5}User Interfaces}{44}
+\contentsline {chapter}{\numberline {6}External Services and Libraries}{45}
+\contentsline {chapter}{\numberline {7}Software System Attribute}{49}
+\contentsline {section}{\numberline {7.1}Reliability}{49}
+\contentsline {section}{\numberline {7.2}Availability}{49}
+\contentsline {section}{\numberline {7.3}Security}{49}
+\contentsline {section}{\numberline {7.4}Maintainability}{49}
+\contentsline {section}{\numberline {7.5}Usability}{49}
+\contentsline {chapter}{\numberline {8}Test Cases}{50}
+\contentsline {chapter}{\numberline {9}Cost Estimation}{51}
