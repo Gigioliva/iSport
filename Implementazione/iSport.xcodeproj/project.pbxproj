@@ -62,6 +62,7 @@
 		23FC320221F8DC8400B61E44 /* CarrelloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC320121F8DC8400B61E44 /* CarrelloViewController.swift */; };
 		23FC320421F8E29B00B61E44 /* CarrelloTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC320321F8E29B00B61E44 /* CarrelloTableViewCell.swift */; };
 		23FC320621F8EED600B61E44 /* APICoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC320521F8EED600B61E44 /* APICoreData.swift */; };
+		23FF4C3D220999C800CEE456 /* GiocataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FF4C3C220999C800CEE456 /* GiocataViewController.swift */; };
 		56B9F0C1CCFF643E9F046AD5 /* Pods_iSport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33E215362505FF6E12A4CDC4 /* Pods_iSport.framework */; };
 		96D54E0DFBFB9E9258CF7967 /* Pods_iSportTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9A602731B3230E125C49204 /* Pods_iSportTests.framework */; };
 		E3F0B4D123D8093D2B75AE86 /* Pods_iSportUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2523B01C61CD510BC807265 /* Pods_iSportUITests.framework */; };
@@ -147,6 +148,7 @@
 		23FC320121F8DC8400B61E44 /* CarrelloViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrelloViewController.swift; sourceTree = "<group>"; };
 		23FC320321F8E29B00B61E44 /* CarrelloTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrelloTableViewCell.swift; sourceTree = "<group>"; };
 		23FC320521F8EED600B61E44 /* APICoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICoreData.swift; sourceTree = "<group>"; };
+		23FF4C3C220999C800CEE456 /* GiocataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiocataViewController.swift; sourceTree = "<group>"; };
 		24C1D8CBD41419DD7E00B9E1 /* Pods-iSportUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSportUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iSportUITests/Pods-iSportUITests.release.xcconfig"; sourceTree = "<group>"; };
 		32EAEFCF1D9E01EE72FC9F5C /* Pods-iSportTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSportTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iSportTests/Pods-iSportTests.debug.xcconfig"; sourceTree = "<group>"; };
 		33E215362505FF6E12A4CDC4 /* Pods_iSport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iSport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -267,6 +269,7 @@
 				23524AAE22036C49000E9B53 /* ChatViewController.swift */,
 				234598532206F79100584C7B /* FavoriteViewController.swift */,
 				23A10BB32208ABBA00EB6CA1 /* CronologiaViewController.swift */,
+				23FF4C3C220999C800CEE456 /* GiocataViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -646,6 +649,7 @@
 				233D2A0021F71D7200968469 /* RisultatiPartite.swift in Sources */,
 				23EEE73121EB978400DE746F /* AppDelegate.swift in Sources */,
 				235249E82202EB52000E9B53 /* InfoUserTableViewCell.swift in Sources */,
+				23FF4C3D220999C800CEE456 /* GiocataViewController.swift in Sources */,
 				233D29FE21F71CCA00968469 /* Notizie.swift in Sources */,
 				23FC320621F8EED600B61E44 /* APICoreData.swift in Sources */,
 				239A117721F38DA4006B90CA /* WebViewNews.swift in Sources */,
