@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.29)  5 FEB 2019 19:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.29)  6 FEB 2019 18:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -150,9 +150,32 @@ Package: inputenc 2018/04/06 v1.3b Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 )
+(/usr/local/texlive/2018/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen103
+\captionmargin@=\dimen104
+\captionwidth=\dimen105
+\caption@tempdima=\dimen106
+\caption@indent=\dimen107
+\caption@parindent=\dimen108
+\caption@hangindent=\dimen109
+)
+Package caption Info: KOMA-Script document class.
+\c@ContinuedFloat=\count108
+)
+\c@subfigure=\count109
+\c@subtable=\count110
+)
 (/usr/local/texlive/2018/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count108
+\c@float@type=\count111
 \float@exts=\toks17
 \float@box=\box28
 \@float@everytoks=\toks18
@@ -163,20 +186,20 @@ Package: tabularx 2016/02/03 v2.11b `tabularx' package (DPC)
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/array.sty
 Package: array 2018/04/07 v2.4g Tabular extension package (FMi)
-\col@sep=\dimen103
+\col@sep=\dimen110
 \ar@mcellbox=\box30
-\extrarowheight=\dimen104
+\extrarowheight=\dimen111
 \NC@list=\toks19
 \extratabsurround=\skip58
 \backup@length=\skip59
 \ar@cellbox=\box31
 )
-\TX@col@width=\dimen105
-\TX@old@table=\dimen106
-\TX@old@col=\dimen107
-\TX@target=\dimen108
-\TX@delta=\dimen109
-\TX@cols=\count109
+\TX@col@width=\dimen112
+\TX@old@table=\dimen113
+\TX@old@col=\dimen114
+\TX@target=\dimen115
+\TX@delta=\dimen116
+\TX@cols=\count112
 \TX@ftn=\toks20
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
@@ -196,27 +219,27 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen110
-\Gin@req@width=\dimen111
+\Gin@req@height=\dimen117
+\Gin@req@width=\dimen118
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count110
+\lst@mode=\count113
 \lst@gtempboxa=\box32
 \lst@token=\toks21
-\lst@length=\count111
-\lst@currlwidth=\dimen112
-\lst@column=\count112
-\lst@pos=\count113
-\lst@lostspace=\dimen113
-\lst@width=\dimen114
-\lst@newlines=\count114
-\lst@lineno=\count115
-\lst@maxwidth=\dimen115
+\lst@length=\count114
+\lst@currlwidth=\dimen119
+\lst@column=\count115
+\lst@pos=\count116
+\lst@lostspace=\dimen120
+\lst@width=\dimen121
+\lst@newlines=\count117
+\lst@lineno=\count118
+\lst@maxwidth=\dimen122
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count116
-\lst@skipnumbers=\count117
+\c@lstnumber=\count119
+\lst@skipnumbers=\count120
 \lst@framebox=\box33
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.cfg
@@ -256,31 +279,35 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 (./DIMA.aux)
 \openout1 = `DIMA.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
 
 (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count118
-\scratchdimen=\dimen116
+\scratchcounter=\count121
+\scratchdimen=\dimen123
 \scratchbox=\box34
-\nofMPsegments=\count119
-\nofMParguments=\count120
+\nofMPsegments=\count122
+\nofMParguments=\count123
 \everyMPshowfont=\toks22
-\MPscratchCnt=\count121
-\MPscratchDim=\dimen117
-\MPnumerator=\count122
-\makeMPintoPDFobject=\count123
+\MPscratchCnt=\count124
+\MPscratchDim=\dimen124
+\MPnumerator=\count125
+\makeMPintoPDFobject=\count126
 \everyMPtoPDFconversion=\toks23
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -338,11 +365,11 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count124
+\c@lstlisting=\count127
 <polimi-logo.png, id=1, 803.0pt x 501.875pt>
 File: polimi-logo.png Graphic file (type png)
 <use polimi-logo.png>
-Package pdftex.def Info: polimi-logo.png  used on input line 66.
+Package pdftex.def Info: polimi-logo.png  used on input line 67.
 (pdftex.def)             Requested size: 156.84856pt x 98.02988pt.
 
 [1
@@ -386,13 +413,13 @@ Class scrbook Warning: \float@addtolists detected!
 (scrbook)              a package that still implements the
 (scrbook)              deprecated \float@addtolist interface .
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 105.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 106.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 105.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 106.
  [3
 
 
@@ -402,17 +429,17 @@ chapter 2.
 <images/DatiSchedina.png, id=31, 131.49126pt x 124.465pt>
 File: images/DatiSchedina.png Graphic file (type png)
 <use images/DatiSchedina.png>
-Package pdftex.def Info: images/DatiSchedina.png  used on input line 209.
+Package pdftex.def Info: images/DatiSchedina.png  used on input line 210.
 (pdftex.def)             Requested size: 89.62482pt x 84.83829pt.
 <images/DatiNews.png, id=32, 129.48375pt x 95.35625pt>
 File: images/DatiNews.png Graphic file (type png)
 <use images/DatiNews.png>
-Package pdftex.def Info: images/DatiNews.png  used on input line 210.
+Package pdftex.def Info: images/DatiNews.png  used on input line 211.
 (pdftex.def)             Requested size: 89.62482pt x 66.00539pt.
 <images/ER.png, id=33, 672.5125pt x 444.66125pt>
 File: images/ER.png Graphic file (type png)
 <use images/ER.png>
-Package pdftex.def Info: images/ER.png  used on input line 215.
+Package pdftex.def Info: images/ER.png  used on input line 216.
 (pdftex.def)             Requested size: 313.69029pt x 207.40991pt.
 [7
 
@@ -425,28 +452,28 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 220.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 221.
  [8]
 chapter 3.
 <images/ViewNews.png, id=46, 662.475pt x 282.05376pt>
 File: images/ViewNews.png Graphic file (type png)
 <use images/ViewNews.png>
-Package pdftex.def Info: images/ViewNews.png  used on input line 246.
+Package pdftex.def Info: images/ViewNews.png  used on input line 247.
 (pdftex.def)             Requested size: 313.69029pt x 133.55515pt.
 <images/ViewLive.png, id=47, 667.49374pt x 282.05376pt>
 File: images/ViewLive.png Graphic file (type png)
 <use images/ViewLive.png>
-Package pdftex.def Info: images/ViewLive.png  used on input line 251.
+Package pdftex.def Info: images/ViewLive.png  used on input line 252.
 (pdftex.def)             Requested size: 313.69029pt x 132.55237pt.
 <images/ViewBet.png, id=48, 667.49374pt x 282.05376pt>
 File: images/ViewBet.png Graphic file (type png)
 <use images/ViewBet.png>
-Package pdftex.def Info: images/ViewBet.png  used on input line 256.
+Package pdftex.def Info: images/ViewBet.png  used on input line 257.
 (pdftex.def)             Requested size: 313.69029pt x 132.55237pt.
 <images/Chat.png, id=49, 669.50125pt x 283.0575pt>
 File: images/Chat.png Graphic file (type png)
 <use images/Chat.png>
-Package pdftex.def Info: images/Chat.png  used on input line 261.
+Package pdftex.def Info: images/Chat.png  used on input line 262.
 (pdftex.def)             Requested size: 313.69029pt x 132.62671pt.
 [9
 
@@ -455,312 +482,312 @@ Package pdftex.def Info: images/Chat.png  used on input line 261.
 <images/Login.png, id=55, 664.4825pt x 283.0575pt>
 File: images/Login.png Graphic file (type png)
 <use images/Login.png>
-Package pdftex.def Info: images/Login.png  used on input line 266.
+Package pdftex.def Info: images/Login.png  used on input line 267.
 (pdftex.def)             Requested size: 313.69029pt x 133.62875pt.
 <images/Share.png, id=56, 664.4825pt x 287.0725pt>
 File: images/Share.png Graphic file (type png)
 <use images/Share.png>
-Package pdftex.def Info: images/Share.png  used on input line 271.
+Package pdftex.def Info: images/Share.png  used on input line 272.
 (pdftex.def)             Requested size: 313.69029pt x 135.5242pt.
 <images/Buy.png, id=57, 664.4825pt x 283.0575pt>
 File: images/Buy.png Graphic file (type png)
 <use images/Buy.png>
-Package pdftex.def Info: images/Buy.png  used on input line 276.
+Package pdftex.def Info: images/Buy.png  used on input line 277.
 (pdftex.def)             Requested size: 313.69029pt x 133.62875pt.
  [10 <./images/ViewBet.png> <./images/Chat.png> <./images/Login.png>]
-Overfull \hbox (3.52776pt too wide) in paragraph at lines 282--282
+Overfull \hbox (3.52776pt too wide) in paragraph at lines 283--283
  []\OT1/cmr/bx/n/12 Name 
  []
 
 
-Overfull \hbox (2.70831pt too wide) in paragraph at lines 284--284
+Overfull \hbox (2.70831pt too wide) in paragraph at lines 285--285
  []\OT1/cmr/bx/n/12 Actor 
  []
 
 
-Overfull \hbox (13.07523pt too wide) in paragraph at lines 280--301
+Overfull \hbox (13.07523pt too wide) in paragraph at lines 281--302
 [] 
  []
 
 [11 <./images/Share.png> <./images/Buy.png>] [12]
-Overfull \hbox (3.52776pt too wide) in paragraph at lines 305--305
+Overfull \hbox (3.52776pt too wide) in paragraph at lines 306--306
  []\OT1/cmr/bx/n/12 Name 
  []
 
 
-Overfull \hbox (2.70831pt too wide) in paragraph at lines 307--307
+Overfull \hbox (2.70831pt too wide) in paragraph at lines 308--308
  []\OT1/cmr/bx/n/12 Actor 
  []
 
 
-Overfull \hbox (13.07523pt too wide) in paragraph at lines 303--322
+Overfull \hbox (13.07523pt too wide) in paragraph at lines 304--323
 [] 
  []
 
 [13]
-Overfull \hbox (3.52776pt too wide) in paragraph at lines 326--326
+Overfull \hbox (3.52776pt too wide) in paragraph at lines 327--327
  []\OT1/cmr/bx/n/12 Name 
  []
 
 
-Overfull \hbox (2.70831pt too wide) in paragraph at lines 328--328
+Overfull \hbox (2.70831pt too wide) in paragraph at lines 329--329
  []\OT1/cmr/bx/n/12 Actor 
  []
 
 
-Overfull \hbox (13.07523pt too wide) in paragraph at lines 324--345
+Overfull \hbox (13.07523pt too wide) in paragraph at lines 325--346
 [] 
  []
 
 [14]
-Overfull \hbox (3.52776pt too wide) in paragraph at lines 349--349
+Overfull \hbox (3.52776pt too wide) in paragraph at lines 350--350
  []\OT1/cmr/bx/n/12 Name 
  []
 
 
-Overfull \hbox (2.70831pt too wide) in paragraph at lines 351--351
+Overfull \hbox (2.70831pt too wide) in paragraph at lines 352--352
  []\OT1/cmr/bx/n/12 Actor 
  []
 
 
-Overfull \hbox (13.07523pt too wide) in paragraph at lines 347--369
+Overfull \hbox (13.07523pt too wide) in paragraph at lines 348--370
 [] 
  []
 
 [15]
-Overfull \hbox (3.52776pt too wide) in paragraph at lines 373--373
+Overfull \hbox (3.52776pt too wide) in paragraph at lines 374--374
  []\OT1/cmr/bx/n/12 Name 
  []
 
 
-Overfull \hbox (2.70831pt too wide) in paragraph at lines 375--375
+Overfull \hbox (2.70831pt too wide) in paragraph at lines 376--376
  []\OT1/cmr/bx/n/12 Actor 
  []
 
 
-Overfull \hbox (13.07523pt too wide) in paragraph at lines 371--392
+Overfull \hbox (13.07523pt too wide) in paragraph at lines 372--393
 [] 
  []
 
 [16]
-Overfull \hbox (3.52776pt too wide) in paragraph at lines 396--396
+Overfull \hbox (3.52776pt too wide) in paragraph at lines 397--397
  []\OT1/cmr/bx/n/12 Name 
  []
 
 
-Overfull \hbox (2.70831pt too wide) in paragraph at lines 398--398
+Overfull \hbox (2.70831pt too wide) in paragraph at lines 399--399
  []\OT1/cmr/bx/n/12 Actor 
  []
 
 
-Overfull \hbox (13.07523pt too wide) in paragraph at lines 394--414
+Overfull \hbox (13.07523pt too wide) in paragraph at lines 395--415
 [] 
  []
 
 [17]
-Overfull \hbox (3.52776pt too wide) in paragraph at lines 418--418
+Overfull \hbox (3.52776pt too wide) in paragraph at lines 419--419
  []\OT1/cmr/bx/n/12 Name 
  []
 
 
-Overfull \hbox (2.70831pt too wide) in paragraph at lines 420--420
+Overfull \hbox (2.70831pt too wide) in paragraph at lines 421--421
  []\OT1/cmr/bx/n/12 Actor 
  []
 
 
-Overfull \hbox (13.07523pt too wide) in paragraph at lines 416--435
+Overfull \hbox (13.07523pt too wide) in paragraph at lines 417--436
 [] 
  []
 
 [18]
-Overfull \hbox (3.52776pt too wide) in paragraph at lines 442--442
+Overfull \hbox (3.52776pt too wide) in paragraph at lines 443--443
  []\OT1/cmr/bx/n/12 Name 
  []
 
 
-Overfull \hbox (2.70831pt too wide) in paragraph at lines 444--444
+Overfull \hbox (2.70831pt too wide) in paragraph at lines 445--445
  []\OT1/cmr/bx/n/12 Actor 
  []
 
 
-Overfull \hbox (13.07523pt too wide) in paragraph at lines 440--461
+Overfull \hbox (13.07523pt too wide) in paragraph at lines 441--462
 [] 
  []
 
 [19]
-Overfull \hbox (3.52776pt too wide) in paragraph at lines 465--465
+Overfull \hbox (3.52776pt too wide) in paragraph at lines 466--466
  []\OT1/cmr/bx/n/12 Name 
  []
 
 
-Overfull \hbox (2.70831pt too wide) in paragraph at lines 467--467
+Overfull \hbox (2.70831pt too wide) in paragraph at lines 468--468
  []\OT1/cmr/bx/n/12 Actor 
  []
 
 
-Overfull \hbox (13.07523pt too wide) in paragraph at lines 463--484
+Overfull \hbox (13.07523pt too wide) in paragraph at lines 464--485
 [] 
  []
 
 [20]
-Overfull \hbox (3.52776pt too wide) in paragraph at lines 488--488
+Overfull \hbox (3.52776pt too wide) in paragraph at lines 489--489
  []\OT1/cmr/bx/n/12 Name 
  []
 
 
-Overfull \hbox (2.70831pt too wide) in paragraph at lines 490--490
+Overfull \hbox (2.70831pt too wide) in paragraph at lines 491--491
  []\OT1/cmr/bx/n/12 Actor 
  []
 
 
-Overfull \hbox (13.07523pt too wide) in paragraph at lines 486--507
+Overfull \hbox (13.07523pt too wide) in paragraph at lines 487--508
 [] 
  []
 
 [21]
-Overfull \hbox (3.52776pt too wide) in paragraph at lines 511--511
+Overfull \hbox (3.52776pt too wide) in paragraph at lines 512--512
  []\OT1/cmr/bx/n/12 Name 
  []
 
 
-Overfull \hbox (2.70831pt too wide) in paragraph at lines 513--513
+Overfull \hbox (2.70831pt too wide) in paragraph at lines 514--514
  []\OT1/cmr/bx/n/12 Actor 
  []
 
 
-Overfull \hbox (13.07523pt too wide) in paragraph at lines 509--530
+Overfull \hbox (13.07523pt too wide) in paragraph at lines 510--531
 [] 
  []
 
 [22]
-Overfull \hbox (3.52776pt too wide) in paragraph at lines 534--534
+Overfull \hbox (3.52776pt too wide) in paragraph at lines 535--535
  []\OT1/cmr/bx/n/12 Name 
  []
 
 
-Overfull \hbox (2.70831pt too wide) in paragraph at lines 536--536
+Overfull \hbox (2.70831pt too wide) in paragraph at lines 537--537
  []\OT1/cmr/bx/n/12 Actor 
  []
 
 
-Underfull \hbox (badness 1038) in paragraph at lines 545--546
+Underfull \hbox (badness 1038) in paragraph at lines 546--547
 []\OT1/cmr/m/n/12 L'applicazione for-nisce un elenco delle quote dei prin-ci-pa
 li
  []
 
 
-Overfull \hbox (13.07523pt too wide) in paragraph at lines 532--551
+Overfull \hbox (13.07523pt too wide) in paragraph at lines 533--552
 [] 
  []
 
 [23]
-Overfull \hbox (3.52776pt too wide) in paragraph at lines 555--555
+Overfull \hbox (3.52776pt too wide) in paragraph at lines 556--556
  []\OT1/cmr/bx/n/12 Name 
  []
 
 
-Overfull \hbox (2.70831pt too wide) in paragraph at lines 557--557
+Overfull \hbox (2.70831pt too wide) in paragraph at lines 558--558
  []\OT1/cmr/bx/n/12 Actor 
  []
 
 
-Overfull \hbox (13.07523pt too wide) in paragraph at lines 553--572
+Overfull \hbox (13.07523pt too wide) in paragraph at lines 554--573
 [] 
  []
 
 [24]
-Overfull \hbox (3.52776pt too wide) in paragraph at lines 576--576
+Overfull \hbox (3.52776pt too wide) in paragraph at lines 577--577
  []\OT1/cmr/bx/n/12 Name 
  []
 
 
-Overfull \hbox (2.70831pt too wide) in paragraph at lines 578--578
+Overfull \hbox (2.70831pt too wide) in paragraph at lines 579--579
  []\OT1/cmr/bx/n/12 Actor 
  []
 
 
-Underfull \hbox (badness 1038) in paragraph at lines 587--588
+Underfull \hbox (badness 1038) in paragraph at lines 588--589
 []\OT1/cmr/m/n/12 L'applicazione for-nisce un elenco delle quote dei prin-ci-pa
 li
  []
 
 
-Overfull \hbox (13.07523pt too wide) in paragraph at lines 574--594
+Overfull \hbox (13.07523pt too wide) in paragraph at lines 575--595
 [] 
  []
 
 [25]
-Overfull \hbox (3.52776pt too wide) in paragraph at lines 598--598
+Overfull \hbox (3.52776pt too wide) in paragraph at lines 599--599
  []\OT1/cmr/bx/n/12 Name 
  []
 
 
-Overfull \hbox (2.70831pt too wide) in paragraph at lines 600--600
+Overfull \hbox (2.70831pt too wide) in paragraph at lines 601--601
  []\OT1/cmr/bx/n/12 Actor 
  []
 
 
-Overfull \hbox (13.07523pt too wide) in paragraph at lines 596--616
+Overfull \hbox (13.07523pt too wide) in paragraph at lines 597--617
 [] 
  []
 
 [26]
-Overfull \hbox (3.52776pt too wide) in paragraph at lines 620--620
+Overfull \hbox (3.52776pt too wide) in paragraph at lines 621--621
  []\OT1/cmr/bx/n/12 Name 
  []
 
 
-Overfull \hbox (2.70831pt too wide) in paragraph at lines 622--622
+Overfull \hbox (2.70831pt too wide) in paragraph at lines 623--623
  []\OT1/cmr/bx/n/12 Actor 
  []
 
 
-Overfull \hbox (13.07523pt too wide) in paragraph at lines 618--639
+Overfull \hbox (13.07523pt too wide) in paragraph at lines 619--640
 [] 
  []
 
 [27]
-Overfull \hbox (3.52776pt too wide) in paragraph at lines 643--643
+Overfull \hbox (3.52776pt too wide) in paragraph at lines 644--644
  []\OT1/cmr/bx/n/12 Name 
  []
 
 
-Overfull \hbox (2.70831pt too wide) in paragraph at lines 645--645
+Overfull \hbox (2.70831pt too wide) in paragraph at lines 646--646
  []\OT1/cmr/bx/n/12 Actor 
  []
 
 
-Overfull \hbox (13.07523pt too wide) in paragraph at lines 641--662
+Overfull \hbox (13.07523pt too wide) in paragraph at lines 642--663
 [] 
  []
 
 [28]
-Overfull \hbox (3.52776pt too wide) in paragraph at lines 666--666
+Overfull \hbox (3.52776pt too wide) in paragraph at lines 667--667
  []\OT1/cmr/bx/n/12 Name 
  []
 
 
-Overfull \hbox (2.70831pt too wide) in paragraph at lines 668--668
+Overfull \hbox (2.70831pt too wide) in paragraph at lines 669--669
  []\OT1/cmr/bx/n/12 Actor 
  []
 
 
-Overfull \hbox (13.07523pt too wide) in paragraph at lines 664--686
+Overfull \hbox (13.07523pt too wide) in paragraph at lines 665--687
 [] 
  []
 
 [29]
-Overfull \hbox (3.52776pt too wide) in paragraph at lines 690--690
+Overfull \hbox (3.52776pt too wide) in paragraph at lines 691--691
  []\OT1/cmr/bx/n/12 Name 
  []
 
 
-Overfull \hbox (2.70831pt too wide) in paragraph at lines 692--692
+Overfull \hbox (2.70831pt too wide) in paragraph at lines 693--693
  []\OT1/cmr/bx/n/12 Actor 
  []
 
 
-Overfull \hbox (13.07523pt too wide) in paragraph at lines 688--711
+Overfull \hbox (13.07523pt too wide) in paragraph at lines 689--712
 [] 
  []
 
@@ -769,7 +796,7 @@ chapter 4.
 <images/Sequence/Login.png, id=129, 654.445pt x 344.28625pt>
 File: images/Sequence/Login.png Graphic file (type png)
 <use images/Sequence/Login.png>
-Package pdftex.def Info: images/Sequence/Login.png  used on input line 725.
+Package pdftex.def Info: images/Sequence/Login.png  used on input line 726.
 (pdftex.def)             Requested size: 448.13095pt x 235.7506pt.
 [31
 
@@ -778,20 +805,20 @@ Package pdftex.def Info: images/Sequence/Login.png  used on input line 725.
 <images/Sequence/Logout.png, id=135, 654.445pt x 344.28625pt>
 File: images/Sequence/Logout.png Graphic file (type png)
 <use images/Sequence/Logout.png>
-Package pdftex.def Info: images/Sequence/Logout.png  used on input line 736.
+Package pdftex.def Info: images/Sequence/Logout.png  used on input line 737.
 (pdftex.def)             Requested size: 448.13095pt x 235.7506pt.
  [32 <./images/Sequence/Logout.png>]
 <images/Sequence/SequenceNews.png, id=140, 741.77126pt x 383.4325pt>
 File: images/Sequence/SequenceNews.png Graphic file (type png)
 <use images/Sequence/SequenceNews.png>
 Package pdftex.def Info: images/Sequence/SequenceNews.png  used on input line 7
-52.
+53.
 (pdftex.def)             Requested size: 448.13095pt x 231.6468pt.
  [33 <./images/Sequence/SequenceNews.png>]
 <images/Sequence/SharePost.png, id=145, 513.92pt x 343.2825pt>
 File: images/Sequence/SharePost.png Graphic file (type png)
 <use images/Sequence/SharePost.png>
-Package pdftex.def Info: images/Sequence/SharePost.png  used on input line 767.
+Package pdftex.def Info: images/Sequence/SharePost.png  used on input line 768.
 
 (pdftex.def)             Requested size: 448.13095pt x 299.33954pt.
  [34 <./images/Sequence/SharePost.png>]
@@ -799,7 +826,7 @@ Package pdftex.def Info: images/Sequence/SharePost.png  used on input line 767.
 File: images/Sequence/SequenceLive.png Graphic file (type png)
 <use images/Sequence/SequenceLive.png>
 Package pdftex.def Info: images/Sequence/SequenceLive.png  used on input line 7
-86.
+87.
 (pdftex.def)             Requested size: 448.13095pt x 270.00986pt.
 
 [35 <./images/Sequence/SequenceLive.png>]
@@ -807,47 +834,47 @@ Package pdftex.def Info: images/Sequence/SequenceLive.png  used on input line 7
 File: images/Sequence/SequenceMatchDetails.png Graphic file (type png)
 <use images/Sequence/SequenceMatchDetails.png>
 Package pdftex.def Info: images/Sequence/SequenceMatchDetails.png  used on inpu
-t line 800.
+t line 801.
 (pdftex.def)             Requested size: 448.13095pt x 326.55641pt.
  [36 <./images/Sequence/SequenceMatchDetails.png>]
 <images/Sequence/Chat.png, id=160, 513.92pt x 343.2825pt>
 File: images/Sequence/Chat.png Graphic file (type png)
 <use images/Sequence/Chat.png>
-Package pdftex.def Info: images/Sequence/Chat.png  used on input line 814.
+Package pdftex.def Info: images/Sequence/Chat.png  used on input line 815.
 (pdftex.def)             Requested size: 448.13095pt x 299.33954pt.
  [37 <./images/Sequence/Chat.png>]
 <images/Sequence/SequenceOdds.png, id=166, 636.3775pt x 303.1325pt>
 File: images/Sequence/SequenceOdds.png Graphic file (type png)
 <use images/Sequence/SequenceOdds.png>
 Package pdftex.def Info: images/Sequence/SequenceOdds.png  used on input line 8
-28.
+29.
 (pdftex.def)             Requested size: 448.13095pt x 213.46329pt.
  [38 <./images/Sequence/SequenceOdds.png>]
 <images/Sequence/SequenceAddOdd.png, id=171, 756.8275pt x 664.4825pt>
 File: images/Sequence/SequenceAddOdd.png Graphic file (type png)
 <use images/Sequence/SequenceAddOdd.png>
 Package pdftex.def Info: images/Sequence/SequenceAddOdd.png  used on input line
- 843.
+ 844.
 (pdftex.def)             Requested size: 448.13095pt x 393.4506pt.
  [39 <./images/Sequence/SequenceAddOdd.png>]
 <images/Sequence/SequenceViewCart.png, id=176, 756.8275pt x 463.7325pt>
 File: images/Sequence/SequenceViewCart.png Graphic file (type png)
 <use images/Sequence/SequenceViewCart.png>
 Package pdftex.def Info: images/Sequence/SequenceViewCart.png  used on input li
-ne 855.
+ne 856.
 (pdftex.def)             Requested size: 448.13095pt x 274.58336pt.
  [40 <./images/Sequence/SequenceViewCart.png>]
 <images/Sequence/SequenceRemoveOdd.png, id=181, 756.8275pt x 664.4825pt>
 File: images/Sequence/SequenceRemoveOdd.png Graphic file (type png)
 <use images/Sequence/SequenceRemoveOdd.png>
 Package pdftex.def Info: images/Sequence/SequenceRemoveOdd.png  used on input l
-ine 866.
+ine 867.
 (pdftex.def)             Requested size: 448.13095pt x 393.4506pt.
  [41 <./images/Sequence/SequenceRemoveOdd.png>]
 <images/Sequence/BuyTicket.png, id=186, 513.92pt x 343.2825pt>
 File: images/Sequence/BuyTicket.png Graphic file (type png)
 <use images/Sequence/BuyTicket.png>
-Package pdftex.def Info: images/Sequence/BuyTicket.png  used on input line 881.
+Package pdftex.def Info: images/Sequence/BuyTicket.png  used on input line 882.
 
 (pdftex.def)             Requested size: 448.13095pt x 299.33954pt.
  [42 <./images/Sequence/BuyTicket.png>]
@@ -855,125 +882,205 @@ Package pdftex.def Info: images/Sequence/BuyTicket.png  used on input line 881.
 File: images/Sequence/TicketChronology.png Graphic file (type png)
 <use images/Sequence/TicketChronology.png>
 Package pdftex.def Info: images/Sequence/TicketChronology.png  used on input li
-ne 894.
+ne 895.
 (pdftex.def)             Requested size: 448.13095pt x 299.33954pt.
  [43 <./images/Sequence/TicketChronology.png>]
 chapter 5.
+<images/Screen/News.png, id=197, 1246.6575pt x 2216.28pt>
+File: images/Screen/News.png Graphic file (type png)
+<use images/Screen/News.png>
+Package pdftex.def Info: images/Screen/News.png  used on input line 906.
+(pdftex.def)             Requested size: 179.25305pt x 318.66386pt.
+<images/Screen/NewsFavorite.png, id=198, 1246.6575pt x 2216.28pt>
+File: images/Screen/NewsFavorite.png Graphic file (type png)
+<use images/Screen/NewsFavorite.png>
+Package pdftex.def Info: images/Screen/NewsFavorite.png  used on input line 911
+.
+(pdftex.def)             Requested size: 179.25305pt x 318.66386pt.
+
+Overfull \hbox (2.61108pt too wide) in paragraph at lines 904--914
+[]$[]$ $[]$ 
+ []
+
+<images/Screen/Share.png, id=199, 1246.6575pt x 2216.28pt>
+File: images/Screen/Share.png Graphic file (type png)
+<use images/Screen/Share.png>
+Package pdftex.def Info: images/Screen/Share.png  used on input line 919.
+(pdftex.def)             Requested size: 179.25305pt x 318.66386pt.
+<images/Screen/WebView.png, id=200, 1246.6575pt x 2216.28pt>
+File: images/Screen/WebView.png Graphic file (type png)
+<use images/Screen/WebView.png>
+Package pdftex.def Info: images/Screen/WebView.png  used on input line 924.
+(pdftex.def)             Requested size: 179.25305pt x 318.66386pt.
+
+Overfull \hbox (2.61108pt too wide) in paragraph at lines 917--927
+[]$[]$ $[]$ 
+ []
+
 [44
 
 
-]
+ <./images/Screen/News.png> <./images/Screen/NewsFavorite.png>] [45 <./images/S
+creen/Share.png> <./images/Screen/WebView.png>]
 chapter 6.
-<images/ResponseNewsAPI.png, id=200, 769.87625pt x 600.2425pt>
+<images/LoginMethod.png, id=207, 720.6925pt x 237.88875pt>
+File: images/LoginMethod.png Graphic file (type png)
+<use images/LoginMethod.png>
+Package pdftex.def Info: images/LoginMethod.png  used on input line 939.
+(pdftex.def)             Requested size: 313.69029pt x 103.54247pt.
+<images/GraphAPI.png, id=208, 657.45625pt x 43.16125pt>
+File: images/GraphAPI.png Graphic file (type png)
+<use images/GraphAPI.png>
+Package pdftex.def Info: images/GraphAPI.png  used on input line 946.
+(pdftex.def)             Requested size: 313.69029pt x 20.59334pt.
+<images/LoginFirebase.png, id=209, 576.1525pt x 120.45pt>
+File: images/LoginFirebase.png Graphic file (type png)
+<use images/LoginFirebase.png>
+Package pdftex.def Info: images/LoginFirebase.png  used on input line 961.
+(pdftex.def)             Requested size: 313.69029pt x 65.58237pt.
+[46
+
+
+ <./images/LoginMethod.png> <./images/GraphAPI.png>]
+<images/DBaccess.png, id=215, 704.6325pt x 123.46124pt>
+File: images/DBaccess.png Graphic file (type png)
+<use images/DBaccess.png>
+Package pdftex.def Info: images/DBaccess.png  used on input line 966.
+(pdftex.def)             Requested size: 313.69029pt x 54.96173pt.
+<images/ScaledroneConnect.png, id=216, 586.19pt x 262.9825pt>
+File: images/ScaledroneConnect.png Graphic file (type png)
+<use images/ScaledroneConnect.png>
+Package pdftex.def Info: images/ScaledroneConnect.png  used on input line 979.
+(pdftex.def)             Requested size: 313.69029pt x 140.72835pt.
+<images/ScaledroneReceive.png, id=217, 563.10374pt x 451.6875pt>
+File: images/ScaledroneReceive.png Graphic file (type png)
+<use images/ScaledroneReceive.png>
+Package pdftex.def Info: images/ScaledroneReceive.png  used on input line 984.
+(pdftex.def)             Requested size: 313.69029pt x 251.62686pt.
+ [47 <./images/LoginFirebase.png> <./images/DBaccess.png> <./images/ScaledroneC
+onnect.png>]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 988.
+
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 988.
+<images/ResponseNewsAPI.png, id=224, 769.87625pt x 600.2425pt>
 File: images/ResponseNewsAPI.png Graphic file (type png)
 <use images/ResponseNewsAPI.png>
-Package pdftex.def Info: images/ResponseNewsAPI.png  used on input line 913.
+Package pdftex.def Info: images/ResponseNewsAPI.png  used on input line 1002.
 (pdftex.def)             Requested size: 313.69029pt x 244.58063pt.
 
-Overfull \hbox (22.02528pt too wide) in paragraph at lines 910--914
+Overfull \hbox (22.02528pt too wide) in paragraph at lines 999--1003
 \OT1/cmr/m/n/12 L'endpoint uti-liz-zato ^^Re "https://newsapi.org/v2/top-headli
 nes?country=it&category=sports
  []
 
-<images/StructDati.png, id=201, 226.8475pt x 232.87pt>
+[48 <./images/ScaledroneReceive.png>]
+<images/StructDati.png, id=230, 226.8475pt x 232.87pt>
 File: images/StructDati.png Graphic file (type png)
 <use images/StructDati.png>
-Package pdftex.def Info: images/StructDati.png  used on input line 918.
+Package pdftex.def Info: images/StructDati.png  used on input line 1007.
 (pdftex.def)             Requested size: 134.44064pt x 138.01038pt.
-[45
-
-
- <./images/ResponseNewsAPI.png>]
-<images/ResponseCompleta.png, id=206, 350.30875pt x 647.41875pt>
+<images/ResponseCompleta.png, id=231, 350.30875pt x 647.41875pt>
 File: images/ResponseCompleta.png Graphic file (type png)
 <use images/ResponseCompleta.png>
-Package pdftex.def Info: images/ResponseCompleta.png  used on input line 931.
+Package pdftex.def Info: images/ResponseCompleta.png  used on input line 1020.
 (pdftex.def)             Requested size: 134.44064pt x 248.47162pt.
 
-Overfull \hbox (41.4648pt too wide) in paragraph at lines 928--932
+Overfull \hbox (41.4648pt too wide) in paragraph at lines 1017--1021
 \OT1/cmr/m/n/12 L'endpoint uti-liz-zato per ot-tenere i risul-tati ^^Re "https:
 //apifootball.com/api/?action=get[]events".
  []
 
-<images/StructPartita.png, id=207, 335.2525pt x 932.48375pt>
-File: images/StructPartita.png Graphic file (type png)
-<use images/StructPartita.png>
-Package pdftex.def Info: images/StructPartita.png  used on input line 936.
-(pdftex.def)             Requested size: 134.44064pt x 373.92598pt.
-[46 <./images/StructDati.png> <./images/ResponseCompleta.png>]
-<images/ResponsePrediction.png, id=213, 478.78876pt x 624.3325pt>
+[49 <./images/ResponseNewsAPI.png> <./images/StructDati.png>]
+<images/StructPartita2.png, id=238, 335.2525pt x 433.62pt>
+File: images/StructPartita2.png Graphic file (type png)
+<use images/StructPartita2.png>
+Package pdftex.def Info: images/StructPartita2.png  used on input line 1025.
+(pdftex.def)             Requested size: 134.44064pt x 173.8816pt.
+<images/StructPartita1.png, id=239, 335.2525pt x 498.86375pt>
+File: images/StructPartita1.png Graphic file (type png)
+<use images/StructPartita1.png>
+Package pdftex.def Info: images/StructPartita1.png  used on input line 1026.
+(pdftex.def)             Requested size: 134.44064pt x 200.04436pt.
+<images/ResponsePrediction.png, id=240, 478.78876pt x 624.3325pt>
 File: images/ResponsePrediction.png Graphic file (type png)
 <use images/ResponsePrediction.png>
-Package pdftex.def Info: images/ResponsePrediction.png  used on input line 941.
-
+Package pdftex.def Info: images/ResponsePrediction.png  used on input line 1031
+.
 (pdftex.def)             Requested size: 134.44064pt x 175.30728pt.
 
-Overfull \hbox (27.378pt too wide) in paragraph at lines 938--942
+Overfull \hbox (27.378pt too wide) in paragraph at lines 1028--1032
 []\OT1/cmr/m/n/12 Per ot-tenere le pre-vi-sioni della par-tita l'endpoint uti-l
 iz-zato ^^Re "https://apifootball.com/api/?
  []
 
-<images/StructPrediction.png, id=214, 228.855pt x 106.3975pt>
+[50 <./images/ResponseCompleta.png> <./images/StructPartita2.png> <./images/Str
+uctPartita1.png>]
+<images/StructPrediction.png, id=248, 228.855pt x 106.3975pt>
 File: images/StructPrediction.png Graphic file (type png)
 <use images/StructPrediction.png>
-Package pdftex.def Info: images/StructPrediction.png  used on input line 946.
+Package pdftex.def Info: images/StructPrediction.png  used on input line 1036.
 (pdftex.def)             Requested size: 134.44064pt x 62.50447pt.
-[47 <./images/StructPartita.png> <./images/ResponsePrediction.png>]
-<images/ResponseOdds.png, id=220, 328.22626pt x 228.855pt>
+<images/ResponseOdds.png, id=249, 328.22626pt x 228.855pt>
 File: images/ResponseOdds.png Graphic file (type png)
 <use images/ResponseOdds.png>
-Package pdftex.def Info: images/ResponseOdds.png  used on input line 951.
+Package pdftex.def Info: images/ResponseOdds.png  used on input line 1041.
 (pdftex.def)             Requested size: 134.44064pt x 93.73686pt.
 
-Overfull \hbox (5.11852pt too wide) in paragraph at lines 948--952
+Overfull \hbox (5.11852pt too wide) in paragraph at lines 1038--1042
 []\OT1/cmr/m/n/12 Per ot-tenere le quote delle par-tite l'endpoint uti-liz-zato
  ^^Re "https://apifootball.com/api/?
  []
 
-<images/StructOdds.png, id=221, 228.855pt x 106.3975pt>
+<images/StructOdds.png, id=250, 228.855pt x 106.3975pt>
 File: images/StructOdds.png Graphic file (type png)
 <use images/StructOdds.png>
-Package pdftex.def Info: images/StructOdds.png  used on input line 956.
+Package pdftex.def Info: images/StructOdds.png  used on input line 1046.
 (pdftex.def)             Requested size: 134.44064pt x 62.50447pt.
-[48 <./images/StructPrediction.png> <./images/ResponseOdds.png> <./images/Struc
-tOdds.png>]
+[51 <./images/ResponsePrediction.png> <./images/StructPrediction.png> <./images
+/ResponseOdds.png> <./images/StructOdds.png>]
 chapter 7.
-[49
+[52
 
 
 ]
 chapter 8.
-[50
+[53
 
 
 ]
 chapter 9.
-[51
+[54
 
 
 ] (./DIMA.aux) ) 
 Here is how much of TeX's memory you used:
- 6322 strings out of 492649
- 103784 string characters out of 6129622
- 310869 words of memory out of 5000000
- 10106 multiletter control sequences out of 15000+600000
- 11278 words of font info for 39 fonts, out of 8000000 for 9000
+ 7468 strings out of 492649
+ 125240 string characters out of 6129622
+ 327781 words of memory out of 5000000
+ 11229 multiletter control sequences out of 15000+600000
+ 11578 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 51i,9n,66p,9105b,1258s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 51i,9n,66p,9105b,1410s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmcsc10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl
-12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmssb
-x10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti1
-2.pfb>
-Output written on DIMA.pdf (51 pages, 1601266 bytes).
+cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl1
+2.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx
+10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12
+.pfb>
+Output written on DIMA.pdf (54 pages, 9071571 bytes).
 PDF statistics:
- 271 PDF objects out of 1000 (max. 8388607)
- 143 compressed objects within 2 object streams
+ 302 PDF objects out of 1000 (max. 8388607)
+ 152 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 161 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 216 words of extra memory for PDF output out of 10000 (max. 10000000)
 

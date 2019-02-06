@@ -1,6 +1,7 @@
 \documentclass[numbers=noenddot, 12pt, a4paper, oneside]{scrbook}
 \usepackage{blindtext}
 \usepackage[utf8]{inputenc}
+\usepackage{subcaption}
 \usepackage{float}
 \usepackage{tabularx}
 \usepackage{graphicx}
@@ -896,9 +897,97 @@ Tale procedura presuppone che l'utente sia già autenticato altrimenti verrà vi
 
 
 \chapter{User Interfaces}
+In this chapter will be discussed and displayed the user interface of each page highlighting the functionalities of the iSport application.
+\subsection*{News}
+
+\begin{figure}[H]
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.8\linewidth]{images/Screen/News}
+		\caption{In questa schermata vengono mostrate tutte le notizie con la possibilità di salvarle o pubblicarle}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.8\linewidth]{images/Screen/NewsFavorite}
+		\caption{n questa schermata vengono mostrate tutte le notizie salvate}
+	\end{subfigure}
+\end{figure}
+
+\begin{figure}[H]
+		\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.8\linewidth]{images/Screen/Share}
+		\caption{In questa schermata viene mostrata la condivisione di news}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.8\linewidth]{images/Screen/WebView}
+		\caption{Use case relativo alla visualizzazione e manipolazione delle notizie}
+	\end{subfigure}
+\end{figure}
+
+
+
 \chapter{External Services and Libraries}
 iSport application uses several third parties API in order to provide all the services to the user.\\
 Per il parsing dei dati JSON è stato usato il componente JSONDecoder nativo dell UIKit.
+
+\subsection*{Facebook SDK}
+Per la gestione del login sono state utilizzate le Facebook SDK. Quando un utente vuole autenticarsi l'applicazione esegue la chiamata al servizio di Facebook mediante:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{images/LoginMethod}
+\end{figure}
+Tale metodo rimanda al sito o all'applicazione di Facebook e una volta autenticato si viene reindirizzati ad "iSport" che andrà a memorizzare il token fornitogli.
+
+Per la pubblicazione delle notizie invece viene utilizzato il servizio di "Graph API":
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{images/GraphAPI}
+\end{figure}
+
+Per utilizzare il servizio di Facebook sono stati inclusi i seguenti pod:
+\begin{lstlisting}[style=CStyle]
+pod 'FacebookCore'
+pod 'FacebookLogin'
+pod 'FacebookShare'
+\end{lstlisting}
+
+\subsection*{Firebase SDK}
+Per l'accesso al database vengono utilizzate le SDK di Firebase. In particolare viene utilizzato il login tramite le credenziali di Facebook in modo da avere un login unico.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{images/LoginFirebase}
+\end{figure}
+Per l'accesso al database è stato usato il DatabaseManager incluso nelle SDK:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{images/DBaccess}
+\end{figure}
+Per utilizzare il servizio di Firebase sono stati inclusi i seguenti pod:
+\begin{lstlisting}[style=CStyle]
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
+pod 'Firebase/Database'
+\end{lstlisting}
+
+\subsection*{Scaledrone}
+Per il servizio di chat in tempo reale sono state utilizzate le API di Scaledrone. Per la connessione alla room viene utilizzata la seguente estensione:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{images/ScaledroneConnect}
+\end{figure}
+Mentre per la ricezione dei messaggi:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{images/ScaledroneReceive}
+\end{figure}
+Per utilizzare il servizio di Scaledrone sono stati inclusi i seguenti pod:
+\begin{lstlisting}[style=CStyle]
+pod 'Scaledrone', '~> 0.3.0'
+\end{lstlisting}
+
 \subsection*{NewsAPI}
 Quando un utente vuole visualizzare le principali notizie del giorno l'applicazione esegue le seguenti operazioni:
 \begin{itemize}
@@ -933,7 +1022,8 @@ L'endpoint utilizzato per ottenere i risultati è "https://apifootball.com/api/?
 Per il parsing quindi è stata usata la seguente struttura dati:
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.3\textwidth]{images/StructPartita}
+	\includegraphics[width=0.3\textwidth]{images/StructPartita2}
+	\includegraphics[width=0.3\textwidth]{images/StructPartita1}
 \end{figure}
 Per ottenere le previsioni della partita l'endpoint utilizzato è "https://apifootball.com/api/? action=get\_predictions". La risposta fornita dal servizio è:
 \begin{figure}[H]
