@@ -22,9 +22,11 @@ class OddsViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableViewOdds.dataSource = self
         
         tableViewOdds.estimatedRowHeight = 100
-//        tableViewOdds.rowHeight = UITableView.automaticDimension
-        
         let giorno = "2019-01-12"
+//        let date = Date()
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "yyyy-MM-dd"
+//        let result = formatter.string(from: date)
         RisultatiAPI.UpdateDatiPartite(giorno: giorno, callback: aggiornaTabella)
     }
     

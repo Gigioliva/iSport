@@ -19,25 +19,33 @@ class CardsTableViewDelegate: NSObject, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listaCards.count
+        return max(listaCards.count, 1)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cella = tableViewCard.dequeueReusableCell(withIdentifier: "CardsCell") as! CardsTableViewCell
-        let cartellino = listaCards[indexPath.row]
         
-        cella.MinutoFallo.text = cartellino.time
-        cella.NomeGiocatoreCasa.text = cartellino.homeFault ?? ""
-        cella.NomeGiocatoreAway.text = cartellino.awayFault ?? ""
-        
-        if cella.NomeGiocatoreCasa.text! == "" {
-            cella.CardCasa.image = nil
+        if listaCards.count > 0{
+            let cella = tableViewCard.dequeueReusableCell(withIdentifier: "CardsCell") as! CardsTableViewCell
+            let cartellino = listaCards[indexPath.row]
+            
+            cella.MinutoFallo.text = cartellino.time
+            cella.NomeGiocatoreCasa.text = cartellino.homeFault ?? ""
+            cella.NomeGiocatoreAway.text = cartellino.awayFault ?? ""
+            
+            if cella.NomeGiocatoreCasa.text! == "" {
+                cella.CardCasa.image = nil
+            }
+            if cella.NomeGiocatoreAway.text! == "" {
+                cella.CardAway.image = nil
+            }
+            
+            cella.selectionStyle = .none
+            return cella
+        }else {
+            let cella = CellaVuotaTableViewCell()
+            cella.testo = "No Cards"
+            return cella
         }
-        if cella.NomeGiocatoreAway.text! == "" {
-            cella.CardAway.image = nil
-        }
-        
-        return cella
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

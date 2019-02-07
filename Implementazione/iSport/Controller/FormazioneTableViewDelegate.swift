@@ -43,7 +43,14 @@ class FormazioneTableViewDelegate: NSObject, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return keysFormazione[section]
+        switch keysFormazione[section] {
+        case "Linep":
+            return ""
+        case "substitutions":
+            return "Substitutions"
+        default:
+            return ""
+        }
     }
     
     
@@ -107,7 +114,7 @@ class FormazioneTableViewDelegate: NSObject, UITableViewDataSource, UITableViewD
             }
             
         }
-        
+        cella.selectionStyle = .none
         return cella
     }
     

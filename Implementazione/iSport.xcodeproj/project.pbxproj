@@ -59,6 +59,8 @@
 		23EEE75421EB978500DE746F /* iSportUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEE75321EB978500DE746F /* iSportUITests.swift */; };
 		23EEE76621EBAEFB00DE746F /* CellNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEE76521EBAEFB00DE746F /* CellNews.swift */; };
 		23EEE76821EBB5B300DE746F /* RisultatiLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEE76721EBB5B300DE746F /* RisultatiLive.swift */; };
+		23F5CD57220C3E1B00D7FBE8 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F5CD56220C3E1B00D7FBE8 /* DateView.swift */; };
+		23F5CD5F220C4D3500D7FBE8 /* CellaVuotaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F5CD5E220C4D3500D7FBE8 /* CellaVuotaTableViewCell.swift */; };
 		23FC320221F8DC8400B61E44 /* CarrelloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC320121F8DC8400B61E44 /* CarrelloViewController.swift */; };
 		23FC320421F8E29B00B61E44 /* CarrelloTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC320321F8E29B00B61E44 /* CarrelloTableViewCell.swift */; };
 		23FC320621F8EED600B61E44 /* APICoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC320521F8EED600B61E44 /* APICoreData.swift */; };
@@ -145,6 +147,8 @@
 		23EEE75521EB978500DE746F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23EEE76521EBAEFB00DE746F /* CellNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CellNews.swift; path = iSport/View/CellNews.swift; sourceTree = SOURCE_ROOT; };
 		23EEE76721EBB5B300DE746F /* RisultatiLive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RisultatiLive.swift; path = iSport/Controller/RisultatiLive.swift; sourceTree = SOURCE_ROOT; };
+		23F5CD56220C3E1B00D7FBE8 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		23F5CD5E220C4D3500D7FBE8 /* CellaVuotaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellaVuotaTableViewCell.swift; sourceTree = "<group>"; };
 		23FC320121F8DC8400B61E44 /* CarrelloViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrelloViewController.swift; sourceTree = "<group>"; };
 		23FC320321F8E29B00B61E44 /* CarrelloTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrelloTableViewCell.swift; sourceTree = "<group>"; };
 		23FC320521F8EED600B61E44 /* APICoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICoreData.swift; sourceTree = "<group>"; };
@@ -249,6 +253,8 @@
 				238D2A9622061090007AC7A8 /* VerticallyCenteredTextView.swift */,
 				234598552207066600584C7B /* PredictionTableViewCell.swift */,
 				23A10BB52208B75100EB6CA1 /* TicketTableViewCell.swift */,
+				23F5CD56220C3E1B00D7FBE8 /* DateView.swift */,
+				23F5CD5E220C4D3500D7FBE8 /* CellaVuotaTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -643,6 +649,7 @@
 				23A6C8DD21F5D47600F732DC /* FormazioneTableViewCell.swift in Sources */,
 				2346C90521ECF2FF00A18CC2 /* CustomImage.swift in Sources */,
 				23EEE73921EB978400DE746F /* iSport.xcdatamodeld in Sources */,
+				23F5CD57220C3E1B00D7FBE8 /* DateView.swift in Sources */,
 				23A10BB42208ABBA00EB6CA1 /* CronologiaViewController.swift in Sources */,
 				23FC320421F8E29B00B61E44 /* CarrelloTableViewCell.swift in Sources */,
 				2346C91321ED1C5500A18CC2 /* News.swift in Sources */,
@@ -650,6 +657,7 @@
 				23EEE73121EB978400DE746F /* AppDelegate.swift in Sources */,
 				235249E82202EB52000E9B53 /* InfoUserTableViewCell.swift in Sources */,
 				23FF4C3D220999C800CEE456 /* GiocataViewController.swift in Sources */,
+				23F5CD5F220C4D3500D7FBE8 /* CellaVuotaTableViewCell.swift in Sources */,
 				233D29FE21F71CCA00968469 /* Notizie.swift in Sources */,
 				23FC320621F8EED600B61E44 /* APICoreData.swift in Sources */,
 				239A117721F38DA4006B90CA /* WebViewNews.swift in Sources */,

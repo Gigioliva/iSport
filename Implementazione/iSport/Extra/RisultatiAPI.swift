@@ -49,6 +49,10 @@ class RisultatiAPI: NSObject {
                     self.listaPartite = try decoder.decode([Partita].self, from: data)
                     PredictionAPI(giorno: giorno, callback: callback)
                 }catch let errore{
+                    listaPartite = [Partita]()
+                    listaPredizioni = [Prediction]()
+                    listaOdds = [Odds]()
+                    callback()
                     print(errore)
                 }
             }
@@ -76,6 +80,10 @@ class RisultatiAPI: NSObject {
                     self.listaPredizioni = try decoder.decode([Prediction].self, from: data)
                     OddsAPI(giorno: giorno, callback: callback)
                 }catch let errore{
+                    listaPartite = [Partita]()
+                    listaPredizioni = [Prediction]()
+                    listaOdds = [Odds]()
+                    callback()
                     print(errore)
                 }
             }
@@ -104,6 +112,10 @@ class RisultatiAPI: NSObject {
                     self.listaOdds = filtraOdds(scommesse: listaTemporanea)
                     callback()
                 }catch let errore{
+                    listaPartite = [Partita]()
+                    listaPredizioni = [Prediction]()
+                    listaOdds = [Odds]()
+                    callback()
                     print(errore)
                 }
             }

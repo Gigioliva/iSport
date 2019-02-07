@@ -52,11 +52,13 @@ class StatisticaViewTableData: NSObject, UITableViewDelegate, UITableViewDataSou
         if indexPath.section == 0 {
             let cella = Statistiche.dequeueReusableCell(withIdentifier: "PrevisionCell") as! PredictionTableViewCell
             cella.predizione = previsioni
+            cella.selectionStyle = .none
             return cella
         } else {
             let cella = Statistiche.dequeueReusableCell(withIdentifier: "StatisticCell") as! StatisticaTableViewCell
             let contenutoCella = statisticaLista[indexPath.row]
             cella.contenuto = contenutoCella
+            cella.selectionStyle = .none
             return cella
         }
     }

@@ -14,18 +14,29 @@ class NewsView: UIViewController, UITableViewDelegate, UITableViewDataSource, Ne
     @IBOutlet weak var ListaNews: UITableView!
     
     var listaArticoli = [Article]()
+    var isLoading = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ListaNews.delegate = self
         ListaNews.dataSource = self
         ListaNews.rowHeight = 130
+        isLoading = true
         NewsAPI.RequestAPI(callback: aggiornaTableView)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         reloadTable()
     }
+    
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let contentYoffset = scrollView.contentOffset.y
+//        if contentYoffset < -100 && !isLoading {
+//            print("aggiorno")
+//            isLoading = true
+//            NewsAPI.RequestAPI(callback: aggiornaTableView)
+//        }
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listaArticoli.count
@@ -73,6 +84,7 @@ class NewsView: UIViewController, UITableViewDelegate, UITableViewDataSource, Ne
     func aggiornaTableView(){
         listaArticoli = NewsAPI.listaArticoli
         ListaNews.reloadData()
+        isLoading = false
     }
     
     @IBAction func OpenMenu(_ sender: Any) {
@@ -85,6 +97,14 @@ class NewsView: UIViewController, UITableViewDelegate, UITableViewDataSource, Ne
     
     func reloadTable() {
         self.ListaNews.reloadData()
+    }
+    
+    @IBAction func ReloadButton(_ sender: Any) {
+        if !isLoading {
+            print("aggiorno")
+            isLoading = true
+            NewsAPI.RequestAPI(callback: aggiornaTableView)
+        }
     }
     
 }

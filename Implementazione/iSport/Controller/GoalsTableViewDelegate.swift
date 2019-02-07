@@ -18,15 +18,24 @@ class GoalsTableViewDelegate: NSObject, UITableViewDelegate, UITableViewDataSour
         self.listaGoals = listaGoal
     }
     
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listaGoals.count
+        return max(listaGoals.count, 1)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cella = tableViewGoal.dequeueReusableCell(withIdentifier: "GoalsCell") as! GoalsTableViewCell
-        let goal = listaGoals[indexPath.row]
-        cella.contenuto = goal
-        return cella
+        if listaGoals.count > 0{
+            let cella = tableViewGoal.dequeueReusableCell(withIdentifier: "GoalsCell") as! GoalsTableViewCell
+            let goal = listaGoals[indexPath.row]
+            cella.contenuto = goal
+            cella.selectionStyle = .none
+            return cella
+        }else {
+            let cella = CellaVuotaTableViewCell()
+            cella.testo = "No Goal"
+            return cella
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
