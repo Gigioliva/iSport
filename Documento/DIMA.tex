@@ -8,6 +8,7 @@
 \def\Plus{\texttt{+}}
 \usepackage{listings}
 \usepackage{color}
+\usepackage{dirtytalk}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -96,7 +97,7 @@
 \section{Purpose}
 The purpose of this document is to describe the design and prototyping phases used for the realization of the “iSport” mobile application. In detail, the main components, features and user experience will be discussed.
 
-The main aim of iSport application is visualizing information and data related to the sport field. In particular, we will focus on the most relevant daily news, also showing a section with all football final scores. Inoltre per favorire la creazione di una comunità di discussione l'applicazione fornirà un sistema di live chat attraverso cui scambiarsi pareri.
+The main aim of iSport application is visualizing information and data related to the sport field. In particular, we will focus on the most relevant daily news, also showing a section with all football final scores. Moreover, to encourage interaction throughout a community discussion, the application will provide a system of live chat to exchange opinions.
 
 This project is the result of the  implementation of the knowledge acquired during the course ”Design and Implementation of Mobile Applications” provided by the Milan Polytechnic.
 
@@ -150,7 +151,7 @@ In particular, the application will be divided into three screens:
 In the ”News” section there will be the daily sport news displayed with a preview image and a small description. Moreover, by pressing on the single news you can read the complete article.\\
 In the ”Live” section there will be all current matches with the final scores if already completed or the current one if still in progress. Pressing on the single game, the user will consult all the related information such as the markers and goal time, cards, training and statistics.\\
 In the ”Bet” section there will be the shares related to the daily football matches. By pressing on the single one the user will bet on the winning game composing a ticket; once the process is completed the application will calculate the potential winnings based the bet amount.\\
-Nella sezione "Chat" ci si collegherà ad una room globale in cui poter parlare con altri utenti che stanno utilizzando l'applicazione per scambiarsi commenti e pareri.
+In the ”Chat” section you will connect to a global room where you can talk to other users who are using the application and exchange comments and opinions.
 
 
 \section{Framework}
@@ -158,7 +159,7 @@ The development of iSport was achieved through the use of native iOS SDKs, in pa
 
 \section{Functional Requirements}
 The product provides to users a simple and user-friendly interface to:
-\begin{itemize}
+\begin{enumerate}
 	\item View news previews
 	\item Read the complete article
 	\item View football match results real time
@@ -169,11 +170,11 @@ The product provides to users a simple and user-friendly interface to:
 	\item Display game share 
 	\item Compose your ticket
 	\item Display the potential winnings of the ticket
-	\item Condividere delle notizie su Facebook
-	\item Salvare delle notizie tra i preferiti
-	\item Chattare con altri utenti
-	\item Esegure l'accesso
-\end{itemize}
+	\item Share news on Facebook
+	\item Save news into favorites section
+	\item Chat with other users
+	\item Log in
+\end{enumerate}
 \section{Non Functional Requirements}
 The application must be able to:
 \begin{itemize}
@@ -210,13 +211,13 @@ Since the application receives all the necessary data from external services thr
 	\includegraphics[width=0.2\textwidth]{images/DatiSchedina}
 	\includegraphics[width=0.2\textwidth]{images/DatiNews}
 \end{figure}
-Per permettere l'acquisto di schedine è stato usato un Database online utilizzando la piattaforma di Firebase. Il modello E/R utilizzato per quest'ultimo è il seguente:
+In order to purchase the ticket, we used an online database through the Firebase platform. The E / R model used is the follow:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/ER.png}
 \end{figure}
 \newpage
-Per garantire la privacy di ogni utente, l'accesso al Database è regolato mediante le seguenti rules:
+To guarantee privacy, the access to the Database is regulated by the following rules:
 \begin{lstlisting}[style=CStyle]
 {
 	"rules": {
@@ -245,37 +246,37 @@ This section describes how actors can interact with iSport in order to use all t
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/ViewNews}
-	\caption{Use case relativo alla visualizzazione e manipolazione delle notizie}
+	\caption{Use case related to visualization and handling news}
 \end{figure}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/ViewLive}
-	\caption{Use case relativo alla visualizzazione e manipolazione dei risultati}
+	\caption{Use case related to visualization and handling results}
 \end{figure}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/ViewBet}
-	\caption{Use case relativo alla visualizzazione e manipolazione delle quote}
+	\caption{Use case related to visualization and handling odds}
 \end{figure}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/Chat}
-	\caption{Use case del servizio chat}
+	\caption{Use case related to chat service}
 \end{figure}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/Login}
-	\caption{Use case per l'esecuzione del Login}
+	\caption{Use case related to log in activity}
 \end{figure}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/Share}
-	\caption{Use case relativo condivisione di notizie}
+	\caption{Use case related to news sharing}
 \end{figure}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/Buy}
-	\caption{Use case relativo all'acquisto di schedine}
+	\caption{Use case related to ticket purchase}
 \end{figure}
 \subsection*{Login}
 \begin{tabular}{|c|p{0.8\textwidth}|}
@@ -286,18 +287,19 @@ This section describes how actors can interact with iSport in order to use all t
 	\hline
 	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & Guest with login credentials\\
 	\hline
-	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  1, 2\\
+	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  14\\
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
-		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "Login" del "Side Menu"
-		\item L'utente viene rimandato sul sito di Facebook per l'inserimento delle credenziali
-		\item L'applicazione effettua il login tramite Facebook
-		\item L'applicazione effettua il login a Firebase usando l'account di Facebook
+		\item The user opens the application
+		\item The user presses ”Login” located in the ”Side Menu”
+		\item The user is redirected on Facebook to enter credentials
+		\item The app logs in through Facebook
+		\item The app login into Firebase using Facebook account
+		
 	\end{itemize}\\
 	\hline
 	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & Actor becomes User \\\hline
-	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete. L'utente non ha un account Facebook. \\ \hline	
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & The user is not connected to the network or he hasn’t a Facebook account. \\ \hline	
 \end{tabular}
 \newpage
 \subsection*{Logout}
@@ -309,405 +311,415 @@ This section describes how actors can interact with iSport in order to use all t
 	\hline
 	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & Actor is logged in\\
 	\hline
-	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  1, 2\\
+	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  14\\
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
-		\item L'utente preme sulla tab "Logout" del "Side Menu"
-		\item L'applicazione effettua il logout da Facebook
-		\item L'applicazione effettua il logout da Firebase
+		\item The user presses ”Logout” located in the ”Side Menu”
+		\item The app logout from Facebook
+		\item The app logout from Firebase
+		
 	\end{itemize}\\
 	\hline
 	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & Actor is logged out and becomes Guest \\\hline
-	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete. \\ \hline	
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & The user is not connected to the network. \\ \hline	
 \end{tabular}
 \newpage
-\subsection*{Visualizzare Notizie}
+\subsection*{View News}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Visualizzare Notizie\\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & View News\\
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & Guest \\
 	\hline
-	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore ha scaricato l'applicazione\\
+	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & The user downloaded the mobile app\\
 	\hline
 	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  1, 2\\
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
-		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "News" del "Side Menu"
-		\item L'applicazione fornisce un elenco delle notizie principali
-		\item L'utente preme sull'articolo di cui vuole visualizzare la notizia completa
-		\item L'utente preme il tasto "Done" per terminare la lettura
+		\item The user opens the app
+		\item The user presses on the ”News” tab located to the ”Side Menu”
+		\item The app shows a selection of the most important news
+		\item The user presses the news to read the whole article
+		\item The user presses ”Done” to finish reading
 	\end{itemize}\\
 	\hline
-	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente ha letto la notizia di interesse. \\\hline
-	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere gli articoli e quindi non può mostrarle. L'articolo è stato rimosso dal sito di origine, ma non nel database del servizio terzo \\ \hline	
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & The user read the news of interest. \\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} &The user is not connected to the network so he cannot send a request to read the article. The news has been released from the origin website, but not from the database. \\ \hline	
 \end{tabular}
 \newpage
-\subsection*{Condividere Notizie}
+\subsection*{Share News}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Condividere Notizie\\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Share News\\
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & User \\
 	\hline
-	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore si è autenticato correttamente\\
+	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & The user logged in correctly\\
 	\hline
-	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  1, 2\\
+	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  11\\
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
-		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "News" del "Side Menu"
-		\item L'applicazione fornisce un elenco delle notizie principali
-		\item L'utente preme il simbolo di "Share" della notizia che vuole condividere
-		\item L'utente compone l'eventuale messaggio da allegare nel post
-		\item L'utente preme il tasto "Pubblica" per terminare la condivisione
+		\item The user opens the app 
+		\item The user presses the ”News” tab located in the ”Side Menu”
+		\item The app shows a selection of the most important news
+		\item The user presses on the ”Share” function 
+		\item The user writes the message he wants to attach to the shared post
+		\item The user presses ”Publish” 
+		
 	\end{itemize}\\
 	\hline
-	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente ha condiviso su Facebook la notizia di interesse. \\\hline
-	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere gli articoli e quindi non può mostrarle. L'articolo è stato rimosso dal sito di origine, ma non nel database del servizio terzo. La connessione è debole e l'applicazione non riesce a mandare i dati per la condivisione. \\ \hline	
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & The user shares on Facebook the news of interest. \\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & The user is not connected to the network so he cannot send a request to share the article. The news has been released from the origin website, but not from the database or the connection is weak. \\ \hline	
 \end{tabular}
 \newpage
-\subsection*{Salvare Notizie}
+\subsection*{Save News}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Salvare Notizie\\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Save News\\
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & User \\
 	\hline
-	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore ha scaricato l'applicazione\\
+	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & The user downloaded the mobile app\\
 	\hline
-	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  1, 2\\
+	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  12\\
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
-		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "News" del "Side Menu"
-		\item L'applicazione fornisce un elenco delle notizie principali
-		\item L'utente preme il simbolo di "Elenco" della notizia che vuole memorizzare
-		\item L'applicazione memorizza le informazioni necessarie nel database locale
+		\item The user opens the app
+		\item The user presses the ”News” tab located in the ”Side Menu”
+		\item The app shows a selection of the most important news
+		\item The user presses on ”Bookmark” to save the news
+		\item The app saves the information in the local database 
+		
 	\end{itemize}\\
 	\hline
-	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente ha memorizzato una notizia per una visione successiva. \\\hline
-	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere gli articoli e quindi non può mostrarle. L'articolo è stato rimosso dal sito di origine, ma non nel database del servizio terzo. \\ \hline	
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & The user saves the news for a following reading. \\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & The user is not connected to the network, so he cannot send a request to save the article. The news has been released from the origin website, but not from the database. \\ \hline	
 \end{tabular}
 \newpage
-\subsection*{Visualizzare Notizie Salvate}
+\subsection*{See Saved News}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Visualizzare Notizie Salvate\\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & See Saved News\\
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & User \\
 	\hline
-	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore ha salvato delle notizie in precedenza\\
+	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & The user saved the news \\
 	\hline
-	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  1, 2\\
+	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  1, 2, 12\\
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
-		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "News" del "Side Menu"
-		\item L'utente preme il tasto "Elenco" nella Navigation Bar per consultare le notizie salvate
-		\item L'applicazione fornisce un elenco delle notizie salvate in precedenza
+		\item The user opens the app
+		\item The user presses the ”News” tab located in the ”Side Menu”
+		\item The user presses on “Bookmark” in the Navigation Bar to see saved news 
+		\item The app shows a list of the saved news
 	\end{itemize}\\
 	\hline
-	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente ha memorizzato una notizia per una visione successiva. \\\hline
-	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere gli articoli e quindi non può mostrarle. L'articolo è stato rimosso dal sito di origine, ma non nel database del servizio terzo. \\ \hline	
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & The user read the news of interest. \\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & The user is not connected to the network so he cannot send a request to read the article. The news has been released from the origin website, but not from the database. \\ \hline	
 \end{tabular}
 \newpage
-\subsection*{Visualizzare Partite}
+\subsection*{See Matches}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Visualizzare Partite\\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & See Matches\\
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & Guest \\
 	\hline
-	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore ha scaricato l'applicazione\\
+	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & 
+	The user downloaded the app\\
 	\hline
 	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  3\\
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
-		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "Live" del "Side Menu"
-		\item L'applicazione fornisce un elenco delle partite del giorno
+		\item The user opens the app
+		\item The user presses the ”Live” tab located in the ”Side Menu”
+		\item The app shows a list of matches
+		
 	\end{itemize}\\
 	\hline
-	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente ha visualizzato i risultati delle partite. \\\hline
-	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere i risultati e quindi non può mostrargli. La connessione potrebbe essere debole e quindi non riuscire a ricevere i dati richiesti. \\ \hline	
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & The user saw scores. \\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & The user is not connected to the network, so he cannot send a request to obtain the final scores. \\ \hline	
 \end{tabular}
 
 
 
 \newpage
-\subsection*{Visualizzare Formazione Partita}
+\subsection*{View Lineup}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Visualizzare Formazione Partita\\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & View Lineup\\
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & Guest \\
 	\hline
-	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore ha scaricato l'applicazione\\
+	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & The user downloaded the app\\
 	\hline
 	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  3, 6\\
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
-		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "Live" del "Side Menu"
-		\item L'applicazione fornisce un elenco delle partite del giorno
-		\item L'utente preme sulla partita di cui vuole ottenere l'informazione richiesta
-		\item L'utente preme sul bottone raffigurante il campo di gioco
+		\item The user opens the app
+		\item The user presses the ”Live” tab located in the ”Side Menu”
+		\item The app shows a list of daily matches 
+		\item The user chooses the match to obtain the requested information 
+		\item The user presses the button showing the game field 
+		
 	\end{itemize}\\
 	\hline
-	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente ha visualizzato le formazioni delle due squadre della partita richiesta. \\\hline
-	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere i risultati e quindi non può mostrargli. La connessione potrebbe essere debole e quindi non riuscire a ricevere i dati richiesti. \\ \hline	
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & The user saw lineups for the requested match  \\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & The user is not connected to the network, so he cannot send a request to obtain results or the connection could be weak.  \\ \hline	
 \end{tabular}
 \newpage
-\subsection*{Visualizzare Marcatori Partita}
+\subsection*{View Goal Scorer}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Visualizzare Marcatori Partita\\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & View Goal Scorer\\
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & Guest \\
 	\hline
-	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore ha scaricato l'applicazione\\
+	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & The user downloaded the app\\
 	\hline
 	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  3, 4\\
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
-		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "Live" del "Side Menu"
-		\item L'applicazione fornisce un elenco delle partite del giorno
-		\item L'utente preme sulla partita di cui vuole ottenere l'informazione richiesta
-		\item L'utente preme sul bottone raffigurante un pallore
+		\item The user opens the app
+		\item The user presses the ”Live” tab located in the ”Side Menu”
+		\item The app shows a list of daily matches 
+		\item The user chooses the match to obtain the requested information 
+		\item The user presses the button showing a ball 
 	\end{itemize}\\
 	\hline
-	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente ha visualizzato i marcatori della partita richiesta. \\\hline
-	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere i risultati e quindi non può mostrargli. La connessione potrebbe essere debole e quindi non riuscire a ricevere i dati richiesti. \\ \hline	
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & The user saw the goal scorers of the requested match.  \\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & The user is not connected to the network, so he cannot send a request to obtain results or the connection could be weak. \\ \hline	
 \end{tabular}
 \newpage
-\subsection*{Visualizzare Statistiche Partita}
+\subsection*{View Match Statistics}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Visualizzare Statistiche Partita\\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & View Match Statistics\\
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & Guest \\
 	\hline
-	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore ha scaricato l'applicazione\\
+	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & The user downloaded the app\\
 	\hline
 	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  3, 7\\
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
-		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "Live" del "Side Menu"
-		\item L'applicazione fornisce un elenco delle partite del giorno
-		\item L'utente preme sulla partita di cui vuole ottenere l'informazione richiesta
-		\item L'utente preme sul bottone raffigurante un grafico
+		\item The user opens the app
+		\item The user presses the ”Live” tab located in the ”Side Menu”
+		\item The app shows a list of daily matches 
+		\item The user chooses the match to obtain the requested information 
+		\item The user presses the button showing a chart
 	\end{itemize}\\
 	\hline
-	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente ha visualizzato le statistiche della partita richiesta. \\\hline
-	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere i risultati e quindi non può mostrargli. La connessione potrebbe essere debole e quindi non riuscire a ricevere i dati richiesti. \\ \hline	
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & The user saw the match statistics. \\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & The user is not connected to the network, so he cannot send a request to obtain results or the connection could be weak. \\ \hline	
 \end{tabular}
 \newpage
-\subsection*{Visualizzare Ammonizioni Partita}
+\subsection*{View Match Booking (Cautions)}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Visualizzare Ammonizioni Partita\\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & View Match Booking (Cautions)\\
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & Guest \\
 	\hline
-	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore ha scaricato l'applicazione\\
+	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & The user downloaded the app\\
 	\hline
 	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  3, 5\\
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
-		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "Live" del "Side Menu"
-		\item L'applicazione fornisce un elenco delle partite del giorno
-		\item L'utente preme sulla partita di cui vuole ottenere l'informazione richiesta
-		\item L'utente preme sul bottone raffigurante un cartellino
+		\item The user opens the app
+		\item The user presses the ”Live” tab located in the ”Side Menu”
+		\item The app shows a list of daily matches 
+		\item The user chooses the match to obtain the requested information 
+		\item The user presses the button showing a card
 	\end{itemize}\\
 	\hline
-	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente ha visualizzato gli ammoniti ed espulsi della partita richiesta. \\\hline
-	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere i risultati e quindi non può mostrargli. La connessione potrebbe essere debole e quindi non riuscire a ricevere i dati richiesti. \\ \hline	
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & The user saw booked and expelled players. \\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & The user is not connected to the network, so he cannot send a request to obtain results or the connection could be weak.  \\ \hline	
 \end{tabular}
 \newpage
-\subsection*{Visualizzare Quote}
+\subsection*{View Odds}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Visualizzare Quote\\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & View Odds\\
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & Guest \\
 	\hline
-	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore ha scaricato l'applicazione\\
+	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & The user downloaded the app\\
 	\hline
 	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  8\\
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
-		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "Bet" del "Side Menu"
-		\item L'applicazione fornisce un elenco delle quote dei principali pronostici delle partite odierne
+		\item The user opens the app
+		\item The user presses the “Bet” tab located in the ”Side Menu”
+		\item The app shows a list of principle odds of the daily matches 
+		
 	\end{itemize}\\
 	\hline
-	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente ha visualizzatole quote delle partite odierne. \\\hline
-	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere le quote. La connessione potrebbe essere debole e quindi non riuscire a ricevere i dati richiesti. \\ \hline	
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & The user saw the odds of the daily matches. \\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & The user is not connected to the network, so he cannot send a request to obtain results or the connection could be weak.  \\ \hline	
 \end{tabular}
 \newpage
-\subsection*{Visualizza Schedina Composta}
+\subsection*{View Ticket}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Visualizza Schedina Composta\\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & View Ticket\\
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & Guest \\
 	\hline
-	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore ha scaricato l'applicazione\\
+	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & The user downloaded the app\\
 	\hline
 	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  9\\
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
-		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "Bet" del "Side Menu"
-		\item L'utente preme sul bottone raffigurante un carrello nella NavBar
+		\item The user opens the app
+		\item The user presses the “Bet” tab located in the ”Side Menu”
+		\item The user presses the button showing a cart 
 	\end{itemize}\\
 	\hline
-	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente visualizza i pronostici presenti nella schedina.\\\hline
-	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere le quote. La connessione potrebbe essere debole e quindi non riuscire a ricevere i dati richiesti. \\ \hline	
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & The user sees the ticket.\\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & The user is not connected to the network, so he cannot send a request to obtain results or the connection could be weak. \\ \hline	
 \end{tabular}
 \newpage
-\subsection*{Aggiungere Partita a Schedina}
+\subsection*{Add Match To The Ticket }
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Aggiungere Partita a Schedina\\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Add Match To The Ticket\\
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & Guest \\
 	\hline
-	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore ha scaricato l'applicazione\\
+	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & The user downloaded the app \\
 	\hline
 	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  9\\
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
-		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "Bet" del "Side Menu"
-		\item L'applicazione fornisce un elenco delle quote dei principali pronostici delle partite odierne
-		\item L'utente preme sulla quota relativa al pronostico e partita da aggiungere
+		\item The user opens the app
+		\item The user presses the “Bet” tab located in the ”Side Menu”
+		\item The app shows a list of principle odds of the daily matches 
+		\item The user presses on the odd and add the forecast to the ticket
+		
 	\end{itemize}\\
 	\hline
-	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente ha aggiunto un pronostico di una partita alla schedina.\\\hline
-	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere le quote. La connessione potrebbe essere debole e quindi non riuscire a ricevere i dati richiesti. \\ \hline	
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & The user added a forecast to the ticket.\\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & The user is not connected to the network, so he cannot send a request to obtain results or the connection could be weak. \\ \hline	
 \end{tabular}
 \newpage
-\subsection*{Eliminare Partita da Schedina}
+\subsection*{Delete a Match}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Eliminare Partita a Schedina\\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Delete a Match\\
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & Guest \\
 	\hline
-	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore ha scaricato l'applicazione\\
+	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & The user downloaded the app\\
 	\hline
 	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  9\\
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
-		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "Bet" del "Side Menu"
-		\item L'utente preme sul bottone raffigurante un carrello nella NavBar
-		\item L'utente effettua uno swipe verso sinistra sulla partita da eliminare
+		\item The user opens the app
+		\item The user presses the “Bet” tab located in the ”Side Menu”
+		\item The user presses the button showing a cart
+		\item The user swipes to the left to delete the match 
 	\end{itemize}\\
 	\hline
-	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente ha eliminato un pronostico di una partita alla schedina.\\\hline
-	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & Nessuna Eccezione\\ \hline	
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & The user deleted a forecast from the ticket \\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & None\\ \hline	
 \end{tabular}
 \newpage
-\subsection*{Calcolare potenziale Vincita Schedina}
+\subsection*{Calculate The Potential Winning}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Calcolare potenziale Vincita Schedina\\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Calculate The Potential Winning\\
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & Guest \\
 	\hline
-	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore ha scaricato l'applicazione\\
+	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & The user downloaded the app\\
 	\hline
 	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  10\\
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
-		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "Bet" del "Side Menu"
-		\item L'utente preme sul bottone raffigurante un carrello nella NavBar
-		\item L'utente inserisce l'importo da giocare nell'apposito input
-		\item L'utente preme il tasto "Done"
+		\item The user opens the app
+		\item The user presses the “Bet” tab located in the ”Side Menu”
+		\item The user presses the button showing a cart
+		\item The user selects the amount of money he wants to bet 
+		\item The user presses on “Done”
+		
 	\end{itemize}\\
 	\hline
-	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente visualizza la potenziale vincita della schedina attuale.\\\hline
-	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & Nessuna Eccezione \\ \hline	
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & The user sees the potential winning \\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & None \\ \hline	
 \end{tabular}
 \newpage
-\subsection*{Acquisto Schedina}
+\subsection*{Purchase ticket}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Acquisto Schedina\\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Purchase ticket\\
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & User \\
 	\hline
-	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore si è autenticato correttamente\\
+	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & The user logged in correctly \\
 	\hline
-	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  10\\
+	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  9, 10\\
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
-		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "Bet" del "Side Menu"
-		\item L'utente preme sul bottone raffigurante un carrello nella NavBar
-		\item L'utente inserisce l'importo che vuole giocare
-		\item L'utente preme sul bottone "Buy"
+		\item The user opens the app
+		\item The user presses the “Bet” tab located in the ”Side Menu”
+		\item The user presses the button showing a cart
+		\item The user selects the amount of money he wants to bet 
+		\item The user presses on ”Buy”
+		
 	\end{itemize}\\
 	\hline
-	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente acquista la schedina attuale.\\\hline
-	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & La connessione è assente e non può portare a termine l'acquisto. L'utente non è autenticato. L'utente non ha inserito nessuna partita nella schedina \\ \hline	
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & The user completes the purchase.\\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & Absent connection to the network, the user cannot complete the purchase. The user didn’t log correctly or he didn’t add matches to the ticket.  \\ \hline	
 \end{tabular}
 \newpage
-\subsection*{Visualizza Schedine Acquistate}
+\subsection*{View Purchased Tickets}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Visualizza Schedine Acquistate\\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & View Purchased Tickets\\
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & User \\
 	\hline
-	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore si è autenticato correttamente\\
+	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & The user logged in correctly\\
 	\hline
-	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  9\\
+	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  9, 10\\
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
-		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "Bet" del "Side Menu"
-		\item L'utente preme sul bottone "cronologia" nella NavBar
-		\item L'applicazione scarica le informazioni su tutte le schedine acquistate
-		\item L'utente preme sulla cella corrispondente alla schedina che vuole visualizzare
-		\item  L'applicazione carica il dettaglio di tutti gli eventi presenti nella schedina
+		\item The user opens the app
+		\item The user presses the “Bet” tab located in the ”Side Menu”
+		\item The user presses on “chronology” in the NavBar
+		\item The app downloads the information about all purchased tickets 
+		\item The user presses on the corresponding cell of the ticket he wants to see 
+		\item The app loads the ticket and the user sees all the details 
 	\end{itemize}\\
 	\hline
-	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente visualizza una schedina acquistata in precedenza.\\\hline
-	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete e quindi non può inviare le richieste per ottenere la cronologia delle giocate. La connessione potrebbe essere debole e quindi non riuscire a ricevere i dati richiesti. L'utente non è autenticato. L'utente non ha giocato nessuna schedina. \\ \hline	
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & The user sees a purchased ticket previously.\\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & The user is not connected to the network, so he cannot send a request to obtain results or the connection could be weak. The user didn’t log correctly or he didn’t buy a ticket. \\ \hline	
 \end{tabular}
 \newpage
 \subsection*{Chat}
 \begin{tabular}{|c|p{0.8\textwidth}|}
 	\hline
-	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Login\\
+	\parbox[c][6ex]{6ex}{\centering \textbf{Name}} & Chat\\
 	\hline
 	\parbox[c][6ex]{6ex}{\centering \textbf{Actor}} & User \\
 	\hline
-	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & L'attore si è autenticato correttamente\\
+	\parbox[c][10ex]{15ex}{\centering \textbf{Entry Condition}} & The user logged in correctly \\
 	\hline
-	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  1, 2\\
+	\parbox[c][6ex]{15ex}{\centering \textbf{Goal}} &  13\\
 	\hline
 	\parbox[c][10ex]{12ex}{\centering \textbf{Event Flow}} & \begin{itemize}
-		\item L'utente apre l'applicazione
-		\item L'utente preme sulla tab "Chat" del "Side Menu"
-		\item L'utente viene rimandato sul sito di Facebook per l'inserimento delle credenziali
-		\item L'applicazione effettua il login tramite alla room di Scaledrone usando le informazioni di Facebook
-		\item  L'utente scrive i propri messaggi nella casella di testo
-		\item L'utente preme invio per spedire il proprio messaggio
-		\item L'applicazione carica tutti i messaggi presenti nella room
+		\item The user opens the app
+		\item The user presses the “Chat” tab located in the ”Side Menu”
+		\item The app logs into Scaledrone’s room using Facebook credentials  
+		\item The user writes messages in the text field 
+		\item The user presses send 
+		\item The app loads all the messages of the room 
+		
 	\end{itemize}\\
 	\hline
-	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & L'utente interagisce con altre persone \\\hline
-	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & L'utente non è connesso alla rete. L'utente non ha un account Facebook.\\ \hline	
+	\parbox[c][7ex]{12ex}{\centering \textbf{Exit condition}} & The user interacts with other people. \\\hline
+	\parbox[c][10ex]{13ex}{\centering \textbf{Exceptions}} & The user is not connected or he has not a Facebook account.\\ \hline	
 \end{tabular}
 \newpage
 
@@ -716,11 +728,12 @@ This section describes how actors can interact with iSport in order to use all t
 In order to explain our work and facilitate further implementations we have decided to show the logical flows aimed to create some features. The sequence diagrams will describe the interactions between the different parts of the system and the user.
 
 \subsection*{Login}
-La procedura di "Login" inizia quando l'utente preme il relativo bottone del Side Menu. Una volta premuto l'utente viene reindirizzato sul sito di Facebook per completare la registrazione. Subito dopo il login a Facebook l'applicazione effettuerà il login al Database di Firebase.
+The ”Login” procedure starts when the user presses the button on the Side Menu.  Once pressed, the user is redirected to the Facebook site to complete the registration. Immediately after logging on Facebook the application will log into the Firebase Database.
 
-Una volta completata questa procedura il sistema aggiornerà la GUI abilitando le sezioni disponibili solo per gli iscritti.
+Once this procedure is completed, the system will update the GUI by enabling the sections available only to subscribers.
 
-In caso di errore il sistema restituirà un messaggio di errore.
+In the event of an error, the system will show an error message.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{images/Sequence/Login}
@@ -728,9 +741,10 @@ In caso di errore il sistema restituirà un messaggio di errore.
 \newpage
 
 \subsection*{Logout}
-La procedura di "Logout" inizia quando l'utente preme il relativo bottone del Side Menu. Una volta premuto verrà visualizzato un messaggio di conferma. In caso di approvazione verrà effettualo il logout da Facebook e Firebase.
+The ”Logout” procedure starts when the user presses the button on the Side Menu. Once pressed, a confirmation message will be displayed. In case of approval, the logout from Facebook and Firebase will be effective.
 
-Una volta completata questa procedura il sistema aggiornerà la GUI abilitando le sezioni non disponibili per i guest.
+Now that this procedure is completed, the system will update the GUI by enabling sections not available for guests.
+
 
 \begin{figure}[H]
 	\centering
@@ -757,11 +771,12 @@ Furthermore and asynchronously, the application will download the preview images
 \newpage
 
 \subsection*{Share News}
-The ”Share News” procedure starts when the user opens the application or presses the ”News” section in the Side Menu. The sequence diagram shows the normal procedure.
+The ”Share News” procedure starts when the user opens the application or presses ”News” on the Side Menu. The sequence diagram shows the normal procedure.
 
-Dopo la normale procedura di "View News" l'utente preme sul bottone di share. A quel punto l'applicazione farà una richiesta alle "Graph" API di Facebook per la creazione del post con il testo inserito dall'utente.
+After the normal ”View News” procedure the user should press the share button. At that point the application will make a request to the ”Graph” API of Facebook to create the post with the message entered by the user.
 
-Tale operazione ha come condizione che l'utente sia già autenticato e in caso contrario restituirà una avviso di errore.
+To make this operation possible is necessary that the user is already authenticated otherwise the system will show an error notice.
+
 
 \begin{figure}[H]
 	\centering
@@ -804,11 +819,12 @@ After opening the detail page, the user can change the desired information throu
 \newpage
 
 \subsection*{Chat}
-La procedura di "Chat" inizia quando l'utente preme il relativo bottone del Side Menu. Una volta caricata la schermata, l'applicazione rimarrà in ascolto della room mostrando in tempo reale tutti i messaggi inviati dagli altri utenti. L'utente può poi scrivere e inviare il proprio messaggio.
+The ”Chat” procedure starts when the user presses the button on the Side Menu. Once the screen is loaded, the application will show all messages sent by other users in real time. The user can then write and send his message.
 
-L'applicazione inoltre scaricherà le immagini del profilo relative ai messaggi inviati dagli altri utenti in maniera asincrona.
+The application will also show Facebook profile images of other users next to the message sent.
 
-Tale procedura presuppone che l'utente sia già autenticato altrimenti verrà visualizzato un messaggio di errore.
+To make this operation possible is necessary that the user is already authenticated otherwise the system will show an error notice.
+
 
 \begin{figure}[H]
 	\centering
@@ -870,12 +886,12 @@ At that point the Controller will delete the corresponding record from the Datab
 \newpage
 
 \subsection*{Buy Ticket}
+When the user completes the composition of his ticket, the ”Buy Ticket” procedure may begin.
 
-La procedura di "Buy Ticket" inizia dopo che l'utente ha completato la composizione della propria schedina.
+By pressing the buy button, the application will check the correctness of the ticket and proceed with the purchase.
 
-Una volta premuto il bottone di buy l'applicazione controllerà la correttezza della schedina ed effettuerà l'acquisto 
+To make this operation possible is necessary that the user is already authenticated otherwise the system will show an error notice.
 
-Tale procedura presuppone che l'utente sia già autenticato altrimenti verrà visualizzato un messaggio di errore.
 
 \begin{figure}[H]
 	\centering
@@ -885,11 +901,12 @@ Tale procedura presuppone che l'utente sia già autenticato altrimenti verrà vi
 \newpage
 
 \subsection*{Ticket Chronology}
-La procedura di "Ticket Chronology" inizia quando l'utente si trova nella sezione "Bet" dopo aver premuto il relativo bottone del Side Menu.
+The ”Ticket Chronology” procedure starts when the user is in the ”Bet” section by pressing the button in the Side Menu.
 
-Dopo che l'utente preme sul tasto "Cronologia" del NavBar l'applicazione accederà ai dati presenti nel database di Firebase recuperando tutte le schedine acquistate in precedenza dall'utente e mostrandole a schermo
+Moreover, by pressing ”History” on the NavBar the application access Firebase database showing all the tickets purchased previously by the user.
 
-Tale procedura presuppone che l'utente sia già autenticato altrimenti verrà visualizzato un messaggio di errore.
+To make this procedure possible is necessary that the user is already authenticated otherwise the system will show an error notice.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{images/Sequence/TicketChronology}
