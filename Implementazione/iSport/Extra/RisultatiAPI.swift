@@ -32,27 +32,26 @@ class RisultatiAPI: NSObject {
     private static func RequestAPI(giorno: String, callback: @escaping () -> Void){
         let stringURL = String(urlRisultatiAPI + "&from=" + giorno + "&to=" + giorno + "&APIkey=" + risultatiKey)
         let url = URL(string: stringURL)!
-        URLSession.shared.dataTask(with: url){ (data, response, error) in
+        let temp = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+        URLSession.shared.dataTask(with: temp){ (data, response, error) in
             DispatchQueue.main.async {
                 guard let data = data , error == nil else {
-                    print (error!)
+                    errorAPI(callback: callback)
                     return
                 }
                 if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
                     print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                    print(response!)
+                    errorAPI(callback: callback)
                 }
                 
                 do{
+                    print("temp")
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
                     self.listaPartite = try decoder.decode([Partita].self, from: data)
                     PredictionAPI(giorno: giorno, callback: callback)
                 }catch let errore{
-                    listaPartite = [Partita]()
-                    listaPredizioni = [Prediction]()
-                    listaOdds = [Odds]()
-                    callback()
+                    errorAPI(callback: callback)
                     print(errore)
                 }
             }
@@ -61,17 +60,19 @@ class RisultatiAPI: NSObject {
     }
     
     private static func PredictionAPI(giorno: String, callback: @escaping () -> Void){
+        print("call")
         let stringURL = String(urlPredizioniAPI + "&from=" + giorno + "&to=" + giorno + "&APIkey=" + risultatiKey)
         let url = URL(string: stringURL)!
-        URLSession.shared.dataTask(with: url){ (data, response, error) in
+        let temp = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+        URLSession.shared.dataTask(with: temp){ (data, response, error) in
             DispatchQueue.main.async {
                 guard let data = data , error == nil else {
-                    print (error!)
+                    errorAPI(callback: callback)
                     return
                 }
                 if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
                     print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                    print(response!)
+                    errorAPI(callback: callback)
                 }
                 
                 do{
@@ -80,10 +81,7 @@ class RisultatiAPI: NSObject {
                     self.listaPredizioni = try decoder.decode([Prediction].self, from: data)
                     OddsAPI(giorno: giorno, callback: callback)
                 }catch let errore{
-                    listaPartite = [Partita]()
-                    listaPredizioni = [Prediction]()
-                    listaOdds = [Odds]()
-                    callback()
+                    errorAPI(callback: callback)
                     print(errore)
                 }
             }
@@ -94,15 +92,16 @@ class RisultatiAPI: NSObject {
     private static func OddsAPI(giorno: String, callback: @escaping () -> Void){
         let stringURL = String(urlOddsAPI + "&from=" + giorno + "&to=" + giorno + "&APIkey=" + risultatiKey)
         let url = URL(string: stringURL)!
-        URLSession.shared.dataTask(with: url){ (data, response, error) in
+        let temp = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+        URLSession.shared.dataTask(with: temp){ (data, response, error) in
             DispatchQueue.main.async {
                 guard let data = data , error == nil else {
-                    print (error!)
+                    errorAPI(callback: callback)
                     return
                 }
                 if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
                     print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                    print(response!)
+                    errorAPI(callback: callback)
                 }
                 
                 do{
@@ -112,10 +111,7 @@ class RisultatiAPI: NSObject {
                     self.listaOdds = filtraOdds(scommesse: listaTemporanea)
                     callback()
                 }catch let errore{
-                    listaPartite = [Partita]()
-                    listaPredizioni = [Prediction]()
-                    listaOdds = [Odds]()
-                    callback()
+                    errorAPI(callback: callback)
                     print(errore)
                 }
             }
@@ -160,6 +156,13 @@ class RisultatiAPI: NSObject {
         
         return risultato
         
+    }
+    
+    static func errorAPI(callback: @escaping () -> Void){
+        listaPartite = [Partita]()
+        listaPredizioni = [Prediction]()
+        listaOdds = [Odds]()
+        callback()
     }
     
 

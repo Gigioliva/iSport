@@ -14,20 +14,17 @@ class OddsViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tableViewOdds: UITableView!
     var listaScommesse = Dictionary<String, [OddsCompleta]>()
     var listaCampionati = [String]()
+    var startUpdate = false
+    var viewBlack: UIView?
+    let giorno = "2019-01-12"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tableViewOdds.delegate = self
         tableViewOdds.dataSource = self
-        
         tableViewOdds.estimatedRowHeight = 100
-        let giorno = "2019-01-12"
-//        let date = Date()
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "yyyy-MM-dd"
-//        let result = formatter.string(from: date)
-        RisultatiAPI.UpdateDatiPartite(giorno: giorno, callback: aggiornaTabella)
+        Update()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -87,8 +84,8 @@ class OddsViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         tableViewOdds.reloadData()
-        
-        
+        viewBlack?.removeFromSuperview()
+        startUpdate = false
     }
 
     @IBAction func VisualizzaCarrello(_ sender: Any) {
@@ -117,5 +114,19 @@ class OddsViewController: UIViewController, UITableViewDelegate, UITableViewData
         let OK = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
         alert.addAction(OK)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func Update(){
+        startUpdate = true
+        viewBlack = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        viewBlack!.backgroundColor = UIColor(white: 0, alpha: 0.5)
+        self.view.addSubview(viewBlack!)
+        let activity = UIActivityIndicatorView()
+        activity.startAnimating()
+        viewBlack!.addSubview(activity)
+        activity.translatesAutoresizingMaskIntoConstraints = false
+        activity.centerXAnchor.constraint(equalTo: viewBlack!.centerXAnchor).isActive = true
+        activity.centerYAnchor.constraint(equalTo: viewBlack!.centerYAnchor).isActive = true
+        RisultatiAPI.UpdateDatiPartite(giorno: giorno, callback: aggiornaTabella)
     }
 }

@@ -20,11 +20,15 @@ class RisultatiLive: UIViewController, UITableViewDelegate, UITableViewDataSourc
     var giorno: String = "2019-01-12"
     var viewBlack: UIView?
     var datePicket: DateView?
+    let dateFormatter = DateFormatter()
+    var startUpdate = false
+    var picketOpen = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ListaRisultati.delegate = self
         ListaRisultati.dataSource = self
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         Update()
         
     }
@@ -85,12 +89,13 @@ class RisultatiLive: UIViewController, UITableViewDelegate, UITableViewDataSourc
 
     
     func Update(){
+        startUpdate = true
         viewBlack = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         viewBlack!.backgroundColor = UIColor(white: 0, alpha: 0.5)
         self.view.addSubview(viewBlack!)
         let activity = UIActivityIndicatorView()
         activity.startAnimating()
-        viewBlack!.addSubview(activity)
+        viewBlack?.addSubview(activity)
         activity.translatesAutoresizingMaskIntoConstraints = false
         activity.centerXAnchor.constraint(equalTo: viewBlack!.centerXAnchor).isActive = true
         activity.centerYAnchor.constraint(equalTo: viewBlack!.centerYAnchor).isActive = true
@@ -124,7 +129,8 @@ class RisultatiLive: UIViewController, UITableViewDelegate, UITableViewDataSourc
         }
  
         ListaRisultati.reloadData()
-        viewBlack?.removeFromSuperview()
+        viewBlack!.removeFromSuperview()
+        startUpdate = false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -141,29 +147,32 @@ class RisultatiLive: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     @IBAction func ShowData(_ sender: Any) {
-        viewBlack = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
-        viewBlack!.backgroundColor = UIColor(white: 0, alpha: 0.5)
-        self.view.addSubview(viewBlack!)
-        
-        datePicket = DateView()
-        viewBlack!.addSubview(datePicket!)
-        
-        datePicket!.translatesAutoresizingMaskIntoConstraints = false
-        datePicket!.topAnchor.constraint(equalTo: datePicket!.superview!.topAnchor, constant: 10).isActive = true
-        datePicket!.leadingAnchor.constraint(equalTo: datePicket!.superview!.leadingAnchor, constant: 10).isActive = true
-        datePicket!.trailingAnchor.constraint(equalTo: datePicket!.superview!.trailingAnchor, constant: -10).isActive = true
-        datePicket!.addConstraint(NSLayoutConstraint(item: datePicket!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 200))
-        
-        viewBlack?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissDatePicker)))
+        if !startUpdate && !picketOpen{
+            picketOpen = true
+            viewBlack = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+            viewBlack!.backgroundColor = UIColor(white: 0, alpha: 0.5)
+            self.view.addSubview(viewBlack!)
+            datePicket = DateView()
+            viewBlack!.addSubview(datePicket!)
+            datePicket!.Data.date = dateFormatter.date(from: giorno)!
+            datePicket!.translatesAutoresizingMaskIntoConstraints = false
+            datePicket!.topAnchor.constraint(equalTo: datePicket!.superview!.topAnchor, constant: 10).isActive = true
+            datePicket!.leadingAnchor.constraint(equalTo: datePicket!.superview!.leadingAnchor, constant: 10).isActive = true
+            datePicket!.trailingAnchor.constraint(equalTo: datePicket!.superview!.trailingAnchor, constant: -10).isActive = true
+            datePicket!.addConstraint(NSLayoutConstraint(item: datePicket!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 200))
+            
+            viewBlack!.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissDatePicker)))
+        }else if picketOpen{
+            dismissDatePicker()
+        }
         
     }
     
     @objc func dismissDatePicker(){
         let date = datePicket!.Data.date
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
         giorno = dateFormatter.string(from: date)
-        viewBlack?.removeFromSuperview()
+        viewBlack!.removeFromSuperview()
+        picketOpen = false
         Update()
     }
     
