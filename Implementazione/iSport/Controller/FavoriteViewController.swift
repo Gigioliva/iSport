@@ -18,6 +18,7 @@ class FavoriteViewController: UIViewController, UITableViewDataSource, UITableVi
         ListaFavoriti.delegate = self
         ListaFavoriti.dataSource = self
         ListaFavoriti.rowHeight = 130
+        ListaFavoriti.estimatedRowHeight = 130
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -73,6 +74,7 @@ class FavoriteViewController: UIViewController, UITableViewDataSource, UITableVi
     func reloadTable() {
         ListaNews = APICoreData.GetAllNews()
         self.ListaFavoriti.reloadData()
+//        self.ListaFavoriti.scrollToNearestSelectedRow(at: .top, animated: true)
     }
     
 }
