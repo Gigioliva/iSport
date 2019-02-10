@@ -17,6 +17,9 @@
 		2346C90521ECF2FF00A18CC2 /* CustomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346C90421ECF2FF00A18CC2 /* CustomImage.swift */; };
 		2346C90D21ED105600A18CC2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346C90C21ED105600A18CC2 /* Extensions.swift */; };
 		2346C91321ED1C5500A18CC2 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2346C91221ED1C5500A18CC2 /* News.swift */; };
+		234B269E221028AC005D6F01 /* prediction.json in Resources */ = {isa = PBXBuildFile; fileRef = 234B269B221028AC005D6F01 /* prediction.json */; };
+		234B269F221028AC005D6F01 /* live.json in Resources */ = {isa = PBXBuildFile; fileRef = 234B269C221028AC005D6F01 /* live.json */; };
+		234B26A0221028AC005D6F01 /* odds.json in Resources */ = {isa = PBXBuildFile; fileRef = 234B269D221028AC005D6F01 /* odds.json */; };
 		235249E82202EB52000E9B53 /* InfoUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235249E72202EB52000E9B53 /* InfoUserTableViewCell.swift */; };
 		235249EA2202F49F000E9B53 /* FacebookApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235249E92202F49F000E9B53 /* FacebookApi.swift */; };
 		23524A3322034E8D000E9B53 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23524A3222034E8D000E9B53 /* ChatService.swift */; };
@@ -99,6 +102,9 @@
 		2346C90421ECF2FF00A18CC2 /* CustomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomImage.swift; path = iSport/Extra/CustomImage.swift; sourceTree = SOURCE_ROOT; };
 		2346C90C21ED105600A18CC2 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = iSport/Extra/Extensions.swift; sourceTree = SOURCE_ROOT; };
 		2346C91221ED1C5500A18CC2 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = News.swift; path = iSport/Model/News.swift; sourceTree = SOURCE_ROOT; };
+		234B269B221028AC005D6F01 /* prediction.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = prediction.json; sourceTree = "<group>"; };
+		234B269C221028AC005D6F01 /* live.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = live.json; sourceTree = "<group>"; };
+		234B269D221028AC005D6F01 /* odds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = odds.json; sourceTree = "<group>"; };
 		235249E72202EB52000E9B53 /* InfoUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoUserTableViewCell.swift; sourceTree = "<group>"; };
 		235249E92202F49F000E9B53 /* FacebookApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookApi.swift; sourceTree = "<group>"; };
 		23524A3222034E8D000E9B53 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
@@ -295,6 +301,16 @@
 			path = iSport/Extra;
 			sourceTree = SOURCE_ROOT;
 		};
+		234B269A2210288F005D6F01 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				234B269C221028AC005D6F01 /* live.json */,
+				234B269D221028AC005D6F01 /* odds.json */,
+				234B269B221028AC005D6F01 /* prediction.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		238D2A8D2205A8DB007AC7A8 /* Image */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +348,7 @@
 		23EEE72F21EB978400DE746F /* iSport */ = {
 			isa = PBXGroup;
 			children = (
+				234B269A2210288F005D6F01 /* JSON */,
 				238D2A8D2205A8DB007AC7A8 /* Image */,
 				23106677220210B1004F053A /* Font */,
 				233D2A0321F71DA700968469 /* Extra */,
@@ -478,10 +495,13 @@
 				238D2A9F2206141D007AC7A8 /* chat2.jpg in Resources */,
 				238D2A95220601D3007AC7A8 /* wp_005.png in Resources */,
 				23EEE73E21EB978500DE746F /* LaunchScreen.storyboard in Resources */,
+				234B269E221028AC005D6F01 /* prediction.json in Resources */,
 				238D2A8F2205A8EC007AC7A8 /* background.jpg in Resources */,
+				234B269F221028AC005D6F01 /* live.json in Resources */,
 				238D2A9E2206141D007AC7A8 /* caht3.jpg in Resources */,
 				23106679220210C9004F053A /* Hard Sports.ttf in Resources */,
 				23D1201C21F635A400F375EC /* Assets.xcassets in Resources */,
+				234B26A0221028AC005D6F01 /* odds.json in Resources */,
 				23A10BB222088F0A00EB6CA1 /* GoogleService-Info.plist in Resources */,
 				238D2AA122061426007AC7A8 /* chat1.png in Resources */,
 				23EEE73621EB978400DE746F /* Main.storyboard in Resources */,

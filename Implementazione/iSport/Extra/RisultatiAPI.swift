@@ -159,11 +159,25 @@ class RisultatiAPI: NSObject {
     }
     
     static func errorAPI(callback: @escaping () -> Void){
-        listaPartite = [Partita]()
-        listaPredizioni = [Prediction]()
-        listaOdds = [Odds]()
+        listaPartite = loadJson(filename: "live")
+        listaPredizioni = loadJson(filename: "prediction")
+        listaOdds = loadJson(filename: "odds")
         callback()
     }
     
-
+    static func loadJson<T: Decodable>(filename: String) -> [T] {
+        if let url = Bundle.main.url(forResource: filename, withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: url)
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let risultato = try decoder.decode([T].self, from: data)
+                return risultato
+            } catch {
+                print("error:\(error)")
+            }
+        }
+        return [T]()
+    }
+    
 }
