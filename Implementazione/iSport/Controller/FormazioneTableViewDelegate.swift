@@ -44,8 +44,8 @@ class FormazioneTableViewDelegate: NSObject, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch keysFormazione[section] {
-        case "Linep":
-            return ""
+        case "startingLineups":
+            return "Lineup"
         case "substitutions":
             return "Substitutions"
         default:

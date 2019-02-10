@@ -920,14 +920,15 @@ In this chapter will be discussed and displayed the user interface of each page 
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{images/Screen/SideMenu}
-		\caption{In questa schermata viene mostrato il Side Menu di un utente autenticato}
+		\caption{This screen shows the Side Menu of an authenticated user}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{images/Screen/SideLogout}
-		\caption{In questa schermata viene mostrato il Side Menu di un utente non autenticato}
+		\caption{This screen shows the Side Menu of an unauthenticated user}
 	\end{subfigure}
 \end{figure}
+
 
 
 \subsection*{News}
@@ -936,12 +937,12 @@ In this chapter will be discussed and displayed the user interface of each page 
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{images/Screen/News}
-		\caption{In questa schermata vengono mostrate tutte le notizie con la possibilità di salvarle o pubblicarle}
+		\caption{This screen shows all the news along with the possibility to save or publish them}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{images/Screen/NewsFavorite}
-		\caption{n questa schermata vengono mostrate tutte le notizie salvate}
+		\caption{This screen shows all the saved news}
 	\end{subfigure}
 \end{figure}
 
@@ -949,12 +950,12 @@ In this chapter will be discussed and displayed the user interface of each page 
 		\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{images/Screen/Share}
-		\caption{In questa schermata viene mostrata la condivisione di News}
+		\caption{This screen shows the News sharing}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{images/Screen/WebView}
-		\caption{WebView per la visione della notizia completa}
+		\caption{WebView to see and read the complete article from the origin website}
 	\end{subfigure}
 \end{figure}
 
@@ -964,12 +965,12 @@ In this chapter will be discussed and displayed the user interface of each page 
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{images/Screen/Live}
-		\caption{In questa schermata vengono mostrate tutte le partite live}
+		\caption{This screen shows real time games}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{images/Screen/Formazione}
-		\caption{n questa schermata vengono mostrate le formazioni delle due squadre}
+		\caption{In this screen are shown both teams lineups}
 	\end{subfigure}
 \end{figure}
 
@@ -977,12 +978,12 @@ In this chapter will be discussed and displayed the user interface of each page 
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{images/Screen/Goal}
-		\caption{In questa schermata viene mostrate i goal della partita}
+		\caption{This screen shows the goals}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{images/Screen/Cards}
-		\caption{In questa schermata viene mostrate i cartellini della partita}
+		\caption{This screen shows the match cards}
 	\end{subfigure}
 \end{figure}
 
@@ -991,7 +992,7 @@ In this chapter will be discussed and displayed the user interface of each page 
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{images/Screen/Statistica}
-		\caption{In questa schermata vengono mostrate le varie statistiche}
+		\caption{This screen shows statistics}
 	\end{subfigure}
 \end{figure}
 
@@ -1001,21 +1002,22 @@ In this chapter will be discussed and displayed the user interface of each page 
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{images/Screen/ComposizioneSchedina}
-		\caption{In questa schermata viene mostrata la composizione di una schedina}
+		\caption{This screen shows the composition of a ticket}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{images/Screen/Carrello}
-		\caption{n questa schermata viene mostrato la lista delle partite inserite in una schedina}
+		\caption{This screen shows the list of the games inserted in a ticket}
 	\end{subfigure}
 \end{figure}
+
 
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{images/Screen/Storico}
-		\caption{In questa schermata viene mostrato lo storico di tutte le schedine giocate}
+		\caption{This screen shows the history of all the cards played}
 	\end{subfigure}
 \end{figure}
 
@@ -1025,30 +1027,31 @@ In this chapter will be discussed and displayed the user interface of each page 
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{images/Screen/Chat}
-		\caption{In questa schermata viene mostrata la chat}
+		\caption{This screen shows the chat}
 	\end{subfigure}
 \end{figure}
 
 
 \chapter{External Services and Libraries}
-iSport application uses several third parties API in order to provide all the services to the user.\\
-Per il parsing dei dati JSON è stato usato il componente JSONDecoder nativo dell UIKit.
+iSport application uses several third parties API in order to provide the user all the services.\\
+The JSONDecoder component from UIKit was used to parse the JSON data.
+
 
 \subsection*{Facebook SDK}
-Per la gestione del login sono state utilizzate le Facebook SDK. Quando un utente vuole autenticarsi l'applicazione esegue la chiamata al servizio di Facebook mediante:
+The Facebook SDK was used to manage the login. When a user wants to authenticate the application makes the call to the Facebook service through:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/LoginMethod}
 \end{figure}
-Tale metodo rimanda al sito o all'applicazione di Facebook e una volta autenticato si viene reindirizzati ad "iSport" che andrà a memorizzare il token fornitogli.
+This method is used to send the user on Facebook for the authentication; once authenticated the user redirected to ”iSport” which will store the token provided.
 
-Per la pubblicazione delle notizie invece viene utilizzato il servizio di "Graph API":
+Instead, the ”Graph API” is used for news publishing:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/GraphAPI}
 \end{figure}
 
-Per utilizzare il servizio di Facebook sono stati inclusi i seguenti pod:
+The following pods were included to use Facebook:
 \begin{lstlisting}[style=CStyle]
 pod 'FacebookCore'
 pod 'FacebookLogin'
@@ -1056,18 +1059,18 @@ pod 'FacebookShare'
 \end{lstlisting}
 
 \subsection*{Firebase SDK}
-Per l'accesso al database vengono utilizzate le SDK di Firebase. In particolare viene utilizzato il login tramite le credenziali di Facebook in modo da avere un login unico.
+Firebase SDKs are used to access the database. In particular, login is possible only inserting Facebook credentials in order to have a single login.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/LoginFirebase}
 \end{figure}
-Per l'accesso al database è stato usato il DatabaseManager incluso nelle SDK:
+For database access, the DatabaseManager included in the SDKs was used:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/DBaccess}
 \end{figure}
-Per utilizzare il servizio di Firebase sono stati inclusi i seguenti pod:
+The following pods were included to use Firebase:
 \begin{lstlisting}[style=CStyle]
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
@@ -1075,74 +1078,74 @@ pod 'Firebase/Database'
 \end{lstlisting}
 
 \subsection*{Scaledrone}
-Per il servizio di chat in tempo reale sono state utilizzate le API di Scaledrone. Per la connessione alla room viene utilizzata la seguente estensione:
+Scaledrone API was used for the real-time chat service. The following extension is used to connect to the room:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/ScaledroneConnect}
 \end{figure}
-Mentre per la ricezione dei messaggi:
+While for receiving messages:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/ScaledroneReceive}
 \end{figure}
-Per utilizzare il servizio di Scaledrone sono stati inclusi i seguenti pod:
+The following pods were included to use the Scaledrone service:
 \begin{lstlisting}[style=CStyle]
 pod 'Scaledrone', '~> 0.3.0'
 \end{lstlisting}
 
 \subsection*{NewsAPI}
-Quando un utente vuole visualizzare le principali notizie del giorno l'applicazione esegue le seguenti operazioni:
+If a user wants to see the most important daily news, the application will perform the following operations:
 \begin{itemize}
-	\item Esegue una richiesta GET al l'endpoint fornito dal servizio
-	\item Se la risposta è valida effettua il parsing del contenuto JSON
-	\item Crea le celle della tabella contenente le informazioni fornite dal servizio e parsate
-	\item Scarica in maniera asincrona le immagini di anteprima
+	\item sends a GET request to the endpoint supplied by the service
+	\item If the answer is valid, it parses the JSON content
+	\item Creates the table cells containing the information provided and parsed by the service 
+	\item Download preview images asynchronously
 \end{itemize}
-L'endpoint utilizzato è "https://newsapi.org/v2/top-headlines?country=it\&category=sports \&apiKey=API\_KEY". La risposta fornita dal servizio è:
+The endpoint used is "https://newsapi.org/v2/top-headlines?country=it\&category=sports \&apiKey=API\_KEY". The answer provided by the service is:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{images/ResponseNewsAPI}
 \end{figure}
-Per il parsing quindi è stata usata la seguente struttura dati:
+The following data structure was used for the parsing:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.3\textwidth]{images/StructDati}
 \end{figure}
 \subsection*{APIFootball}
-Quando un utente vuole visualizzare i risultati delle partite del giorno l'applicazione esegue le seguenti operazioni:
+When a user wants to see a daily match score the application performs the following operations:
 \begin{itemize}
-	\item Esegue una richiesta GET al l'endpoint fornito dal servizio
-	\item Se la risposta è valida effettua il parsing del contenuto JSON
-	\item Crea le celle della tabella contenente le informazioni fornite dal servizio e parsate
-	\item Aggiorna le informazioni ogni 30 secondi per mantenere i dati in tempo reale
+	\item sends a GET request to the endpoint supplied by the service
+	\item If the answer is valid, it parses the JSON content
+	\item Creates the table cells containing the information provided and parsed by the service 
+	\item Update the information every 30 seconds
 \end{itemize}
-L'endpoint utilizzato per ottenere i risultati è "https://apifootball.com/api/?action=get\_events". La risposta fornita dal servizio è:
+The endpoint used to obtain the results is "https://apifootball.com/api/?action=get\_events". The answer provided by the service is:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.3\textwidth]{images/ResponseCompleta}
 \end{figure}
-Per il parsing quindi è stata usata la seguente struttura dati:
+The following data structure was used for the parsing:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.3\textwidth]{images/StructPartita2}
 	\includegraphics[width=0.3\textwidth]{images/StructPartita1}
 \end{figure}
-Per ottenere le previsioni della partita l'endpoint utilizzato è "https://apifootball.com/api/? action=get\_predictions". La risposta fornita dal servizio è:
+To get the game’s predictions, the endpoint used is "https://apifootball.com/api/? action=get\_predictions". The answer provided by the service is:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.3\textwidth]{images/ResponsePrediction}
 \end{figure}
-Per il parsing quindi è stata usata la seguente struttura dati:
+The following data structure was used for the parsing:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.3\textwidth]{images/StructPrediction}
 \end{figure}
-Per ottenere le quote delle partite l'endpoint utilizzato è "https://apifootball.com/api/? action=get\_odds". La risposta fornita dal servizio è:
+To get the odds of the games the endpoint used is "https://apifootball.com/api/? action=get\_odds". The answer provided by the service is:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.3\textwidth]{images/ResponseOdds}
 \end{figure}
-Per il parsing quindi è stata usata la seguente struttura dati:
+The following data structure was used for the parsing:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.3\textwidth]{images/StructOdds}

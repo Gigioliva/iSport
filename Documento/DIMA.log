@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.29)  10 FEB 2019 00:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.7.29)  10 FEB 2019 20:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -906,16 +906,16 @@ Overfull \hbox (2.61108pt too wide) in paragraph at lines 920--930
 <images/Screen/News.png, id=199, 1246.6575pt x 2216.28pt>
 File: images/Screen/News.png Graphic file (type png)
 <use images/Screen/News.png>
-Package pdftex.def Info: images/Screen/News.png  used on input line 938.
+Package pdftex.def Info: images/Screen/News.png  used on input line 939.
 (pdftex.def)             Requested size: 179.25305pt x 318.66386pt.
 <images/Screen/NewsFavorite.png, id=200, 1246.6575pt x 2216.28pt>
 File: images/Screen/NewsFavorite.png Graphic file (type png)
 <use images/Screen/NewsFavorite.png>
-Package pdftex.def Info: images/Screen/NewsFavorite.png  used on input line 943
+Package pdftex.def Info: images/Screen/NewsFavorite.png  used on input line 944
 .
 (pdftex.def)             Requested size: 179.25305pt x 318.66386pt.
 
-Overfull \hbox (2.61108pt too wide) in paragraph at lines 936--946
+Overfull \hbox (2.61108pt too wide) in paragraph at lines 937--947
 []$[]$ $[]$ 
  []
 
@@ -926,15 +926,15 @@ Overfull \hbox (2.61108pt too wide) in paragraph at lines 936--946
 <images/Screen/Share.png, id=204, 1246.6575pt x 2216.28pt>
 File: images/Screen/Share.png Graphic file (type png)
 <use images/Screen/Share.png>
-Package pdftex.def Info: images/Screen/Share.png  used on input line 951.
+Package pdftex.def Info: images/Screen/Share.png  used on input line 952.
 (pdftex.def)             Requested size: 179.25305pt x 318.66386pt.
 <images/Screen/WebView.png, id=205, 1246.6575pt x 2216.28pt>
 File: images/Screen/WebView.png Graphic file (type png)
 <use images/Screen/WebView.png>
-Package pdftex.def Info: images/Screen/WebView.png  used on input line 956.
+Package pdftex.def Info: images/Screen/WebView.png  used on input line 957.
 (pdftex.def)             Requested size: 179.25305pt x 318.66386pt.
 
-Overfull \hbox (2.61108pt too wide) in paragraph at lines 949--959
+Overfull \hbox (2.61108pt too wide) in paragraph at lines 950--960
 []$[]$ $[]$ 
  []
 
@@ -942,15 +942,15 @@ Overfull \hbox (2.61108pt too wide) in paragraph at lines 949--959
 <images/Screen/Live.png, id=209, 1246.6575pt x 2216.28pt>
 File: images/Screen/Live.png Graphic file (type png)
 <use images/Screen/Live.png>
-Package pdftex.def Info: images/Screen/Live.png  used on input line 966.
+Package pdftex.def Info: images/Screen/Live.png  used on input line 967.
 (pdftex.def)             Requested size: 179.25305pt x 318.66386pt.
 <images/Screen/Formazione.png, id=210, 1246.6575pt x 2216.28pt>
 File: images/Screen/Formazione.png Graphic file (type png)
 <use images/Screen/Formazione.png>
-Package pdftex.def Info: images/Screen/Formazione.png  used on input line 971.
+Package pdftex.def Info: images/Screen/Formazione.png  used on input line 972.
 (pdftex.def)             Requested size: 179.25305pt x 318.66386pt.
 
-Overfull \hbox (2.61108pt too wide) in paragraph at lines 964--974
+Overfull \hbox (2.61108pt too wide) in paragraph at lines 965--975
 []$[]$ $[]$ 
  []
 
@@ -958,20 +958,15 @@ Overfull \hbox (2.61108pt too wide) in paragraph at lines 964--974
 <images/Screen/Goal.png, id=214, 1246.6575pt x 2216.28pt>
 File: images/Screen/Goal.png Graphic file (type png)
 <use images/Screen/Goal.png>
-Package pdftex.def Info: images/Screen/Goal.png  used on input line 979.
+Package pdftex.def Info: images/Screen/Goal.png  used on input line 980.
 (pdftex.def)             Requested size: 179.25305pt x 318.66386pt.
 <images/Screen/Cards.png, id=215, 1246.6575pt x 2216.28pt>
 File: images/Screen/Cards.png Graphic file (type png)
 <use images/Screen/Cards.png>
-Package pdftex.def Info: images/Screen/Cards.png  used on input line 984.
+Package pdftex.def Info: images/Screen/Cards.png  used on input line 985.
 (pdftex.def)             Requested size: 179.25305pt x 318.66386pt.
 
-Underfull \hbox (badness 3058) in paragraph at lines 985--985
-[][][]|\OT1/cmr/m/n/10.95 In questa scher-mata viene mostrate i
- []
-
-
-Overfull \hbox (2.61108pt too wide) in paragraph at lines 977--987
+Overfull \hbox (2.61108pt too wide) in paragraph at lines 978--988
 []$[]$ $[]$ 
  []
 
@@ -979,22 +974,22 @@ Overfull \hbox (2.61108pt too wide) in paragraph at lines 977--987
 <images/Screen/Statistica.png, id=219, 1246.6575pt x 2216.28pt>
 File: images/Screen/Statistica.png Graphic file (type png)
 <use images/Screen/Statistica.png>
-Package pdftex.def Info: images/Screen/Statistica.png  used on input line 993.
+Package pdftex.def Info: images/Screen/Statistica.png  used on input line 994.
 (pdftex.def)             Requested size: 179.25305pt x 318.66386pt.
  [48 <./images/Screen/Goal.png> <./images/Screen/Cards.png>]
 <images/Screen/ComposizioneSchedina.png, id=223, 1246.6575pt x 2216.28pt>
 File: images/Screen/ComposizioneSchedina.png Graphic file (type png)
 <use images/Screen/ComposizioneSchedina.png>
 Package pdftex.def Info: images/Screen/ComposizioneSchedina.png  used on input 
-line 1003.
+line 1004.
 (pdftex.def)             Requested size: 179.25305pt x 318.66386pt.
 <images/Screen/Carrello.png, id=224, 1246.6575pt x 2216.28pt>
 File: images/Screen/Carrello.png Graphic file (type png)
 <use images/Screen/Carrello.png>
-Package pdftex.def Info: images/Screen/Carrello.png  used on input line 1008.
+Package pdftex.def Info: images/Screen/Carrello.png  used on input line 1009.
 (pdftex.def)             Requested size: 179.25305pt x 318.66386pt.
 
-Overfull \hbox (2.61108pt too wide) in paragraph at lines 1001--1011
+Overfull \hbox (2.61108pt too wide) in paragraph at lines 1002--1012
 []$[]$ $[]$ 
  []
 
@@ -1002,36 +997,31 @@ Overfull \hbox (2.61108pt too wide) in paragraph at lines 1001--1011
 <images/Screen/Storico.png, id=229, 1246.6575pt x 2216.28pt>
 File: images/Screen/Storico.png Graphic file (type png)
 <use images/Screen/Storico.png>
-Package pdftex.def Info: images/Screen/Storico.png  used on input line 1017.
+Package pdftex.def Info: images/Screen/Storico.png  used on input line 1019.
 (pdftex.def)             Requested size: 179.25305pt x 318.66386pt.
-
-Underfull \hbox (badness 1609) in paragraph at lines 1018--1018
-[][][]|\OT1/cmr/m/n/10.95 In questa scher-mata viene mostrato lo
- []
-
-[50 <./images/Screen/ComposizioneSchedina.png> <./images/Screen/Carrello.png>]
+ [50 <./images/Screen/ComposizioneSchedina.png> <./images/Screen/Carrello.png>]
 <images/Screen/Chat.png, id=234, 1246.6575pt x 2216.28pt>
 File: images/Screen/Chat.png Graphic file (type png)
 <use images/Screen/Chat.png>
-Package pdftex.def Info: images/Screen/Chat.png  used on input line 1027.
+Package pdftex.def Info: images/Screen/Chat.png  used on input line 1029.
 (pdftex.def)             Requested size: 179.25305pt x 318.66386pt.
-
-[51 <./images/Screen/Storico.png>] [52 <./images/Screen/Chat.png>]
+ [51 <./images/Screen/Storico.png>]
+[52 <./images/Screen/Chat.png>]
 chapter 6.
 <images/LoginMethod.png, id=241, 720.6925pt x 237.88875pt>
 File: images/LoginMethod.png Graphic file (type png)
 <use images/LoginMethod.png>
-Package pdftex.def Info: images/LoginMethod.png  used on input line 1041.
+Package pdftex.def Info: images/LoginMethod.png  used on input line 1044.
 (pdftex.def)             Requested size: 313.69029pt x 103.54247pt.
 <images/GraphAPI.png, id=242, 657.45625pt x 43.16125pt>
 File: images/GraphAPI.png Graphic file (type png)
 <use images/GraphAPI.png>
-Package pdftex.def Info: images/GraphAPI.png  used on input line 1048.
+Package pdftex.def Info: images/GraphAPI.png  used on input line 1051.
 (pdftex.def)             Requested size: 313.69029pt x 20.59334pt.
 <images/LoginFirebase.png, id=243, 576.1525pt x 120.45pt>
 File: images/LoginFirebase.png Graphic file (type png)
 <use images/LoginFirebase.png>
-Package pdftex.def Info: images/LoginFirebase.png  used on input line 1063.
+Package pdftex.def Info: images/LoginFirebase.png  used on input line 1066.
 (pdftex.def)             Requested size: 313.69029pt x 65.58237pt.
 [53
 
@@ -1040,104 +1030,92 @@ Package pdftex.def Info: images/LoginFirebase.png  used on input line 1063.
 <images/DBaccess.png, id=249, 704.6325pt x 123.46124pt>
 File: images/DBaccess.png Graphic file (type png)
 <use images/DBaccess.png>
-Package pdftex.def Info: images/DBaccess.png  used on input line 1068.
+Package pdftex.def Info: images/DBaccess.png  used on input line 1071.
 (pdftex.def)             Requested size: 313.69029pt x 54.96173pt.
 <images/ScaledroneConnect.png, id=250, 586.19pt x 262.9825pt>
 File: images/ScaledroneConnect.png Graphic file (type png)
 <use images/ScaledroneConnect.png>
-Package pdftex.def Info: images/ScaledroneConnect.png  used on input line 1081.
+Package pdftex.def Info: images/ScaledroneConnect.png  used on input line 1084.
 
 (pdftex.def)             Requested size: 313.69029pt x 140.72835pt.
 <images/ScaledroneReceive.png, id=251, 563.10374pt x 451.6875pt>
 File: images/ScaledroneReceive.png Graphic file (type png)
 <use images/ScaledroneReceive.png>
-Package pdftex.def Info: images/ScaledroneReceive.png  used on input line 1086.
+Package pdftex.def Info: images/ScaledroneReceive.png  used on input line 1089.
 
 (pdftex.def)             Requested size: 313.69029pt x 251.62686pt.
  [54 <./images/LoginFirebase.png> <./images/DBaccess.png> <./images/ScaledroneC
 onnect.png>]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 1090
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 1093
 .
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 1090.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 1093.
 
 <images/ResponseNewsAPI.png, id=258, 769.87625pt x 600.2425pt>
 File: images/ResponseNewsAPI.png Graphic file (type png)
 <use images/ResponseNewsAPI.png>
-Package pdftex.def Info: images/ResponseNewsAPI.png  used on input line 1104.
+Package pdftex.def Info: images/ResponseNewsAPI.png  used on input line 1107.
 (pdftex.def)             Requested size: 313.69029pt x 244.58063pt.
 
-Overfull \hbox (22.02528pt too wide) in paragraph at lines 1101--1105
-\OT1/cmr/m/n/12 L'endpoint uti-liz-zato ^^Re "https://newsapi.org/v2/top-headli
-nes?country=it&category=sports
+Overfull \hbox (12.20316pt too wide) in paragraph at lines 1104--1108
+\OT1/cmr/m/n/12 The end-point used is "https://newsapi.org/v2/top-headlines?cou
+ntry=it&category=sports
  []
 
 [55 <./images/ScaledroneReceive.png>]
 <images/StructDati.png, id=265, 226.8475pt x 232.87pt>
 File: images/StructDati.png Graphic file (type png)
 <use images/StructDati.png>
-Package pdftex.def Info: images/StructDati.png  used on input line 1109.
+Package pdftex.def Info: images/StructDati.png  used on input line 1112.
 (pdftex.def)             Requested size: 134.44064pt x 138.01038pt.
 <images/ResponseCompleta.png, id=266, 350.30875pt x 647.41875pt>
 File: images/ResponseCompleta.png Graphic file (type png)
 <use images/ResponseCompleta.png>
-Package pdftex.def Info: images/ResponseCompleta.png  used on input line 1122.
+Package pdftex.def Info: images/ResponseCompleta.png  used on input line 1125.
 (pdftex.def)             Requested size: 134.44064pt x 248.47162pt.
 
-Overfull \hbox (41.4648pt too wide) in paragraph at lines 1119--1123
-\OT1/cmr/m/n/12 L'endpoint uti-liz-zato per ot-tenere i risul-tati ^^Re "https:
-//apifootball.com/api/?action=get[]events".
+Overfull \hbox (22.24277pt too wide) in paragraph at lines 1122--1126
+\OT1/cmr/m/n/12 The end-point used to ob-tain the re-sults is "https://apifootb
+all.com/api/?action=get[]events".
  []
 
 [56 <./images/ResponseNewsAPI.png> <./images/StructDati.png>]
 <images/StructPartita2.png, id=272, 335.2525pt x 433.62pt>
 File: images/StructPartita2.png Graphic file (type png)
 <use images/StructPartita2.png>
-Package pdftex.def Info: images/StructPartita2.png  used on input line 1127.
+Package pdftex.def Info: images/StructPartita2.png  used on input line 1130.
 (pdftex.def)             Requested size: 134.44064pt x 173.8816pt.
 <images/StructPartita1.png, id=273, 335.2525pt x 498.86375pt>
 File: images/StructPartita1.png Graphic file (type png)
 <use images/StructPartita1.png>
-Package pdftex.def Info: images/StructPartita1.png  used on input line 1128.
+Package pdftex.def Info: images/StructPartita1.png  used on input line 1131.
 (pdftex.def)             Requested size: 134.44064pt x 200.04436pt.
 <images/ResponsePrediction.png, id=274, 478.78876pt x 624.3325pt>
 File: images/ResponsePrediction.png Graphic file (type png)
 <use images/ResponsePrediction.png>
-Package pdftex.def Info: images/ResponsePrediction.png  used on input line 1133
+Package pdftex.def Info: images/ResponsePrediction.png  used on input line 1136
 .
 (pdftex.def)             Requested size: 134.44064pt x 175.30728pt.
-
-Overfull \hbox (27.378pt too wide) in paragraph at lines 1130--1134
-[]\OT1/cmr/m/n/12 Per ot-tenere le pre-vi-sioni della par-tita l'endpoint uti-l
-iz-zato ^^Re "https://apifootball.com/api/?
- []
-
-[57 <./images/ResponseCompleta.png> <./images/StructPartita2.png> <./images/Str
-uctPartita1.png>]
+ [57 <./images/ResponseCompleta.png> <./images/StructPartita2.png> <./images/St
+ructPartita1.png>]
 <images/StructPrediction.png, id=281, 228.855pt x 106.3975pt>
 File: images/StructPrediction.png Graphic file (type png)
 <use images/StructPrediction.png>
-Package pdftex.def Info: images/StructPrediction.png  used on input line 1138.
+Package pdftex.def Info: images/StructPrediction.png  used on input line 1141.
 (pdftex.def)             Requested size: 134.44064pt x 62.50447pt.
 <images/ResponseOdds.png, id=282, 328.22626pt x 228.855pt>
 File: images/ResponseOdds.png Graphic file (type png)
 <use images/ResponseOdds.png>
-Package pdftex.def Info: images/ResponseOdds.png  used on input line 1143.
+Package pdftex.def Info: images/ResponseOdds.png  used on input line 1146.
 (pdftex.def)             Requested size: 134.44064pt x 93.73686pt.
-
-Overfull \hbox (5.11852pt too wide) in paragraph at lines 1140--1144
-[]\OT1/cmr/m/n/12 Per ot-tenere le quote delle par-tite l'endpoint uti-liz-zato
- ^^Re "https://apifootball.com/api/?
- []
-
 <images/StructOdds.png, id=283, 228.855pt x 106.3975pt>
 File: images/StructOdds.png Graphic file (type png)
 <use images/StructOdds.png>
-Package pdftex.def Info: images/StructOdds.png  used on input line 1148.
+Package pdftex.def Info: images/StructOdds.png  used on input line 1151.
 (pdftex.def)             Requested size: 134.44064pt x 62.50447pt.
 [58 <./images/ResponsePrediction.png> <./images/StructPrediction.png> <./images
 /ResponseOdds.png> <./images/StructOdds.png>]
@@ -1157,10 +1135,10 @@ chapter 9.
 
 ] (./DIMA.aux) ) 
 Here is how much of TeX's memory you used:
- 7599 strings out of 492649
- 127883 string characters out of 6129622
+ 7597 strings out of 492649
+ 127867 string characters out of 6129622
  335785 words of memory out of 5000000
- 11340 multiletter control sequences out of 15000+600000
+ 11338 multiletter control sequences out of 15000+600000
  11578 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  48i,9n,66p,9105b,1410s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1175,7 +1153,7 @@ r6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl1
 10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
 0.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12
 .pfb>
-Output written on DIMA.pdf (61 pages, 12542864 bytes).
+Output written on DIMA.pdf (61 pages, 12541972 bytes).
 PDF statistics:
  336 PDF objects out of 1000 (max. 8388607)
  168 compressed objects within 2 object streams
