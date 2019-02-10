@@ -29,10 +29,13 @@ class StatisticaTableViewCell: UITableViewCell {
             ProgressBarHome.progress = CGFloat(valoreHome / (valoreHome + valoreAway))
             ProgressBarAway.progress = CGFloat(valoreAway / (valoreHome + valoreAway))
             
-            if ProgressBarHome.progress >= 0.5 {
+            if ProgressBarHome.progress > 0.5 {
                 ProgressBarHome.barFillColor = UIColor.rgb(red: 0, green: 150, blue: 0)
                 ProgressBarAway.barFillColor = UIColor.red
-            } else {
+            }else if ProgressBarHome.progress == 0.5{
+                ProgressBarHome.barFillColor = UIColor.rgb(red: 0, green: 150, blue: 0)
+                ProgressBarAway.barFillColor = UIColor.rgb(red: 0, green: 150, blue: 0)
+            }else {
                 ProgressBarHome.barFillColor = UIColor.red
                 ProgressBarAway.barFillColor = UIColor.rgb(red: 0, green: 150, blue: 0)
             }
