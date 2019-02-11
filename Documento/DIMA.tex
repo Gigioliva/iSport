@@ -1165,8 +1165,25 @@ The entire application is very maintainable as the code is entirely documented, 
 The usability was another of our concern for the development. In order to improve it, a beta version of the application was given to 5 users and tested for 1 weeks. The result of this test highlighted usability issues. In particular, in the first version the buttons for changing information on the match detail page were not clearly visible. Another report concerned the lack of visual feedback after adding a quota to their ticket. Both of these problems were then solved in a later version of the application.
 
 \chapter{Test Cases}
-\chapter{Cost Estimation}
+As the structure of our application is mainly based on creating elemnents on screen starting from data received from the web, a unit test for each asynchronous function was not a viable solution.\\
 
+Per testare l'applicazione è stato usato il framework di Apple XCTest che permette di analizzare il flusso di esecuzione compiendo azioni sulla UI, come il tap su bottoni. Inoltre per alcuni metodi, come il calcolo della potenziale vincita o il perse dei JSON, sono stati effettuati degli Unit Test.\\
+
+Sotto sono rappresentati i risultati dell'esecuzione dei test
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/TestUnit}
+\end{figure}
+\chapter{Tool \& Software Used}
+For the developement the following tools and software were used:
+\begin{itemize}
+	\item Xcode 10.1
+	\item GIMP
+	\item Sketch
+	\item Postman
+	\item Draw.io
+	\item Github
+\end{itemize}
 
 
 
