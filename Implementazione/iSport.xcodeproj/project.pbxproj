@@ -280,8 +280,8 @@
 				233E17B82202395D00BE8B33 /* MenuViewController.swift */,
 				23524AAE22036C49000E9B53 /* ChatViewController.swift */,
 				234598532206F79100584C7B /* FavoriteViewController.swift */,
-				23A10BB32208ABBA00EB6CA1 /* CronologiaViewController.swift */,
 				23FF4C3C220999C800CEE456 /* GiocataViewController.swift */,
+				23A10BB32208ABBA00EB6CA1 /* CronologiaViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
