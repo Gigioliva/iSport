@@ -44,6 +44,7 @@
 		23A10BB222088F0A00EB6CA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 23A10BB122088F0A00EB6CA1 /* GoogleService-Info.plist */; };
 		23A10BB42208ABBA00EB6CA1 /* CronologiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A10BB32208ABBA00EB6CA1 /* CronologiaViewController.swift */; };
 		23A10BB62208B75100EB6CA1 /* TicketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A10BB52208B75100EB6CA1 /* TicketTableViewCell.swift */; };
+		23A13C3E2214560F00049BEB /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A13C3D2214560F00049BEB /* Icon.png */; };
 		23A6C8DD21F5D47600F732DC /* FormazioneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A6C8DC21F5D47600F732DC /* FormazioneTableViewCell.swift */; };
 		23A6C8DF21F5DA3C00F732DC /* GoalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A6C8DE21F5DA3C00F732DC /* GoalsTableViewCell.swift */; };
 		23A6C8E121F5DABD00F732DC /* GoalsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A6C8E021F5DABD00F732DC /* GoalsTableViewDelegate.swift */; };
@@ -129,6 +130,7 @@
 		23A10BB122088F0A00EB6CA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		23A10BB32208ABBA00EB6CA1 /* CronologiaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CronologiaViewController.swift; sourceTree = "<group>"; };
 		23A10BB52208B75100EB6CA1 /* TicketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTableViewCell.swift; sourceTree = "<group>"; };
+		23A13C3D2214560F00049BEB /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		23A6C8DC21F5D47600F732DC /* FormazioneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FormazioneTableViewCell.swift; path = iSport/View/FormazioneTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		23A6C8DE21F5DA3C00F732DC /* GoalsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoalsTableViewCell.swift; path = iSport/View/GoalsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		23A6C8E021F5DABD00F732DC /* GoalsTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoalsTableViewDelegate.swift; path = iSport/Controller/GoalsTableViewDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -318,6 +320,7 @@
 				238D2A9C2206141C007AC7A8 /* caht3.jpg */,
 				238D2A9D2206141D007AC7A8 /* chat2.jpg */,
 				238D2A94220601D3007AC7A8 /* wp_005.png */,
+				23A13C3D2214560F00049BEB /* Icon.png */,
 				238D2A8E2205A8EC007AC7A8 /* background.jpg */,
 			);
 			path = Image;
@@ -504,6 +507,7 @@
 				234B26A0221028AC005D6F01 /* odds.json in Resources */,
 				23A10BB222088F0A00EB6CA1 /* GoogleService-Info.plist in Resources */,
 				238D2AA122061426007AC7A8 /* chat1.png in Resources */,
+				23A13C3E2214560F00049BEB /* Icon.png in Resources */,
 				23EEE73621EB978400DE746F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
