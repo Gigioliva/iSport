@@ -16,15 +16,18 @@ class NewsAPI: NSObject {
     
     static func RequestAPI(callback: @escaping () -> Void){
         let url = URL(string: urlNewsAPI)!
-        URLSession.shared.dataTask(with: url){ (data, response, error) in
+        let temp = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+        URLSession.shared.dataTask(with: temp){ (data, response, error) in
             DispatchQueue.main.async {
                 guard let data = data , error == nil else {
                     print (error!)
+                    errorAPI(callback: callback)
                     return
                 }
                 if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
                     print("statusCode should be 200, but is \(httpStatus.statusCode)")
                     print(response!)
+                    errorAPI(callback: callback)
                 }
                 
                 do{
@@ -33,11 +36,32 @@ class NewsAPI: NSObject {
                     self.listaArticoli = try decoder.decode(Articoli.self, from: data).articles
                     callback()
                 }catch let errore{
+                    errorAPI(callback: callback)
                     print(errore)
                 }
             }
             
         }.resume()
+    }
+    
+    static func errorAPI(callback: @escaping () -> Void){
+        self.listaArticoli = loadJson()
+        callback()
+    }
+    
+    static func loadJson() -> [Article] {
+        if let url = Bundle.main.url(forResource: "news", withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: url)
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let risultato = try decoder.decode(Articoli.self, from: data).articles
+                return risultato
+            } catch {
+                print("error:\(error)")
+            }
+        }
+        return [Article]()
     }
 
 }

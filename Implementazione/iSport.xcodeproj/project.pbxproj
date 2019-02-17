@@ -52,6 +52,7 @@
 		23D1201821F628E900F375EC /* CardsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1201721F628E900F375EC /* CardsTableViewDelegate.swift */; };
 		23D1201A21F629E800F375EC /* CardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D1201921F629E800F375EC /* CardsTableViewCell.swift */; };
 		23D1201C21F635A400F375EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23D1201B21F635A300F375EC /* Assets.xcassets */; };
+		23D3889D22195FBD006F4200 /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = 23D3889C22195FBD006F4200 /* news.json */; };
 		23E45A7421EE234000A5F38F /* RisultatoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E45A7321EE234000A5F38F /* RisultatoTableViewCell.swift */; };
 		23E45A7621EE2B9B00A5F38F /* RisultatiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E45A7521EE2B9B00A5F38F /* RisultatiAPI.swift */; };
 		23EEE73121EB978400DE746F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EEE73021EB978400DE746F /* AppDelegate.swift */; };
@@ -138,6 +139,7 @@
 		23D1201721F628E900F375EC /* CardsTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardsTableViewDelegate.swift; path = iSport/Controller/CardsTableViewDelegate.swift; sourceTree = SOURCE_ROOT; };
 		23D1201921F629E800F375EC /* CardsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardsTableViewCell.swift; path = iSport/View/CardsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		23D1201B21F635A300F375EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		23D3889C22195FBD006F4200 /* news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news.json; sourceTree = "<group>"; };
 		23E45A7321EE234000A5F38F /* RisultatoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RisultatoTableViewCell.swift; path = iSport/View/RisultatoTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		23E45A7521EE2B9B00A5F38F /* RisultatiAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RisultatiAPI.swift; path = iSport/Extra/RisultatiAPI.swift; sourceTree = SOURCE_ROOT; };
 		23EEE72D21EB978400DE746F /* iSport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSport.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -308,6 +310,7 @@
 			children = (
 				234B269C221028AC005D6F01 /* live.json */,
 				234B269D221028AC005D6F01 /* odds.json */,
+				23D3889C22195FBD006F4200 /* news.json */,
 				234B269B221028AC005D6F01 /* prediction.json */,
 			);
 			path = JSON;
@@ -501,6 +504,7 @@
 				234B269E221028AC005D6F01 /* prediction.json in Resources */,
 				238D2A8F2205A8EC007AC7A8 /* background.jpg in Resources */,
 				234B269F221028AC005D6F01 /* live.json in Resources */,
+				23D3889D22195FBD006F4200 /* news.json in Resources */,
 				238D2A9E2206141D007AC7A8 /* caht3.jpg in Resources */,
 				23106679220210C9004F053A /* Hard Sports.ttf in Resources */,
 				23D1201C21F635A400F375EC /* Assets.xcassets in Resources */,

@@ -1002,12 +1002,12 @@ In this chapter will be discussed and displayed the user interface of each page 
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{images/Screen/ComposizioneSchedina}
-		\caption{This screen shows the composition of a ticket}
+		\caption{This screen shows the act of composing a ticket}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{images/Screen/Carrello}
-		\caption{This screen shows the list of the games inserted in a ticket}
+		\caption{This screen shows the bet}
 	\end{subfigure}
 \end{figure}
 
@@ -1167,9 +1167,9 @@ The usability was another of our concern for the development. In order to improv
 \chapter{Test Cases}
 As the structure of our application is mainly based on creating elemnents on screen starting from data received from the web, a unit test for each asynchronous function was not a viable solution.\\
 
-Per testare l'applicazione è stato usato il framework di Apple XCTest che permette di analizzare il flusso di esecuzione compiendo azioni sulla UI, come il tap su bottoni. Inoltre per alcuni metodi, come il calcolo della potenziale vincita o il perse dei JSON, sono stati effettuati degli Unit Test.\\
+To test the app we used XCTest that is an Apple framework; it allows to analyze the execution flow through actions on UI, such as button tap. Moreover for some methods we used the Unit Test, for example calculation of the potential winning or JSON parse.\\
 
-Sotto sono rappresentati i risultati dell'esecuzione dei test
+Below the results of the test execution:
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{images/TestUnit}
